@@ -1,4 +1,16 @@
-import { Achievement1, GamerAvatar, GameTime, StyledCheckmark } from '../../../assets/svgs';
+import {
+	Achievement1,
+	Achievement2,
+	Achievement3,
+	Achievement4,
+	Achievement5,
+	Achievement6,
+	GameAmount,
+	GamePointEarned,
+	GamerAvatar,
+	GameTime,
+	StyledCheckmark,
+} from '../../../assets/svgs';
 import { Button } from '../../../ui';
 import { CursorIllustration, HeroAvatar } from '../../../assets/images';
 import { Container } from './styles';
@@ -41,11 +53,11 @@ const Hero = () => {
 							<span className="card-title">Latest Achievements</span>
 							<div className="flex items-center lg:gap-1 flex-wrap">
 								<Achievement1 />
-								<Achievement1 />
-								<Achievement1 />
-								<Achievement1 />
-								<Achievement1 />
-								<Achievement1 />
+								<Achievement2 />
+								<Achievement3 />
+								<Achievement4 />
+								<Achievement5 />
+								<Achievement6 />
 								<p className="card-text">+10</p>
 							</div>
 						</div>
@@ -67,30 +79,30 @@ const Hero = () => {
 					<div className="flex flex-wrap max-lg:justify-between lg:gap-6 text-start">
 						<div className="flex items-center gap-2">
 							<GameTime />
-							<div className="space-y-0">
+							<div className="space-y-[-.4rem]">
 								<span className="card-title">Played</span>
 								<p className="card-text">360 hours</p>
 							</div>
 						</div>
 						<div className="flex items-center gap-2">
-							<GameTime />
-							<div className="space-y-0">
-								<span className="card-title">Played</span>
-								<p className="card-text">360 hours</p>
+							<GameAmount />
+							<div className="space-y-[-.4rem]">
+								<span className="card-title">Games</span>
+								<p className="card-text">340</p>
 							</div>
 						</div>
 						<div className="flex items-center gap-2">
-							<GameTime />
-							<div className="space-y-0">
-								<span className="card-title">Played</span>
-								<p className="card-text">360 hours</p>
+							<GamePointEarned />
+							<div className="space-y-[-.4rem]">
+								<span className="card-title">Won</span>
+								<p className="card-text">170</p>
 							</div>
 						</div>
 						<div className="flex items-center gap-2">
-							<GameTime />
-							<div className="space-y-0">
-								<span className="card-title">Played</span>
-								<p className="card-text">360 hours</p>
+							<GamePointEarned />
+							<div className="space-y-[-.4rem]">
+								<span className="card-title">Earned</span>
+								<p className="card-text">1200 coins</p>
 							</div>
 						</div>
 					</div>

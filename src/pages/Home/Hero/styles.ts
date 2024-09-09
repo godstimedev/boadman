@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { maxQuery } from '../../../utilities';
 
 export const Container = styled.section`
-	padding: 7rem 1.5rem 0rem 1.5rem;
+	padding: 11rem 1.5rem 0rem 1.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;

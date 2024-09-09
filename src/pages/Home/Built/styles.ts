@@ -7,6 +7,7 @@ export const Container = styled.section`
 		text-align: center;
 
 		span {
+			${({ theme }) => theme.fonts.secondaryFont};
 			color: ${({ theme }) => theme.colors.primary500};
 		}
 	}

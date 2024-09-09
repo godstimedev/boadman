@@ -2,15 +2,17 @@ import styled from 'styled-components';
 import { maxQuery } from '../../utilities';
 
 export const Container = styled.section`
-	max-width: 1440px;
-	position: fixed;
+	/* max-width: 1440px; */
 	background: ${({ theme }) => theme.colors.secondary500};
 	height: 99px;
 	padding: 0 4rem;
+	width: 100%;
 	display: flex;
 	align-items: center;
-	width: 100%;
+	justify-content: center;
 	z-index: 3000;
+	margin: auto;
+	position: fixed;
 	/* border-bottom: 1px solid ${({ theme }) => theme.colors.secondary400}; */
 
 	${maxQuery('lg')} {
@@ -18,7 +20,6 @@ export const Container = styled.section`
 	}
 
 	nav {
-		margin: auto;
 		width: 100%;
 		display: flex;
 		align-items: center;

@@ -11,6 +11,7 @@ export const Container = styled.section`
 		align-items: center;
 
 		span {
+			${({ theme }) => theme.fonts.secondaryFont};
 			color: ${({ theme }) => theme.colors.primary500};
 		}
 

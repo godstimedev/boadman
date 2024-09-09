@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Navbar';
 import { Container } from './styles';
+import Footer from '../Footer';
 
 const ApplyLayout = () => {
 	return (
@@ -10,6 +11,8 @@ const ApplyLayout = () => {
 			<main>
 				<Outlet />
 			</main>
+
+			<Footer />
 		</Container>
 	);
 };
