@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container } from './styles';
 import { Boadman } from '../../assets/images';
 import { Button } from '../../ui';
