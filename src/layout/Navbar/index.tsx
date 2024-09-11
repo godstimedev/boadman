@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Boadman } from '../../assets/images';
 import { Container } from './styles';
 import { Button } from '../../ui';
-import { MenuIcon } from '../../assets/svgs';
+import { MenuIcon, NavClose } from '../../assets/svgs';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -42,7 +42,7 @@ const Navbar = () => {
 						className="text-xl font-bold transition-all py-[.375rem] px-3"
 						onClick={() => setShowNav(false)}
 					>
-						X
+						<NavClose />
 					</button>
 				) : (
 					<button

@@ -1,3 +1,4 @@
+export { default as FaqAccordion } from './FaqAccordion';
 export { default as Button } from './Button';
 
 export { default as InputGroup } from './InputGroup';

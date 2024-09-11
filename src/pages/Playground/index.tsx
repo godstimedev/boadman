@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, InputGroup, CodeGroup, Loader, Select, TextArea, Table } from '../../ui';
+import {
+	Button,
+	InputGroup,
+	CodeGroup,
+	Loader,
+	Select,
+	TextArea,
+	Table,
+	FaqAccordion,
+} from '../../ui';
 import { Container, Flex } from './styles';
 import { useNotify } from '../../hooks';
 import { Search } from '../../assets/svgs';
@@ -237,6 +246,10 @@ const Playground = () => {
 			</Flex>
 			<br />
 			<br />
+
+			<div className="w-full">
+				<FaqAccordion />
+			</div>
 
 			<h3>Table</h3>
 			<br />

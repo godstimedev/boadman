@@ -1,7 +1,9 @@
 import BeginEarning from './BeginEarning';
 import Built from './Built';
+import Cta from './Cta';
 import Events from './Events';
 import Everyone from './Everyone';
+import Faqs from './Faqs';
 import Featured from './Featured';
 import Hero from './Hero';
 import Immerse from './Immerse';
@@ -20,6 +22,8 @@ const HomePage = () => {
 			<Metrics />
 			<Built />
 			<Everyone />
+			<Faqs />
+			<Cta />
 		</>
 	);
 };
