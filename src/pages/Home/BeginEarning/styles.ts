@@ -29,7 +29,7 @@ export const Container = styled.section`
 		margin-top: 2rem;
 		gap: 2rem;
 
-		${maxQuery('sm')} {
+		${maxQuery('md')} {
 			flex-direction: column;
 		}
 
@@ -42,7 +42,7 @@ export const Container = styled.section`
 				text-align: left;
 				list-style-type: decimal;
 
-				${maxQuery('sm')} {
+				${maxQuery('md')} {
 					align-items: center;
 				}
 			}
@@ -50,7 +50,7 @@ export const Container = styled.section`
 			button {
 				margin-top: 3rem;
 
-				${maxQuery('sm')} {
+				${maxQuery('md')} {
 					margin-left: auto;
 					margin-right: auto;
 				}

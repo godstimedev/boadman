@@ -11,9 +11,12 @@ export const Container = styled.section`
 	> div:last-child {
 		max-width: 1024px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 4rem;
 
 		> .button {
-			margin-top: 4rem 0;
+			/* margin-top: 4rem 0; */
 
 			button {
 				width: 100%;

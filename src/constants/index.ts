@@ -1,4 +1,5 @@
 export * from './authState';
+export * from './carouselSettings';
 export * from './inputOptions';
 export * from './queryStrings';
 export * from './restrictionConditions';

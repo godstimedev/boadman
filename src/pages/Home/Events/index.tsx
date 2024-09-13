@@ -1,4 +1,7 @@
+import { CyberPunkEvent } from '@/assets/images';
 import { Container } from './styles';
+import Carousel from 'react-multi-carousel';
+import { eventResponsive } from '@/constants';
 
 const Events = () => {
 	return (
@@ -11,7 +14,129 @@ const Events = () => {
 			</div>
 
 			{/* carousel */}
-			<div></div>
+			<div>
+				<Carousel
+					responsive={eventResponsive}
+					arrows={false}
+					autoPlay={true}
+					autoPlaySpeed={3000}
+					shouldResetAutoplay={false}
+					infinite={true}
+					showDots={false}
+					centerMode={false}
+					partialVisible={true}
+					pauseOnHover={true}
+				>
+					<div className="event-card-wrapper">
+						<div className="event-card">
+							<img src={CyberPunkEvent} alt="/" />
+							<div className="event-card-content">
+								<div className="badge">
+									<span>Cyberpunk</span>
+								</div>
+								<div className="about">
+									<h5>Rebirth Resurgence express </h5>
+									<div>
+										<div>
+											<span>Date</span>
+											<span>may 1 - 31</span>
+										</div>
+										<div>
+											<span>Prize</span>
+											<span>$3500</span>
+										</div>
+										<div>
+											<span>Entry</span>
+											<span>Paid</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="event-card-wrapper">
+						<div className="event-card">
+							<img src={CyberPunkEvent} alt="/" />
+							<div className="event-card-content">
+								<div className="badge">
+									<span>Cyberpunk</span>
+								</div>
+								<div className="about">
+									<h5>Rebirth Resurgence express </h5>
+									<div>
+										<div>
+											<span>Date</span>
+											<span>may 1 - 31</span>
+										</div>
+										<div>
+											<span>Prize</span>
+											<span>$3500</span>
+										</div>
+										<div>
+											<span>Entry</span>
+											<span>Paid</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="event-card-wrapper">
+						<div className="event-card">
+							<img src={CyberPunkEvent} alt="/" />
+							<div className="event-card-content">
+								<div className="badge">
+									<span>Cyberpunk</span>
+								</div>
+								<div className="about">
+									<h5>Rebirth Resurgence express </h5>
+									<div>
+										<div>
+											<span>Date</span>
+											<span>may 1 - 31</span>
+										</div>
+										<div>
+											<span>Prize</span>
+											<span>$3500</span>
+										</div>
+										<div>
+											<span>Entry</span>
+											<span>Paid</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="event-card-wrapper">
+						<div className="event-card">
+							<img src={CyberPunkEvent} alt="/" />
+							<div className="event-card-content">
+								<div className="badge">
+									<span>Cyberpunk</span>
+								</div>
+								<div className="about">
+									<h5>Rebirth Resurgence express </h5>
+									<div>
+										<div>
+											<span>Date</span>
+											<span>may 1 - 31</span>
+										</div>
+										<div>
+											<span>Prize</span>
+											<span>$3500</span>
+										</div>
+										<div>
+											<span>Entry</span>
+											<span>Paid</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</Carousel>
+			</div>
 		</Container>
 	);
 };

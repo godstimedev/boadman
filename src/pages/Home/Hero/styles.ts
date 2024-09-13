@@ -9,6 +9,7 @@ export const Container = styled.section`
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	overflow-x: hidden;
 
 	h1 {
 	}
@@ -45,6 +46,16 @@ export const Container = styled.section`
 				${maxQuery('md')} {
 					height: 1rem;
 					width: 1rem;
+				}
+			}
+
+			.stacked-avatar {
+				/* position: relative; */
+
+				> svg {
+					width: 25px;
+					height: 25px;
+					margin-right: -0.9rem;
 				}
 			}
 		}

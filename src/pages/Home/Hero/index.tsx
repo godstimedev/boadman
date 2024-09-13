@@ -64,11 +64,13 @@ const Hero = () => {
 						<span className="h-[3.2rem] w-[1.17px] bg-[#313337] my-auto max-lg:hidden" />
 						<div className="text-start hidden sm:block">
 							<span className="card-title">Joined team</span>
-							<div className="flex items-center gap-1">
-								<GamerAvatar />
-								<GamerAvatar />
-								<GamerAvatar />
-								<GamerAvatar />
+							<div className="flex items-center gap-6">
+								<div className="flex items-center  stacked-avatar">
+									<GamerAvatar />
+									<GamerAvatar />
+									<GamerAvatar />
+									<GamerAvatar />
+								</div>
 								<p className="card-text">+10</p>
 							</div>
 						</div>
