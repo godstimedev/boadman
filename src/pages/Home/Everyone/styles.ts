@@ -62,7 +62,7 @@ export const Container = styled.section`
 			max-width: 260px;
 
 			${maxQuery('md')} {
-				width: 220px;
+				width: 220px !important;
 			}
 		}
 

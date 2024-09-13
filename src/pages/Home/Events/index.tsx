@@ -2,8 +2,27 @@ import { CyberPunkEvent } from '@/assets/images';
 import { Container } from './styles';
 import Carousel from 'react-multi-carousel';
 import { eventResponsive } from '@/constants';
+import { useEffect, useState } from 'react';
 
 const Events = () => {
+	const [isDesktop, setIsDesktop] = useState(false);
+
+	// Check screen size on component mount and window resize
+	useEffect(() => {
+		const handleResize = () => {
+			setIsDesktop(window.innerWidth >= 1024); // Set true for screens wider than 1024px
+		};
+
+		// Call the function initially
+		handleResize();
+
+		// Add event listener for window resize
+		window.addEventListener('resize', handleResize);
+
+		// Clean up the event listener on component unmount
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	return (
 		<Container>
 			<div className="heading">
@@ -18,8 +37,8 @@ const Events = () => {
 				<Carousel
 					responsive={eventResponsive}
 					arrows={false}
-					autoPlay={true}
-					autoPlaySpeed={3000}
+					autoPlay={isDesktop}
+					autoPlaySpeed={4000}
 					shouldResetAutoplay={false}
 					infinite={true}
 					showDots={false}

@@ -14,8 +14,27 @@ import { Container } from './styles';
 // import { responsive } from '@/constants/carouselSettings';
 import { Console1, Console2, PlayStation, Xbox } from '@/assets/svgs';
 import { featuredResponsive } from '@/constants/carouselSettings';
+import { useEffect, useState } from 'react';
 
 const Featured = () => {
+	const [isDesktop, setIsDesktop] = useState(false);
+
+	// Check screen size on component mount and window resize
+	useEffect(() => {
+		const handleResize = () => {
+			setIsDesktop(window.innerWidth >= 1024); // Set true for screens wider than 1024px
+		};
+
+		// Call the function initially
+		handleResize();
+
+		// Add event listener for window resize
+		window.addEventListener('resize', handleResize);
+
+		// Clean up the event listener on component unmount
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
 	return (
 		<Container>
 			<div className="curve-background">
@@ -33,7 +52,7 @@ const Featured = () => {
 					<Carousel
 						responsive={featuredResponsive}
 						arrows={false}
-						autoPlay={true}
+						autoPlay={isDesktop}
 						autoPlaySpeed={1500}
 						infinite={true}
 						showDots={false}
