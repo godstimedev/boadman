@@ -3,7 +3,7 @@ import './tailwind.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Playground, Login, Home, PageNotFound } from './pages';
+import { Playground, Home, PageNotFound, SignIn, SignUp } from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
 import { APP_ROUTES, PAGE_RESTRICTION_CONDITIONS } from './constants';
@@ -28,7 +28,8 @@ function App() {
 					<Route
 						element={<RestrictPages conditions={[PAGE_RESTRICTION_CONDITIONS.by_auth.be_logged_out]} />}
 					>
-						<Route path={APP_ROUTES.login} element={<Login />} />
+						<Route path={APP_ROUTES.login} element={<SignIn />} />
+						<Route path={APP_ROUTES.register} element={<SignUp />} />
 					</Route>
 
 					{/* Use default layout on theses pages */}

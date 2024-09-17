@@ -9,7 +9,7 @@ const BeginEarning = () => {
 				<BeginEarningVector />
 				<h2>
 					Get started to begin <br className="max-sm:hidden" />
-					<span>earning</span> on Boardman
+					<span>earning</span> on Boadman
 				</h2>
 				<p className="md:text-xl my-4">
 					Perks so good you'll never need to go anywhere else for your design.

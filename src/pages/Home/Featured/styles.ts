@@ -143,6 +143,14 @@ export const Container = styled.section`
 			transform: translateY(500%);
 			transition: transform 0.3s ease-in-out;
 		}
+		${maxQuery('md')} {
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.76%, rgba(0, 0, 0, 0.7) 80.81%);
+			opacity: 100%;
+			> .game-card-content {
+				transform: translateY(0);
+				transition: transform 0.3s ease-in-out;
+			}
+		}
 	}
 
 	.game-card-wrapper:hover {

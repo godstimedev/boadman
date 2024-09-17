@@ -9,6 +9,7 @@ import {
 	GamePointEarned,
 	GamerAvatar,
 	GameTime,
+	// HeroAvatar,
 	StyledCheckmark,
 } from '../../../assets/svgs';
 import { Button } from '../../../ui';
@@ -28,9 +29,10 @@ const Hero = () => {
 			</p>
 
 			{/* Game Card */}
-			<div className="gamer-card lg:w-[950px] lg:h-[290px] max-md:py-4 max-md:pr-2  sm:pl-[1rem] sm:pr-[5rem]">
-				<div className="max-w-full ">
+			<div className="gamer-card lg:w-[950px] lg:h-[290px] max-md:py-5 max-md:pr-2  sm:pl-[1rem] sm:pr-[5rem]">
+				<div className="max-w-full avatar">
 					<img src={HeroAvatar} alt="/" />
+					{/* <HeroAvatar /> */}
 				</div>
 
 				<div className="gamer-info flex flex-col space-y-1 md:space-y-4">
@@ -43,7 +45,11 @@ const Hero = () => {
 							</div>
 						</div>
 
-						<Button variant="primary" size="small" className="whitespace-nowrap max-sm:!px-2 !ml-2">
+						<Button
+							variant="primary"
+							size="small"
+							className="whitespace-nowrap !text-xs max-sm:!px-2 !ml-2"
+						>
 							View Profile
 						</Button>
 					</div>

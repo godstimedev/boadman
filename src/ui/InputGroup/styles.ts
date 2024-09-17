@@ -38,7 +38,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	}
 
 	label {
-		color: ${({ theme }) => theme.colors.neutral600};
+		color: ${({ theme }) => theme.colors.white};
 
 		font-size: 0.75rem;
 		line-height: 120%;
@@ -74,7 +74,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 
 			display: flex;
 			align-items: center;
-			gap: 0.5rem;
+			gap: 1rem;
 			position: relative;
 			width: fit-content;
 
@@ -86,6 +86,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			}
 			.custom-checkbox {
 				background: ${({ theme }) => theme.colors.neutral50};
+				/* background: transparent; */
 				border: 1.66667px solid ${({ theme }) => theme.colors.neutral400};
 
 				flex-shrink: 0;
@@ -233,11 +234,16 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	input,
 	textarea {
 		background: ${({ theme }) => theme.colors.neutral50};
+		/* background: transparent; */
+
+		caret-color: ${({ theme }) => theme.colors.primary500};
 
 		border: none;
-		border-radius: 0.75rem;
+		border-radius: 5px;
 		padding: 0.75rem 1rem;
 		width: 100%;
+
+		outline: 2px solid ${({ theme }) => theme.colors.neutral100};
 
 		&:focus {
 			outline: 2px solid ${({ theme }) => theme.colors.primary500};
@@ -273,16 +279,19 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	.PhoneInputCountry {
 		background: ${({ theme }) => theme.colors.neutral50};
 
+		outline: 2px solid ${({ theme }) => theme.colors.neutral100};
 		width: 100px;
 		padding: 0.75rem 1rem;
-		border-radius: 0.75rem;
+		border-radius: 5px;
+
+		color: ${({ theme }) => theme.colors.black};
 	}
 	.PhoneInputCountrySelectArrow {
 		display: none;
 	}
 	.dropdown {
-		background: ${({ theme }) => theme.colors.white};
-		box-shadow: 0 0 8px ${({ theme }) => theme.colors.neutral200};
+		background: ${({ theme }) => theme.colors.neutral50};
+		box-shadow: 0 0 8px ${({ theme }) => theme.colors.neutral50};
 
 		overflow: auto;
 		border-radius: 0.25rem;
@@ -306,7 +315,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			padding: 0.5rem 0.75rem;
 
 			span {
-				color: ${({ theme }) => theme.colors.neutral500};
+				color: ${({ theme }) => theme.colors.neutral50};
 
 				font-size: 0.625rem;
 				line-height: 120%;

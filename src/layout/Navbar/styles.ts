@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { maxQuery } from '../../utilities';
 
-export const Container = styled.section`
+export const Container = styled.header`
 	/* max-width: 1440px; */
 	background: ${({ theme }) => theme.colors.secondary500};
 	height: 99px;

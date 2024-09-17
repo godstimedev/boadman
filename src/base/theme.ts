@@ -37,14 +37,16 @@ const colors = {
 	accent700: '#181A1D',
 	accent800: '#121416',
 	accent900: '#0D0F11',
+	// background: ;
 
 	// Neutral
-	neutral50: '#F7F8F9',
-	neutral100: '#E7EAEE',
-	neutral200: '#D0D5DD',
-	neutral300: '#B8C0CC',
-	neutral400: '#A0ABBB',
-	neutral500: '#64748B',
+	neutral50: '#E5E5E51A',
+	neutral100: '#E5E5E5B2',
+	// neutral100: '#E7EAEE',
+	neutral200: '#E5E5E5B2',
+	neutral300: '#E5E5E5B2',
+	neutral400: '#E5E5E5B2',
+	neutral500: '#E5E5E5B2',
 	neutral600: '#4B5768',
 	neutral700: '#323A46',
 	neutral800: '#191D23',

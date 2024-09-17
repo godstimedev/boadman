@@ -1,6 +1,7 @@
 // Export all images from here
 export { default as ApexLegends } from './ApexLegends.png';
 export { default as ApexLegendsSlider } from './ApexLegendsSlider.png';
+export { default as AuthBackground } from './AuthBackground.png';
 export { default as AvatarTable } from './AvatarTable.png';
 export { default as Boadman } from './Boadman.png';
 export { default as CallOfDuty } from './CallOfDuty.png';

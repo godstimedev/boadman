@@ -1,9 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
-import { Boadman } from '../../assets/images';
+// import { Boadman } from '../../assets/images';
 import { Container } from './styles';
 import { Button } from '../../ui';
-import { MenuIcon, NavClose } from '../../assets/svgs';
+import { BoadmanLogo, MenuIcon, NavClose } from '../../assets/svgs';
 import { useState } from 'react';
+import { APP_ROUTES } from '@/constants';
 
 const Navbar = () => {
 	const [showNav, setShowNav] = useState(false);
@@ -12,7 +13,8 @@ const Navbar = () => {
 		<Container>
 			<nav>
 				<Link to="/">
-					<img src={Boadman} alt="Boadman Logo" />
+					{/* <img src={Boadman} alt="Boadman Logo" /> */}
+					<BoadmanLogo />
 				</Link>
 
 				<div className="hidden lg:flex gap-28">
@@ -32,8 +34,12 @@ const Navbar = () => {
 					</ul>
 
 					<div className="flex items-center gap-4">
-						<Button variant="secondary">Login</Button>
-						<Button variant="primary">Get Started for free</Button>
+						<NavLink to={APP_ROUTES.login}>
+							<Button variant="secondary">Login</Button>
+						</NavLink>
+						<NavLink to={APP_ROUTES.register}>
+							<Button variant="primary">Get Started for free</Button>
+						</NavLink>
 					</div>
 				</div>
 
@@ -70,12 +76,16 @@ const Navbar = () => {
 					</ul>
 
 					<div className="flex items-center gap-6 mt-24">
-						<Button variant="secondary" size="large">
-							Login
-						</Button>
-						<Button variant="primary" size="large">
-							Get Started for free
-						</Button>
+						<NavLink to={APP_ROUTES.login}>
+							<Button variant="secondary" size="large">
+								Login
+							</Button>
+						</NavLink>
+						<NavLink to={APP_ROUTES.register}>
+							<Button variant="primary" size="large">
+								Get Started for free
+							</Button>
+						</NavLink>
 					</div>
 				</div>
 			</nav>

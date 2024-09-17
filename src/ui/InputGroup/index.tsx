@@ -3,7 +3,10 @@ import { InputCheckmark, InputInfo, InputEye, InputEyeSlashed } from '../../asse
 import { StyledInputContainer } from './styles';
 import { v4 as uuidv4 } from 'uuid';
 import { InputGroupPropType } from './types';
-import PhoneInput, { DefaultInputComponentProps, getCountryCallingCode } from 'react-phone-number-input';
+import PhoneInput, {
+	DefaultInputComponentProps,
+	getCountryCallingCode,
+} from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
 const InputGroup = (props: InputGroupPropType) => {
@@ -39,7 +42,9 @@ const InputGroup = (props: InputGroupPropType) => {
 
 	const isCheckBoxChecked = type === 'checkbox' ? /^true$/i.test(value.toString()) : false;
 	const [passwordVisible, setPasswordVisible] = useState(false);
-	const [countryCode, setCountryCode] = useState<string | number>(getCountryCallingCode(defaultCountry) || '234');
+	const [countryCode, setCountryCode] = useState<string | number>(
+		getCountryCallingCode(defaultCountry) || '234'
+	);
 	const infoRef = useRef<HTMLDivElement>(null);
 	const componentRef = useRef<HTMLDivElement>(null);
 	const componentId = uuidv4();
@@ -124,9 +129,15 @@ const InputGroup = (props: InputGroupPropType) => {
 
 						{!hidePasswordControls ? (
 							passwordVisible ? (
-								<InputEye className="password-control" onClick={() => setPasswordVisible((prev) => !prev)} />
+								<InputEye
+									className="password-control"
+									onClick={() => setPasswordVisible((prev) => !prev)}
+								/>
 							) : (
-								<InputEyeSlashed className="password-control" onClick={() => setPasswordVisible((prev) => !prev)} />
+								<InputEyeSlashed
+									className="password-control"
+									onClick={() => setPasswordVisible((prev) => !prev)}
+								/>
 							)
 						) : null}
 						<InputCheckmark className="checkmark" />
@@ -142,7 +153,15 @@ const InputGroup = (props: InputGroupPropType) => {
 						event.currentTarget?.classList.remove('error');
 					}}
 				>
-					<input type="checkbox" name={name} required={required} checked={isCheckBoxChecked} data-componentid={componentId} readOnly {...rest} />
+					<input
+						type="checkbox"
+						name={name}
+						required={required}
+						checked={isCheckBoxChecked}
+						data-componentid={componentId}
+						readOnly
+						{...rest}
+					/>
 					<div className={`custom-checkbox ${isCheckBoxChecked ? 'checked' : ''}`}>
 						<div />
 					</div>

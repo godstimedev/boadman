@@ -32,8 +32,24 @@ export const Container = styled.section`
 		border-image-source: linear-gradient(180deg, #ff5733 -45.22%, rgba(239, 202, 188, 0.1) 27.78%);
 		border-image-slice: 1; /* This tells the browser to use the entire gradient */
 
+		/* .avatar {
+			> svg {
+				max-width: 220px;
+
+				${maxQuery('md')} {
+					width: 120px;
+				}
+			}
+		} */
+
 		.gamer-info {
 			/* flex: 1; */
+
+			h6 {
+				${maxQuery('sm')} {
+					font-size: 11.96px;
+				}
+			}
 
 			hr {
 				border: 1.17px solid #313337;

@@ -1,7 +1,7 @@
 import { Container } from './styles';
-import { Boadman } from '../../assets/images';
+// import { Boadman } from '../../assets/images';
 import { Button } from '../../ui';
-import { Instagram, Linkedin, TikTok, X, YouTube } from '../../assets/svgs';
+import { BoadmanLogo, Instagram, Linkedin, TikTok, X, YouTube } from '../../assets/svgs';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -9,7 +9,8 @@ const Footer = () => {
 		<Container>
 			<div className="top">
 				<div className="space-y-5">
-					<img src={Boadman} alt="Boadman Logo" />
+					{/* <img src={Boadman} alt="Boadman Logo" /> */}
+					<BoadmanLogo />
 					<p className="lg:pr-8 leading-6">
 						We are a one-of-a-kind platform, where everyone plays, enjoys themselves and most importantly,
 						win prizes.
