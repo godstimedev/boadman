@@ -1,13 +1,13 @@
 import { DashboardHeader } from '@/components';
 import { Container } from './styles';
 
-const Gaming = () => {
+const Profile = () => {
 	return (
 		<Container>
 			<DashboardHeader />
-			<h1>Gaming</h1>
+			<h1>Profile</h1>
 		</Container>
 	);
 };
 
-export default Gaming;
+export default Profile;

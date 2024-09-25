@@ -13,6 +13,13 @@ import {
 	Leaderboard,
 	Gaming,
 	Tournaments,
+	Teams,
+	Friends,
+	Stream,
+	Wallet,
+	Profile,
+	Settings,
+	Faqs,
 } from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
@@ -40,6 +47,13 @@ function App() {
 						<Route path={APP_ROUTES.leaderboard} element={<Leaderboard />} />
 						<Route path={APP_ROUTES.gaming} element={<Gaming />} />
 						<Route path={APP_ROUTES.tournaments} element={<Tournaments />} />
+						<Route path={APP_ROUTES.teams} element={<Teams />} />
+						<Route path={APP_ROUTES.friends} element={<Friends />} />
+						<Route path={APP_ROUTES.stream} element={<Stream />} />
+						<Route path={APP_ROUTES.wallet} element={<Wallet />} />
+						<Route path={APP_ROUTES.profile} element={<Profile />} />
+						<Route path={APP_ROUTES.settings} element={<Settings />} />
+						<Route path={APP_ROUTES.faqs} element={<Faqs />} />
 					</Route>
 
 					{/* Pages that require you to be logged out */}

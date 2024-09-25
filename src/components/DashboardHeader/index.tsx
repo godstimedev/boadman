@@ -14,6 +14,7 @@ import { GeneralChangeEventType } from '@/types';
 import { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { JoelHenderson } from '@/assets/images';
+import { MobileSidebar } from '@/layout';
 
 const DashboardHeader = () => {
 	const [formData, setFormData] = useState({
@@ -26,6 +27,8 @@ const DashboardHeader = () => {
 
 		setFormData((prev) => ({ ...prev, [name]: value }));
 	};
+
+	const [nav, setNav] = useState(false);
 
 	return (
 		<Container>
@@ -47,6 +50,8 @@ const DashboardHeader = () => {
 					<BoadmanLogo />
 				</div>
 			</div>
+
+			<MobileSidebar nav={nav} setNav={setNav} />
 
 			<nav>
 				<ul>
@@ -74,7 +79,7 @@ const DashboardHeader = () => {
 					<SearchGoggles />
 				</Button>
 
-				<button>
+				<button onClick={() => setNav(true)}>
 					<MenuIcon2 />
 				</button>
 			</div>

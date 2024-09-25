@@ -6,11 +6,14 @@ export const Container = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	width: 100%;
 
 	border-bottom: 1px solid #313337;
 
 	> div {
 		> .search-con {
+			width: 448px;
+
 			${maxQuery('lg')} {
 				display: none;
 			}

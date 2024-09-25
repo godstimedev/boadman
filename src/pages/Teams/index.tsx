@@ -1,13 +1,13 @@
 import { DashboardHeader } from '@/components';
 import { Container } from './styles';
 
-const Gaming = () => {
+const Teams = () => {
 	return (
 		<Container>
 			<DashboardHeader />
-			<h1>Gaming</h1>
+			<h1>Teams</h1>
 		</Container>
 	);
 };
 
-export default Gaming;
+export default Teams;

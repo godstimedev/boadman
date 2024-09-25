@@ -1,88 +1,131 @@
-import { maxQuery } from '@/utilities';
+import { minQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Aside = styled.aside`
-	background-color: ${({ theme }) => theme.colors.accent500};
-	width: 10.5rem;
-	padding: 2rem 0 1rem 0;
-	flex-shrink: 0;
-	display: flex;
-	flex-direction: column;
-
-	/* WebKit browsers (Chrome, Safari, Edge) */
-	::-webkit-scrollbar {
-		width: 1px; /* Make the scrollbar slimmer */
-	}
-
-	::-webkit-scrollbar-track {
-		background: #e3e5e9; /* The background of the scrollbar track */
-	}
-
-	::-webkit-scrollbar-thumb {
-		background-color: #22252c; /* The color of the scrollbar thumb */
-		border-radius: 5px; /* Rounded corners */
-		border: 2px solid #e3e5e9; /* Adds space around the thumb */
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		background-color: #22252c; /* Color when hovering over the thumb */
-	}
-
-	/* Firefox */
-	scrollbar-width: thin; /* Makes the scrollbar slimmer */
-	scrollbar-color: #22252c #e3e5e9; /* Thumb color and track color */
-	scrollbar-arrow-color: #22252c; /* Arrow color */
-
-	${maxQuery('lg')} {
+	${minQuery('lg')} {
 		display: none;
 	}
 
-	.logo {
-		margin-bottom: 2rem;
-		padding: 0 1rem;
+	.show {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: #000000b2;
+		width: 100%;
+		height: 100%;
+		z-index: 20;
+		display: grid;
+		place-items: left;
+		transition: left 0.3s ease-in-out;
 	}
 
-	nav {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		flex-grow: 1;
-		gap: 2rem;
+	.close {
+		position: fixed;
+		top: 0;
+		transition: left 0.3s ease-in-out;
+		width: 100%;
+		height: 100%;
+		left: -100vw;
+		z-index: 20;
 	}
 
-	hr {
-		border-top: 1px solid ${({ theme }) => theme.colors.accent300};
-		margin: 0.5rem 1rem;
-	}
-
-	a.active li {
-		background-color: ${({ theme }) => theme.colors.secondary500};
-		svg {
-			fill: ${({ theme }) => theme.colors.primary50} !important;
-		}
-
-		span {
-			display: none;
-		}
-		span.active {
+	> div {
+		.menu-con {
+			position: relative;
+			background-color: ${({ theme }) => theme.colors.accent500};
+			width: 350px;
+			height: 100%;
+			padding: 2rem 0 1rem 0;
+			flex-shrink: 0;
 			display: flex;
+			flex-direction: column;
+			overflow: auto;
+
+			.logo {
+				margin-bottom: 1.5rem;
+				padding: 0 1rem 1.5rem 1rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				border-bottom: 1px solid #313337;
+			}
+
+			a.active li {
+				background-color: ${({ theme }) => theme.colors.secondary500};
+				svg {
+					fill: ${({ theme }) => theme.colors.primary50} !important;
+				}
+
+				span {
+					display: none;
+				}
+				span.active {
+					display: flex;
+				}
+			}
+			a:hover li {
+				background-color: ${({ theme }) => theme.colors.secondary500};
+			}
+
+			li {
+				font-size: 14px;
+				line-height: 16.8px;
+				font-weight: 500;
+				padding: 1rem 2rem 1rem 1.25rem;
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+			}
+
+			span.active {
+				display: none;
+			}
 		}
-	}
-	a:hover li {
-		background-color: ${({ theme }) => theme.colors.secondary500};
-	}
 
-	li {
-		font-size: 14px;
-		line-height: 16.8px;
-		font-weight: 500;
-		padding: 1rem 2rem 1rem 1.25rem;
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-	}
+		.bottom {
+			margin: 2rem 0;
+			padding: 0 1rem;
+			display: flex;
+			align-items: center;
+			gap: 1rem;
 
-	span.active {
-		display: none;
+			.dropdown-con {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				cursor: pointer;
+
+				> div {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+				}
+			}
+
+			> ul {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+
+				li {
+					position: relative;
+					display: flex;
+					align-items: center;
+					cursor: pointer;
+					padding: 0;
+
+					.dot {
+						position: absolute;
+						z-index: 30;
+						top: 7px;
+						right: 7px;
+						padding: 2.25rem;
+						background-color: ${({ theme }) => theme.colors.error500};
+						border-radius: 50%;
+					}
+				}
+			}
+		}
 	}
 `;

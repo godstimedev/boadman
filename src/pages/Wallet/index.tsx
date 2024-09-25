@@ -1,13 +1,14 @@
+import { Container } from './syles';
 import { DashboardHeader } from '@/components';
-import { Container } from './styles';
 
-const Gaming = () => {
+const Wallet = () => {
 	return (
 		<Container>
 			<DashboardHeader />
-			<h1>Gaming</h1>
+
+			<h1>Wallet</h1>
 		</Container>
 	);
 };
 
-export default Gaming;
+export default Wallet;
