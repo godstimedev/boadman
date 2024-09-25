@@ -12,7 +12,7 @@ const Navbar = () => {
 	return (
 		<Container>
 			<nav>
-				<Link to="/">
+				<Link to={APP_ROUTES.home}>
 					{/* <img src={Boadman} alt="Boadman Logo" /> */}
 					<BoadmanLogo />
 				</Link>

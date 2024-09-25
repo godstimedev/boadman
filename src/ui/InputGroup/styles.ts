@@ -196,6 +196,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 					right: unset;
 				`}
 		}
+
 		.select-advanced-values {
 			background: ${({ theme }) => theme.colors.neutral50};
 
@@ -230,6 +231,33 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	svg.checkmark {
 		display: none;
 	}
+	.search-input-group {
+		position: relative;
+		padding-right: 3rem;
+		input {
+			outline: none;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.search-icon {
+			position: absolute;
+			top: 50%;
+			right: 0rem;
+			transform: translateY(-50%);
+			display: flex;
+			align-items: center;
+
+			${({ $posLeft }) =>
+				$posLeft === true &&
+				css`
+					left: 0rem;
+					right: unset;
+				`}
+		}
+	}
 
 	input,
 	textarea {
@@ -242,6 +270,11 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		border-radius: 5px;
 		padding: 0.75rem 1rem;
 		width: 100%;
+		color: ${({ theme }) => theme.colors.white};
+
+		&::placeholder {
+			color: ${({ theme }) => theme.colors.white};
+		}
 
 		outline: 2px solid ${({ theme }) => theme.colors.neutral100};
 

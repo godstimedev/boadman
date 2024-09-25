@@ -68,7 +68,7 @@ export const StyledTable = styled.section`
 			}
 
 			td {
-				background-color: ${({ theme }) => theme.colors.white};
+				background-color: ${({ theme }) => theme.colors.secondary500};
 
 				font-weight: 500;
 				padding: 0.75rem 1rem;

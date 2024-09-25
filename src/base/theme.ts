@@ -30,8 +30,8 @@ const colors = {
 	accent50: '#E3E5E9',
 	accent100: '#BCC0C8',
 	accent200: '#979797', // unfocused texts
-	accent300: '#6E717C',
-	accent400: '#2C2E33',
+	accent300: '#474C57', //in use
+	accent400: '#2C2E33', // in use
 	accent500: '#22252C', // Base color
 	accent600: '#1D1F25',
 	accent700: '#181A1D',

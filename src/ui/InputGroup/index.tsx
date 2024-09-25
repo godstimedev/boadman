@@ -173,6 +173,28 @@ const InputGroup = (props: InputGroupPropType) => {
 						</label>
 					)}
 				</div>
+			) : type === 'search' ? (
+				<div className="search-input-group">
+					<div className="input-icon">
+						<input
+							type={'text'}
+							name={name}
+							required={required}
+							placeholder={placeholder}
+							value={value}
+							data-componentid={componentId}
+							onChange={(event) => {
+								infoRef.current?.classList.remove('active');
+								componentRef.current?.classList.remove('error');
+
+								onChange(event);
+							}}
+							onBlur={handleBlur}
+							{...rest}
+						/>
+						<div className="search-icon">{icon}</div>
+					</div>
+				</div>
 			) : (
 				<div className="input-group">
 					<div className="input-icon">

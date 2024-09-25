@@ -17,6 +17,7 @@ export { default as FeaturedVectorMobile1 } from './FeaturedVectorMobile1.png';
 export { default as FeaturedVectorMobile2 } from './FeaturedVectorMobile2.png';
 export { default as GameStream } from './GameStream.png';
 export { default as HeroAvatar } from './HeroAvatar.png';
+export { default as JoelHenderson } from './JoelHenderson.png';
 export { default as LeagueOfLegends } from './LeagueOfLegends.png';
 export { default as PartnerLogo1 } from './PartnerLogo1.png';
 export { default as PartnerLogo2 } from './PartnerLogo2.png';

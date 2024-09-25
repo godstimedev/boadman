@@ -3,12 +3,23 @@ import './tailwind.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Playground, Home, PageNotFound, SignIn, SignUp } from './pages';
+import {
+	Playground,
+	Home,
+	PageNotFound,
+	SignIn,
+	SignUp,
+	Dashboard,
+	Leaderboard,
+	Gaming,
+	Tournaments,
+} from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
 import { APP_ROUTES, PAGE_RESTRICTION_CONDITIONS } from './constants';
 import { GlobalStyles, theme } from './base';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import DashboardLayout from './layout/DashboardLayout';
 
 function App() {
 	return (
@@ -24,6 +35,13 @@ function App() {
 					)}
 
 					{/* Pages that have their own default layout */}
+					<Route element={<DashboardLayout />}>
+						<Route path={APP_ROUTES.dashboard} element={<Dashboard />} />
+						<Route path={APP_ROUTES.leaderboard} element={<Leaderboard />} />
+						<Route path={APP_ROUTES.gaming} element={<Gaming />} />
+						<Route path={APP_ROUTES.tournaments} element={<Tournaments />} />
+					</Route>
+
 					{/* Pages that require you to be logged out */}
 					<Route
 						element={<RestrictPages conditions={[PAGE_RESTRICTION_CONDITIONS.by_auth.be_logged_out]} />}

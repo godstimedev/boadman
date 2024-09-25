@@ -1,6 +1,17 @@
 export const APP_ROUTES = {
+	dashboard: '/dashboard',
+	faqs: '/faqs',
+	friends: '/friends',
+	gaming: '/gaming',
+	leaderboard: '/leaderboard',
 	home: '/',
 	login: '/login',
-	register: '/register',
 	playground: '/playground',
+	profile: '/profile',
+	register: '/register',
+	settings: '/settings',
+	stream: '/stream',
+	teams: '/teams',
+	tournaments: '/tournaments',
+	wallet: '/wallet',
 };
