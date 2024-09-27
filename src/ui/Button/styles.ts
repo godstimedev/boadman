@@ -137,11 +137,11 @@ export const StyledButton = styled.button<StyledButtonProps>`
 	${({ $variant }) =>
 		$variant === 'text' &&
 		css`
-			color: ${({ theme }) => theme.colors.primary700};
+			color: ${({ theme }) => theme.colors.primary500};
 			background: transparent;
 
 			&:hover {
-				color: ${({ theme }) => theme.colors.primary900};
+				color: ${({ theme }) => theme.colors.primary700};
 			}
 			&:focus {
 				color: ${({ theme }) => theme.colors.primary300};

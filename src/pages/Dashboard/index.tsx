@@ -1,4 +1,4 @@
-import { DashboardHeader } from '@/components';
+import { DashboardHeader, FeaturedStream, FeaturedTournament } from '@/components';
 import { Container } from './styles';
 import {
 	Achievement1,
@@ -8,22 +8,28 @@ import {
 	Achievement5,
 	Achievement6,
 	Coin,
+	CounterStrike,
 	GameAmount,
 	GamePointEarned,
 	GamerAvatar,
 	GameTime,
 	HeroAvatar,
 	JoinEmoji,
+	LeagueOfLegends,
 	StyledCheckmark,
+	Valorant,
 } from '@/assets/svgs';
 import { Button } from '@/ui';
 import {
 	BombAchievement,
 	ChestAchievement,
 	CoinAchievement,
+	CyberPunkEvent,
 	DiamondAchievement,
+	GameStream,
 	GiftAchievement,
 	HeroAvatar as HeroAvatarImage,
+	StreamAvatar,
 	ThunderAchievement,
 } from '@/assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -39,7 +45,7 @@ const Dashboard = () => {
 			<DashboardHeader />
 
 			<div className="con-1">
-				<div className="wrapper">
+				<div className="con-1-wrapper">
 					<div className="profile-card">
 						<HeroAvatar />
 
@@ -303,8 +309,265 @@ const Dashboard = () => {
 					</Swiper>
 				</div>
 			</div>
+
+			<div className="con-2">
+				<div className="con-2-wrapper">
+					<div className="left">
+						<div className="nav">
+							<h6>Trending games</h6>
+							<Button variant="text" size="small">
+								VIEW ALL
+							</Button>
+						</div>
+						<div className="left-con">
+							{trendingGamesList.map((game, index) => (
+								<div key={index} className="trending-card">
+									<span>{game.icon}</span>
+
+									<div>
+										<p>{game.name}</p>
+										<span>{game.info}</span>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<div className="right">
+						<div className="nav">
+							<h6>Featured tournaments</h6>
+							<Button variant="text" size="small">
+								VIEW ALL
+							</Button>
+						</div>
+
+						<div className="right-con">
+							{featuredTournamentsList.map((tournament, index) => (
+								<FeaturedTournament
+									key={index}
+									image={tournament.image}
+									categories={tournament.category}
+									date={tournament.date}
+									time={tournament.time}
+									title={tournament.title}
+									description={tournament.description}
+									prize={tournament.prize}
+									game_mode={tournament.game_mode}
+									game_slot={tournament.game_slot}
+								/>
+							))}
+						</div>
+					</div>
+				</div>
+
+				<div className="swiper-con-2">
+					<div className="nav">
+						<h6>Trending games</h6>
+						<Button variant="text" size="small">
+							VIEW ALL
+						</Button>
+					</div>
+
+					<Swiper
+						spaceBetween={20}
+						slidesPerView={1.3}
+						// onSlideChange={() => console.log('slide change')}
+						// onSwiper={(swiper) => console.log(swiper)}
+					>
+						<div className="left-con">
+							{trendingGamesList.map((game, index) => (
+								<SwiperSlide>
+									<div key={index} className="trending-card">
+										<span>{game.icon}</span>
+
+										<div>
+											<p>{game.name}</p>
+											<span>{game.info}</span>
+										</div>
+									</div>
+								</SwiperSlide>
+							))}
+						</div>
+					</Swiper>
+				</div>
+
+				<div className="swiper-con-3">
+					<div className="nav">
+						<h6>Featured tournaments</h6>
+						<Button variant="text" size="small">
+							VIEW ALL
+						</Button>
+					</div>
+					<Swiper
+						spaceBetween={11.5}
+						slidesPerView={1.3}
+						// onSlideChange={() => console.log('slide change')}
+						// onSwiper={(swiper) => console.log(swiper)}
+					>
+						<div className="right-con">
+							{featuredTournamentsList.map((tournament, index) => (
+								<SwiperSlide>
+									<FeaturedTournament
+										key={index}
+										image={tournament.image}
+										categories={tournament.category}
+										date={tournament.date}
+										time={tournament.time}
+										title={tournament.title}
+										description={tournament.description}
+										prize={tournament.prize}
+										game_mode={tournament.game_mode}
+										game_slot={tournament.game_slot}
+									/>
+								</SwiperSlide>
+							))}
+						</div>
+					</Swiper>
+				</div>
+			</div>
+
+			<div className="con-3">
+				<div className="con-3-wrapper">
+					<div className="nav">
+						<h6>Featured Streams</h6>
+						<Button variant="text" size="small">
+							VIEW ALL
+						</Button>
+					</div>
+
+					<div className="con-3-list">
+						{featuredStreamsList.map((stream, index) => (
+							<FeaturedStream
+								avatar={stream.avatar}
+								game={stream.game}
+								image={stream.image}
+								key={index}
+								username={stream.username}
+								views={stream.views}
+							/>
+						))}
+					</div>
+				</div>
+
+				<div className="swiper-con-4">
+					<div className="nav">
+						<h6>Featured Streams</h6>
+						<Button variant="text" size="small">
+							VIEW ALL
+						</Button>
+					</div>
+
+					<Swiper
+						spaceBetween={20}
+						slidesPerView={1.3}
+						// onSlideChange={() => console.log('slide change')}
+						// onSwiper={(swiper) => console.log(swiper)}
+					>
+						<div className="con-3-list">
+							{featuredStreamsList.map((stream, index) => (
+								<SwiperSlide>
+									<FeaturedStream
+										avatar={stream.avatar}
+										game={stream.game}
+										image={stream.image}
+										key={index}
+										username={stream.username}
+										views={stream.views}
+									/>
+								</SwiperSlide>
+							))}
+						</div>
+					</Swiper>
+				</div>
+			</div>
 		</Container>
 	);
 };
 
 export default Dashboard;
+
+const trendingGamesList = [
+	{
+		icon: <Valorant />,
+		name: 'Valorant',
+		info: '20 matches currently available',
+	},
+
+	{
+		icon: <LeagueOfLegends />,
+		name: 'League of Legends',
+		info: 'Highest streams for the month',
+	},
+	{
+		icon: <CounterStrike />,
+		name: 'Counter strike',
+		info: '20 people currently playing',
+	},
+];
+
+const featuredTournamentsList = [
+	{
+		image: CyberPunkEvent,
+		category: ['Call of duty', 'Team'],
+		date: 'sept 02 - 05, 2023',
+		time: ' 6 : 00 PM',
+		title: 'Rebirth Resurgence express',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize.....',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunkEvent,
+		category: ['Call of duty', 'Team'],
+		date: 'sept 02 - 05, 2023',
+		time: ' 6 : 00 PM',
+		title: 'Rebirth Resurgence express',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize.....',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunkEvent,
+		category: ['Call of duty', 'Team'],
+		date: 'sept 02 - 05, 2023',
+		time: ' 6 : 00 PM',
+		title: 'Rebirth Resurgence express',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize.....',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+];
+
+const featuredStreamsList = [
+	{
+		image: GameStream,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
+	{
+		image: GameStream,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
+	{
+		image: GameStream,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
+	{
+		image: GameStream,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
+];
