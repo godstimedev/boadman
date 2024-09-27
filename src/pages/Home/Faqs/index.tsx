@@ -13,7 +13,7 @@ const Faqs = () => {
 				<FaqAccordion />
 
 				<div className="button">
-					<Button variant="outline" size="large">
+					<Button variant="outline" outline="secondary" size="large">
 						All FAQ Questions
 					</Button>
 				</div>

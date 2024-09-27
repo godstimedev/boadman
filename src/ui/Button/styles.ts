@@ -70,17 +70,41 @@ export const StyledButton = styled.button<StyledButtonProps>`
 				stroke: ${({ theme }) => theme.colors.primary700};
 			}
 		`};
-	${({ $variant }) =>
+	${({ $variant, $outline }) =>
 		$variant === 'outline' &&
+		$outline === 'secondary' &&
 		css`
 			color: ${({ theme }) => theme.colors.white};
-			border: 1px solid ${({ theme }) => theme.colors.white};
 			background: ${({ theme }) => theme.colors.accent500};
+			border: 1px solid ${({ theme }) => theme.colors.white};
 
 			&:hover {
 				color: ${({ theme }) => theme.colors.primary500};
 				border-color: ${({ theme }) => theme.colors.primary500};
 				/* background: ${({ theme }) => theme.colors.primary700}; */
+			}
+			&:focus {
+				color: ${({ theme }) => theme.colors.primary100};
+				border-color: transparent;
+				box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.primary200};
+			}
+
+			svg {
+				stroke: ${({ theme }) => theme.colors.primary700};
+			}
+		`}
+	${({ $variant, $outline }) =>
+		$variant === 'outline' &&
+		$outline === 'primary' &&
+		css`
+			color: ${({ theme }) => theme.colors.primary500};
+			background: ${({ theme }) => theme.colors.accent500};
+			border: 1px solid ${({ theme }) => theme.colors.primary500};
+
+			&:hover {
+				color: ${({ theme }) => theme.colors.white};
+				border-color: ${({ theme }) => theme.colors.white};
+				background: ${({ theme }) => theme.colors.primary700};
 			}
 			&:focus {
 				color: ${({ theme }) => theme.colors.primary100};

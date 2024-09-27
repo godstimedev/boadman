@@ -9,11 +9,11 @@ import {
 	GamePointEarned,
 	GamerAvatar,
 	GameTime,
-	// HeroAvatar,
+	HeroAvatar,
 	StyledCheckmark,
 } from '../../../assets/svgs';
 import { Button } from '../../../ui';
-import { CursorIllustration, HeroAvatar } from '../../../assets/images';
+import { CursorIllustration } from '../../../assets/images';
 import { Container } from './styles';
 
 const Hero = () => {
@@ -29,10 +29,10 @@ const Hero = () => {
 			</p>
 
 			{/* Game Card */}
-			<div className="gamer-card lg:w-[950px] lg:h-[290px] max-md:py-5 max-md:pr-2  sm:pl-[1rem] sm:pr-[5rem]">
+			<div className="gamer-card ">
 				<div className="max-w-full avatar">
-					<img src={HeroAvatar} alt="/" />
-					{/* <HeroAvatar /> */}
+					{/* <img src={HeroAvatar} alt="/" /> */}
+					<HeroAvatar />
 				</div>
 
 				<div className="gamer-info flex flex-col space-y-1 md:space-y-4">
@@ -68,7 +68,7 @@ const Hero = () => {
 							</div>
 						</div>
 						<span className="h-[3.2rem] w-[1.17px] bg-[#313337] my-auto max-lg:hidden" />
-						<div className="text-start hidden sm:block">
+						<div className="text-start hidden lg:block">
 							<span className="card-title">Joined team</span>
 							<div className="flex items-center gap-6">
 								<div className="flex items-center  stacked-avatar">
@@ -84,31 +84,31 @@ const Hero = () => {
 
 					<hr />
 
-					<div className="flex flex-wrap max-lg:justify-between lg:gap-6 text-start">
+					<div className="bottom-dets">
 						<div className="flex items-center gap-2">
 							<GameTime />
-							<div className="space-y-[-.4rem]">
+							<div className="text-start">
 								<span className="card-title">Played</span>
 								<p className="card-text">360 hours</p>
 							</div>
 						</div>
 						<div className="flex items-center gap-2">
 							<GameAmount />
-							<div className="space-y-[-.4rem]">
+							<div className="text-start">
 								<span className="card-title">Games</span>
 								<p className="card-text">340</p>
 							</div>
 						</div>
 						<div className="flex items-center gap-2">
 							<GamePointEarned />
-							<div className="space-y-[-.4rem]">
+							<div className="text-start">
 								<span className="card-title">Won</span>
 								<p className="card-text">170</p>
 							</div>
 						</div>
 						<div className="flex items-center gap-2">
 							<GamePointEarned />
-							<div className="space-y-[-.4rem]">
+							<div className="text-start">
 								<span className="card-title">Earned</span>
 								<p className="card-text">1200 coins</p>
 							</div>

@@ -28,7 +28,7 @@ const colors = {
 
 	// Accent
 	accent50: '#E3E5E9',
-	accent100: '#BCC0C8',
+	accent100: '#313337', //lines
 	accent200: '#979797', // unfocused texts
 	accent300: '#474C57', //in use
 	accent400: '#2C2E33', // in use

@@ -8,7 +8,7 @@ export const Container = styled.header`
 	justify-content: space-between;
 	width: 100%;
 
-	border-bottom: 1px solid #313337;
+	/* border-bottom: 1px solid #313337; */
 
 	> div {
 		> .search-con {

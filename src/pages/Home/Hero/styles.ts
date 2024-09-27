@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { maxQuery } from '../../../utilities';
+import { maxQuery, minQuery } from '../../../utilities';
 
 export const Container = styled.section`
 	padding: 11rem 1.5rem 0rem 1.5rem;
@@ -32,15 +32,47 @@ export const Container = styled.section`
 		border-image-source: linear-gradient(180deg, #ff5733 -45.22%, rgba(239, 202, 188, 0.1) 27.78%);
 		border-image-slice: 1; /* This tells the browser to use the entire gradient */
 
-		/* .avatar {
+		/* lg:w-[950px] lg:h-[290px] max-md:py-5 max-md:pr-2  sm:pl-[1rem] sm:pr-[5rem] */
+		padding: 0.5rem 5rem 0.5rem 1rem;
+
+		${minQuery('lg')} {
+			width: 950px;
+			height: 290px;
+		}
+
+		${maxQuery('md')} {
+			padding: 1.5rem 1rem 1.5rem 0rem;
+		}
+
+		${maxQuery('sm')} {
+			gap: 0rem;
+		}
+
+		.avatar {
 			> svg {
-				max-width: 220px;
+				width: 220px;
+				height: 200px;
 
 				${maxQuery('md')} {
 					width: 120px;
+					height: 100px;
 				}
 			}
-		} */
+		}
+
+		.bottom-dets {
+			/* flex flex-wrap max-lg:justify-between lg:gap-6 text-start */
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			align-items: center;
+			place-content: center;
+			gap: 1rem;
+
+			${maxQuery('lg')} {
+				grid-template-columns: 1fr 1fr;
+				gap: 0.5rem;
+			}
+		}
 
 		.gamer-info {
 			/* flex: 1; */
