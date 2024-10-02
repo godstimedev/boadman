@@ -1,13 +1,22 @@
 import { useEffect, useState } from 'react';
 import { StyledTable as Container } from './styles';
-import { InputCaretDown } from '../../assets/svgs';
+// import { InputCaretDown } from '../../assets/svgs';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { QUERY_STRINGS } from '../../constants';
 import { useReplaceQueryKey } from '../../hooks';
 import { TablePropType } from './Table.types';
+import { NextArrow, PrevArrow } from '@/assets/svgs';
 
 const Table = (props: TablePropType) => {
-	const { maxPage, itemsPerPageOptions = [10, 15, 20], loading = false, columnNames, tableData, tableNumber = 1 } = props;
+	const {
+		maxPage,
+		itemsPerPageOptions = [10, 15, 20],
+		loading = false,
+		columnNames,
+		tableData,
+		tableNumber = 1,
+		tableFooter = true,
+	} = props;
 
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -15,18 +24,33 @@ const Table = (props: TablePropType) => {
 
 	const [searchParams] = useSearchParams();
 
-	const ITEM_PER_PAGE_QUERY_KEY = tableNumber === 1 ? QUERY_STRINGS.items_per_page : `${QUERY_STRINGS.items_per_page}_${tableNumber}`;
-	const PAGE_QUERY_KEY = tableNumber === 1 ? QUERY_STRINGS.page : `${QUERY_STRINGS.page}_${tableNumber}`;
+	const ITEM_PER_PAGE_QUERY_KEY =
+		tableNumber === 1
+			? QUERY_STRINGS.items_per_page
+			: `${QUERY_STRINGS.items_per_page}_${tableNumber}`;
+	const PAGE_QUERY_KEY =
+		tableNumber === 1 ? QUERY_STRINGS.page : `${QUERY_STRINGS.page}_${tableNumber}`;
 
 	const currentPage = parseInt(searchParams.get(PAGE_QUERY_KEY) || '1');
 	const currentItemPerPage = parseInt(
-		searchParams.get(tableNumber === 1 ? QUERY_STRINGS.items_per_page : `${QUERY_STRINGS.items_per_page}_${tableNumber}`) || '10'
+		searchParams.get(
+			tableNumber === 1
+				? QUERY_STRINGS.items_per_page
+				: `${QUERY_STRINGS.items_per_page}_${tableNumber}`
+		) || '10'
 	);
 
 	const [tempPageValue, setTempPageValue] = useState(currentPage.toString());
 
 	useEffect(() => {
-		setTempPageValue(searchParams.get(PAGE_QUERY_KEY) || '1');
+		// Get the page number from the search parameters, defaulting to '1' if not found
+		const pageValue = searchParams.get(PAGE_QUERY_KEY) || '1';
+
+		// Update tempPageValue only if it differs from the current value
+		if (pageValue !== tempPageValue) {
+			setTempPageValue(pageValue);
+		}
+		// setTempPageValue(searchParams.get(PAGE_QUERY_KEY) || '1');
 	}, [location.search, PAGE_QUERY_KEY, searchParams]);
 
 	useEffect(() => {
@@ -87,14 +111,18 @@ const Table = (props: TablePropType) => {
 				<table>
 					<thead>
 						<tr>
-							{columnNames.map((name) => (
-								<th key={name}>{name}</th>
+							{columnNames.map((name, index) => (
+								<th key={typeof name == 'string' ? name : name.key || index}>{name}</th>
 							))}
 						</tr>
 					</thead>
 					<tbody>
 						{tableData?.map(({ rowId, rowData, onRowClick }, rowIndex) => (
-							<tr key={rowId || rowIndex} onClick={() => onRowClick && onRowClick()} style={{ cursor: onRowClick ? 'pointer' : 'initial' }}>
+							<tr
+								key={rowId || rowIndex}
+								onClick={() => onRowClick && onRowClick()}
+								style={{ cursor: onRowClick ? 'pointer' : 'initial' }}
+							>
 								{rowData.map((el, elIndex) => (
 									<td key={elIndex}>{el}</td>
 								))}
@@ -104,59 +132,97 @@ const Table = (props: TablePropType) => {
 				</table>
 			</div>
 
-			<div className="table-footer">
-				<div>
-					Page
-					<div className="input-container">
-						<input
-							type="number"
-							value={tempPageValue}
-							min={1}
-							max={maxPage || 1}
-							disabled={loading}
-							onChange={(event) => setTempPageValue(event.target.value || '')}
-							onBlur={(event) => {
-								let value = parseInt(event.target.value || '1');
+			{tableFooter && (
+				<div className="table-footer">
+					<div className="action-container">
+						<button tabIndex={-1} disabled={currentPage === 1 || loading}>
+							{currentPage === 1 || loading ? (
+								<span>
+									<PrevArrow />
+								</span>
+							) : (
+								<Link
+									to={
+										location.pathname +
+										replaceQueryKey({ newValue: currentPage - 1, queryKey: PAGE_QUERY_KEY })
+									}
+								>
+									<PrevArrow />
+								</Link>
+							)}
+						</button>
 
-								if (value <= 0) {
-									value = 1;
-								} else if (value > maxPage) {
-									value = maxPage;
-								}
+						{/* <div>
+						Page
+						<div className="input-container">
+							<input
+								type="number"
+								value={tempPageValue}
+								min={1}
+								max={maxPage || 1}
+								disabled={loading}
+								onChange={(event) => setTempPageValue(event.target.value || '')}
+								onBlur={(event) => {
+									let value = parseInt(event.target.value || '1');
 
-								setTempPageValue(value.toString());
+									if (value <= 0) {
+										value = 1;
+									} else if (value > maxPage) {
+										value = maxPage;
+									}
 
-								if (value === currentPage) {
-									return;
-								}
+									setTempPageValue(value.toString());
 
-								const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
-								navigate(location.pathname + searchQuery);
-							}}
-						/>
-						<span>{tempPageValue}</span>
+									if (value === currentPage) {
+										return;
+									}
+
+									const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
+									navigate(location.pathname + searchQuery);
+								}}
+							/>
+							<span>{tempPageValue}</span>
+						</div>
+						of {maxPage}
+					</div> */}
+
+						<div className="page-numbers-container">
+							{Array.from({ length: maxPage }, (_, index) => {
+								const page = index + 1;
+								return (
+									<button>
+										<Link
+											key={page}
+											to={location.pathname + replaceQueryKey({ newValue: page, queryKey: PAGE_QUERY_KEY })}
+											className={page === currentPage ? 'active' : ''}
+											onClick={() => setTempPageValue(page.toString())}
+										>
+											{page}
+										</Link>
+									</button>
+								);
+							})}
+						</div>
+
+						<button tabIndex={-1} disabled={currentPage >= maxPage || loading}>
+							{currentPage >= maxPage || loading ? (
+								<span>
+									<NextArrow />
+								</span>
+							) : (
+								<Link
+									to={
+										location.pathname +
+										replaceQueryKey({ newValue: currentPage + 1, queryKey: PAGE_QUERY_KEY })
+									}
+								>
+									<NextArrow />
+								</Link>
+							)}
+						</button>
 					</div>
-					of {maxPage}
-				</div>
 
-				<div className="action-container">
-					<button tabIndex={-1} disabled={currentPage === 1 || loading}>
-						{currentPage === 1 || loading ? (
-							<span>Prev</span>
-						) : (
-							<Link to={location.pathname + replaceQueryKey({ newValue: currentPage - 1, queryKey: PAGE_QUERY_KEY })}>Prev</Link>
-						)}
-					</button>
-					<button tabIndex={-1} disabled={currentPage >= maxPage || loading}>
-						{currentPage >= maxPage || loading ? (
-							<span>Next</span>
-						) : (
-							<Link to={location.pathname + replaceQueryKey({ newValue: currentPage + 1, queryKey: PAGE_QUERY_KEY })}>Next</Link>
-						)}
-					</button>
-				</div>
-
-				<div>
+					{/* <div>
 					Show
 					<div className="select-container" tabIndex={loading ? undefined : 0}>
 						{currentItemPerPage}
@@ -193,8 +259,9 @@ const Table = (props: TablePropType) => {
 						</ul>
 					</div>
 					Items per page
+				</div> */}
 				</div>
-			</div>
+			)}
 		</Container>
 	);
 };

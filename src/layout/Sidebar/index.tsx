@@ -113,7 +113,7 @@ const navList = {
 		},
 		{
 			name: 'Leaderboard',
-			link: APP_ROUTES.leaderboard,
+			link: APP_ROUTES.leaderboard.initial,
 			svg: {
 				default: <Leaderboard />,
 				active: <DashboardActive />,
@@ -173,7 +173,7 @@ const navList = {
 	list3: [
 		{
 			name: 'Profile',
-			link: APP_ROUTES.profile,
+			link: APP_ROUTES.profile.initial,
 			svg: {
 				default: <Profile />,
 				active: <DashboardActive />,

@@ -2,7 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import './tailwind.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import {
 	Playground,
 	Home,
@@ -20,6 +20,8 @@ import {
 	Profile,
 	Settings,
 	Faqs,
+	LeaderboardValorant,
+	ProfileOverview,
 } from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
@@ -44,14 +46,37 @@ function App() {
 					{/* Pages that have their own default layout */}
 					<Route element={<DashboardLayout />}>
 						<Route path={APP_ROUTES.dashboard} element={<Dashboard />} />
-						<Route path={APP_ROUTES.leaderboard} element={<Leaderboard />} />
+						<Route element={<Leaderboard />}>
+							<Route
+								path={APP_ROUTES.leaderboard.initial}
+								element={<Navigate to={APP_ROUTES.leaderboard.valorant} replace />}
+							/>
+							<Route path={APP_ROUTES.leaderboard.valorant} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.cod} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.pubg} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.apexLegend} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.destiny2} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.leagueOfLegend} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.fortnite} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.counterStrike} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.overwatch} element={<LeaderboardValorant />} />
+						</Route>
 						<Route path={APP_ROUTES.gaming} element={<Gaming />} />
 						<Route path={APP_ROUTES.tournaments} element={<Tournaments />} />
 						<Route path={APP_ROUTES.teams} element={<Teams />} />
 						<Route path={APP_ROUTES.friends} element={<Friends />} />
 						<Route path={APP_ROUTES.stream} element={<Stream />} />
 						<Route path={APP_ROUTES.wallet} element={<Wallet />} />
-						<Route path={APP_ROUTES.profile} element={<Profile />} />
+						<Route element={<Profile />}>
+							<Route
+								path={APP_ROUTES.profile.initial}
+								element={<Navigate to={APP_ROUTES.profile.overview} replace />}
+							/>
+							<Route path={APP_ROUTES.profile.overview} element={<ProfileOverview />} />
+							<Route path={APP_ROUTES.profile.agents} element={<ProfileOverview />} />
+							<Route path={APP_ROUTES.profile.weapons} element={<ProfileOverview />} />
+							<Route path={APP_ROUTES.profile.maps} element={<ProfileOverview />} />
+						</Route>
 						<Route path={APP_ROUTES.settings} element={<Settings />} />
 						<Route path={APP_ROUTES.faqs} element={<Faqs />} />
 					</Route>

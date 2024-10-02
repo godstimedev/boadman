@@ -127,7 +127,7 @@ const colors = {
 */
 const fonts = {
 	primaryFont: css`
-		font-family: 'Manrope', sans-serif;
+		font-family: 'Manrope', sans-serif !important;
 	`,
 	secondaryFont: css`
 		font-family: 'McLaren', serif;

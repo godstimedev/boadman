@@ -8,12 +8,14 @@ export { default as SignUp } from './Auth/SignUp';
 // Pages on dashboard layout
 export { default as Dashboard } from './Dashboard';
 export { default as Gaming } from './Gaming';
-export { default as Leaderboard } from './Leaderboard';
+export { default as Leaderboard } from './Leaderboard/Layout';
+export { default as LeaderboardValorant } from './Leaderboard/Valorant';
 export { default as Tournaments } from './Tournaments';
 export { default as Teams } from './Teams';
 export { default as Friends } from './Friends';
 export { default as Stream } from './Stream';
 export { default as Wallet } from './Wallet';
-export { default as Profile } from './Profile';
+export { default as Profile } from './Profile/Layout';
+export { default as ProfileOverview } from './Profile/Overview';
 export { default as Settings } from './Settings';
 export { default as Faqs } from './Faqs';
