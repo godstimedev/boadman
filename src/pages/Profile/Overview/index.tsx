@@ -3,6 +3,7 @@ import { Container } from './styles';
 import {
 	Agent1,
 	AvatarTable,
+	Character1,
 	MapAscent,
 	MapBreeze,
 	MapSunset,
@@ -445,7 +446,320 @@ const Overview = () => {
 					/>
 				</div>
 
-				<div className="table-con-2"></div>
+				<div className="table-con-2">
+					<h6>Match History</h6>
+					<div className="history">
+						<div className="date">
+							<p>Jan 2 2024</p>
+						</div>
+
+						<div className="stats">
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="gold">MVP</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+						</div>
+
+						<div className="date">
+							<p>Dec 27, 2023</p>
+						</div>
+
+						<div className="stats">
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+							<div className="history-pallet">
+								<div>
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div>
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div>
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div>
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div>
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div>
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div>
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</Container>
 	);

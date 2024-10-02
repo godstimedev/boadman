@@ -354,6 +354,9 @@ export const Container = styled.div`
 
 	.table-cons-wrapper {
 		/* grid-column: span 3; */
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
 	}
 
 	.table-con-1 {
@@ -409,6 +412,120 @@ export const Container = styled.div`
 
 				span {
 					color: ${({ theme }) => theme.colors.accent200};
+				}
+			}
+		}
+	}
+
+	.table-con-2 {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+
+		h6 {
+			font-size: 16px;
+			line-height: 21.12px;
+			font-weight: 500;
+		}
+
+		.history {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			> .date {
+				background-color: ${({ theme }) => theme.colors.accent400};
+				padding: 0.75rem 1rem;
+				border-radius: 5px;
+
+				p {
+					font-size: 14px;
+					line-height: 18.48px;
+					font-weight: 500;
+				}
+			}
+
+			> .stats {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+
+				> div {
+					background-color: ${({ theme }) => theme.colors.accent500};
+					padding: 1rem 1.5rem 1rem 1rem;
+					border-radius: 5px;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					overflow: auto;
+					flex-wrap: nowrap;
+
+					> div {
+						white-space: nowrap;
+						text-align: center;
+					}
+
+					.score {
+						display: flex;
+						align-items: center;
+						flex-direction: column;
+						gap: 0.5rem;
+
+						h6 {
+							font-size: 18px;
+							line-height: 21.6px;
+							font-weight: 500;
+						}
+
+						.gold {
+							background-color: #c28c30;
+							color: white;
+							border-radius: 17px;
+							padding: 0.25rem 0.75rem;
+							font-size: 12px;
+							line-height: 14.4px;
+							border: 1px solid ${({ theme }) => theme.colors.accent100};
+						}
+						.silver {
+							background-color: ${({ theme }) => theme.colors.secondary500};
+							color: white;
+							border-radius: 17px;
+							padding: 0.25rem 0.75rem;
+							font-size: 12px;
+							line-height: 14.4px;
+							border: 1px solid ${({ theme }) => theme.colors.accent100};
+						}
+					}
+
+					span {
+						font-size: 12px;
+						line-height: 14.4px;
+						color: ${({ theme }) => theme.colors.accent200};
+					}
+					p {
+						font-size: 12px;
+						line-height: 14.4px;
+						font-weight: 500;
+					}
+
+					> div:first-child {
+						display: flex;
+						align-items: center;
+						gap: 0.75rem;
+
+						img {
+							width: 33px;
+							height: 33px;
+							border-radius: 100%;
+						}
+
+						> div {
+							display: flex;
+							flex-direction: column;
+							gap: 0.5rem;
+							text-align: left;
+						}
+					}
 				}
 			}
 		}

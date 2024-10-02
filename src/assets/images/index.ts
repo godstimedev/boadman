@@ -12,6 +12,7 @@ export { default as Boadman } from './Boadman.png';
 export { default as BombAchievement } from './BombAchievement.png';
 export { default as CallOfDuty } from './CallOfDuty.png';
 export { default as CallOfDutyFull } from './CallOfDutyFull.png';
+export { default as Character1 } from './Character1.png';
 export { default as ChestAchievement } from './ChestAchievement.png';
 export { default as CoinAchievement } from './CoinAchievement.png';
 export { default as CreateJoin } from './CreateJoin.png';
