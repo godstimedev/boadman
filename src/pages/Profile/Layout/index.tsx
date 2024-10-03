@@ -18,6 +18,7 @@ const Profile = () => {
 				<div>
 					<div className="img-con">
 						<img src={HeroAvatar} alt="/" />
+						{/* <HeroAvatar /> */}
 					</div>
 
 					<div>

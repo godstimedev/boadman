@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { StyledModalProps } from './Modal.types';
+import { maxQuery } from '@/utilities';
 
 export const StyledModal = styled.div<StyledModalProps>`
 	background-color: #000000b2;
@@ -35,6 +36,10 @@ export const StyledModal = styled.div<StyledModalProps>`
 		min-height: 40%;
 		border-radius: 5px;
 		transition: all 0.3s ease-in-out;
+
+		${maxQuery('md')} {
+			max-width: 85%;
+		}
 
 		${({ $isOpen }) =>
 			$isOpen &&

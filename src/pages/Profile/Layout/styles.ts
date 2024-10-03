@@ -42,12 +42,7 @@ export const Container = styled.section`
 
 				.img-con {
 					img {
-						/* width: 100%; */
 						object-fit: cover;
-
-						${maxQuery('md')} {
-							width: 48px !important;
-						}
 					}
 				}
 
@@ -55,6 +50,7 @@ export const Container = styled.section`
 					font-size: 28px;
 					line-height: 26.96px;
 					font-weight: 700;
+					white-space: nowrap;
 
 					${maxQuery('md')} {
 						font-size: 18px;
@@ -76,12 +72,18 @@ export const Container = styled.section`
 			}
 		}
 
-		div:last-child {
+		> div:last-child {
 			display: flex;
 			gap: 1rem;
 			align-items: center;
 			justify-content: flex-end;
 			margin-left: auto;
+
+			${maxQuery('md')} {
+				justify-content: space-between;
+				margin-left: 0;
+				margin-top: 1rem;
+			}
 		}
 	}
 
@@ -92,6 +94,10 @@ export const Container = styled.section`
 		align-items: center;
 		gap: 1.5rem;
 		text-align: center;
+
+		${maxQuery('md')} {
+			padding: 2rem 2rem;
+		}
 
 		h6 {
 			font-size: 20px;
@@ -125,6 +131,10 @@ export const Container = styled.section`
 		align-items: center;
 		gap: 1.5rem;
 		text-align: center;
+
+		${maxQuery('md')} {
+			padding: 6rem 2rem 2rem;
+		}
 
 		.img-con {
 			position: absolute;
