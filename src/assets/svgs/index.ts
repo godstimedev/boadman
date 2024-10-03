@@ -55,6 +55,7 @@ export { default as MenuIcon } from './MenuIcon.svg?react';
 export { default as MenuIcon2 } from './MenuIcon2.svg?react';
 export { default as MetricsVector1 } from './MetricsVector1.svg?react';
 export { default as MetricsVector2 } from './MetricsVector2.svg?react';
+export { default as ModalClose } from './ModalClose.svg?react';
 export { default as MostPlayed } from './MostPlayed.svg?react';
 export { default as NotificationBell } from './NotificationBell.svg?react';
 export { default as NotificationInfo } from './NotificationInfo.svg?react';

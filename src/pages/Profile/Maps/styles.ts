@@ -6,23 +6,10 @@ export const Container = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 0.8rem;
+		flex: 1;
 
 		${maxQuery('md')} {
 			gap: 0.5rem;
-		}
-
-		img {
-			border-radius: 100%;
-		}
-
-		> div {
-			display: flex;
-			flex-direction: column;
-			gap: 0rem;
-
-			span {
-				color: ${({ theme }) => theme.colors.accent200};
-			}
 		}
 	}
 `;

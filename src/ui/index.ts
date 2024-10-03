@@ -1,5 +1,6 @@
 export { default as FaqAccordion } from './FaqAccordion';
 export { default as Button } from './Button';
+export { default as Modal } from './Modal';
 
 export { default as InputGroup } from './InputGroup';
 export { default as CodeGroup } from './InputGroup/CodeGroup';

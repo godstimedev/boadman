@@ -85,6 +85,79 @@ export const Container = styled.section`
 		}
 	}
 
+	.add-friend-modal {
+		padding: 2rem 5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+		text-align: center;
+
+		h6 {
+			font-size: 20px;
+			line-height: 26.4px;
+		}
+
+		span {
+			font-size: 14px;
+			line-height: 18.48px;
+			color: ${({ theme }) => theme.colors.accent200};
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 18.48px;
+		}
+
+		div:last-child {
+			width: 100%;
+			margin-bottom: 1rem;
+			> button {
+				width: 100%;
+			}
+		}
+	}
+
+	.invite-friend-modal {
+		padding: 7rem 5rem 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+		text-align: center;
+
+		.img-con {
+			position: absolute;
+			top: -60px;
+			img {
+			}
+		}
+
+		h6 {
+			font-size: 20px;
+			line-height: 26.4px;
+		}
+
+		span {
+			font-size: 14px;
+			line-height: 18.48px;
+			color: ${({ theme }) => theme.colors.accent200};
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 18.48px;
+		}
+
+		div:last-child {
+			width: 100%;
+			margin-bottom: 1rem;
+			> button {
+				width: 100%;
+			}
+		}
+	}
+
 	.profile {
 		display: flex;
 		flex-direction: column;

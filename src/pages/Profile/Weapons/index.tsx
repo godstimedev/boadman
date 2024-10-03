@@ -1,6 +1,6 @@
 import { Table } from '@/ui';
 import { Container } from './styles';
-import { Agent1 } from '@/assets/images';
+import { Sheriff, Sniper, Spectre, Vandal } from '@/assets/images';
 
 const Weapons = () => {
 	const tableData = [
@@ -8,37 +8,20 @@ const Weapons = () => {
 			rowId: 1,
 			rowData: [
 				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
+					<div className="w-[4rem]">
+						<img src={Vandal} alt="/" />
+					</div>
 					<div>
-						<p className="font-medium text-sm">Sage </p>
-						<span className=" text-sm">2314 matches</span>
+						<p className="font-medium text-sm">Vandal </p>
+						<span className=" text-sm">Rifle</span>
 					</div>
 				</div>,
-				'1234 hrs',
+				'346',
 
+				'1234',
 				'67%',
-				'1.13.2',
-				'180.4',
-				'180.4',
-			],
-			onRowClick: () => console.log('clicked'),
-		},
-		{
-			rowId: 1,
-			rowData: [
-				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Sage </p>
-						<span className=" text-sm">2314 matches</span>
-					</div>
-				</div>,
-				'1234 hrs',
-
 				'67%',
-				'1.13.2',
-				'180.4',
-				'180.4',
+				'67%',
 			],
 			onRowClick: () => console.log('clicked'),
 		},
@@ -46,18 +29,20 @@ const Weapons = () => {
 			rowId: 2,
 			rowData: [
 				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
+					<div className="w-[4rem]">
+						<img src={Sheriff} alt="/" />
+					</div>
 					<div>
-						<p className="font-medium text-sm">Sova </p>
-						<span className=" text-sm">1814 matches</span>
+						<p className="font-medium text-sm">Sheriff </p>
+						<span className=" text-sm">Sidearm</span>
 					</div>
 				</div>,
-				'474 hrs',
+				'346',
 
-				'73%',
-				'1.05.4',
-				'146.8',
-				'146.8',
+				'1234',
+				'67%',
+				'67%',
+				'67%',
 			],
 			onRowClick: () => console.log('clicked'),
 		},
@@ -65,18 +50,83 @@ const Weapons = () => {
 			rowId: 3,
 			rowData: [
 				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
+					<div className="w-[4rem]">
+						<img src={Sniper} alt="/" />
+					</div>
 					<div>
-						<p className="font-medium text-sm">Jett </p>
-						<span className=" text-sm">814 matches</span>
+						<p className="font-medium text-sm">Sniper </p>
+						<span className=" text-sm">Operator</span>
 					</div>
 				</div>,
-				'234 hrs',
+				'346',
 
-				'58%',
-				'2.33.3',
-				'127.2',
-				'127.2',
+				'1234',
+				'67%',
+				'67%',
+				'67%',
+			],
+			onRowClick: () => console.log('clicked'),
+		},
+		{
+			rowId: 4,
+			rowData: [
+				<div className="player">
+					<div className="w-[4rem]">
+						<img src={Spectre} alt="/" />
+					</div>
+					<div>
+						<p className="font-medium text-sm">Spectre </p>
+						<span className=" text-sm">SMGs</span>
+					</div>
+				</div>,
+				'346',
+
+				'1234',
+				'67%',
+				'67%',
+				'67%',
+			],
+			onRowClick: () => console.log('clicked'),
+		},
+		{
+			rowId: 5,
+			rowData: [
+				<div className="player">
+					<div className="w-[4rem]">
+						<img src={Vandal} alt="/" />
+					</div>
+					<div>
+						<p className="font-medium text-sm">Vandal </p>
+						<span className=" text-sm">Rifle</span>
+					</div>
+				</div>,
+				'346',
+
+				'1234',
+				'67%',
+				'67%',
+				'67%',
+			],
+			onRowClick: () => console.log('clicked'),
+		},
+		{
+			rowId: 5,
+			rowData: [
+				<div className="player">
+					<div className="w-[4rem]">
+						<img src={Spectre} alt="/" />
+					</div>
+					<div>
+						<p className="font-medium text-sm">Vandal </p>
+						<span className=" text-sm">Rifle</span>
+					</div>
+				</div>,
+				'346',
+
+				'1234',
+				'67%',
+				'67%',
+				'67%',
 			],
 			onRowClick: () => console.log('clicked'),
 		},
@@ -85,9 +135,9 @@ const Weapons = () => {
 	return (
 		<Container>
 			<Table
-				maxPage={3}
+				maxPage={5}
 				loading={false}
-				columnNames={['Agent', 'Time played', 'Win%', 'KDA', 'ADR', 'ACS']}
+				columnNames={['Weapon', 'Games', 'Kils', 'Headshot%', 'Bodyshot%', 'Legshot %']}
 				itemsPerPageOptions={[2, 4, 6]}
 				tableData={tableData}
 				tableFooter={true}
