@@ -38,7 +38,7 @@ const Leaderboard = () => {
 
 				<div className="input">
 					<InputGroup
-						type="text"
+						type="search"
 						name="search"
 						placeholder="Search player name #tagline"
 						autoComplete="off"

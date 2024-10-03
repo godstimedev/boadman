@@ -48,6 +48,13 @@ export const StyledTable = styled.section`
 				position: sticky;
 			}
 		}
+		${maxQuery('md')} {
+			> * > tr > *:first-child {
+				left: 0;
+				position: sticky;
+				background-color: ${({ theme }) => theme.colors.accent500};
+			}
+		}
 
 		thead {
 			color: ${({ theme }) => theme.colors.white};

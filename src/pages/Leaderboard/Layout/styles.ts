@@ -1,3 +1,4 @@
+import { StyledInputContainer } from '@/ui/InputGroup/styles';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -14,6 +15,10 @@ export const Container = styled.section`
 
 		> .input {
 			width: max-content;
+
+			${StyledInputContainer} {
+				/* width: 20rem; */
+			}
 		}
 	}
 

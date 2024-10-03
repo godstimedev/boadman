@@ -2,8 +2,8 @@ import { Button, Table } from '@/ui';
 import { Container } from './styles';
 import {
 	Agent1,
-	AvatarTable,
 	Character1,
+	AvatarTable,
 	MapAscent,
 	MapBreeze,
 	MapSunset,
@@ -423,7 +423,7 @@ const Overview = () => {
 				</div>
 			</aside>
 
-			<div className="table-cons-wrapper">
+			<div className="space-y-4">
 				<div className="table-con-1">
 					<div>
 						<div>
@@ -431,11 +431,13 @@ const Overview = () => {
 							<span>Based on lifetime agent playtime</span>
 						</div>
 
-						<div>
+						<div className="hidden sm:block">
 							<Button variant="outline">View all agents</Button>
 						</div>
+						<div className=" sm:hidden">
+							<Button variant="outline">View all</Button>
+						</div>
 					</div>
-
 					<Table
 						maxPage={3}
 						loading={false}
@@ -455,18 +457,18 @@ const Overview = () => {
 
 						<div className="stats">
 							<div className="history-pallet">
-								<div>
+								<div className="first">
 									<img src={Character1} alt="/" />
 									<div>
 										<p>Competitive</p>
 										<span>Ascent</span>
 									</div>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Victory </span>
 									<p>36m 30 s</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Headshots % </span>
 									<p>67%</p>
 								</div>
@@ -474,73 +476,37 @@ const Overview = () => {
 									<h6>10 : 13</h6>
 									<span className="silver">2nd</span>
 								</div>
-								<div>
+								<div className="normal">
 									<span>KDA</span>
 									<p>1.45.1</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>K/D</span>
 									<p>1.45</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ADR</span>
 									<p>180.4</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ACS</span>
 									<p>146.8</p>
 								</div>
 							</div>
+
 							<div className="history-pallet">
-								<div>
+								<div className="first">
 									<img src={Character1} alt="/" />
 									<div>
 										<p>Competitive</p>
 										<span>Ascent</span>
 									</div>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Victory </span>
 									<p>36m 30 s</p>
 								</div>
-								<div>
-									<span>Headshots % </span>
-									<p>67%</p>
-								</div>
-								<div className="score">
-									<h6>10 : 13</h6>
-									<span className="silver">2nd</span>
-								</div>
-								<div>
-									<span>KDA</span>
-									<p>1.45.1</p>
-								</div>
-								<div>
-									<span>K/D</span>
-									<p>1.45</p>
-								</div>
-								<div>
-									<span>ADR</span>
-									<p>180.4</p>
-								</div>
-								<div>
-									<span>ACS</span>
-									<p>146.8</p>
-								</div>
-							</div>
-							<div className="history-pallet">
-								<div>
-									<img src={Character1} alt="/" />
-									<div>
-										<p>Competitive</p>
-										<span>Ascent</span>
-									</div>
-								</div>
-								<div>
-									<span>Victory </span>
-									<p>36m 30 s</p>
-								</div>
-								<div>
+								<div className="normal">
 									<span>Headshots % </span>
 									<p>67%</p>
 								</div>
@@ -548,36 +514,37 @@ const Overview = () => {
 									<h6>10 : 13</h6>
 									<span className="gold">MVP</span>
 								</div>
-								<div>
+								<div className="normal">
 									<span>KDA</span>
 									<p>1.45.1</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>K/D</span>
 									<p>1.45</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ADR</span>
 									<p>180.4</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ACS</span>
 									<p>146.8</p>
 								</div>
 							</div>
+
 							<div className="history-pallet">
-								<div>
+								<div className="first">
 									<img src={Character1} alt="/" />
 									<div>
 										<p>Competitive</p>
 										<span>Ascent</span>
 									</div>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Victory </span>
 									<p>36m 30 s</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Headshots % </span>
 									<p>67%</p>
 								</div>
@@ -585,19 +552,56 @@ const Overview = () => {
 									<h6>10 : 13</h6>
 									<span className="silver">2nd</span>
 								</div>
-								<div>
+								<div className="normal">
 									<span>KDA</span>
 									<p>1.45.1</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>K/D</span>
 									<p>1.45</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ADR</span>
 									<p>180.4</p>
 								</div>
-								<div>
+								<div className="normal">
+									<span>ACS</span>
+									<p>146.8</p>
+								</div>
+							</div>
+							<div className="history-pallet">
+								<div className="first">
+									<img src={Character1} alt="/" />
+									<div>
+										<p>Competitive</p>
+										<span>Ascent</span>
+									</div>
+								</div>
+								<div className="normal">
+									<span>Victory </span>
+									<p>36m 30 s</p>
+								</div>
+								<div className="normal">
+									<span>Headshots % </span>
+									<p>67%</p>
+								</div>
+								<div className="score">
+									<h6>10 : 13</h6>
+									<span className="silver">2nd</span>
+								</div>
+								<div className="normal">
+									<span>KDA</span>
+									<p>1.45.1</p>
+								</div>
+								<div className="normal">
+									<span>K/D</span>
+									<p>1.45</p>
+								</div>
+								<div className="normal">
+									<span>ADR</span>
+									<p>180.4</p>
+								</div>
+								<div className="normal">
 									<span>ACS</span>
 									<p>146.8</p>
 								</div>
@@ -610,18 +614,18 @@ const Overview = () => {
 
 						<div className="stats">
 							<div className="history-pallet">
-								<div>
+								<div className="first">
 									<img src={Character1} alt="/" />
 									<div>
 										<p>Competitive</p>
 										<span>Ascent</span>
 									</div>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Victory </span>
 									<p>36m 30 s</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Headshots % </span>
 									<p>67%</p>
 								</div>
@@ -629,36 +633,36 @@ const Overview = () => {
 									<h6>10 : 13</h6>
 									<span className="silver">2nd</span>
 								</div>
-								<div>
+								<div className="normal">
 									<span>KDA</span>
 									<p>1.45.1</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>K/D</span>
 									<p>1.45</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ADR</span>
 									<p>180.4</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ACS</span>
 									<p>146.8</p>
 								</div>
 							</div>
 							<div className="history-pallet">
-								<div>
+								<div className="first">
 									<img src={Character1} alt="/" />
 									<div>
 										<p>Competitive</p>
 										<span>Ascent</span>
 									</div>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Victory </span>
 									<p>36m 30 s</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Headshots % </span>
 									<p>67%</p>
 								</div>
@@ -666,36 +670,36 @@ const Overview = () => {
 									<h6>10 : 13</h6>
 									<span className="silver">2nd</span>
 								</div>
-								<div>
+								<div className="normal">
 									<span>KDA</span>
 									<p>1.45.1</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>K/D</span>
 									<p>1.45</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ADR</span>
 									<p>180.4</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ACS</span>
 									<p>146.8</p>
 								</div>
 							</div>
 							<div className="history-pallet">
-								<div>
+								<div className="first">
 									<img src={Character1} alt="/" />
 									<div>
 										<p>Competitive</p>
 										<span>Ascent</span>
 									</div>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Victory </span>
 									<p>36m 30 s</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>Headshots % </span>
 									<p>67%</p>
 								</div>
@@ -703,56 +707,19 @@ const Overview = () => {
 									<h6>10 : 13</h6>
 									<span className="silver">2nd</span>
 								</div>
-								<div>
+								<div className="normal">
 									<span>KDA</span>
 									<p>1.45.1</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>K/D</span>
 									<p>1.45</p>
 								</div>
-								<div>
+								<div className="normal">
 									<span>ADR</span>
 									<p>180.4</p>
 								</div>
-								<div>
-									<span>ACS</span>
-									<p>146.8</p>
-								</div>
-							</div>
-							<div className="history-pallet">
-								<div>
-									<img src={Character1} alt="/" />
-									<div>
-										<p>Competitive</p>
-										<span>Ascent</span>
-									</div>
-								</div>
-								<div>
-									<span>Victory </span>
-									<p>36m 30 s</p>
-								</div>
-								<div>
-									<span>Headshots % </span>
-									<p>67%</p>
-								</div>
-								<div className="score">
-									<h6>10 : 13</h6>
-									<span className="silver">2nd</span>
-								</div>
-								<div>
-									<span>KDA</span>
-									<p>1.45.1</p>
-								</div>
-								<div>
-									<span>K/D</span>
-									<p>1.45</p>
-								</div>
-								<div>
-									<span>ADR</span>
-									<p>180.4</p>
-								</div>
-								<div>
+								<div className="normal">
 									<span>ACS</span>
 									<p>146.8</p>
 								</div>

@@ -1,4 +1,5 @@
-import { Banner1 } from '../../../assets/images';
+import { maxQuery } from '@/utilities';
+import { Banner1, Banner1Mobile } from '../../../assets/images';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -17,9 +18,20 @@ export const Container = styled.section`
 		justify-content: space-between;
 		align-items: center;
 
+		${maxQuery('lg')} {
+			background-image: url(${Banner1Mobile});
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			flex-direction: column;
+			justify-content: end;
+		}
+
 		div:first-child {
 			display: flex;
 			align-items: center;
+			justify-self: flex-start;
 			/* gap: 1rem; */
 
 			> div {
@@ -28,10 +40,26 @@ export const Container = styled.section`
 				align-items: start;
 				gap: 1rem;
 
+				.img-con {
+					img {
+						/* width: 100%; */
+						object-fit: cover;
+
+						${maxQuery('md')} {
+							width: 48px !important;
+						}
+					}
+				}
+
 				h5 {
 					font-size: 28px;
 					line-height: 26.96px;
 					font-weight: 700;
+
+					${maxQuery('md')} {
+						font-size: 18px;
+						line-height: 23.76px;
+					}
 				}
 
 				span {
@@ -39,6 +67,11 @@ export const Container = styled.section`
 					line-height: 25.87px;
 					font-weight: 400;
 					color: ${({ theme }) => theme.colors.accent200};
+
+					${maxQuery('md')} {
+						font-size: 12px;
+						line-height: 15.84px;
+					}
 				}
 			}
 		}
@@ -47,6 +80,8 @@ export const Container = styled.section`
 			display: flex;
 			gap: 1rem;
 			align-items: center;
+			justify-content: flex-end;
+			margin-left: auto;
 		}
 	}
 
@@ -111,6 +146,11 @@ export const Container = styled.section`
 				justify-content: space-between;
 				gap: 0.5rem;
 				width: 170px;
+			}
+
+			${maxQuery('md')} {
+				display: flex;
+				justify-content: space-between;
 			}
 		}
 	}

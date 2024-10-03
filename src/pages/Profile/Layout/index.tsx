@@ -12,7 +12,9 @@ const Profile = () => {
 			<DashboardHeader />
 			<div className="banner">
 				<div>
-					<img src={HeroAvatar} alt="/" />
+					<div className="img-con">
+						<img src={HeroAvatar} alt="/" />
+					</div>
 
 					<div>
 						<h5>Joel Henderson</h5>

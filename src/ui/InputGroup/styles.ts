@@ -233,7 +233,19 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	}
 	.search-input-group {
 		position: relative;
-		padding-right: 3rem;
+
+		${({ $posLeft }) =>
+			$posLeft === true &&
+			css`
+				padding-right: 0;
+			`}
+
+		${({ $posLeft }) =>
+			$posLeft === false &&
+			css`
+				padding-right: 3rem;
+			`}
+
 		input {
 			outline: none;
 

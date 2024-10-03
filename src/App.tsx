@@ -22,6 +22,9 @@ import {
 	Faqs,
 	LeaderboardValorant,
 	ProfileOverview,
+	ProfileAgents,
+	ProfileWeapons,
+	ProfileMaps,
 } from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
@@ -73,9 +76,9 @@ function App() {
 								element={<Navigate to={APP_ROUTES.profile.overview} replace />}
 							/>
 							<Route path={APP_ROUTES.profile.overview} element={<ProfileOverview />} />
-							<Route path={APP_ROUTES.profile.agents} element={<ProfileOverview />} />
-							<Route path={APP_ROUTES.profile.weapons} element={<ProfileOverview />} />
-							<Route path={APP_ROUTES.profile.maps} element={<ProfileOverview />} />
+							<Route path={APP_ROUTES.profile.agents} element={<ProfileAgents />} />
+							<Route path={APP_ROUTES.profile.weapons} element={<ProfileWeapons />} />
+							<Route path={APP_ROUTES.profile.maps} element={<ProfileMaps />} />
 						</Route>
 						<Route path={APP_ROUTES.settings} element={<Settings />} />
 						<Route path={APP_ROUTES.faqs} element={<Faqs />} />

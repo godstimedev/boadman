@@ -5,12 +5,14 @@ export const Container = styled.div`
 	display: grid;
 	grid-template-columns: 2fr 5fr;
 	gap: 1rem;
+	width: 100%;
 
 	${maxQuery('xl')} {
 		grid-template-columns: 1fr 2fr;
 	}
 	${maxQuery('md')} {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
 	}
 
 	aside {
@@ -98,6 +100,10 @@ export const Container = styled.div`
 				width: 75%;
 				border-collapse: collapse;
 				margin-left: auto;
+
+				${maxQuery('md')} {
+					width: 100%;
+				}
 
 				tr {
 					text-align: center;
@@ -352,15 +358,8 @@ export const Container = styled.div`
 		}
 	}
 
-	.table-cons-wrapper {
-		/* grid-column: span 3; */
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-	}
-
 	.table-con-1 {
-		> div {
+		> div:first-child {
 			background-color: ${({ theme }) => theme.colors.accent500};
 			display: flex;
 			align-items: center;
@@ -421,6 +420,7 @@ export const Container = styled.div`
 		display: flex;
 		flex-direction: column;
 		gap: 0.75rem;
+		min-width: 350px;
 
 		h6 {
 			font-size: 16px;
@@ -449,20 +449,66 @@ export const Container = styled.div`
 				display: flex;
 				flex-direction: column;
 				gap: 1rem;
+				flex-wrap: nowrap;
+				white-space: nowrap;
 
-				> div {
+				${maxQuery('md')} {
+					gap: 0.5rem;
+				}
+
+				> .history-pallet {
 					background-color: ${({ theme }) => theme.colors.accent500};
 					padding: 1rem 1.5rem 1rem 1rem;
 					border-radius: 5px;
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
-					overflow: auto;
 					flex-wrap: nowrap;
 
-					> div {
+					${maxQuery('md')} {
+						padding: 0.75rem;
+					}
+
+					> .first {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						gap: 0.75rem;
+
+						${maxQuery('md')} {
+							gap: 0.5rem;
+						}
+
+						img {
+							width: 33px;
+							height: 33px;
+							border-radius: 100%;
+
+							${maxQuery('md')} {
+								width: 14px;
+								height: 14px;
+							}
+						}
+
+						> div {
+							display: flex;
+							flex-direction: column;
+							gap: 0.5rem;
+							text-align: left;
+
+							${maxQuery('md')} {
+								gap: 0.3rem;
+							}
+						}
+					}
+
+					> .normal {
 						white-space: nowrap;
 						text-align: center;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
 					}
 
 					.score {
@@ -475,6 +521,11 @@ export const Container = styled.div`
 							font-size: 18px;
 							line-height: 21.6px;
 							font-weight: 500;
+
+							${maxQuery('md')} {
+								font-size: 12px;
+								line-height: 14.4px;
+							}
 						}
 
 						.gold {
@@ -485,6 +536,11 @@ export const Container = styled.div`
 							font-size: 12px;
 							line-height: 14.4px;
 							border: 1px solid ${({ theme }) => theme.colors.accent100};
+
+							${maxQuery('md')} {
+								font-size: 8px;
+								line-height: 9.6px;
+							}
 						}
 						.silver {
 							background-color: ${({ theme }) => theme.colors.secondary500};
@@ -494,6 +550,11 @@ export const Container = styled.div`
 							font-size: 12px;
 							line-height: 14.4px;
 							border: 1px solid ${({ theme }) => theme.colors.accent100};
+
+							${maxQuery('md')} {
+								font-size: 8px;
+								line-height: 9.6px;
+							}
 						}
 					}
 
@@ -501,29 +562,19 @@ export const Container = styled.div`
 						font-size: 12px;
 						line-height: 14.4px;
 						color: ${({ theme }) => theme.colors.accent200};
+						${maxQuery('md')} {
+							font-size: 8px;
+							line-height: 9.6px;
+						}
 					}
 					p {
 						font-size: 12px;
 						line-height: 14.4px;
 						font-weight: 500;
-					}
 
-					> div:first-child {
-						display: flex;
-						align-items: center;
-						gap: 0.75rem;
-
-						img {
-							width: 33px;
-							height: 33px;
-							border-radius: 100%;
-						}
-
-						> div {
-							display: flex;
-							flex-direction: column;
-							gap: 0.5rem;
-							text-align: left;
+						${maxQuery('md')} {
+							font-size: 8px;
+							line-height: 9.6px;
 						}
 					}
 				}

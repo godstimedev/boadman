@@ -68,7 +68,7 @@ const InputGroup = (props: InputGroupPropType) => {
 		<StyledInputContainer
 			ref={componentRef}
 			id={componentId}
-			$posLeft={iconPosition === 'left' && icon ? true : false}
+			$posLeft={iconPosition === 'left' && icon ? true : iconPosition === 'right' ? false : undefined}
 			className={type === 'password' && validatePassword ? (passwordValid ? 'success' : 'error') : ''}
 		>
 			{type !== 'checkbox' &&
@@ -175,7 +175,7 @@ const InputGroup = (props: InputGroupPropType) => {
 				</div>
 			) : type === 'search' ? (
 				<div className="search-input-group">
-					<div className="input-icon">
+					<div className={icon ? 'input-icon' : ''}>
 						<input
 							type={'text'}
 							name={name}
@@ -192,7 +192,7 @@ const InputGroup = (props: InputGroupPropType) => {
 							onBlur={handleBlur}
 							{...rest}
 						/>
-						<div className="search-icon">{icon}</div>
+						{icon && <div className="search-icon">{icon}</div>}
 					</div>
 				</div>
 			) : (
