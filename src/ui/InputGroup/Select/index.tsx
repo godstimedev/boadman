@@ -168,9 +168,9 @@ const Select = (props: SelectPropType) => {
 						{...rest}
 					/>
 
-					<div className="svg-con">
-						<InputCaretDown />
-					</div>
+					{/* <div className="svg-con"> */}
+					<InputCaretDown />
+					{/* </div> */}
 				</div>
 
 				{type === 'advanced' && !inputVal.length && initialSuggestions.length ? (

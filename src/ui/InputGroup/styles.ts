@@ -171,7 +171,18 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			position: relative;
 		}
 
-		.input-icon > .svg-con {
+		.input-icon > svg {
+			position: absolute;
+			top: 50%;
+			right: 1rem;
+			transform: translateY(-50%);
+
+			&.password-control {
+				cursor: pointer;
+			}
+		}
+
+		/* .input-icon > .svg-con {
 			border-left: 1px solid #313337;
 			height: 60%;
 
@@ -186,7 +197,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			&.password-control {
 				cursor: pointer;
 			}
-		}
+		} */
 		.prop-icon {
 			position: absolute;
 			top: 50%;
