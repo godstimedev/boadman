@@ -1,5 +1,5 @@
 import { maxQuery } from '@/utilities';
-import { Banner1, Banner1Mobile } from '../../../assets/images';
+import { Banner1, Banner1Mobile } from '../../../../assets/images';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -83,87 +83,6 @@ export const Container = styled.section`
 				justify-content: space-between;
 				margin-left: 0;
 				margin-top: 1rem;
-			}
-		}
-	}
-
-	.add-friend-modal {
-		padding: 2rem 5rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1.5rem;
-		text-align: center;
-
-		${maxQuery('md')} {
-			padding: 2rem 2rem;
-		}
-
-		h6 {
-			font-size: 20px;
-			line-height: 26.4px;
-		}
-
-		span {
-			font-size: 14px;
-			line-height: 18.48px;
-			color: ${({ theme }) => theme.colors.accent200};
-		}
-
-		p {
-			font-size: 14px;
-			line-height: 18.48px;
-		}
-
-		div:last-child {
-			width: 100%;
-			margin-bottom: 1rem;
-			> button {
-				width: 100%;
-			}
-		}
-	}
-
-	.invite-friend-modal {
-		padding: 7rem 5rem 2rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1.5rem;
-		text-align: center;
-
-		${maxQuery('md')} {
-			padding: 6rem 2rem 2rem;
-		}
-
-		.img-con {
-			position: absolute;
-			top: -60px;
-			img {
-			}
-		}
-
-		h6 {
-			font-size: 20px;
-			line-height: 26.4px;
-		}
-
-		span {
-			font-size: 14px;
-			line-height: 18.48px;
-			color: ${({ theme }) => theme.colors.accent200};
-		}
-
-		p {
-			font-size: 14px;
-			line-height: 18.48px;
-		}
-
-		div:last-child {
-			width: 100%;
-			margin-bottom: 1rem;
-			> button {
-				width: 100%;
 			}
 		}
 	}

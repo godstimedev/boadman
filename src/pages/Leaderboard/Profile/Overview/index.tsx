@@ -11,29 +11,10 @@ import {
 	Sniper,
 	Vandal,
 } from '@/assets/images';
-import { TierRadiant } from '@/assets/svgs';
+import { PersonTargetBody, PersonTargetHead, PersonTargetLeg, TierRadiant } from '@/assets/svgs';
 
 const Overview = () => {
 	const tableData = [
-		{
-			rowId: 1,
-			rowData: [
-				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Sage </p>
-						<span className=" text-sm">2314 matches</span>
-					</div>
-				</div>,
-				'1234 hrs',
-
-				'67%',
-				'1.13.2',
-				'180.4',
-				'180.4',
-			],
-			onRowClick: () => console.log('clicked'),
-		},
 		{
 			rowId: 1,
 			rowData: [
@@ -161,58 +142,58 @@ const Overview = () => {
 							</table>
 						</div>
 					</div>
-					<table className="bottom ">
-						<tbody>
-							<tr>
-								<td>
-									<div></div>
-								</td>
-								<td>
-									<span>Headshots</span>
-									<div>
-										<p>33.45%</p>
-										<span>(2978)</span>
-									</div>
-								</td>
-								<td>
-									<span>Kills</span>
-									<p>200</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div></div>
-								</td>
-								<td>
-									<span>Bodyshots</span>
-									<div>
-										<p>63.84%</p>
-										<span>(5684)</span>
-									</div>
-								</td>
-								<td>
-									<span>Deaths</span>
-									<p>200</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div></div>
-								</td>
-								<td>
-									<span>Legshots</span>
-									<div>
-										<p>2.95% </p>
-										<span>(445)</span>
-									</div>
-								</td>
-								<td>
-									<span>Assist</span>
-									<p>200</p>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					<div className="bottom ">
+						<div className="person-target">
+							<div>
+								<PersonTargetHead />
+							</div>
+							<div className={'active'}>
+								<PersonTargetBody />
+							</div>
+							<div>
+								<PersonTargetLeg />
+							</div>
+						</div>
+						<div>
+							<div>
+								<span>Headshots</span>
+								<div>
+									<p>33.45%</p>
+									<span>(2978)</span>
+								</div>
+							</div>
+							<div>
+								<span>Bodyshots</span>
+								<div>
+									<p className={'active'}>63.84%</p>
+									<span>(5684)</span>
+								</div>
+							</div>
+							<div>
+								<span>Legshots</span>
+								<div>
+									<p>2.95% </p>
+									<span>(445)</span>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div>
+								<span>Kills</span>
+								<p>200</p>
+							</div>
+
+							<div>
+								<span>Deaths</span>
+								<p>200</p>
+							</div>
+
+							<div>
+								<span>Assist</span>
+								<p>200</p>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div className="top-weapons">

@@ -34,8 +34,10 @@ export const StyledModal = styled.div<StyledModalProps>`
 		width: max-content;
 		max-width: 40%;
 		min-height: 40%;
+		max-height: 90%;
 		border-radius: 5px;
 		transition: all 0.3s ease-in-out;
+		overflow-y: auto;
 
 		${maxQuery('md')} {
 			max-width: 85%;

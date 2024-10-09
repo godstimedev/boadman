@@ -17,14 +17,19 @@ import {
 	Friends,
 	Stream,
 	Wallet,
-	Profile,
 	Settings,
 	Faqs,
 	LeaderboardValorant,
-	ProfileOverview,
-	ProfileAgents,
-	ProfileWeapons,
-	ProfileMaps,
+	LeaderboardProfile,
+	LeaderboardProfileOverview,
+	LeaderboardProfileAgents,
+	LeaderboardProfileWeapons,
+	LeaderboardProfileMaps,
+	Profile,
+	GamingGames,
+	GamingChallenges,
+	GamingTournaments,
+	GamingMatches,
 } from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
@@ -64,22 +69,32 @@ function App() {
 							<Route path={APP_ROUTES.leaderboard.counterStrike} element={<LeaderboardValorant />} />
 							<Route path={APP_ROUTES.leaderboard.overwatch} element={<LeaderboardValorant />} />
 						</Route>
-						<Route path={APP_ROUTES.gaming} element={<Gaming />} />
+						<Route element={<LeaderboardProfile />}>
+							<Route
+								path={APP_ROUTES.playerProfile.initial}
+								element={<Navigate to={APP_ROUTES.playerProfile.overview} replace />}
+							/>
+							<Route path={APP_ROUTES.playerProfile.overview} element={<LeaderboardProfileOverview />} />
+							<Route path={APP_ROUTES.playerProfile.agents} element={<LeaderboardProfileAgents />} />
+							<Route path={APP_ROUTES.playerProfile.weapons} element={<LeaderboardProfileWeapons />} />
+							<Route path={APP_ROUTES.playerProfile.maps} element={<LeaderboardProfileMaps />} />
+						</Route>
+						<Route element={<Gaming />}>
+							<Route
+								path={APP_ROUTES.gaming.initial}
+								element={<Navigate to={APP_ROUTES.gaming.games} />}
+							/>
+							<Route path={APP_ROUTES.gaming.games} element={<GamingGames />} />
+							<Route path={APP_ROUTES.gaming.myChallenges} element={<GamingChallenges />} />
+							<Route path={APP_ROUTES.gaming.myTournaments} element={<GamingTournaments />} />
+							<Route path={APP_ROUTES.gaming.myMatches} element={<GamingMatches />} />
+						</Route>
 						<Route path={APP_ROUTES.tournaments} element={<Tournaments />} />
 						<Route path={APP_ROUTES.teams} element={<Teams />} />
 						<Route path={APP_ROUTES.friends} element={<Friends />} />
 						<Route path={APP_ROUTES.stream} element={<Stream />} />
 						<Route path={APP_ROUTES.wallet} element={<Wallet />} />
-						<Route element={<Profile />}>
-							<Route
-								path={APP_ROUTES.profile.initial}
-								element={<Navigate to={APP_ROUTES.profile.overview} replace />}
-							/>
-							<Route path={APP_ROUTES.profile.overview} element={<ProfileOverview />} />
-							<Route path={APP_ROUTES.profile.agents} element={<ProfileAgents />} />
-							<Route path={APP_ROUTES.profile.weapons} element={<ProfileWeapons />} />
-							<Route path={APP_ROUTES.profile.maps} element={<ProfileMaps />} />
-						</Route>
+						<Route path={APP_ROUTES.profile} element={<Profile />} />
 						<Route path={APP_ROUTES.settings} element={<Settings />} />
 						<Route path={APP_ROUTES.faqs} element={<Faqs />} />
 					</Route>
@@ -87,10 +102,9 @@ function App() {
 					{/* Pages that require you to be logged out */}
 					<Route
 						element={<RestrictPages conditions={[PAGE_RESTRICTION_CONDITIONS.by_auth.be_logged_out]} />}
-					>
-						<Route path={APP_ROUTES.login} element={<SignIn />} />
-						<Route path={APP_ROUTES.register} element={<SignUp />} />
-					</Route>
+					></Route>
+					<Route path={APP_ROUTES.login} element={<SignIn />} />
+					<Route path={APP_ROUTES.register} element={<SignUp />} />
 
 					{/* Use default layout on theses pages */}
 					<Route element={<ApplyLayout />}>

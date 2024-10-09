@@ -121,7 +121,7 @@ const navList = {
 		},
 		{
 			name: 'Gaming',
-			link: APP_ROUTES.gaming,
+			link: APP_ROUTES.gaming.initial,
 			svg: {
 				default: <Gaming />,
 				active: <DashboardActive />,
@@ -173,7 +173,7 @@ const navList = {
 	list3: [
 		{
 			name: 'Profile',
-			link: APP_ROUTES.profile.initial,
+			link: APP_ROUTES.profile,
 			svg: {
 				default: <Profile />,
 				active: <DashboardActive />,

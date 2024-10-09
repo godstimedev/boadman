@@ -39,6 +39,7 @@ const SignIn = () => {
 							placeholder="Email"
 							value={formData.email}
 							onChange={handleChange}
+							variant="secondary"
 						/>
 						<InputGroup
 							type="password"
@@ -46,6 +47,7 @@ const SignIn = () => {
 							placeholder="Password"
 							value={formData.password}
 							onChange={handleChange}
+							variant="secondary"
 						/>
 
 						<div className="button">

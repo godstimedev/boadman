@@ -25,6 +25,7 @@ const InputGroup = (props: InputGroupPropType) => {
 		validatePassword = false,
 		hidePasswordControls = false,
 		customErrorMsg = '',
+		variant,
 		icon,
 		iconPosition = 'left',
 		...rest
@@ -68,6 +69,7 @@ const InputGroup = (props: InputGroupPropType) => {
 		<StyledInputContainer
 			ref={componentRef}
 			id={componentId}
+			$variant={variant ? variant : 'primary'}
 			$posLeft={iconPosition === 'left' && icon ? true : iconPosition === 'right' ? false : undefined}
 			className={type === 'password' && validatePassword ? (passwordValid ? 'success' : 'error') : ''}
 		>

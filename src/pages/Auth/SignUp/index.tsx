@@ -43,6 +43,7 @@ const SignUp = () => {
 							placeholder="Username"
 							value={formData.username}
 							onChange={handleChange}
+							variant="secondary"
 						/>
 						<InputGroup
 							type="email"
@@ -50,6 +51,7 @@ const SignUp = () => {
 							placeholder="Email"
 							value={formData.email}
 							onChange={handleChange}
+							variant="secondary"
 						/>
 						<InputGroup
 							type="tel"
@@ -57,6 +59,7 @@ const SignUp = () => {
 							placeholder="xxx xxxx xxxx"
 							value={formData.phone_number}
 							onChange={handleChange}
+							variant="secondary"
 						/>
 						<InputGroup
 							type="password"
@@ -64,6 +67,7 @@ const SignUp = () => {
 							placeholder="Password"
 							value={formData.password}
 							onChange={handleChange}
+							variant="secondary"
 						/>
 						<InputGroup
 							type="password"
@@ -71,6 +75,7 @@ const SignUp = () => {
 							placeholder="Confirm Password"
 							value={formData.confirm_password}
 							onChange={handleChange}
+							variant="secondary"
 						/>
 						<InputGroup
 							type="checkbox"
@@ -79,6 +84,7 @@ const SignUp = () => {
 							checked={false}
 							value={formData.terms}
 							onChange={handleChange}
+							variant="secondary"
 							customLabel={
 								<>
 									<label

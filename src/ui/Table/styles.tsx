@@ -30,7 +30,8 @@ export const StyledTable = styled.section`
 
 	.table-container {
 		overflow: auto;
-		min-height: 300px;
+		/* min-height: 300px; */
+		min-height: max-content;
 	}
 
 	table {

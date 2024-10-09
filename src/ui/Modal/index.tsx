@@ -1,12 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { StyledModal } from './styles';
 import { ModalClose } from '@/assets/svgs';
-
-type ModalProps = {
-	children: React.ReactNode;
-	isModalOpen: boolean;
-	setIsModalOpen: (value: boolean) => void;
-};
+import { ModalProps } from './Modal.types';
 
 const Modal = (props: ModalProps) => {
 	const { children, isModalOpen, setIsModalOpen } = props;

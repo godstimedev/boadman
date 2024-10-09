@@ -347,8 +347,8 @@ const Dashboard = () => {
 									key={index}
 									image={tournament.image}
 									categories={tournament.category}
-									date={tournament.date}
-									time={tournament.time}
+									status={tournament.status}
+									period={tournament.period}
 									title={tournament.title}
 									description={tournament.description}
 									prize={tournament.prize}
@@ -411,8 +411,8 @@ const Dashboard = () => {
 										key={index}
 										image={tournament.image}
 										categories={tournament.category}
-										date={tournament.date}
-										time={tournament.time}
+										status={tournament.status}
+										period={tournament.period}
 										title={tournament.title}
 										description={tournament.description}
 										prize={tournament.prize}
@@ -509,8 +509,8 @@ const featuredTournamentsList = [
 	{
 		image: CyberPunkEvent,
 		category: ['Call of duty', 'Team'],
-		date: 'sept 02 - 05, 2023',
-		time: ' 6 : 00 PM',
+		status: 'sept 02 - 05, 2023',
+		period: 'STARTING AT 6 : 00 PM',
 		title: 'Rebirth Resurgence express',
 		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize.....',
 		prize: '3500',
@@ -520,8 +520,8 @@ const featuredTournamentsList = [
 	{
 		image: CyberPunkEvent,
 		category: ['Call of duty', 'Team'],
-		date: 'sept 02 - 05, 2023',
-		time: ' 6 : 00 PM',
+		status: 'sept 02 - 05, 2023',
+		period: 'STARTING AT 6 : 00 PM',
 		title: 'Rebirth Resurgence express',
 		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize.....',
 		prize: '3500',
@@ -531,8 +531,8 @@ const featuredTournamentsList = [
 	{
 		image: CyberPunkEvent,
 		category: ['Call of duty', 'Team'],
-		date: 'sept 02 - 05, 2023',
-		time: ' 6 : 00 PM',
+		status: 'sept 02 - 05, 2023',
+		period: 'STARTING AT 6 : 00 PM',
 		title: 'Rebirth Resurgence express',
 		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize.....',
 		prize: '3500',

@@ -3,6 +3,7 @@ import { Country } from 'react-phone-number-input';
 export type StyledInputContainerPropType = {
 	$posLeft?: boolean;
 	$dropdownPosBottom?: boolean;
+	$variant?: string;
 };
 
 // Input
@@ -12,7 +13,11 @@ export type InputGroupPropType = {
 	name: string;
 	label?: string;
 	customLabel?: React.ReactNode;
-	onChange: (event?: React.ChangeEvent<HTMLInputElement>, name?: string, value?: string | number | boolean) => void;
+	onChange: (
+		event?: React.ChangeEvent<HTMLInputElement>,
+		name?: string,
+		value?: string | number | boolean
+	) => void;
 	placeholder?: string;
 	value: string | number;
 	defaultCountry?: Country;
@@ -21,6 +26,7 @@ export type InputGroupPropType = {
 	hidePasswordControls?: boolean;
 	customErrorMsg?: string;
 	icon?: React.ReactNode;
+	variant?: string;
 	iconPosition?: 'left' | 'right';
 } & React.ComponentProps<'input'>;
 
@@ -30,7 +36,11 @@ export type TextAreaPropType = {
 	name: string;
 	label?: string;
 	customLabel?: React.ReactNode;
-	onChange: (event?: React.ChangeEvent<HTMLTextAreaElement>, name?: string, value?: string | number | boolean) => void;
+	onChange: (
+		event?: React.ChangeEvent<HTMLTextAreaElement>,
+		name?: string,
+		value?: string | number | boolean
+	) => void;
 	placeholder?: string;
 	value: string;
 } & React.ComponentProps<'textarea'>;
@@ -48,7 +58,11 @@ type GeneralType = {
 	suggestWhileTyping?: boolean;
 	dropdownPosition?: 'top' | 'bottom';
 	value: string;
-	onChange: (event: React.ChangeEvent<HTMLInputElement> | null, name?: string, value?: string | number) => void;
+	onChange: (
+		event: React.ChangeEvent<HTMLInputElement> | null,
+		name?: string,
+		value?: string | number
+	) => void;
 	placeholder?: string;
 	allowNewSuggestions?: boolean;
 } & React.ComponentProps<'input'>;

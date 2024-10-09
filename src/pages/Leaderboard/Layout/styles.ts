@@ -17,7 +17,11 @@ export const Container = styled.section`
 			width: max-content;
 
 			${StyledInputContainer} {
-				/* width: 20rem; */
+				width: 16rem;
+				/* height: 56px; */
+				input {
+					padding: 0.45rem 1rem;
+				}
 			}
 		}
 	}

@@ -75,7 +75,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
 		$outline === 'secondary' &&
 		css`
 			color: ${({ theme }) => theme.colors.white};
-			background: ${({ theme }) => theme.colors.accent500};
+			/* background: ${({ theme }) => theme.colors.accent500}; */
+			background: transparent;
 			border: 1px solid ${({ theme }) => theme.colors.white};
 
 			&:hover {
@@ -98,7 +99,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
 		$outline === 'primary' &&
 		css`
 			color: ${({ theme }) => theme.colors.primary500};
-			background: ${({ theme }) => theme.colors.accent500};
+			/* background: ${({ theme }) => theme.colors.accent500}; */
+			background: transparent;
 			border: 1px solid ${({ theme }) => theme.colors.primary500};
 
 			&:hover {
@@ -139,6 +141,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 		css`
 			color: ${({ theme }) => theme.colors.primary500};
 			background: transparent;
+			min-height: 16px !important;
 
 			&:hover {
 				color: ${({ theme }) => theme.colors.primary700};

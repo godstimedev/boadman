@@ -26,7 +26,7 @@ export const Container = styled.div`
 			padding: 1rem;
 			border-radius: 5px;
 
-			> div {
+			> div:not(:last-child) {
 				padding: 0.5rem 0;
 				border-bottom: 1px solid ${({ theme }) => theme.colors.accent100};
 				p {
@@ -97,19 +97,50 @@ export const Container = styled.div`
 			}
 
 			.bottom {
-				width: 75%;
-				border-collapse: collapse;
-				margin-left: auto;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				justify-content: space-between;
+				padding: 1rem 0 0 0;
 
 				${maxQuery('md')} {
 					width: 100%;
 				}
 
-				tr {
-					text-align: center;
-					/* border-top: 1px solid ${({ theme }) => theme.colors.accent100}; */
+				> div:first-child {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
 
-					td {
+					> div:nth-child(2) {
+						margin-bottom: -1.2rem;
+					}
+					svg > path {
+						fill: #515163;
+					}
+
+					.active {
+						svg > path {
+							fill: #ff5733;
+						}
+					}
+				}
+
+				> div:not(:first-child) {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					text-align: center;
+
+					.active {
+						color: #ff5733;
+					}
+
+					> div:first-child {
+						margin-top: -0.5rem;
+					}
+
+					> div {
+						/* padding: -0.5rem 0 0 0; */
 						span {
 							font-size: 12px;
 							line-height: 18.48px;
@@ -359,6 +390,7 @@ export const Container = styled.div`
 	}
 
 	.table-con-1 {
+		height: max-content;
 		> div:first-child {
 			background-color: ${({ theme }) => theme.colors.accent500};
 			display: flex;

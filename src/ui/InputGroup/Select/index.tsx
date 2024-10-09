@@ -61,14 +61,20 @@ const Select = (props: SelectPropType) => {
 	const handleBlur = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const eventValue = event.target.value;
 
-		const dropdownValue = options.find((option) => option.name.toString().toLowerCase() === eventValue.toLowerCase())?.value || '';
+		const dropdownValue =
+			options.find((option) => option.name.toString().toLowerCase() === eventValue.toLowerCase())
+				?.value || '';
 
 		if (type === 'basic') {
 			onChange(null, name, dropdownValue);
 		}
 	};
 	const handleDropdownFilter = (value = '') => {
-		setDropdownOptions(options.filter((option) => option.name.toString().toLowerCase().indexOf(value.toLowerCase()) >= 0));
+		setDropdownOptions(
+			options.filter(
+				(option) => option.name.toString().toLowerCase().indexOf(value.toLowerCase()) >= 0
+			)
+		);
 	};
 	const handleRemoveAdvancedValue = (valueToRemove: string) => {
 		const newValue = value
@@ -92,7 +98,11 @@ const Select = (props: SelectPropType) => {
 	};
 
 	return (
-		<StyledInputContainer ref={componentRef} id={componentId} $dropdownPosBottom={dropdownPosition === 'bottom' ? true : false}>
+		<StyledInputContainer
+			ref={componentRef}
+			id={componentId}
+			$dropdownPosBottom={dropdownPosition === 'bottom' ? true : false}
+		>
 			{customLabel ? (
 				customLabel
 			) : (
@@ -103,7 +113,10 @@ const Select = (props: SelectPropType) => {
 
 			<div className={`input-group ${type === 'advanced' ? 'advanced-group' : ''}`}>
 				{type === 'advanced' && value ? (
-					<div className="select-advanced-values" onClick={(event) => event.currentTarget === event.target && inputRef.current?.focus()}>
+					<div
+						className="select-advanced-values"
+						onClick={(event) => event.currentTarget === event.target && inputRef.current?.focus()}
+					>
 						{value.split(seperator).map((val) => (
 							<div key={val}>
 								{val}
@@ -121,7 +134,9 @@ const Select = (props: SelectPropType) => {
 						name={name}
 						required={type === 'advanced' ? (required ? (value ? false : true) : required) : required}
 						placeholder={placeholder}
-						value={type === 'advanced' ? inputVal : shouldHaveOtherOption && otherValue ? otherValue : value}
+						value={
+							type === 'advanced' ? inputVal : shouldHaveOtherOption && otherValue ? otherValue : value
+						}
 						data-componentid={componentId}
 						ref={inputRef}
 						onBlur={handleBlur}
@@ -153,7 +168,9 @@ const Select = (props: SelectPropType) => {
 						{...rest}
 					/>
 
-					<InputCaretDown />
+					<div className="svg-con">
+						<InputCaretDown />
+					</div>
 				</div>
 
 				{type === 'advanced' && !inputVal.length && initialSuggestions.length ? (
@@ -261,7 +278,8 @@ const Select = (props: SelectPropType) => {
 									tabIndex={0}
 									onClick={(event) => {
 										if (event.currentTarget?.parentElement?.parentElement)
-											event.currentTarget.parentElement.parentElement.scrollTop = event.currentTarget.parentElement.offsetTop;
+											event.currentTarget.parentElement.parentElement.scrollTop =
+												event.currentTarget.parentElement.offsetTop;
 										setInputVal('');
 									}}
 								>

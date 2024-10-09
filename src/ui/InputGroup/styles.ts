@@ -171,11 +171,17 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			position: relative;
 		}
 
-		.input-icon > svg {
-			position: absolute;
-			top: 50%;
-			right: 1rem;
-			transform: translateY(-50%);
+		.input-icon > .svg-con {
+			border-left: 1px solid #313337;
+			height: 60%;
+
+			> svg {
+				position: absolute;
+				top: 50%;
+				margin-left: 1.5rem;
+				right: 1.5rem;
+				transform: translateY(-50%);
+			}
 
 			&.password-control {
 				cursor: pointer;
@@ -198,7 +204,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		}
 
 		.select-advanced-values {
-			background: ${({ theme }) => theme.colors.neutral50};
+			background: ${({ theme }) => theme.colors.secondary500};
 
 			display: flex;
 			flex-wrap: wrap;
@@ -248,9 +254,14 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 
 		input {
 			outline: none;
+			background: ${({ theme }) => theme.colors.neutral50};
 
 			&:focus {
 				outline: none;
+			}
+
+			&::placeholder {
+				color: ${({ theme }) => theme.colors.white};
 			}
 		}
 
@@ -273,9 +284,9 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 
 	input,
 	textarea {
-		background: ${({ theme }) => theme.colors.neutral50};
+		background: ${({ theme }) => theme.colors.secondary500};
 		/* background: transparent; */
-
+		font-size: 0.875rem;
 		caret-color: ${({ theme }) => theme.colors.primary500};
 
 		border: none;
@@ -285,10 +296,20 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		color: ${({ theme }) => theme.colors.white};
 
 		&::placeholder {
-			color: ${({ theme }) => theme.colors.white};
+			color: ${({ theme }) => theme.colors.accent200};
+			font-size: 0.875rem;
 		}
 
-		outline: 2px solid ${({ theme }) => theme.colors.neutral100};
+		${({ $variant }) =>
+			$variant === 'secondary' &&
+			css`
+				outline: 2px solid ${({ theme }) => theme.colors.neutral100};
+				background: ${({ theme }) => theme.colors.neutral50};
+
+				&::placeholder {
+					color: ${({ theme }) => theme.colors.white};
+				}
+			`}
 
 		&:focus {
 			outline: 2px solid ${({ theme }) => theme.colors.primary500};
@@ -335,7 +356,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		display: none;
 	}
 	.dropdown {
-		background: ${({ theme }) => theme.colors.neutral50};
+		background: ${({ theme }) => theme.colors.secondary500};
 		box-shadow: 0 0 8px ${({ theme }) => theme.colors.neutral50};
 
 		overflow: auto;

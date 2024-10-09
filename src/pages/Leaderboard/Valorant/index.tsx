@@ -2,6 +2,8 @@ import { CaretDown, Crown, TierRadiant } from '@/assets/svgs';
 import { Container } from './styles';
 import { Table } from '@/ui';
 import { Agent1, AvatarTable } from '@/assets/images';
+import { Link } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
 const Valorant = () => {
 	const tableData = [
@@ -15,13 +17,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">1</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />
@@ -54,13 +58,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">2</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />
@@ -93,13 +99,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">3</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />
@@ -131,13 +139,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">4</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />
@@ -169,13 +179,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">5</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />
@@ -207,13 +219,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">6</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />
@@ -245,13 +259,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">6</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />
@@ -283,13 +299,15 @@ const Valorant = () => {
 					</div>
 				</div>,
 				<span className="rank-number">8</span>,
-				<div className="player">
-					<img src={AvatarTable} alt="/" className="w-4 h-4" />
-					<div>
-						<p className="font-medium text-sm">Joel Henderson </p>
-						<span className=" text-sm">#flunk_god</span>
+				<Link to={APP_ROUTES.playerProfile.initial}>
+					<div className="player">
+						<img src={AvatarTable} alt="/" className="w-4 h-4" />
+						<div>
+							<p className="font-medium text-sm">Joel Henderson </p>
+							<span className=" text-sm">#flunk_god</span>
+						</div>
 					</div>
-				</div>,
+				</Link>,
 				'1330',
 				<div className="flex items-center gap-2">
 					<TierRadiant />

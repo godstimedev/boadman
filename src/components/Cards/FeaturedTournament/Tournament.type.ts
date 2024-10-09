@@ -1,8 +1,8 @@
 export type TournamentProps = {
 	image: string;
 	categories: string[];
-	date: string;
-	time: string;
+	status: string;
+	period: string;
 	title: string;
 	description: string;
 	prize: string;
