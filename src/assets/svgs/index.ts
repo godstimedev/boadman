@@ -88,6 +88,7 @@ export { default as Tournaments } from './Tournaments.svg?react';
 export { default as TournamentTrophy } from './TournamentTrophy.svg?react';
 export { default as Valorant } from './Valorant.svg?react';
 export { default as Wallet } from './Wallet.svg?react';
+export { default as WinnerCheck } from './WinnerCheck.svg?react';
 export { default as X } from './X.svg?react';
 export { default as Xbox } from './Xbox.svg?react';
 export { default as YouTube } from './YouTube.svg?react';

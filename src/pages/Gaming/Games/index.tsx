@@ -3,22 +3,28 @@ import {
 	Challenge,
 	Controller,
 	Fortnite,
-	GamerAvatar,
 	JoinEmoji,
 	MatchAmount,
 	MostPlayed,
 	TournamentTrophy,
+	Valorant,
 } from '@/assets/svgs';
 import { Container } from './styles';
 import { Button, InputGroup } from '@/ui';
-import { ApexLegendsSlider, CallOfDutyFull, LeagueOfLegends } from '@/assets/images';
+import {
+	ApexLegendsSlider,
+	CallOfDutyFull,
+	CyberPunkEvent,
+	HeroAvatar,
+	LeagueOfLegends,
+} from '@/assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import { GeneralChangeEventType } from '@/types';
 import { useState } from 'react';
-import Match from '../Cards/Match';
+import { LastPlayed, Match, RecentWin } from '../Cards';
 
 const Games = () => {
 	const [filter, setFilter] = useState('all');
@@ -85,72 +91,17 @@ const Games = () => {
 						<h6>Recent wins</h6>
 
 						<div>
-							<div className="recent-wins">
-								<div>
-									<Fortnite />
-									<div>
-										<p>Fornite</p>
-										<div>
-											<span>2345 kills</span>
-											<span>345 K/D</span>
-										</div>
-									</div>
-								</div>
-								<div>
-									<div>
-										<span>Won</span>
-										<p>300 coins</p>
-									</div>
-									<div>
-										<span>Score</span>
-										<p>3425</p>
-									</div>
-								</div>
-							</div>
-							<div className="recent-wins">
-								<div>
-									<Fortnite />
-									<div>
-										<p>Fornite</p>
-										<div>
-											<span>2345 kills</span>
-											<span>345 K/D</span>
-										</div>
-									</div>
-								</div>
-								<div>
-									<div>
-										<span>Won</span>
-										<p>300 coins</p>
-									</div>
-									<div>
-										<span>Score</span>
-										<p>3425</p>
-									</div>
-								</div>
-							</div>
-							<div className="recent-wins">
-								<div>
-									<Fortnite />
-									<div>
-										<p>Fornite</p>
-										<div>
-											<span>2345 kills</span>
-											<span>345 K/D</span>
-										</div>
-									</div>
-								</div>
-								<div>
-									<div>
-										<span>Won</span>
-										<p>300 coins</p>
-									</div>
-									<div>
-										<span>Score</span>
-										<p>3425</p>
-									</div>
-								</div>
-							</div>
+							{recentWins.map((match, index) => (
+								<RecentWin
+									key={index}
+									title={match.title}
+									svg={match.svg}
+									stats={match.stats}
+									coins={match.coins}
+									score={match.score}
+									ranked={match.ranked}
+								/>
+							))}
 						</div>
 					</div>
 				</div>
@@ -227,74 +178,17 @@ const Games = () => {
 						<h6>Last played</h6>
 					</div>
 					<div>
-						<div className="last-played">
-							<div>
-								<div>
-									<img src={CallOfDutyFull} alt="/" />
-								</div>
-								<div>
-									<p>Call of Duty</p>
-
-									<div>
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<span>+3</span>
-									</div>
-								</div>
-								<span>40 hours played</span>
-							</div>
-							<hr />
-							<div>
-								<div>
-									<span>Win %</span>
-									<p>78%</p>
-								</div>
-								<div>
-									<span>Avg.scr</span>
-									<p>58654.45</p>
-								</div>
-								<div>
-									<span>Won</span>
-									<p>3400 coins</p>
-								</div>
-							</div>
-						</div>
-						<div className="last-played">
-							<div>
-								<div>
-									<img src={CallOfDutyFull} alt="/" />
-								</div>
-								<div>
-									<p>Call of Duty</p>
-
-									<div>
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<span>+3</span>
-									</div>
-								</div>
-								<span>40 hours played</span>
-							</div>
-							<hr />
-							<div>
-								<div>
-									<span>Win %</span>
-									<p>78%</p>
-								</div>
-								<div>
-									<span>Avg.scr</span>
-									<p>58654.45</p>
-								</div>
-								<div>
-									<span>Won</span>
-									<p>3400 coins</p>
-								</div>
-							</div>
-						</div>
+						{lastPlayed.map((game, index) => (
+							<LastPlayed
+								key={index}
+								title={game.title}
+								image={game.image}
+								hours_played={game.hours_played}
+								win_percent={game.win_percent}
+								avg_score={game.avg_score}
+								won_coins={game.won_coins}
+							/>
+						))}
 					</div>
 				</div>
 
@@ -308,8 +202,20 @@ const Games = () => {
 					</div>
 
 					<div>
-						<Match />
-						<Match />
+						{matchData.map((match, index) => (
+							<Match
+								key={index}
+								title={match.title}
+								date={match.date}
+								svg={match.svg}
+								status={match.status}
+								player1={match.player1}
+								player2={match.player2}
+								// winner={match.winner}
+								// scores={match.scores}
+								mode={match.mode}
+							/>
+						))}
 					</div>
 				</div>
 			</div>
@@ -319,78 +225,19 @@ const Games = () => {
 					<h6>Last played</h6>
 				</div>
 				<Swiper spaceBetween={20} slidesPerView={1.3}>
-					<SwiperSlide>
-						<div className="last-played">
-							<div>
-								<div>
-									<img src={CallOfDutyFull} alt="/" />
-								</div>
-								<div>
-									<p>Call of Duty</p>
-
-									<div>
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<span>+3</span>
-									</div>
-								</div>
-								<span>40 hours played</span>
-							</div>
-							<hr />
-							<div>
-								<div>
-									<span>Win %</span>
-									<p>78%</p>
-								</div>
-								<div>
-									<span>Avg.scr</span>
-									<p>58654.45</p>
-								</div>
-								<div>
-									<span>Won</span>
-									<p>3400 coins</p>
-								</div>
-							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide>
-						<div className="last-played">
-							<div>
-								<div>
-									<img src={CallOfDutyFull} alt="/" />
-								</div>
-								<div>
-									<p>Call of Duty</p>
-
-									<div>
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<GamerAvatar />
-										<span>+3</span>
-									</div>
-								</div>
-								<span>40 hours played</span>
-							</div>
-							<hr />
-							<div>
-								<div>
-									<span>Win %</span>
-									<p>78%</p>
-								</div>
-								<div>
-									<span>Avg.scr</span>
-									<p>58654.45</p>
-								</div>
-								<div>
-									<span>Won</span>
-									<p>3400 coins</p>
-								</div>
-							</div>
-						</div>
-					</SwiperSlide>
+					{lastPlayed.map((game, index) => (
+						<SwiperSlide>
+							<LastPlayed
+								key={index}
+								title={game.title}
+								image={game.image}
+								hours_played={game.hours_played}
+								win_percent={game.win_percent}
+								avg_score={game.avg_score}
+								won_coins={game.won_coins}
+							/>
+						</SwiperSlide>
+					))}
 				</Swiper>
 			</div>
 
@@ -403,12 +250,22 @@ const Games = () => {
 					</Button>
 				</div>
 				<Swiper spaceBetween={20} slidesPerView={1.3}>
-					<SwiperSlide>
-						<Match />
-					</SwiperSlide>
-					<SwiperSlide>
-						<Match />
-					</SwiperSlide>
+					{matchData.map((match, index) => (
+						<SwiperSlide>
+							<Match
+								key={index}
+								title={match.title}
+								date={match.date}
+								svg={match.svg}
+								status={match.status}
+								player1={match.player1}
+								player2={match.player2}
+								// winner={match.winner}
+								// scores={match.scores}
+								mode={match.mode}
+							/>
+						</SwiperSlide>
+					))}
 				</Swiper>
 			</div>
 
@@ -510,3 +367,82 @@ const Games = () => {
 };
 
 export default Games;
+
+const matchData = [
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		svg: <Valorant />,
+		status: 'Upcoming',
+		mode: '1v1',
+		player1: {
+			id: 1,
+			name: 'Flunk god',
+			avatar: HeroAvatar,
+		},
+		player2: {
+			id: 2,
+			name: 'Flunk god',
+			avatar: HeroAvatar,
+		},
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		svg: <Valorant />,
+		status: 'Upcoming',
+		mode: '1v1',
+		player1: {
+			id: 1,
+			name: 'Flunk god',
+			avatar: HeroAvatar,
+		},
+		player2: {
+			id: 2,
+			name: 'Flunk god',
+			avatar: HeroAvatar,
+		},
+	},
+];
+
+const lastPlayed = [
+	{
+		title: 'Call of Duty',
+		image: CallOfDutyFull,
+		hours_played: '40 ',
+		win_percent: '78',
+		avg_score: '58654.45',
+		won_coins: '3400 ',
+	},
+	{
+		title: 'Cyberpunk',
+		image: CyberPunkEvent,
+		hours_played: '40 ',
+		win_percent: '78',
+		avg_score: '58654.45',
+		won_coins: '3400 ',
+	},
+];
+
+const recentWins = [
+	{
+		title: 'Fortnite',
+		svg: <Fortnite />,
+		stats: ['2345 kills', '345 K/D'],
+		coins: 300,
+		score: 3425,
+	},
+	{
+		title: 'Valorant',
+		svg: <Fortnite />,
+		stats: ['2345 kills', '1.54.2 KDA'],
+		coins: 300,
+		score: 3425,
+	},
+	{
+		title: 'Call of Duty',
+		svg: <Fortnite />,
+		stats: ['2345 kills', '345 death', '345 damage'],
+		ranked: '2nd',
+	},
+];

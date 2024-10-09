@@ -11,8 +11,7 @@ export const Container = styled.div`
 		align-items: center;
 		gap: 1rem;
 
-		div {
-			cursor: pointer;
+		.dropdown {
 			background-color: ${({ theme }) => theme.colors.accent500};
 			border-radius: 5px;
 			padding: 0.65rem 1rem;
@@ -21,6 +20,9 @@ export const Container = styled.div`
 			justify-content: space-between;
 			gap: 0.5rem;
 			width: 170px;
+			white-space: nowrap;
+			font-size: 14px;
+			line-height: 18.48px;
 		}
 
 		${maxQuery('md')} {

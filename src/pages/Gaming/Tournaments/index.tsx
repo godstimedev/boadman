@@ -2,17 +2,43 @@ import { CaretDown } from '@/assets/svgs';
 import { Container } from './styles';
 import { FeaturedTournament } from '@/components';
 import { CyberPunk } from '@/assets/images';
+import { Dropdown } from '@/ui';
 
 const Tournaments = () => {
 	return (
 		<Container>
 			<div className="dropdowns">
-				<div>
-					All tournaments <CaretDown />
-				</div>
-				<div>
-					All games <CaretDown />
-				</div>
+				<Dropdown
+					trigger={
+						<div className="dropdown">
+							All tournaments <CaretDown className="caret" />
+						</div>
+					}
+					position="bottom"
+				>
+					<div>
+						<button>All matches</button>
+						<button>Upcoming</button>
+						<button>Finished</button>
+						<button>In progress</button>
+						<button>Cancelled</button>
+					</div>
+				</Dropdown>
+				<Dropdown
+					trigger={
+						<div className="dropdown">
+							All games <CaretDown className="caret" />
+						</div>
+					}
+				>
+					<div>
+						<button>All games</button>
+						<button>Call of duty</button>
+						<button>Fortnite</button>
+						<button>Valorant</button>
+						<button>League of legends</button>
+					</div>
+				</Dropdown>
 			</div>
 
 			<div className="tournaments">

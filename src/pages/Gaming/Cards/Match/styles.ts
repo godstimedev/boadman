@@ -23,11 +23,40 @@ export const Container = styled.div`
 		line-height: 14.8px;
 	}
 
-	.badge {
-		background-color: ${({ theme }) => theme.colors.secondary500};
-		padding: 0.3rem 0.5rem;
-		border-radius: 17px;
-		height: max-content;
+	.status {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.img-con {
+			width: 12px;
+			height: 12px;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.badge {
+			background-color: ${({ theme }) => theme.colors.secondary500};
+			padding: 0.3rem 0.5rem;
+			border-radius: 17px;
+			height: max-content;
+			text-transform: capitalize;
+		}
+
+		> div {
+			display: flex;
+			align-items: center;
+			gap: 0.15rem;
+		}
+
+		.winner {
+			font-size: 10px;
+			line-height: 12px;
+			font-weight: 500;
+			color: ${({ theme }) => theme.colors.white} !important;
+		}
 	}
 
 	.icon-con {
@@ -39,8 +68,12 @@ export const Container = styled.div`
 	> div:first-child {
 		display: flex;
 		justify-content: space-between;
-		gap: 1rem;
+		gap: 0.75rem;
 		padding: 1rem 1rem 0rem 1rem;
+
+		${maxQuery('md')} {
+			padding: 0.75rem 0.75rem 0rem 0.75rem;
+		}
 
 		> div {
 			display: flex;
@@ -63,13 +96,16 @@ export const Container = styled.div`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		gap: 1rem;
+		gap: 0.75rem;
 		padding: 0rem 1rem 1rem 1rem;
+		${maxQuery('md')} {
+			padding: 0 0.75rem 0.75rem 0.75rem;
+		}
 
 		> div {
 			display: flex;
 			align-items: center;
-			gap: 1rem;
+			gap: 0.65rem;
 
 			> div {
 				display: flex;
@@ -81,6 +117,18 @@ export const Container = styled.div`
 				display: flex;
 				align-items: center;
 				gap: 0.5rem;
+
+				p {
+					color: white;
+
+					&.active {
+						color: ${({ theme }) => theme.colors.white};
+					}
+
+					&.inactive {
+						color: ${({ theme }) => theme.colors.accent200};
+					}
+				}
 			}
 
 			.img-con {
@@ -89,6 +137,24 @@ export const Container = styled.div`
 
 				img {
 					width: 100%;
+				}
+			}
+		}
+
+		.scores {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 0.25rem;
+
+			> span {
+				font-size: 1rem;
+				line-height: 21.12px;
+				font-weight: 500;
+				color: ${({ theme }) => theme.colors.accent200};
+
+				&.active {
+					color: ${({ theme }) => theme.colors.white};
 				}
 			}
 		}

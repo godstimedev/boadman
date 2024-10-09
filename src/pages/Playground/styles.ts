@@ -22,7 +22,6 @@ type FlexPropTypes = {
 export const Flex = styled.div<FlexPropTypes>`
 	display: flex;
 	gap: 1rem;
-
 	flex-direction: ${({ $direction }) => $direction || 'row'};
 	flex-wrap: ${({ $wrap }) => ($wrap ? 'wrap' : 'nowrap')};
 	align-items: ${({ $align }) => $align || 'initial'};

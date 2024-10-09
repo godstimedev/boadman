@@ -9,6 +9,7 @@ import {
 	TextArea,
 	Table,
 	FaqAccordion,
+	Dropdown,
 } from '../../ui';
 import { Container, Flex } from './styles';
 import { useNotify } from '../../hooks';
@@ -247,9 +248,86 @@ const Playground = () => {
 			<br />
 			<br />
 
+			<h3>Dropdowns</h3>
+			<br />
+			<Flex>
+				<Flex $direction="column" $align="center">
+					<Dropdown trigger={<button>Dropdown</button>} position="bottom">
+						<div>
+							<button>Item One</button>
+							<button>Item Two</button>
+							<button>Item Three</button>
+						</div>
+					</Dropdown>
+
+					<ul>
+						<li>Props</li>
+						<li>position: bottom (default) - width starts on the left and grows to the right</li>
+						<li>trigger: A button element</li>
+						<li>children: A div element with buttons containing the dropdown items</li>
+					</ul>
+				</Flex>
+				<Flex $direction="column" $align="center">
+					<Dropdown trigger={<button>Dropdown</button>} position="top">
+						<div>
+							<button>Item One</button>
+							<button>Item Two</button>
+							<button>Item Three</button>
+						</div>
+					</Dropdown>
+
+					<ul>
+						<li>Props</li>
+						<li>position: top - width starts on the left and grows to the right</li>
+						<li>trigger: A button element</li>
+						<li>children: A div element with buttons containing the dropdown items</li>
+					</ul>
+				</Flex>
+				<Flex $direction="column" $align="center">
+					<Dropdown trigger={<button>Dropdown</button>} position="topRight">
+						<div>
+							<button>Item One</button>
+							<button>Item Two</button>
+							<button>Item Three</button>
+						</div>
+					</Dropdown>
+
+					<ul>
+						<li>Props</li>
+						<li>position: topRight - width starts on the right and grows to the left</li>
+						<li>trigger: A button element</li>
+						<li>children: A div element with buttons containing the dropdown items</li>
+					</ul>
+				</Flex>
+				<Flex $direction="column" $align="center">
+					<Dropdown trigger={<button>Dropdown</button>} position="bottomRight">
+						<div>
+							<button>Item One</button>
+							<button>Item Two</button>
+							<button>Item Three</button>
+						</div>
+					</Dropdown>
+
+					<ul>
+						<li>Props</li>
+						<li>position: bottomRight - width starts on the right and grows to the left</li>
+						<li>trigger: A button element</li>
+						<li>children: A div element with buttons containing the dropdown items</li>
+					</ul>
+				</Flex>
+			</Flex>
+			<br />
+			<br />
+
+			<h3>Accordion</h3>
+			<br />
 			<div className="w-full">
-				<FaqAccordion />
+				<Flex>
+					<FaqAccordion />
+				</Flex>
 			</div>
+			<br />
+			<br />
 
 			<h3>Table</h3>
 			<br />
