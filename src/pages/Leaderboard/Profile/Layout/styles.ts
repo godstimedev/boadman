@@ -138,7 +138,7 @@ export const Container = styled.section`
 			align-items: center;
 			gap: 1rem;
 
-			div {
+			.dropdown {
 				cursor: pointer;
 				background-color: ${({ theme }) => theme.colors.accent500};
 				border-radius: 5px;
@@ -148,6 +148,9 @@ export const Container = styled.section`
 				justify-content: space-between;
 				gap: 0.5rem;
 				width: 170px;
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 18.48px;
 			}
 
 			${maxQuery('md')} {

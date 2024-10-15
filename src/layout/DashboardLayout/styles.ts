@@ -10,7 +10,7 @@ export const Container = styled.div`
 	}
 	main {
 		flex: 1;
-		padding: 1rem 1.5rem;
+		padding: 1rem 2rem;
 
 		${maxQuery('md')} {
 			padding: 1rem 1rem;

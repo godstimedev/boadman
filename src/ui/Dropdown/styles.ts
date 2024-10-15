@@ -28,12 +28,15 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 		position: absolute;
 		width: 100%;
 		min-width: max-content;
+		height: max-content;
+		max-height: 190px;
 		display: flex;
 		gap: 0.5rem;
 		pointer-events: none;
 		background-color: ${({ theme }) => theme.colors.accent500};
 		border: 1px solid ${({ theme }) => theme.colors.accent100};
 		border-radius: 5px;
+		overflow-y: auto;
 
 		${({ $position }) =>
 			$position === 'bottom' &&
@@ -100,5 +103,30 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 				}
 			}
 		}
+
+		/* WebKit browsers (Chrome, Safari, Edge) */
+		::-webkit-scrollbar {
+			width: 1px; /* Make the scrollbar slimmer */
+		}
+
+		::-webkit-scrollbar-track {
+			background: transparent; /* The background of the scrollbar track */
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: #22252c; /* The color of the scrollbar thumb */
+			border-radius: 5px; /* Rounded corners */
+			border: 2px solid #e3e5e9; /* Adds space around the thumb */
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background-color: #22252c; /* Color when hovering over the thumb */
+		}
+
+		/* Firefox */
+		scrollbar-width: thin; /* Makes the scrollbar slimmer */
+		/* /* scrollbar-color: #22252c #e3e5e9;  */
+		scrollbar-color: ${({ theme }) => theme.colors.accent100} transparent; /* Thumb color and track color */
+		scrollbar-arrow-color: #22252c; /* Arrow color */
 	}
 `;

@@ -17,19 +17,18 @@ export const Container = styled.section`
 	.wrapper {
 		background-color: ${({ theme }) => theme.colors.secondary500};
 		border-radius: 10px;
+		width: 546px;
 
-		padding: 4rem;
 		${maxQuery('md')} {
-			padding: 1.5rem;
+			width: 100%;
+			max-width: 546px;
 		}
 
 		.content {
-			width: 546px;
+			padding: 4rem;
 			text-align: center;
-
 			${maxQuery('md')} {
-				width: 100%;
-				max-width: 546px;
+				padding: 1.5rem;
 			}
 
 			> div {

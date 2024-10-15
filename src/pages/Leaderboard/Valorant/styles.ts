@@ -11,16 +11,28 @@ export const Container = styled.div`
 		background-color: ${({ theme }) => theme.colors.accent500};
 		border-radius: 5px 5px 0 0;
 
+		${maxQuery('sm')} {
+			flex-direction: column;
+			align-items: normal;
+			gap: 1rem;
+		}
+
 		h6 {
 			font-size: 20px;
 			line-height: 26.4px;
 			font-weight: 400;
+			text-align: left;
 		}
 
 		button {
 			display: flex;
 			align-items: center;
 			gap: 0.5rem;
+
+			${maxQuery('sm')} {
+				text-align: right;
+				align-self: flex-end;
+			}
 
 			span {
 				font-size: 14px;
@@ -45,13 +57,14 @@ export const Container = styled.div`
 			justify-content: space-between;
 		}
 
-		> div {
+		.dropdown {
 			background-color: ${({ theme }) => theme.colors.secondary500};
 			display: flex;
 			align-items: center;
 			gap: 1.2rem;
 			padding: 0.5rem 1rem;
 			font-size: 14.64px;
+			white-space: nowrap;
 
 			${maxQuery('md')} {
 				font-size: 10px;

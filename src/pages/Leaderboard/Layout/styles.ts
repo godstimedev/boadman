@@ -1,4 +1,5 @@
 import { StyledInputContainer } from '@/ui/InputGroup/styles';
+import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -13,8 +14,18 @@ export const Container = styled.section`
 		/* margin-top: 2rem;
         margin-bottom: 1rem; */
 
+		${maxQuery('sm')} {
+			flex-direction: column;
+			align-items: normal;
+			gap: 1rem;
+		}
+
 		> .input {
 			width: max-content;
+
+			${maxQuery('sm')} {
+				align-self: flex-end;
+			}
 
 			${StyledInputContainer} {
 				width: 16rem;
@@ -71,6 +82,11 @@ export const Container = styled.section`
 			/* border-right: 6px solid ${({ theme }) => theme.colors.secondary500};
 			border-left: 6px solid ${({ theme }) => theme.colors.secondary500}; */
 			border: 4px solid #171a23;
+
+			svg {
+				transform: scale(1.35);
+				transition: transform 0.3s ease-out;
+			}
 		}
 	}
 `;

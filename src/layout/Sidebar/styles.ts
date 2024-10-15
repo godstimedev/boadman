@@ -40,6 +40,10 @@ export const Aside = styled.aside`
 	.logo {
 		margin-bottom: 2rem;
 		padding: 0 1rem;
+
+		svg {
+			width: 120px;
+		}
 	}
 
 	nav {
@@ -57,15 +61,11 @@ export const Aside = styled.aside`
 
 	a.active li {
 		background-color: ${({ theme }) => theme.colors.secondary500};
-		svg {
-			fill: ${({ theme }) => theme.colors.primary50} !important;
-		}
 
 		span {
-			display: none;
-		}
-		span.active {
-			display: flex;
+			svg path {
+				fill: ${({ theme }) => theme.colors.primary500} !important;
+			}
 		}
 	}
 	a:hover li {

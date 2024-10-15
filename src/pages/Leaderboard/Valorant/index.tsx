@@ -1,6 +1,6 @@
 import { CaretDown, Crown, TierRadiant } from '@/assets/svgs';
 import { Container } from './styles';
-import { Table } from '@/ui';
+import { Dropdown, Table } from '@/ui';
 import { Agent1, AvatarTable } from '@/assets/images';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
@@ -343,18 +343,55 @@ const Valorant = () => {
 				</button>
 			</div>
 			<div className="action-bar">
-				<div>
-					<p>Region</p>
-					<CaretDown />
-				</div>
-				<div>
-					<p>Country</p>
-					<CaretDown />
-				</div>
-				<div>
-					<p>Episode 7</p>
-					<CaretDown />
-				</div>
+				<Dropdown
+					trigger={
+						<div className="dropdown">
+							Region <CaretDown className="caret" />
+						</div>
+					}
+				>
+					<div>
+						<button>Global</button>
+						<button>North america</button>
+						<button>Europe</button>
+						<button>Brazil</button>
+					</div>
+				</Dropdown>
+
+				<Dropdown
+					trigger={
+						<div className="dropdown">
+							Country <CaretDown className="caret" />
+						</div>
+					}
+				>
+					<div>
+						<button>United states</button>
+						<button>Bolivia</button>
+						<button>Columbia</button>
+						<button>Kenya</button>
+						<button>Columbia</button>
+					</div>
+				</Dropdown>
+				<Dropdown
+					position="bottomRight"
+					trigger={
+						<div className="dropdown">
+							Episode 7- act 3 <CaretDown className="caret" />
+						</div>
+					}
+				>
+					<div>
+						<button>Episode 8 - act 2</button>
+						<button>Episode 8 - act 1</button>
+						<button>Episode 7 - act 3</button>
+						<button>Episode 7 - act 2</button>
+						<button>Episode 7 - act 1</button>
+						<button>Episode 7 - act 1</button>
+						<button>Episode 7 - act 1</button>
+						<button>Episode 7 - act 1</button>
+					</div>
+				</Dropdown>
 			</div>
 			<Table
 				maxPage={3}

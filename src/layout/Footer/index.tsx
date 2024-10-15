@@ -9,7 +9,6 @@ const Footer = () => {
 		<Container>
 			<div className="top">
 				<div className="space-y-5">
-					{/* <img src={Boadman} alt="Boadman Logo" /> */}
 					<BoadmanLogo />
 					<p className="lg:pr-8 leading-6">
 						We are a one-of-a-kind platform, where everyone plays, enjoys themselves and most importantly,
@@ -55,12 +54,22 @@ const Footer = () => {
 				<div className="space-y-3">
 					<h6 className="text-[1.5rem]">We're Online</h6>
 					<p className="leading-6">Follow us for updates, events and ways to earn.</p>
-					<div className="flex items-center gap-4 pt-4">
-						<X />
-						<Linkedin />
-						<Instagram />
-						<TikTok />
-						<YouTube />
+					<div className="flex items-center gap-4 pt-4 socials">
+						<Link to={'/'}>
+							<X />
+						</Link>
+						<Link to={'/'}>
+							<Linkedin />
+						</Link>
+						<Link to={'/'}>
+							<Instagram />
+						</Link>
+						<Link to={'/'}>
+							<TikTok />
+						</Link>
+						<Link to={'/'}>
+							<YouTube />
+						</Link>
 					</div>
 				</div>
 			</div>

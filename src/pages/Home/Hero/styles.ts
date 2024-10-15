@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { maxQuery, minQuery } from '../../../utilities';
 
 export const Container = styled.section`
-	padding: 11rem 1.5rem 0rem 1.5rem;
+	padding: 0rem 1.5rem 0rem 1.5rem;
+	min-height: calc(90vh);
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -11,8 +12,6 @@ export const Container = styled.section`
 	text-align: center;
 	overflow-x: hidden;
 
-	h1 {
-	}
 	h1 > span {
 		${({ theme }) => theme.fonts.secondaryFont};
 
@@ -21,9 +20,8 @@ export const Container = styled.section`
 
 	.gamer-card {
 		background: ${({ theme }) => theme.colors.accent500};
-
 		position: relative;
-		z-index: -10;
+		z-index: 10;
 		display: flex;
 		gap: 1rem;
 		align-items: center;
@@ -32,12 +30,11 @@ export const Container = styled.section`
 		border-image-source: linear-gradient(180deg, #ff5733 -45.22%, rgba(239, 202, 188, 0.1) 27.78%);
 		border-image-slice: 1; /* This tells the browser to use the entire gradient */
 
-		/* lg:w-[950px] lg:h-[290px] max-md:py-5 max-md:pr-2  sm:pl-[1rem] sm:pr-[5rem] */
-		padding: 0.5rem 5rem 0.5rem 1rem;
+		padding: 1.2rem 8rem 1.2rem 1rem;
 
 		${minQuery('lg')} {
-			width: 950px;
-			height: 290px;
+			width: 940px;
+			/* height: 290px; */
 		}
 
 		${maxQuery('md')} {
@@ -60,26 +57,38 @@ export const Container = styled.section`
 			}
 		}
 
-		.bottom-dets {
-			/* flex flex-wrap max-lg:justify-between lg:gap-6 text-start */
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-			align-items: center;
-			place-content: center;
-			gap: 1rem;
-
-			${maxQuery('lg')} {
-				grid-template-columns: 1fr 1fr;
-				gap: 0.5rem;
-			}
-		}
-
 		.gamer-info {
-			/* flex: 1; */
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+			width: 100%;
 
-			h6 {
+			${maxQuery('md')} {
+				gap: 0.35rem;
+			}
+
+			span {
+				font-size: 14.01px;
+				line-height: 14.13px;
+				font-weight: 400;
+				color: ${({ theme }) => theme.colors.accent200};
+
 				${maxQuery('sm')} {
-					font-size: 11.96px;
+					font-size: 6.64px;
+					font-weight: 400;
+					line-height: 7.97px;
+				}
+			}
+
+			p {
+				font-size: 16.34px;
+				font-weight: 500;
+				line-height: 22.32px;
+
+				${maxQuery('sm')} {
+					font-size: 9.27px;
+					font-weight: 500;
+					line-height: 11.13px;
 				}
 			}
 
@@ -87,24 +96,89 @@ export const Container = styled.section`
 				border: 1.17px solid #313337;
 			}
 
-			svg {
-				height: 2rem;
-				width: 2rem;
+			> div:first-child {
+				/* className="flex justify-between items-center" */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 
-				${maxQuery('md')} {
-					height: 1rem;
-					width: 1rem;
+				> div {
+					/* className="flex flex-col items-start max-md:gap-1" */
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+
+					${maxQuery('md')} {
+						gap: 0.25rem;
+					}
+
+					> div {
+						/* className="flex items-center md:gap-1" */
+						display: flex;
+						align-items: center;
+						gap: 0.25rem;
+
+						h6 {
+							font-size: 21.01px;
+							line-height: 28.7px;
+							white-space: nowrap;
+
+							${maxQuery('sm')} {
+								font-size: 9.96px;
+								font-weight: 500;
+								line-height: 11.95px;
+							}
+						}
+					}
 				}
 			}
 
-			.stacked-avatar {
-				/* position: relative; */
+			> div:nth-child(2) {
+				/* className="flex max-lg:flex-col gap-3 lg:gap-8" */
+				display: flex;
+				flex-direction: row;
+				gap: 2rem;
 
-				> svg {
-					width: 25px;
-					height: 25px;
-					margin-right: -0.9rem;
+				${maxQuery('lg')} {
+					flex-direction: column;
+					gap: 1rem;
 				}
+
+				svg {
+					height: 2rem;
+					width: 2rem;
+
+					${maxQuery('md')} {
+						height: 1rem;
+						width: 1rem;
+					}
+				}
+
+				.stacked-avatar {
+					/* position: relative; */
+					/* flex items-center  */
+					display: flex;
+					align-items: center;
+
+					> svg {
+						width: 25px;
+						height: 25px;
+						margin-right: -0.75rem;
+					}
+				}
+			}
+		}
+
+		.bottom-dets {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+			margin-top: 0.5rem;
+
+			${maxQuery('lg')} {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0.5rem;
 			}
 		}
 
@@ -115,23 +189,24 @@ export const Container = styled.section`
 
 			${maxQuery('xl')} {
 				position: absolute;
-				bottom: -18%;
+				bottom: -38%;
 				right: -6%;
 			}
 			${maxQuery('lg')} {
 				position: absolute;
 				bottom: -10%;
 				right: -2%;
+				width: 80px;
 			}
 
 			${maxQuery('md')} {
 				position: absolute;
-				bottom: -15%;
+				bottom: -18%;
 				right: -4%;
 			}
 			${maxQuery('sm')} {
 				position: absolute;
-				bottom: -25%;
+				bottom: -22%;
 				right: -8%;
 			}
 		}

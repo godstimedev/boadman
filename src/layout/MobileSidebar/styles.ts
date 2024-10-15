@@ -41,7 +41,7 @@ export const Aside = styled.aside`
 			flex-direction: column;
 			overflow: auto;
 
-			.logo {
+			.logo-con {
 				margin-bottom: 1.5rem;
 				padding: 0 1rem 1.5rem 1rem;
 				display: flex;
@@ -49,19 +49,25 @@ export const Aside = styled.aside`
 				align-items: center;
 
 				border-bottom: 1px solid #313337;
+
+				/* > svg {
+					width: 140px;
+
+					rect {
+						fill: ${({ theme }) => theme.colors.white};
+					}
+				} */
 			}
 
 			a.active li {
 				background-color: ${({ theme }) => theme.colors.secondary500};
-				svg {
-					fill: ${({ theme }) => theme.colors.primary50} !important;
-				}
 
-				span {
-					display: none;
-				}
-				span.active {
-					display: flex;
+				> span {
+					svg {
+						path {
+							fill: ${({ theme }) => theme.colors.primary500} !important;
+						}
+					}
 				}
 			}
 			a:hover li {
@@ -78,9 +84,9 @@ export const Aside = styled.aside`
 				gap: 0.75rem;
 			}
 
-			span.active {
+			/* span.active {
 				display: none;
-			}
+			} */
 		}
 
 		.bottom {
@@ -117,10 +123,10 @@ export const Aside = styled.aside`
 
 					.dot {
 						position: absolute;
-						z-index: 30;
-						top: 7px;
-						right: 7px;
-						padding: 2.25rem;
+						z-index: 10;
+						top: 0px;
+						right: 0px;
+						padding: 0.2rem;
 						background-color: ${({ theme }) => theme.colors.error500};
 						border-radius: 50%;
 					}

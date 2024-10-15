@@ -25,10 +25,6 @@ export const Container = styled.section`
 	.game-card-container {
 		position: relative;
 		overflow: hidden;
-
-		/* > .react-multi-carousel-list .react-multi-carousel-track {
-		
-		} */
 	}
 
 	.game-card-container::before {
@@ -55,6 +51,7 @@ export const Container = styled.section`
 		height: 87px;
 		background-color: #1b1e25;
 		border-radius: 100%;
+		z-index: 10;
 
 		${maxQuery('xl')} {
 			display: none;
@@ -67,19 +64,18 @@ export const Container = styled.section`
 		align-items: center;
 		justify-content: center;
 		padding: 0.5rem;
-		width: 317px;
+		max-width: 317px;
+		width: 100%;
 		height: 402px;
 
 		${maxQuery('md')} {
 			width: 237px;
 			height: 300px;
-			margin-left: 5.5rem; /* gives center effect on mobile*/
 		}
 	}
 
 	.game-card {
 		position: relative;
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.76%, rgba(0, 0, 0, 0.7) 80.81%);
 		width: 100%;
 		height: 100%;
 		padding: 1rem;
@@ -87,7 +83,6 @@ export const Container = styled.section`
 		flex-direction: column;
 		justify-content: flex-end;
 		text-align: left;
-		opacity: 20%;
 
 		> img {
 			position: absolute;
@@ -139,33 +134,45 @@ export const Container = styled.section`
 					gap: 0.5rem;
 				}
 			}
-
-			transform: translateY(500%);
-			transition: transform 0.3s ease-in-out;
 		}
-		${maxQuery('md')} {
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.76%, rgba(0, 0, 0, 0.7) 80.81%);
-			opacity: 100%;
-			> .game-card-content {
-				transform: translateY(0);
-				transition: transform 0.3s ease-in-out;
+	}
+
+	.swiper-slide-active {
+		.game-card-wrapper {
+			border-left: 1px solid white;
+			border-right: 1px solid white;
+
+			${maxQuery('xl')} {
+				border: 1px solid white;
+			}
+
+			.game-card {
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.76%, rgba(0, 0, 0, 0.7) 80.81%);
+				opacity: 100%;
+				> .game-card-content {
+					transform: translateY(0);
+					transition: transform 0.3s ease-in-out;
+				}
+
+				.game-card-content {
+					opacity: 1;
+					transform: translateY(0);
+					transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+				}
 			}
 		}
 	}
 
-	.game-card-wrapper:hover {
+	/* Optional: Style for non-active slides */
+	.swiper-slide {
 		cursor: grab;
-		border-left: 1px solid white;
-		border-right: 1px solid white;
 
-		${maxQuery('xl')} {
-			border: 1px solid white;
-		}
+		.game-card {
+			opacity: 20%;
 
-		> .game-card {
-			opacity: 100%;
-			> .game-card-content {
-				transform: translateY(0);
+			.game-card-content {
+				opacity: 0;
+				transform: translateY(500%);
 				transition: transform 0.3s ease-in-out;
 			}
 		}

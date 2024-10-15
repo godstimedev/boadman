@@ -47,8 +47,10 @@ const GlobalStyles = createGlobalStyle`
       letter-spacing: 0.02em;
    }
    .display1 {
-      font-size: 4.5rem;
-      line-height: 120%;
+      /* font-size: 4.5rem;
+      line-height: 120%; */
+      font-size: 76px;
+      line-height: 88px;
 
       @media screen and (max-width: 720px) {
          font-size: 3.75rem ;

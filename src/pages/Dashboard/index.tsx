@@ -368,12 +368,7 @@ const Dashboard = () => {
 						</Button>
 					</div>
 
-					<Swiper
-						spaceBetween={20}
-						slidesPerView={1.3}
-						// onSlideChange={() => console.log('slide change')}
-						// onSwiper={(swiper) => console.log(swiper)}
-					>
+					<Swiper spaceBetween={20} slidesPerView={1.3}>
 						<div className="left-con">
 							{trendingGamesList.map((game, index) => (
 								<SwiperSlide>
@@ -401,8 +396,38 @@ const Dashboard = () => {
 					<Swiper
 						spaceBetween={11.5}
 						slidesPerView={1.3}
-						// onSlideChange={() => console.log('slide change')}
-						// onSwiper={(swiper) => console.log(swiper)}
+						breakpoints={{
+							// When the screen width is 280px or larger
+							280: {
+								slidesPerView: 1.2,
+								spaceBetween: 20,
+							},
+							// When the screen width is 390px or larger
+							390: {
+								slidesPerView: 1.3,
+								spaceBetween: 5,
+							},
+							// When the screen width is 440px or larger
+							440: {
+								slidesPerView: 1.5,
+								spaceBetween: 5,
+							},
+							// When the screen width is 550px or larger
+							610: {
+								slidesPerView: 2.1,
+								spaceBetween: 10,
+							},
+							// When the screen width is 768px or larger (e.g., tablets)
+							768: {
+								slidesPerView: 2.3,
+								spaceBetween: 20,
+							},
+							// When the screen width is 1000px or larger (e.g., desktop)
+							1000: {
+								slidesPerView: 1.3,
+								spaceBetween: 20,
+							},
+						}}
 					>
 						<div className="right-con">
 							{featuredTournamentsList.map((tournament, index) => (
@@ -458,10 +483,46 @@ const Dashboard = () => {
 					</div>
 
 					<Swiper
-						spaceBetween={20}
 						slidesPerView={1.3}
-						// onSlideChange={() => console.log('slide change')}
-						// onSwiper={(swiper) => console.log(swiper)}
+						spaceBetween={20}
+						// loop={true}
+						// autoplay={{
+						// 	delay: 2500, // Time in milliseconds (2.5 seconds)
+						// 	disableOnInteraction: false, // Autoplay continues even after user interaction
+						// }}
+						// modules={[Autoplay]}
+						breakpoints={{
+							// When the screen width is 280px or larger
+							280: {
+								slidesPerView: 1.3,
+								spaceBetween: 10,
+							},
+							// When the screen width is 390px or larger
+							390: {
+								slidesPerView: 1.4,
+								spaceBetween: 5,
+							},
+							// When the screen width is 440px or larger
+							440: {
+								slidesPerView: 1.6,
+								spaceBetween: 5,
+							},
+							// When the screen width is 550px or larger
+							550: {
+								slidesPerView: 2.1,
+								spaceBetween: 10,
+							},
+							// When the screen width is 768px or larger (e.g., tablets)
+							768: {
+								slidesPerView: 2.3,
+								spaceBetween: 20,
+							},
+							// When the screen width is 1000px or larger (e.g., desktop)
+							1000: {
+								slidesPerView: 1.3,
+								spaceBetween: 20,
+							},
+						}}
 					>
 						<div className="con-3-list">
 							{featuredStreamsList.map((stream, index) => (

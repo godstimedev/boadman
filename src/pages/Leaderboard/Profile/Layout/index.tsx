@@ -1,6 +1,6 @@
 import { DashboardHeader } from '@/components';
 import { Container } from './styles';
-import { Button } from '@/ui';
+import { Button, Dropdown } from '@/ui';
 import { NavLink, Outlet } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
 import { HeroAvatar } from '../../../../assets/images';
@@ -64,12 +64,35 @@ const Profile = () => {
 				</ul>
 
 				<div className="filter-con">
-					<div>
-						All queues <CaretDown />
-					</div>
-					<div>
-						All acts <CaretDown />
-					</div>
+					<Dropdown
+						trigger={
+							<div className="dropdown">
+								All queues <CaretDown className="caret" />
+							</div>
+						}
+					>
+						<div>
+							<button>Deathmatch</button>
+							<button>Swiftplay</button>
+							<button>Premier</button>
+							<button>New map</button>
+						</div>
+					</Dropdown>
+					<Dropdown
+						trigger={
+							<div className="dropdown">
+								All acts <CaretDown className="caret" />
+							</div>
+						}
+						position="bottomRight"
+					>
+						<div>
+							<button>Episode 9 - Act 2</button>
+							<button>Episode 9 - Act 1</button>
+							<button>Episode 8 - Act 4</button>
+							<button>Episode 8 - Act 3</button>
+						</div>
+					</Dropdown>
 				</div>
 
 				<Outlet />

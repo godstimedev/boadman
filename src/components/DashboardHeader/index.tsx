@@ -1,7 +1,6 @@
 import { Button, InputGroup } from '@/ui';
 import { Container } from './styles';
 import {
-	BoadmanLogo,
 	CaretDown,
 	Chat,
 	Gift,
@@ -13,8 +12,9 @@ import {
 import { GeneralChangeEventType } from '@/types';
 import { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { JoelHenderson } from '@/assets/images';
+import { BoadmanLogo, JoelHenderson } from '@/assets/images';
 import { MobileSidebar } from '@/layout';
+import { APP_ROUTES } from '@/constants';
 
 const DashboardHeader = () => {
 	const [formData, setFormData] = useState({
@@ -46,9 +46,10 @@ const DashboardHeader = () => {
 					/>
 				</div>
 
-				<div className="logo">
-					<BoadmanLogo />
-				</div>
+				<Link to={APP_ROUTES.dashboard} className="logo">
+					{/* <BoadmanLogo /> */}
+					<img src={BoadmanLogo} alt="Boadman" />
+				</Link>
 			</div>
 
 			<MobileSidebar nav={nav} setNav={setNav} />

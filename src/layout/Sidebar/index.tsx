@@ -1,7 +1,6 @@
 import {
 	BoadmanLogo,
 	Dashboard,
-	DashboardActive,
 	Faqs,
 	Friends,
 	Gaming,
@@ -21,17 +20,16 @@ import { Link, NavLink } from 'react-router-dom';
 const Sidebar = () => {
 	return (
 		<Aside>
-			<div className="logo">
+			<Link to={APP_ROUTES.dashboard} className="logo" title="Boadman">
 				<BoadmanLogo />
-			</div>
+			</Link>
 
 			<nav>
 				<div>
 					<ul>
 						{navList.list1.map((list) => (
-							<NavLink key={list.name} to={list.link}>
+							<NavLink key={list.name} to={list.link} title={list.name}>
 								<li>
-									<span className="active">{list.svg.active}</span>
 									<span>{list.svg.default}</span>
 									{list.name}
 								</li>
@@ -43,9 +41,8 @@ const Sidebar = () => {
 
 					<ul>
 						{navList.list2.map((list) => (
-							<NavLink key={list.name} to={list.link}>
+							<NavLink key={list.name} to={list.link} title={list.name}>
 								<li>
-									<span className="active">{list.svg.active}</span>
 									<span>{list.svg.default}</span>
 									{list.name}
 								</li>
@@ -57,9 +54,8 @@ const Sidebar = () => {
 
 					<ul>
 						{navList.list3.map((list) => (
-							<NavLink key={list.name} to={list.link}>
+							<NavLink key={list.name} to={list.link} title={list.name}>
 								<li>
-									<span className="active">{list.svg.active}</span>
 									<span>{list.svg.default}</span>
 									{list.name}
 								</li>
@@ -71,9 +67,8 @@ const Sidebar = () => {
 
 					<ul>
 						{navList.list4.map((list) => (
-							<NavLink key={list.name} to={list.link}>
+							<NavLink key={list.name} to={list.link} title={list.name}>
 								<li>
-									<span className="active">{list.svg.active}</span>
 									<span>{list.svg.default}</span>
 									{list.name}
 								</li>
@@ -86,7 +81,7 @@ const Sidebar = () => {
 					<hr />
 
 					<ul>
-						<Link to={APP_ROUTES.login}>
+						<Link to={APP_ROUTES.login} title={'Logout'}>
 							<li>
 								{' '}
 								<Logout /> Logout
@@ -108,7 +103,6 @@ const navList = {
 			link: APP_ROUTES.dashboard,
 			svg: {
 				default: <Dashboard />,
-				active: <DashboardActive />,
 			},
 		},
 		{
@@ -116,7 +110,6 @@ const navList = {
 			link: APP_ROUTES.leaderboard.initial,
 			svg: {
 				default: <Leaderboard />,
-				active: <DashboardActive />,
 			},
 		},
 		{
@@ -124,7 +117,6 @@ const navList = {
 			link: APP_ROUTES.gaming.initial,
 			svg: {
 				default: <Gaming />,
-				active: <DashboardActive />,
 			},
 		},
 		{
@@ -132,7 +124,6 @@ const navList = {
 			link: APP_ROUTES.tournaments,
 			svg: {
 				default: <Tournaments />,
-				active: <DashboardActive />,
 			},
 		},
 	],
@@ -142,7 +133,6 @@ const navList = {
 			link: APP_ROUTES.teams,
 			svg: {
 				default: <Teams />,
-				active: <DashboardActive />,
 			},
 		},
 		{
@@ -150,7 +140,6 @@ const navList = {
 			link: APP_ROUTES.friends,
 			svg: {
 				default: <Friends />,
-				active: <DashboardActive />,
 			},
 		},
 		{
@@ -158,7 +147,6 @@ const navList = {
 			link: APP_ROUTES.stream,
 			svg: {
 				default: <Stream />,
-				active: <DashboardActive />,
 			},
 		},
 		{
@@ -166,7 +154,6 @@ const navList = {
 			link: APP_ROUTES.wallet,
 			svg: {
 				default: <Wallet />,
-				active: <DashboardActive />,
 			},
 		},
 	],
@@ -176,7 +163,6 @@ const navList = {
 			link: APP_ROUTES.profile,
 			svg: {
 				default: <Profile />,
-				active: <DashboardActive />,
 			},
 		},
 		{
@@ -184,7 +170,6 @@ const navList = {
 			link: APP_ROUTES.settings,
 			svg: {
 				default: <Settings />,
-				active: <DashboardActive />,
 			},
 		},
 	],
@@ -194,7 +179,6 @@ const navList = {
 			link: APP_ROUTES.faqs,
 			svg: {
 				default: <Faqs />,
-				active: <DashboardActive />,
 			},
 		},
 	],

@@ -7,12 +7,15 @@ export const Container = styled.section`
 	gap: 2rem;
 
 	.con-1-wrapper {
-		display: flex;
-		align-items: center;
+		display: grid;
+		grid-template-columns: 4.5fr 2.5fr;
+		/* display: flex;
+		align-items: center; */
 		gap: 1rem;
 		height: 280px;
 
 		${maxQuery('xl')} {
+			display: flex;
 			flex-direction: column;
 			gap: 1rem;
 			height: max-content;
@@ -43,7 +46,7 @@ export const Container = styled.section`
 		padding: 1rem 1.5rem 1.5rem 0rem;
 		border-radius: 5px;
 		height: 100%;
-		width: 750px;
+		/* width: 750px; */
 
 		${maxQuery('xl')} {
 			width: 100%;

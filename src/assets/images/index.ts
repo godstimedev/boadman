@@ -9,6 +9,7 @@ export { default as AvatarTable } from './AvatarTable.png';
 export { default as Banner1 } from './Banner1.png';
 export { default as Banner1Mobile } from './Banner1Mobile.png';
 export { default as Boadman } from './Boadman.png';
+export { default as BoadmanLogo } from './BoadmanLogo.png';
 export { default as BombAchievement } from './BombAchievement.png';
 export { default as CallOfDuty } from './CallOfDuty.png';
 export { default as CallOfDutyFull } from './CallOfDutyFull.png';

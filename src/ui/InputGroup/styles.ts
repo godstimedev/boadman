@@ -169,6 +169,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		}
 		.input-icon {
 			position: relative;
+			/* border: 1px solid red; */
 		}
 
 		.input-icon > svg {

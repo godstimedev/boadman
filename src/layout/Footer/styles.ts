@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { maxQuery } from '../../utilities';
 
 export const Container = styled.footer`
-	padding: 6rem 4rem;
+	padding: 6rem 4rem 2rem 4rem;
 	max-width: 1440px;
 	margin: 0 auto;
 
@@ -25,8 +25,23 @@ export const Container = styled.footer`
 			gap: 2rem;
 		}
 
-		svg {
-			color: ${({ theme }) => theme.colors.primary500} !important;
+		/* svg {
+			fill: ${({ theme }) => theme.colors.primary500} !important;
+			rect {
+				fill: ${({ theme }) => theme.colors.primary500} !important;
+			}
+		} */
+
+		.socials {
+			svg {
+				&:hover {
+					path {
+						fill: ${({ theme }) => theme.colors.primary500} !important;
+						color: white;
+					}
+					scale: 1.2;
+				}
+			}
 		}
 
 		li > a {

@@ -19,11 +19,18 @@ export const Container = styled.header`
 			}
 		}
 
-		> .logo {
+		> a {
 			display: none;
+
 			${maxQuery('lg')} {
 				display: block;
 			}
+
+			/* svg {
+				> rect {
+					fill: ${({ theme }) => theme.colors.white};
+				}
+			} */
 		}
 	}
 
@@ -84,11 +91,6 @@ export const Container = styled.header`
 			display: flex;
 			align-items: center;
 			gap: 1.5rem;
-		}
-
-		button {
-			> svg rect {
-			}
 		}
 	}
 `;

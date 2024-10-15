@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+// import { Bracket, RoundProps } from 'react-brackets';
 import {
 	Button,
 	InputGroup,
@@ -23,12 +24,14 @@ import {
 	formValidator,
 } from '../../utilities';
 import { GeneralChangeEventType } from '../../types';
+import DateTime from '@/ui/InputGroup/DateTime';
 
 const Playground = () => {
 	const notify = useNotify();
 
 	const [formData, setFormData] = useState({
 		search: '',
+		date_time: null as Date | null,
 		phone_number: '',
 		company_website: '',
 		startup_stage: '',
@@ -54,6 +57,10 @@ const Playground = () => {
 		favorite_color_again: '',
 		other_favorite_color_again: '',
 	});
+
+	const handleDateChange = (date: Date | null) => {
+		setFormData((prev) => ({ ...prev, date_time: date }));
+	};
 
 	const handleChange: GeneralChangeEventType = (event, name, value) => {
 		name = event?.target.name || name || '';
@@ -150,6 +157,8 @@ const Playground = () => {
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
+		console.log(formData);
+
 		if (
 			!formValidator([
 				...event.currentTarget.querySelectorAll('input'),
@@ -158,6 +167,34 @@ const Playground = () => {
 		)
 			return;
 	};
+
+	// const rounds: RoundProps[] = [
+	// 	{
+	// 		title: 'Round one',
+	// 		seeds: [
+	// 			{
+	// 				id: 1,
+	// 				date: new Date().toDateString(),
+	// 				teams: [{ name: 'Team A' }, { name: 'Team B' }],
+	// 			},
+	// 			{
+	// 				id: 2,
+	// 				date: new Date().toDateString(),
+	// 				teams: [{ name: 'Team C' }, { name: 'Team D' }],
+	// 			},
+	// 		],
+	// 	},
+	// 	{
+	// 		title: 'Round one',
+	// 		seeds: [
+	// 			{
+	// 				id: 3,
+	// 				date: new Date().toDateString(),
+	// 				teams: [{ name: 'Team A' }, { name: 'Team C' }],
+	// 			},
+	// 		],
+	// 	},
+	// ];
 
 	return (
 		<Container>
@@ -245,9 +282,15 @@ const Playground = () => {
 					</ul>
 				</Flex>
 			</Flex>
+			{/* <br />
+			<br />
+			<h3>Brackets</h3>
+			<br />
+			<Flex>
+				<Bracket rounds={rounds} />
+			</Flex> */}
 			<br />
 			<br />
-
 			<h3>Dropdowns</h3>
 			<br />
 			<Flex>
@@ -318,7 +361,22 @@ const Playground = () => {
 			</Flex>
 			<br />
 			<br />
-
+			<br />
+			<br />
+			<h3>DateTime Picker</h3>
+			<br />
+			<Flex>
+				<Flex $align="center">
+					<DateTime
+						name="date_time"
+						placeholder="Date Time"
+						value={formData.date_time}
+						onChange={handleDateChange}
+					/>
+				</Flex>
+			</Flex>
+			<br />
+			<br />
 			<h3>Accordion</h3>
 			<br />
 			<div className="w-full">
@@ -328,7 +386,6 @@ const Playground = () => {
 			</div>
 			<br />
 			<br />
-
 			<h3>Table</h3>
 			<br />
 			<p style={{ maxWidth: '60%', margin: '0 auto 2rem' }}>
@@ -356,7 +413,6 @@ const Playground = () => {
 			</Flex>
 			<br />
 			<br />
-
 			<Flex>
 				<Table
 					maxPage={4}
@@ -378,7 +434,6 @@ const Playground = () => {
 			</Flex>
 			<br />
 			<br />
-
 			<Flex>
 				<Table
 					maxPage={5}
@@ -398,10 +453,10 @@ const Playground = () => {
 					<li>tableNumber: 3</li>
 				</ul>
 			</Flex>
-
 			{/* InputGroup */}
 			<form onSubmit={handleSubmit} noValidate>
 				<h3>InputGroup</h3>
+
 				<br />
 				<Flex>
 					<div>
@@ -715,7 +770,6 @@ const Playground = () => {
 				<br />
 				<br />
 			</form>
-
 			{/* CodeGroup */}
 			<form onSubmit={handleSubmit} noValidate>
 				<h3>CodeGroup</h3>
@@ -771,7 +825,6 @@ const Playground = () => {
 				<br />
 				<br />
 			</form>
-
 			{/* Select */}
 			<form onSubmit={handleSubmit} noValidate>
 				<h3>Select</h3>
@@ -1017,7 +1070,6 @@ const Playground = () => {
 				<br />
 				<br />
 			</form>
-
 			{/* TextArea */}
 			<form onSubmit={handleSubmit} noValidate>
 				<h3>TextArea</h3>
@@ -1054,7 +1106,6 @@ const Playground = () => {
 			</form>
 			<br />
 			<br />
-
 			<h3>Loader</h3>
 			<br />
 			<Flex>
@@ -1078,7 +1129,6 @@ const Playground = () => {
 			</Flex>
 			<br />
 			<br />
-
 			<h1>Hooks</h1>
 			<h3>useNotify</h3>
 			<p>Click button to view effect</p>

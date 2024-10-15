@@ -1,9 +1,7 @@
 import {
-	BoadmanLogo,
 	CaretDown,
 	Chat,
 	Dashboard,
-	DashboardActive,
 	Faqs,
 	Friends,
 	Gaming,
@@ -21,10 +19,10 @@ import {
 } from '@/assets/svgs';
 import { Aside } from './styles';
 import { APP_ROUTES } from '@/constants';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { ReactElement, useEffect, useRef } from 'react';
 
-import { JoelHenderson } from '@/assets/images';
+import { BoadmanLogo, JoelHenderson } from '@/assets/images';
 
 interface MobileSidebarProps {
 	nav: boolean;
@@ -53,8 +51,11 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ nav, setNav }) => {
 		<Aside>
 			<div className={nav ? 'show' : 'close'}>
 				<div ref={navRef} className="menu-con">
-					<div className="logo">
-						<BoadmanLogo />
+					<div className="logo-con">
+						<Link to={APP_ROUTES.dashboard} title="Boadman">
+							{/* <BoadmanLogo /> */}
+							<img src={BoadmanLogo} alt="Boadman" />
+						</Link>
 
 						<button onClick={() => setNav(false)}>
 							<NavClose />
@@ -64,9 +65,8 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ nav, setNav }) => {
 					<div>
 						<ul>
 							{navList.map((list) => (
-								<NavLink key={list.name} to={list.link}>
+								<NavLink key={list.name} to={list.link} title={list.name}>
 									<li>
-										<span className="active">{list.svg.active}</span>
 										<span>{list.svg.default}</span>
 										{list.name}
 									</li>
@@ -108,7 +108,6 @@ const navList = [
 		link: APP_ROUTES.dashboard,
 		svg: {
 			default: <Dashboard />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -116,7 +115,6 @@ const navList = [
 		link: APP_ROUTES.leaderboard.initial,
 		svg: {
 			default: <Leaderboard />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -124,7 +122,6 @@ const navList = [
 		link: APP_ROUTES.gaming.initial,
 		svg: {
 			default: <Gaming />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -132,7 +129,6 @@ const navList = [
 		link: APP_ROUTES.tournaments,
 		svg: {
 			default: <Tournaments />,
-			active: <DashboardActive />,
 		},
 	},
 
@@ -141,7 +137,6 @@ const navList = [
 		link: APP_ROUTES.teams,
 		svg: {
 			default: <Teams />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -149,7 +144,6 @@ const navList = [
 		link: APP_ROUTES.friends,
 		svg: {
 			default: <Friends />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -157,7 +151,6 @@ const navList = [
 		link: APP_ROUTES.stream,
 		svg: {
 			default: <Stream />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -165,7 +158,6 @@ const navList = [
 		link: APP_ROUTES.wallet,
 		svg: {
 			default: <Wallet />,
-			active: <DashboardActive />,
 		},
 	},
 
@@ -174,7 +166,6 @@ const navList = [
 		link: APP_ROUTES.profile,
 		svg: {
 			default: <Profile />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -182,7 +173,6 @@ const navList = [
 		link: APP_ROUTES.settings,
 		svg: {
 			default: <Settings />,
-			active: <DashboardActive />,
 		},
 	},
 
@@ -191,7 +181,6 @@ const navList = [
 		link: APP_ROUTES.faqs,
 		svg: {
 			default: <Faqs />,
-			active: <DashboardActive />,
 		},
 	},
 	{
@@ -199,7 +188,6 @@ const navList = [
 		link: APP_ROUTES.login,
 		svg: {
 			default: <Logout />,
-			active: <DashboardActive />,
 		},
 	},
 ];

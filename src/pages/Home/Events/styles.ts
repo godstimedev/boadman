@@ -1,8 +1,12 @@
-import { maxQuery, minQuery } from '@/utilities';
+import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
-	padding: 4rem 0rem;
+	padding: 2rem 0rem 4rem 0rem;
+
+	${maxQuery('md')} {
+		padding: 1rem 0rem 2rem 0rem;
+	}
 
 	.heading {
 		text-align: center;
@@ -11,7 +15,8 @@ export const Container = styled.section`
 	}
 
 	.event-card-wrapper {
-		width: 677px;
+		max-width: 677px;
+		width: 100%;
 		height: 427px;
 		padding: 0.8rem;
 		border-radius: 1rem;
@@ -19,38 +24,30 @@ export const Container = styled.section`
 		border-image-source: linear-gradient(180deg, #ff5733 -45.22%, rgba(239, 202, 188, 0.1) 27.78%);
 		border-image-slice: 1; /* This tells the browser to use the entire gradient */
 		background-clip: padding-box;
-		scale: 0.85;
-		transition: scale 0.3s ease-in-out;
 
-		${minQuery('xl')} {
-			margin-left: 23rem;
-			/* gives center effect on mobile*/
+		${maxQuery('xl')} {
+			height: 355px;
+			padding: 0.4rem;
 		}
-
+		${maxQuery('lg')} {
+			height: 255px;
+			padding: 0.4rem;
+		}
 		${maxQuery('md')} {
-			width: 285px;
 			height: 195px;
 			padding: 0.4rem;
-			/* margin: 0 8rem; */
-			scale: 1;
-			margin-left: 4.15rem;
-			/* gives center effect on mobile*/
-		}
-		${maxQuery('360px')} {
-			width: 285px;
-			height: 195px;
-			padding: 0.4rem;
-			/* margin: 0 8rem; */
-			scale: 1;
-			margin-left: 2rem;
-			/* gives center effect on mobile*/
 		}
 	}
 
-	.event-card-wrapper:hover {
-		scale: 1;
-		transition: scale 0.3s ease-in-out;
+	.swiper-slide-active {
+		transform: scale(1) !important;
+		transition: transform 0.3s ease !important;
+	}
+
+	.swiper-slide {
 		cursor: grab;
+		transform: scale(0.8);
+		transition: transform 0.3s ease;
 	}
 
 	.event-card {
@@ -90,12 +87,15 @@ export const Container = styled.section`
 
 					padding: 0.5rem 0.8rem;
 					border-radius: 1rem;
-					font-size: 12px;
+					font-size: 12.33px;
+					font-weight: 400;
+					line-height: 14.79px;
 
 					${maxQuery('md')} {
 						padding: 0.3rem 0.5rem;
 						border-radius: 1rem;
 						font-size: 5.66px;
+						line-height: 6.79px;
 					}
 				}
 			}
@@ -108,13 +108,13 @@ export const Container = styled.section`
 				padding-bottom: 1rem;
 
 				h5 {
-					${maxQuery('md')} {
+					${maxQuery('lg')} {
 						font-size: 18.1px;
 						line-height: 23.89px;
 					}
 				}
 
-				${maxQuery('md')} {
+				${maxQuery('lg')} {
 					gap: 0.2rem;
 					padding-bottom: 0.2rem;
 				}
@@ -124,7 +124,7 @@ export const Container = styled.section`
 					align-items: center;
 					gap: 2rem;
 
-					${maxQuery('md')} {
+					${maxQuery('lg')} {
 						gap: 1.5rem;
 					}
 
@@ -137,7 +137,7 @@ export const Container = styled.section`
 							font-size: 12.33px;
 							line-height: 16.27px;
 
-							${maxQuery('md')} {
+							${maxQuery('lg')} {
 								font-size: 5.66px;
 								line-height: 7.47px;
 							}
@@ -147,7 +147,7 @@ export const Container = styled.section`
 							line-height: 19.53px;
 							font-weight: 500;
 
-							${maxQuery('md')} {
+							${maxQuery('lg')} {
 								font-size: 6.79px;
 								line-height: 8.96px;
 							}

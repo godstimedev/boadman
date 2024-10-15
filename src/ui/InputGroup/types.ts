@@ -103,3 +103,14 @@ export type CodeGroupPropType = {
 	value: string[];
 	numberOfInputBox?: number;
 } & React.ComponentProps<'input'>;
+
+// DateTime
+export type DateTimePropType = {
+	required?: boolean;
+	name: string;
+	label?: string;
+	customLabel?: React.ReactNode;
+	onChange: (value: Date | null) => void; // Now accepts Date | null directly
+	placeholder?: string;
+	value: Date | null;
+};

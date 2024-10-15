@@ -1,4 +1,4 @@
-import { maxQuery, minQuery } from '@/utilities';
+import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -6,7 +6,7 @@ export const Container = styled.section`
 
 	h2 {
 		text-align: center;
-		margin-bottom: 1rem;
+		margin-bottom: 2rem;
 
 		${maxQuery('md')} {
 			margin-bottom: 4rem;
@@ -14,25 +14,21 @@ export const Container = styled.section`
 	}
 
 	.card-wrapper {
-		width: 480px;
+		max-width: 709px;
+		width: 100%;
 		height: 580px;
+	}
 
-		${minQuery('xl')} {
-			margin-left: 27rem;
-			/* gives center effect on mobile*/
-		}
+	.swiper-slide-active {
+		transform: scale(1) !important; /* Scale the active slide to make it larger */
+		transition: transform 0.3s ease !important; /* Smooth transition */
+	}
 
-		${maxQuery('md')} {
-			width: 280px;
-			height: 450px;
-			margin-left: 1.2rem;
-		}
-
-		${maxQuery('360px')} {
-			width: 280px;
-			height: 450px;
-			margin-left: 0rem;
-		}
+	/* Optional: Style for non-active slides */
+	.swiper-slide {
+		cursor: grab;
+		transform: scale(0.8);
+		transition: transform 0.3s ease;
 	}
 
 	.card {
@@ -48,15 +44,6 @@ export const Container = styled.section`
 		padding: 1rem;
 		border-radius: 1rem;
 		text-align: center;
-		transform: scale(0.8);
-		transition: transform 0.3s ease-in-out;
-
-		${maxQuery('md')} {
-			transform: scale(1);
-			padding: 2rem 1rem;
-			margin-left: 3rem;
-			padding: 1rem !important;
-		}
 
 		img {
 			max-width: 260px;
@@ -72,11 +59,5 @@ export const Container = styled.section`
 			align-items: center;
 			gap: 1rem;
 		}
-	}
-
-	.card:hover {
-		transform: scale(1);
-		transition: transform 0.3s ease-in-out;
-		cursor: grab;
 	}
 `;

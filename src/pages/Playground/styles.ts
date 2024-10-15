@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	padding: 1rem 4rem;
+	background-color: ${({ theme }) => theme.colors.accent100};
 
 	> h1,
 	> h3,
