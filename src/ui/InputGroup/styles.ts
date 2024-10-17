@@ -4,6 +4,10 @@ import { StyledInputContainerPropType } from './types';
 export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	width: 100%;
 
+	.date-input {
+		width: 20rem;
+	}
+
 	&.success {
 		.info-con {
 			color: ${({ theme }) => theme.colors.success500};
@@ -49,6 +53,24 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 
 		span {
 			color: ${({ theme }) => theme.colors.error500};
+		}
+	}
+
+	.date-group {
+		.date-input {
+			position: relative;
+			/* border: 1px solid red; */
+		}
+
+		.date-input > div {
+			position: absolute;
+			z-index: 10000;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			padding-left: 1rem;
+			margin-right: 1rem;
+			border-left: 1px solid ${({ theme }) => theme.colors.accent100};
 		}
 	}
 

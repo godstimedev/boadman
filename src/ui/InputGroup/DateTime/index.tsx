@@ -4,6 +4,7 @@ import { StyledInputContainer } from '../styles';
 import { DateTimePropType } from '../types';
 import { InputDateTime, InputInfo } from '@/assets/svgs';
 import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const DateTime = (props: DateTimePropType) => {
 	const { name, value, customLabel, onChange, required, label, placeholder } = props;
@@ -32,24 +33,27 @@ const DateTime = (props: DateTimePropType) => {
 				</label>
 			)}
 
-			<div className="input-group">
+			<div className="date-group">
 				<DatePicker
+					className=""
 					selected={value}
 					onChange={handleDateChange}
 					showTimeSelect
 					dateFormat="MMMM d, yyyy h:mm aa"
 					customInput={
-						<div className="input-icon">
+						<div className="date-input">
 							<input
 								name={name}
 								ref={inputRef}
 								required={required}
-								value={value?.toLocaleDateString()}
+								value={value?.toLocaleString()}
 								placeholder={placeholder}
 								readOnly
 							/>
 
-							<InputDateTime />
+							<div>
+								<InputDateTime />
+							</div>
 						</div>
 					}
 				/>

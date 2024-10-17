@@ -1,6 +1,7 @@
 import { Button, Dropdown } from '@/ui';
 import { Container } from './styles';
-import { CaretDown } from '@/assets/svgs';
+import { CaretDown, Valorant } from '@/assets/svgs';
+import { Agent1 } from '@/assets/images';
 
 const Challenges = () => {
 	return (
@@ -66,44 +67,151 @@ const Challenges = () => {
 				<table>
 					<tbody>
 						<tr>
-							<td>aaa</td>
-							<td>baaaa</td>
-							<td>caa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caa</td>
+							<td>
+								<div>
+									<span>
+										<Valorant />
+									</span>
+									<div>
+										<p>Loner epic</p>
+										<span>WED, JUN 21, 18:30 CST</span>
+									</div>
+								</div>
+							</td>
+							<td>
+								<span className="badge">Upcoming</span>
+							</td>
+							<td>
+								<div>
+									<span>Challenger</span>{' '}
+									<div>
+										<div>
+											<img src={Agent1} alt="/" />
+										</div>{' '}
+										<p>Flunk_god</p>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div>
+									<span>Mode</span>
+									<p>1v1</p>
+								</div>
+							</td>
+							<td>
+								<div>
+									<span>Prize</span>
+									<p>300 coins</p>
+								</div>
+							</td>
+							<td>
+								<div>
+									<div>
+										<Button variant="text">Accept</Button>
+									</div>
+									<div>
+										<Button variant="text">Decline</Button>
+									</div>
+								</div>
+							</td>
 						</tr>
 						<tr>
-							<td>aaa</td>
-							<td>baaaa</td>
-							<td>caa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caa</td>
+							<td>
+								<div>
+									<span>
+										<Valorant />
+									</span>
+									<div>
+										<p>Loner epic</p>
+										<span>WED, JUN 21, 18:30 CST</span>
+									</div>
+								</div>
+							</td>
+							<td>
+								<span className="badge">Upcoming</span>
+							</td>
+							<td>
+								<div>
+									<span>Challenger</span>{' '}
+									<div>
+										<div>
+											<img src={Agent1} alt="/" />
+										</div>{' '}
+										<p>Flunk_god</p>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div>
+									<span>Mode</span>
+									<p>1v1</p>
+								</div>
+							</td>
+							<td>
+								<div>
+									<span>Prize</span>
+									<p>300 coins</p>
+								</div>
+							</td>
+							<td>
+								<div>
+									<div>
+										<Button variant="text">Accept</Button>
+									</div>
+									<div>
+										<Button variant="text">Decline</Button>
+									</div>
+								</div>
+							</td>
 						</tr>
 						<tr>
-							<td>aaa</td>
-							<td>baaaa</td>
-							<td>caa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caa</td>
-						</tr>
-						<tr>
-							<td>aaa</td>
-							<td>baaaa</td>
-							<td>caa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caaa</td>
-							<td>caa</td>
+							<td>
+								<div>
+									<span>
+										<Valorant />
+									</span>
+									<div>
+										<p>Loner epic</p>
+										<span>WED, JUN 21, 18:30 CST</span>
+									</div>
+								</div>
+							</td>
+							<td>
+								<span className="badge">Upcoming</span>
+							</td>
+							<td>
+								<div>
+									<span>Challenger</span>{' '}
+									<div>
+										<div>
+											<img src={Agent1} alt="/" />
+										</div>{' '}
+										<p>Flunk_god</p>
+									</div>
+								</div>
+							</td>
+							<td>
+								<div>
+									<span>Mode</span>
+									<p>1v1</p>
+								</div>
+							</td>
+							<td>
+								<div>
+									<span>Prize</span>
+									<p>300 coins</p>
+								</div>
+							</td>
+							<td>
+								<div>
+									<div>
+										<Button variant="text">Accept</Button>
+									</div>
+									<div>
+										<Button variant="text">Decline</Button>
+									</div>
+								</div>
+							</td>
 						</tr>
 					</tbody>
 				</table>

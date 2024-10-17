@@ -22,7 +22,10 @@ export { default as LeaderboardProfileOverview } from './Leaderboard/Profile/Ove
 export { default as Tournaments } from './Tournaments';
 export { default as Teams } from './Teams';
 export { default as Friends } from './Friends';
-export { default as Stream } from './Stream';
+export { default as Matches } from './Matches';
+export { default as MatchView } from './Matches/View/Layout';
+export { default as MatchOverview } from './Matches/View/Overview';
+export { default as MatchSummary } from './Matches/View/Summary';
 export { default as Wallet } from './Wallet';
 export { default as Profile } from './Profile';
 export { default as Settings } from './Settings';

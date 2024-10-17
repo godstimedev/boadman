@@ -1,7 +1,12 @@
+import { StyledButton } from '@/ui/Button/styles';
 import { maxQuery, minQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
 	.head {
 		display: flex;
 		justify-content: space-between;
@@ -71,25 +76,106 @@ export const Container = styled.div`
 			margin-bottom: 1rem;
 			display: flex;
 			justify-content: space-between;
-		}
-		td {
-			/* display: block; */
+			align-items: center;
+			border-radius: 5px;
+
+			td {
+				width: max-content;
+				white-space: nowrap;
+				padding: 1rem;
+
+				span {
+					font-size: 10px;
+					line-height: 13.2px;
+					color: ${({ theme }) => theme.colors.accent200};
+				}
+
+				.badge {
+					padding: 0.5rem 0.75rem;
+					border-radius: 17px;
+					border: 1px solid #3498db;
+				}
+
+				p {
+					font-size: 12px;
+					line-height: 14.4px;
+					font-weight: 500;
+				}
+			}
 		}
 
 		tr {
 			background-color: ${({ theme }) => theme.colors.accent500};
 
 			td:first-child {
-				border-radius: 5px 0 0 5px;
-				border-right: 1px solid ${({ theme }) => theme.colors.accent700};
+				/* border-right: 1px solid ${({ theme }) => theme.colors.accent700}; */
+
+				> div {
+					display: flex;
+					align-items: center;
+					gap: 0.75rem;
+
+					> span {
+						background-color: ${({ theme }) => theme.colors.accent100};
+						padding: 0.5rem;
+						border-radius: 100%;
+					}
+
+					> div {
+						> p {
+							font-size: 14px;
+							line-height: 18.48px;
+							font-weight: 500;
+						}
+					}
+				}
 			}
 			td:last-child {
-				border-radius: 0 5px 5px 0;
+				div {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+
+					> div:last-child {
+						${StyledButton} {
+							color: white;
+							&:hover {
+								color: ${({ theme }) => theme.colors.primary700};
+								/* color: red; */
+							}
+							&:focus {
+								color: ${({ theme }) => theme.colors.primary200};
+							}
+						}
+					}
+				}
 			}
 
-			td {
-				padding: 1rem;
-				width: 5rem;
+			td:nth-child(3),
+			td:nth-child(4),
+			td:nth-child(5) {
+				> div {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 0.5rem;
+
+					> div {
+						display: flex;
+						align-items: center;
+						gap: 0.5rem;
+
+						> div {
+							width: 12px;
+							height: 12px;
+							img {
+								width: 100%;
+								height: 100%;
+								border-radius: 100%;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

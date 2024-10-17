@@ -43,7 +43,7 @@ export const Aside = styled.aside`
 
 			.logo-con {
 				margin-bottom: 1.5rem;
-				padding: 0 1rem 1.5rem 1rem;
+				padding: 0 1rem 1rem 1rem;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -57,6 +57,12 @@ export const Aside = styled.aside`
 						fill: ${({ theme }) => theme.colors.white};
 					}
 				} */
+
+				img {
+					height: 40px;
+					width: 100%;
+					object-fit: cover;
+				}
 			}
 
 			a.active li {

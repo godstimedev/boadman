@@ -1,108 +1,127 @@
-import { CaretDown, Valorant } from '@/assets/svgs';
+import { DashboardHeader, Match } from '@/components';
 import { Container } from './styles';
-import { Dropdown } from '@/ui';
+import { Button, Dropdown, InputGroup } from '@/ui';
 import { HeroAvatar } from '@/assets/images';
-import { Match } from '@/components';
+import { CaretDown, Valorant } from '@/assets/svgs';
+import { Link } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
+import { useState } from 'react';
+import { GeneralChangeEventType } from '@/types';
 
 const Matches = () => {
+	const [filter, setFilter] = useState('all');
+	const [formData, setFormData] = useState({
+		search: '',
+	});
+
+	const handleChange: GeneralChangeEventType = (event, name, value) => {
+		name = event?.target.name || name || '';
+		value = event?.target.value ?? value ?? '';
+
+		setFormData((prev) => ({ ...prev, [name]: value }));
+	};
+
 	return (
 		<Container>
-			<div>
-				<div className="dropdowns ">
-					<Dropdown
-						trigger={
-							<div className="dropdown">
-								All matches <CaretDown className="caret" />
-							</div>
-						}
-					>
-						<div>
-							<button>All matches</button>
-							<button>Upcoming</button>
-							<button>Finished</button>
-							<button>In progress</button>
-							<button>Cancelled</button>
-						</div>
-					</Dropdown>
-					<Dropdown
-						trigger={
-							<div className="dropdown">
-								All games <CaretDown className="caret" />
-							</div>
-						}
-					>
-						<div>
-							<button>All games</button>
-							<button>Call of duty</button>
-							<button>Apex legends</button>
-							<button>Fortnite</button>
-							<button>Valorant</button>
-						</div>
-					</Dropdown>
-					<Dropdown
-						position="bottomRight"
-						trigger={
-							<div className="dropdown">
-								My games <CaretDown className="caret" />
-							</div>
-						}
-					>
-						<div>
-							<button>My games</button>
-							<button>Joined games</button>
-						</div>
-					</Dropdown>
-					<div className="filter">
+			<DashboardHeader />
+			<div className="head">
+				<div>
+					<h6>Matches</h6>
+
+					<Button variant="primary" size="large">
+						Create game
+					</Button>
+				</div>
+
+				<div className="filter-box">
+					<div>
 						<Dropdown
-							position="bottomRight"
 							trigger={
-								<div className="flex items-center gap-4 ">
-									Filter <CaretDown className="caret" />
+								<div className="dropdown">
+									All matches <CaretDown className="caret" />
 								</div>
 							}
 						>
 							<div>
+								<button>All matches</button>
 								<button>Upcoming</button>
 								<button>Finished</button>
+								<button>In progress</button>
+								<button>Cancelled</button>
 							</div>
 						</Dropdown>
 					</div>
-				</div>
 
-				<div className="filter-mobile">
-					<div>
-						<Dropdown
-							position="bottomRight"
-							trigger={
-								<div className="flex items-center gap-4 ">
-									Filter <CaretDown className="caret" />
-								</div>
-							}
+					<div className="filter-buttons">
+						<button className={filter === 'all' ? 'active' : ''} onClick={() => setFilter('all')}>
+							All
+						</button>
+						<button
+							className={filter === 'in-progress' ? 'active' : ''}
+							onClick={() => setFilter('in-progress')}
 						>
-							<div>
-								<button>Upcoming</button>
-								<button>Finished</button>
-							</div>
-						</Dropdown>
+							In Progess
+						</button>
+						<button
+							className={filter === 'upcomming' ? 'active' : ''}
+							onClick={() => setFilter('upcomming')}
+						>
+							Upcoming
+						</button>
+						<button
+							className={filter === 'finished' ? 'active' : ''}
+							onClick={() => setFilter('finished')}
+						>
+							Finished
+						</button>
+					</div>
+
+					<div>
+						<InputGroup
+							type="search"
+							name="search"
+							placeholder="Search game"
+							autoComplete="off"
+							value={formData.search}
+							onChange={handleChange}
+						/>
+
+						<div className="filter">
+							<Dropdown
+								position="bottomRight"
+								trigger={
+									<div className="flex items-center gap-4 ">
+										Filter <CaretDown className="caret" />
+									</div>
+								}
+							>
+								<div>
+									<button>Upcoming</button>
+									<button>Finished</button>
+								</div>
+							</Dropdown>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<div className="matches">
 				{matchData.map((match, index) => (
-					<Match
-						key={index}
-						title={match.title}
-						date={match.date}
-						time={match.time}
-						svg={match.svg}
-						status={match.status}
-						player1={match.player1}
-						player2={match.player2}
-						winner={match.winner}
-						scores={match.scores}
-						mode={match.mode}
-					/>
+					<Link to={APP_ROUTES.matches.use_overview(index.toString())}>
+						<Match
+							key={index}
+							title={match.title}
+							date={match.date}
+							time={match.time}
+							svg={match.svg}
+							status={match.status}
+							player1={match.player1}
+							player2={match.player2}
+							winner={match.winner}
+							scores={match.scores}
+							mode={match.mode}
+						/>
+					</Link>
 				))}
 			</div>
 		</Container>

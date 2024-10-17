@@ -147,8 +147,8 @@ const navList = [
 		},
 	},
 	{
-		name: 'Stream',
-		link: APP_ROUTES.stream,
+		name: 'Matches',
+		link: APP_ROUTES.matches.initial,
 		svg: {
 			default: <Stream />,
 		},

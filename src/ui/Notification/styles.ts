@@ -6,7 +6,7 @@ type MajorContainerProps = {
 };
 
 export const MajorContainer = styled.div<MajorContainerProps>`
-	background-color: ${({ theme }) => theme.colors.primary500};
+	background-color: #ff573321;
 
 	${({ $status, theme }) =>
 		$status === 'success' &&
@@ -20,8 +20,9 @@ export const MajorContainer = styled.div<MajorContainerProps>`
 		`}
 
 	width: max-content;
-	max-width: 80vw;
 	padding: 1.25rem 4rem 1.25rem 3rem;
+	max-width: 80vw;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -60,4 +61,42 @@ export const MinorContainer = styled.p`
 	background-color: ${({ theme }) => theme.colors.black};
 
 	padding: 0.75rem 2rem;
+`;
+
+export const TextContainer = styled.div`
+	background-color: #ff573321;
+	width: 100%;
+	padding: 0.85rem 1rem;
+
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	border-radius: 8px;
+
+	${maxQuery('lg')} {
+		align-items: start;
+	}
+
+	svg {
+		flex-shrink: 0;
+
+		${maxQuery('md')} {
+			width: 1rem;
+			height: 1rem;
+			margin-top: 0.15rem;
+		}
+	}
+
+	p {
+		color: ${({ theme }) => theme.colors.accent200};
+		font-size: 14px;
+		line-height: 18.48px;
+		font-weight: 400;
+
+		${maxQuery('md')} {
+			font-size: 12px;
+			font-weight: 400;
+			line-height: 18px;
+		}
+	}
 `;

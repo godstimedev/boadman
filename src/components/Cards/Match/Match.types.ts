@@ -2,6 +2,7 @@ export type MatchProps = {
 	key: number;
 	title: string;
 	date: string;
+	time?: string;
 	svg: React.ReactNode;
 	status: string;
 	winner?: number;

@@ -15,7 +15,6 @@ import {
 	Tournaments,
 	Teams,
 	Friends,
-	Stream,
 	Wallet,
 	Settings,
 	Faqs,
@@ -30,6 +29,10 @@ import {
 	GamingChallenges,
 	GamingTournaments,
 	GamingMatches,
+	Matches,
+	MatchView,
+	MatchOverview,
+	MatchSummary,
 } from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
@@ -92,7 +95,12 @@ function App() {
 						<Route path={APP_ROUTES.tournaments} element={<Tournaments />} />
 						<Route path={APP_ROUTES.teams} element={<Teams />} />
 						<Route path={APP_ROUTES.friends} element={<Friends />} />
-						<Route path={APP_ROUTES.stream} element={<Stream />} />
+						<Route path={APP_ROUTES.matches.initial} element={<Matches />} />
+						<Route element={<MatchView />}>
+							<Route path={APP_ROUTES.matches.view} element={<MatchView />} />
+							<Route path={APP_ROUTES.matches.overview} element={<MatchOverview />} />
+							<Route path={APP_ROUTES.matches.summary} element={<MatchSummary />} />
+						</Route>
 						<Route path={APP_ROUTES.wallet} element={<Wallet />} />
 						<Route path={APP_ROUTES.profile} element={<Profile />} />
 						<Route path={APP_ROUTES.settings} element={<Settings />} />

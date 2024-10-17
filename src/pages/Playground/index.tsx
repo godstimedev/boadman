@@ -11,6 +11,7 @@ import {
 	Table,
 	FaqAccordion,
 	Dropdown,
+	Accordion,
 } from '../../ui';
 import { Container, Flex } from './styles';
 import { useNotify } from '../../hooks';
@@ -379,6 +380,30 @@ const Playground = () => {
 			<br />
 			<h3>Accordion</h3>
 			<br />
+			<div className="w-full">
+				<Flex $direction="column">
+					<Accordion
+						items={[
+							{
+								title: 'item trigger',
+								content: 'item content',
+							},
+							{
+								title: 'item trigger',
+								content: 'item content',
+							},
+							{
+								title: 'item trigger',
+								content: 'item content',
+							},
+							{
+								title: 'item trigger',
+								content: 'item content',
+							},
+						]}
+					/>
+				</Flex>
+			</div>
 			<div className="w-full">
 				<Flex>
 					<FaqAccordion />

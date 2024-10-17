@@ -2,7 +2,7 @@ export type Variant = 'primary' | 'subtle' | 'secondary' | 'outline' | 'text';
 
 export type Size = 'large' | 'medium' | 'small';
 
-export type Outline = 'primary' | 'secondary';
+export type Outline = 'primary' | 'secondary' | 'tetiary';
 
 export type ButtonProps = {
 	variant?: Variant;

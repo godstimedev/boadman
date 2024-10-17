@@ -28,7 +28,7 @@ export const Container = styled.header`
 
 		.mobile-nav {
 			background-color: ${({ theme }) => theme.colors.secondary500};
-			top: 99px;
+			top: 90px;
 			padding: 4rem 0;
 			width: 100%;
 			height: 100%;

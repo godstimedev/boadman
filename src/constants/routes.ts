@@ -23,6 +23,15 @@ export const APP_ROUTES = {
 	},
 	home: '/',
 	login: '/login',
+	matches: {
+		initial: '/match',
+		view: `/match/:id/`,
+		use_view: (id: string) => `/match/${id}/`,
+		overview: `/match/:id/overview`,
+		use_overview: (id: string) => `/match/${id}/overview`,
+		summary: `/match/:id/summary`,
+		use_summary: (id: string) => `/match/${id}/summary`,
+	},
 	playground: '/playground',
 	playerProfile: {
 		initial: '/player-profile/',
@@ -34,7 +43,7 @@ export const APP_ROUTES = {
 	profile: '/profile',
 	register: '/register',
 	settings: '/settings',
-	stream: '/stream',
+
 	teams: '/teams',
 	tournaments: '/tournaments',
 	wallet: '/wallet',

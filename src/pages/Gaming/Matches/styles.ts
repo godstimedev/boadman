@@ -16,6 +16,9 @@ export const Container = styled.div`
 			align-items: center;
 			justify-content: space-between;
 			gap: 0.5rem;
+
+			background-color: ${({ theme }) => theme.colors.accent100};
+			padding: 0.75rem 0.65rem;
 		}
 
 		.dropdown {
@@ -49,14 +52,16 @@ export const Container = styled.div`
 				display: none;
 			}
 		}
+	}
+	.filter-mobile {
+		display: none;
 
-		.filter-mobile {
-			display: none;
+		${maxQuery('md')} {
+			display: flex;
+			margin-top: 0.75rem;
 
-			${maxQuery('md')} {
+			> div {
 				margin-left: auto;
-				display: inline-block;
-				/* width: max-content; */
 			}
 		}
 	}
