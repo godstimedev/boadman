@@ -35,7 +35,7 @@ const DateTime = (props: DateTimePropType) => {
 
 			<div className="date-group">
 				<DatePicker
-					className=""
+					className="date-picker"
 					selected={value}
 					onChange={handleDateChange}
 					showTimeSelect

@@ -2,7 +2,7 @@ export type CreateChallenge = {
 	game: string;
 	game_type: string;
 	game_name: string;
-	date_time: string;
+	date_time: null | Date;
 	wager_amount: string;
 	player: string;
 	time_limit: string;

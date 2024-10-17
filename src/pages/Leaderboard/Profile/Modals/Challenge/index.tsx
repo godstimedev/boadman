@@ -3,11 +3,13 @@ import { useState } from 'react';
 import FormOne from './Forms/FormOne';
 import FormTwo from './Forms/FormTwo';
 import { CreateChallenge, GeneralChangeEventType } from '@/types';
+import { Container } from './styles';
 
 export type FormType = {
 	formData: CreateChallenge;
 	handleChange: GeneralChangeEventType;
 	setStage: React.Dispatch<React.SetStateAction<number>>;
+	setFormData: React.Dispatch<React.SetStateAction<CreateChallenge>>;
 };
 
 type PropsType = {
@@ -23,7 +25,7 @@ const Challenge = (props: PropsType) => {
 		game: '',
 		game_type: '',
 		game_name: '',
-		date_time: '',
+		date_time: null,
 		wager_amount: '',
 		player: '',
 		time_limit: '',
@@ -44,11 +46,23 @@ const Challenge = (props: PropsType) => {
 
 	return (
 		<Modal isModalOpen={createChallenge} setIsModalOpen={setCreateChallenge}>
-			{stage === 1 ? (
-				<FormOne formData={formData} handleChange={handleChange} setStage={setStage} />
-			) : stage === 2 ? (
-				<FormTwo formData={formData} handleChange={handleChange} setStage={setStage} />
-			) : null}
+			<Container>
+				{stage === 1 ? (
+					<FormOne
+						formData={formData}
+						setFormData={setFormData}
+						handleChange={handleChange}
+						setStage={setStage}
+					/>
+				) : stage === 2 ? (
+					<FormTwo
+						formData={formData}
+						handleChange={handleChange}
+						setFormData={setFormData}
+						setStage={setStage}
+					/>
+				) : null}
+			</Container>
 		</Modal>
 	);
 };

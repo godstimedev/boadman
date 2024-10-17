@@ -19,19 +19,24 @@ export const Container = styled.section`
 		}
 
 		.filter-box {
-			padding: 0.5rem;
+			padding: 0.75rem;
 			background-color: ${({ theme }) => theme.colors.accent500};
 			display: flex;
 			align-items: center;
 			gap: 1.5rem;
 
-			${maxQuery('lg')} {
+			${maxQuery('xl')} {
 				flex-direction: column;
 			}
 
 			> div:first-child {
 				padding-right: 1.5rem;
 				border-right: 1px solid ${({ theme }) => theme.colors.accent100};
+
+				${maxQuery('xl')} {
+					padding-right: 0;
+					border-right: none;
+				}
 
 				.dropdown {
 					background-color: ${({ theme }) => theme.colors.secondary500};
@@ -52,6 +57,11 @@ export const Container = styled.section`
 				display: flex;
 				align-items: center;
 				gap: 1rem;
+
+				${maxQuery('md')} {
+					justify-content: center;
+					flex-wrap: wrap;
+				}
 
 				button {
 					padding: 0.75rem 1rem;
@@ -76,6 +86,11 @@ export const Container = styled.section`
 				padding-left: 1.5rem;
 				border-left: 1px solid ${({ theme }) => theme.colors.accent100};
 
+				${maxQuery('xl')} {
+					padding-left: 0;
+					border-left: none;
+				}
+
 				${StyledInputContainer} {
 					width: 150px;
 					input {
@@ -96,6 +111,10 @@ export const Container = styled.section`
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		gap: 1rem;
+
+		> a {
+			width: 100%;
+		}
 
 		${maxQuery('xl')} {
 			grid-template-columns: 1fr 1fr 1fr;

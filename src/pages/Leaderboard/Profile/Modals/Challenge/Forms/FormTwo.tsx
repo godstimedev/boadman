@@ -1,15 +1,14 @@
 import { Button, InputGroup, Select } from '@/ui';
-import { Container } from '../styles';
 import { FormType } from '..';
 
 const FormTwo = (props: FormType) => {
 	const { formData, handleChange } = props;
 
 	const handleSubmit = () => {
-		console.log(formData);
+		// console.log(formData);
 	};
 	return (
-		<Container>
+		<div>
 			<div>
 				<h6>Set Challenge rules</h6>
 				<span>Set the rules for your challenge against flunk_god</span>
@@ -70,7 +69,7 @@ const FormTwo = (props: FormType) => {
 					Make challenge
 				</Button>
 			</div>
-		</Container>
+		</div>
 	);
 };
 

@@ -1,12 +1,11 @@
-import { Button, InputGroup, Select } from '@/ui';
-import { Container } from '../styles';
+import { Button, DateTime, InputGroup, Select } from '@/ui';
 import { FormType } from '..';
 import { GAMES } from '@/constants';
 
 const FormOne = (props: FormType) => {
-	const { formData, handleChange, setStage } = props;
+	const { formData, handleChange, setFormData, setStage } = props;
 	return (
-		<Container>
+		<div>
 			<div>
 				<h6>Create Challenge</h6>
 				<span>Challenge</span>
@@ -34,12 +33,12 @@ const FormOne = (props: FormType) => {
 					value={formData.game_name}
 					onChange={handleChange}
 				/>
-				<InputGroup
-					type="date"
+
+				<DateTime
 					name="date_time"
 					placeholder="Date & Time"
 					value={formData.date_time}
-					onChange={handleChange}
+					onChange={(date: Date | null) => setFormData((prev) => ({ ...prev, date_time: date }))}
 				/>
 
 				<hr />
@@ -71,7 +70,7 @@ const FormOne = (props: FormType) => {
 					Next
 				</Button>
 			</div>
-		</Container>
+		</div>
 	);
 };
 

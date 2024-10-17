@@ -57,10 +57,27 @@ export const Container = styled.div`
 
 	hr {
 		border: 1px solid #313337;
+		width: 100%;
 	}
 
-	div:last-child {
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		> div:first-child {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		> div:nth-child(3) {
+			margin-top: -0.75rem;
+		}
+	}
+	> div:last-child {
 		width: 100%;
+		margin-top: 1rem;
 
 		> button {
 			width: 100%;

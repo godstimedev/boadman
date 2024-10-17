@@ -38,7 +38,12 @@ export const StyledModal = styled.div<StyledModalProps>`
 		border-radius: 5px;
 		transition: all 0.3s ease-in-out;
 		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
 
+		${maxQuery('lg')} {
+			max-width: 65%;
+		}
 		${maxQuery('md')} {
 			max-width: 85%;
 		}

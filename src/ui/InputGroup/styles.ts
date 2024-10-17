@@ -4,10 +4,6 @@ import { StyledInputContainerPropType } from './types';
 export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	width: 100%;
 
-	.date-input {
-		width: 20rem;
-	}
-
 	&.success {
 		.info-con {
 			color: ${({ theme }) => theme.colors.success500};
@@ -56,15 +52,72 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		}
 	}
 
+	.date-group,
+	.date-group > div.react-datepicker-wrapper,
+	.date-group
+		> div
+		> div.react-datepicker__input-container
+		.date-group
+		> div
+		> div.react-datepicker__input-container
+		input {
+		width: 100%;
+	}
+
 	.date-group {
+		/* Custom Calendar Styles */
+		.react-datepicker {
+			background-color: ${({ theme }) =>
+				theme.colors.secondary500}; /* Background color for the calendar */
+			border-color: ${({ theme }) => theme.colors.accent100}; /* Border color */
+			color: #fff !important;
+		}
+
+		.react-datepicker__header {
+			background-color: ${({ theme }) => theme.colors.accent200}; /* Header background color */
+			color: #fff !important; /* Header text color */
+		}
+
+		.react-datepicker__day,
+		.react-datepicker__time-list-item {
+			color: #fff !important; /* Default text color */
+		}
+
+		.react-datepicker__day--selected,
+		.react-datepicker__time-list-item--selected {
+			background-color: ${({ theme }) =>
+				theme.colors.primary500} !important; /* Selected day/time background */
+			color: #fff; /* Selected day/time text color */
+		}
+
+		.react-datepicker__day:hover,
+		.react-datepicker__time-list-item:hover {
+			background-color: ${({ theme }) => theme.colors.accent200}; /* Hover background */
+			color: #000; /* Hover text color */
+		}
+
+		/* Custom time picker styles */
+		.react-datepicker__time-container .react-datepicker__time {
+			background-color: ${({ theme }) =>
+				theme.colors.secondary500}; /* Background color for the calendar */
+			border-color: ${({ theme }) => theme.colors.accent100}; /* Border color */
+		}
+		.react-datepicker__time-list-item:hover {
+			background-color: ${({ theme }) => theme.colors.accent200} !important;
+			/* color: #000 !important; */
+		}
+
+		.react-datepicker__current-month {
+			color: #000; /* Month text color */
+		}
+
 		.date-input {
 			position: relative;
-			/* border: 1px solid red; */
 		}
 
 		.date-input > div {
 			position: absolute;
-			z-index: 10000;
+			z-index: 0;
 			top: 50%;
 			right: 0;
 			transform: translateY(-50%);
@@ -359,8 +412,16 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		resize: vertical;
 		padding: 0.75rem 1rem;
 	}
+	.more-info {
+		font-size: 0.75rem;
+		line-height: 120%;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
+		display: flex;
+	}
 	.info-con {
-		color: ${({ theme }) => theme.colors.neutral500};
+		/* color: ${({ theme }) => theme.colors.white}; */
 
 		font-size: 0.75rem;
 		line-height: 120%;

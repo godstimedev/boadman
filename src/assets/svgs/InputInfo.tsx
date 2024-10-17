@@ -6,7 +6,15 @@ const InputInfo = () => {
 
 	return (
 		<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<mask id={uniqueId} style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="1" y="1" width="14" height="14">
+			<mask
+				id={uniqueId}
+				style={{ maskType: 'alpha' }}
+				maskUnits="userSpaceOnUse"
+				x="1"
+				y="1"
+				width="14"
+				height="14"
+			>
 				<path
 					fillRule="evenodd"
 					clipRule="evenodd"
@@ -15,7 +23,7 @@ const InputInfo = () => {
 				/>
 			</mask>
 			<g mask={`url(#${uniqueId}`}>
-				<rect width="16" height="16" fill="#667085" />
+				<rect width="16" height="16" fill="#fff" />
 			</g>
 		</svg>
 	);

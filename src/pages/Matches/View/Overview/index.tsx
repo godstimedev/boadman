@@ -102,15 +102,15 @@ const MatchOverview = () => {
 							<CaretRight />
 						</button>
 						<button className={rules === 2 ? 'active' : ''} onClick={() => setRules(2)}>
-							General rules
+							Stream submitting policy
 							<CaretRight />
 						</button>
 						<button className={rules === 3 ? 'active' : ''} onClick={() => setRules(3)}>
-							General rules
+							Payout format and dates
 							<CaretRight />
 						</button>
 						<button className={rules === 4 ? 'active' : ''} onClick={() => setRules(4)}>
-							General rules
+							Admin set of rules and regulations
 							<CaretRight />
 						</button>
 						<button className={rules === 5 ? 'active' : ''} onClick={() => setRules(5)}>
@@ -148,6 +148,14 @@ const MatchOverview = () => {
 								title: 'Payout format and dates',
 								content: 'item content',
 							},
+							{
+								title: 'Admin set of rules and regulations',
+								content: 'item content',
+							},
+							{
+								title: 'Payout format and dates',
+								content: 'item content',
+							},
 						]}
 					/>
 				</div>
@@ -164,23 +172,23 @@ const statsList = [
 		value: 'Valorant',
 	},
 	{
-		title: 'Game',
-		value: 'Valorant',
+		title: 'Fee',
+		value: '300 coins',
 	},
 	{
-		title: 'Game',
-		value: 'Valorant',
+		title: 'Mode',
+		value: '1 v 1 (best of 3)',
 	},
 	{
-		title: 'Game',
-		value: 'Valorant',
+		title: 'Platform',
+		value: 'Xbox',
 	},
 	{
-		title: 'Game',
-		value: 'Valorant',
+		title: 'Format',
+		value: 'Single Elimination',
 	},
 	{
-		title: 'Game',
-		value: 'Valorant',
+		title: 'Rounds (per match)',
+		value: '2 round ',
 	},
 ];

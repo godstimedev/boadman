@@ -28,6 +28,7 @@ const InputGroup = (props: InputGroupPropType) => {
 		variant,
 		icon,
 		iconPosition = 'left',
+		moreInfo,
 		...rest
 	} = props;
 
@@ -221,8 +222,15 @@ const InputGroup = (props: InputGroupPropType) => {
 				</div>
 			)}
 
-			<div className="info-con" id="info-con" ref={infoRef}>
-				<InputInfo /> <span></span>
+			<div className="info-wrapper">
+				{moreInfo && (
+					<div className="more-info">
+						<InputInfo /> <span>{moreInfo}</span>
+					</div>
+				)}
+				<div className="info-con" id="info-con" ref={infoRef}>
+					<InputInfo /> <span></span>
+				</div>
 			</div>
 		</StyledInputContainer>
 	);

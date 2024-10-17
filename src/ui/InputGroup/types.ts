@@ -26,6 +26,7 @@ export type InputGroupPropType = {
 	hidePasswordControls?: boolean;
 	customErrorMsg?: string;
 	icon?: React.ReactNode;
+	moreInfo?: React.ReactNode | string;
 	variant?: string;
 	iconPosition?: 'left' | 'right';
 } & React.ComponentProps<'input'>;
