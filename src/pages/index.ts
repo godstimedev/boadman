@@ -20,6 +20,13 @@ export { default as LeaderboardProfileWeapons } from './Leaderboard/Profile/Weap
 export { default as LeaderboardProfileMaps } from './Leaderboard/Profile/Maps';
 export { default as LeaderboardProfileOverview } from './Leaderboard/Profile/Overview';
 export { default as Tournaments } from './Tournaments';
+export { default as TournamentView } from './Tournaments/View/Layout';
+export { default as TournamentOverview } from './Tournaments/View/Overview';
+export { default as TournamentMatches } from './Tournaments/View/Matches';
+export { default as TournamentMatchView } from './Tournaments/View/Matches/View';
+export { default as TournamentBracket } from './Tournaments/View/Bracket';
+export { default as TournamentTeams } from './Tournaments/View/Teams';
+export { default as TournamentResults } from './Tournaments/View/Results';
 export { default as Teams } from './Teams';
 export { default as Friends } from './Friends';
 export { default as Matches } from './Matches';

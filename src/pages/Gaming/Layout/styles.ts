@@ -13,6 +13,9 @@ export const Container = styled.section`
 		align-items: center;
 		/* margin-top: 2rem;
         margin-bottom: 1rem; */
+		h6 {
+			padding: 0.5rem 0;
+		}
 	}
 
 	.gaming-con {
@@ -38,6 +41,7 @@ export const Container = styled.section`
 				font-size: 14px;
 				line-height: 18.48px;
 				font-weight: 500;
+				white-space: nowrap;
 
 				${maxQuery('sm')} {
 					font-size: 10px;

@@ -126,7 +126,7 @@ const navList = [
 	},
 	{
 		name: 'Tournaments',
-		link: APP_ROUTES.tournaments,
+		link: APP_ROUTES.tournaments.initial,
 		svg: {
 			default: <Tournaments />,
 		},

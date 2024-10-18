@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const StyledMatchContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	background-color: ${({ theme }) => theme.colors.accent500};

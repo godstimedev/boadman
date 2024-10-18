@@ -32,7 +32,7 @@ export const StyledModal = styled.div<StyledModalProps>`
 		position: relative;
 		background-color: ${({ theme }) => theme.colors.accent500};
 		width: max-content;
-		max-width: 40%;
+		max-width: 65%;
 		min-height: 40%;
 		max-height: 90%;
 		border-radius: 5px;
@@ -41,9 +41,6 @@ export const StyledModal = styled.div<StyledModalProps>`
 		display: flex;
 		flex-direction: column;
 
-		${maxQuery('lg')} {
-			max-width: 65%;
-		}
 		${maxQuery('md')} {
 			max-width: 85%;
 		}

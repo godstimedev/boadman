@@ -45,6 +45,22 @@ export const APP_ROUTES = {
 	settings: '/settings',
 
 	teams: '/teams',
-	tournaments: '/tournaments',
+	tournaments: {
+		initial: '/tournament',
+		view: `/tournament/:id/`,
+		use_view: (id: string) => `/tournament/${id}/`,
+		overview: `/tournament/:id/overview`,
+		use_overview: (id: string) => `/tournament/${id}/overview`,
+		matches: `/tournament/:id/matches`,
+		use_matches: (id: string) => `/tournament/${id}/matches`,
+		match: `/tournament/:id/matches/:matchId`,
+		use_match: (id: string, matchId: string) => `/tournament/${id}/matches/${matchId}`,
+		bracket: `/tournament/:id/bracket`,
+		use_bracket: (id: string) => `/tournament/${id}/bracket`,
+		teams: `/tournament/:id/teams`,
+		use_teams: (id: string) => `/tournament/${id}/teams`,
+		results: `/tournament/:id/results`,
+		use_results: (id: string) => `/tournament/${id}/results`,
+	},
 	wallet: '/wallet',
 };

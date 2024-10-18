@@ -9,10 +9,7 @@ import {
 } from '../../../assets/images';
 import { Button } from '../../../ui';
 import { Container } from './styles';
-// import { responsive } from '@/constants/carouselSettings';
 import { Console1, Console2, PlayStation, Xbox } from '@/assets/svgs';
-// import { useEffect, useState } from 'react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 // Import Swiper styles
@@ -20,24 +17,6 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 
 const Featured = () => {
-	// const [isDesktop, setIsDesktop] = useState(false);
-
-	// Check screen size on component mount and window resize
-	// useEffect(() => {
-	// 	const handleResize = () => {
-	// 		setIsDesktop(window.innerWidth >= 1024); // Set true for screens wider than 1024px
-	// 	};
-
-	// 	// Call the function initially
-	// 	handleResize();
-
-	// 	// Add event listener for window resize
-	// 	window.addEventListener('resize', handleResize);
-
-	// 	// Clean up the event listener on component unmount
-	// 	return () => window.removeEventListener('resize', handleResize);
-	// }, []);
-
 	return (
 		<Container>
 			<div className="curve-background">
@@ -52,37 +31,6 @@ const Featured = () => {
 
 				{/* carousel */}
 				<div className="game-card-container">
-					{/* <Carousel
-						responsive={featuredResponsive}
-						arrows={false}
-						autoPlay={isDesktop}
-						autoPlaySpeed={1500}
-						infinite={true}
-						showDots={false}
-						partialVisible={true}
-						pauseOnHover={true}
-						// focusOnSelect={true}
-					>
-						{CarouselData.map((item) => {
-							return (
-								<div key={item.id} className="game-card-wrapper">
-									<div className="game-card">
-										<img src={item.image} alt="/" />
-										<div className="game-card-content">
-											<h6 className="capitalize">{item.title}</h6>
-											<p>{item.details}</p>
-											<div>
-												<Xbox />
-												<Console1 />
-												<Console2 />
-												<PlayStation />
-											</div>
-										</div>
-									</div>
-								</div>
-							);
-						})}
-					</Carousel> */}
 					<Swiper
 						centeredSlides={true}
 						slidesPerView={1.2}

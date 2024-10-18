@@ -415,10 +415,14 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	.more-info {
 		font-size: 0.75rem;
 		line-height: 120%;
-		align-items: center;
+		align-items: start;
 		gap: 0.5rem;
 		margin-top: 0.5rem;
 		display: flex;
+
+		> span {
+			text-align: start;
+		}
 	}
 	.info-con {
 		/* color: ${({ theme }) => theme.colors.white}; */

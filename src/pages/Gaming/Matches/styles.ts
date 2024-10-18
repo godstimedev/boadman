@@ -15,10 +15,10 @@ export const Container = styled.div`
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			gap: 0.5rem;
+			gap: 0.45rem;
 
 			background-color: ${({ theme }) => theme.colors.accent100};
-			padding: 0.75rem 0.65rem;
+			padding: 0.75rem 0.5rem;
 		}
 
 		.dropdown {
@@ -28,7 +28,7 @@ export const Container = styled.div`
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			gap: 0.5rem;
+			gap: 0.35rem;
 			width: 170px;
 			white-space: nowrap;
 			font-size: 14px;
@@ -36,7 +36,7 @@ export const Container = styled.div`
 
 			${maxQuery('md')} {
 				width: max-content;
-				padding: 0.65rem 0.65rem;
+				padding: 0.5rem 0.5rem;
 			}
 		}
 
@@ -81,6 +81,10 @@ export const Container = styled.div`
 		${maxQuery('sm')} {
 			grid-template-columns: 1fr;
 			place-items: center;
+		}
+
+		> a {
+			width: 100%;
 		}
 	}
 `;

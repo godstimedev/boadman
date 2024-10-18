@@ -3,6 +3,8 @@ import { Container } from './styles';
 import { FeaturedTournament } from '@/components';
 import { CyberPunk } from '@/assets/images';
 import { Dropdown } from '@/ui';
+import { Link } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
 const Tournaments = () => {
 	return (
@@ -42,233 +44,105 @@ const Tournaments = () => {
 			</div>
 
 			<div className="tournaments">
-				<FeaturedTournament
-					key={1}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={2}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={3}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={4}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={5}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={6}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={7}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={8}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={9}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={10}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={11}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={12}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={13}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={14}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={15}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
-				<FeaturedTournament
-					key={16}
-					image={CyberPunk}
-					categories={['Call of duty', 'Team']}
-					status={'IN PROGRESS'}
-					period={' Finishing in 20 days'}
-					title={'Rebirth Resurgence express '}
-					description={
-						'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... '
-					}
-					prize={'3500'}
-					game_mode={'3 v 3'}
-					game_slot={'60/64'}
-				/>
+				{tournamentList.map((tournament, index) => (
+					<Link to={APP_ROUTES.tournaments.use_overview(index.toString())} key={index}>
+						<FeaturedTournament
+							key={index}
+							image={tournament.image}
+							categories={tournament.categories}
+							status={tournament.status}
+							period={tournament.period}
+							title={tournament.title}
+							description={tournament.description}
+							prize={tournament.prize}
+							game_mode={tournament.game_mode}
+							game_slot={tournament.game_slot}
+						/>
+					</Link>
+				))}
 			</div>
 		</Container>
 	);
 };
 
 export default Tournaments;
+
+const tournamentList = [
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
+];

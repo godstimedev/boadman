@@ -24,6 +24,7 @@ export const Container = styled.section`
 			display: flex;
 			align-items: center;
 			gap: 1.5rem;
+			border-radius: 5px;
 
 			${maxQuery('xl')} {
 				flex-direction: column;

@@ -1,4 +1,4 @@
-import { Container } from './styles';
+import { StyledMatchContainer } from './styles';
 import { MatchProps } from './Match.types';
 import { WinnerCheck } from '@/assets/svgs';
 
@@ -6,7 +6,7 @@ const Match = (props: MatchProps) => {
 	const { title, svg, date, time, status, winner, player1, player2, scores } = props;
 
 	return (
-		<Container>
+		<StyledMatchContainer>
 			<div>
 				<div>
 					<div className="icon-con">{svg}</div>
@@ -103,7 +103,7 @@ const Match = (props: MatchProps) => {
 					)}
 				</div>
 			</div>
-		</Container>
+		</StyledMatchContainer>
 	);
 };
 

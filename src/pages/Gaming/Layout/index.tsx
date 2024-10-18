@@ -1,14 +1,23 @@
 import { DashboardHeader } from '@/components';
 import { Container } from './styles';
 import { APP_ROUTES } from '@/constants';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Button } from '@/ui';
 
 const Gaming = () => {
+	const location = useLocation();
+
 	return (
 		<Container>
 			<DashboardHeader />
 			<div className="head">
 				<h6>Gaming</h6>
+
+				{location.pathname === '/gaming/my-challenges' && (
+					<Button variant="primary" size="small">
+						Make Challenge
+					</Button>
+				)}
 			</div>
 
 			<div className="gaming-con">

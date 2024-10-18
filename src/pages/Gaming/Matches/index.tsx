@@ -3,6 +3,8 @@ import { Container } from './styles';
 import { Dropdown } from '@/ui';
 import { HeroAvatar } from '@/assets/images';
 import { Match } from '@/components';
+import { Link } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
 const Matches = () => {
 	return (
@@ -90,19 +92,21 @@ const Matches = () => {
 
 			<div className="matches">
 				{matchData.map((match, index) => (
-					<Match
-						key={index}
-						title={match.title}
-						date={match.date}
-						time={match.time}
-						svg={match.svg}
-						status={match.status}
-						player1={match.player1}
-						player2={match.player2}
-						winner={match.winner}
-						scores={match.scores}
-						mode={match.mode}
-					/>
+					<Link to={APP_ROUTES.matches.use_overview(index.toString())}>
+						<Match
+							key={index}
+							title={match.title}
+							date={match.date}
+							time={match.time}
+							svg={match.svg}
+							status={match.status}
+							player1={match.player1}
+							player2={match.player2}
+							winner={match.winner}
+							scores={match.scores}
+							mode={match.mode}
+						/>
+					</Link>
 				))}
 			</div>
 		</Container>

@@ -58,8 +58,6 @@ const Challenges = () => {
 							</div>
 						</Dropdown>
 					</div>
-
-					<Button variant="primary">Make challenge</Button>
 				</div>
 			</div>
 
