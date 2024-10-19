@@ -1,7 +1,7 @@
 import { Button, Dropdown } from '@/ui';
 import { Container } from './styles';
 import { CaretDown, Valorant } from '@/assets/svgs';
-import { Agent1 } from '@/assets/images';
+import { HeroAvatar } from '@/assets/images';
 
 const Challenges = () => {
 	return (
@@ -64,153 +64,57 @@ const Challenges = () => {
 			<div className="table-con">
 				<table>
 					<tbody>
-						<tr>
-							<td>
-								<div>
-									<span>
-										<Valorant />
-									</span>
+						{challengesData.map((data, index) => (
+							<tr key={index}>
+								<td>
 									<div>
-										<p>Loner epic</p>
-										<span>WED, JUN 21, 18:30 CST</span>
+										<span>{data.image}</span>
+										<div>
+											<p>{data.title}</p>
+											<span>{data.date}</span>
+										</div>
 									</div>
-								</div>
-							</td>
-							<td>
-								<span className="badge">Upcoming</span>
-							</td>
-							<td>
-								<div>
-									<span>Challenger</span>{' '}
+								</td>
+								<td className="badge-con">
+									<div className={`${data.status} badge`}>
+										<span>{data.status}</span>
+									</div>
+								</td>
+								<td>
+									<div>
+										<span>Challenger</span>{' '}
+										<div>
+											<div>
+												<img src={data.challenger.image} alt={data.challenger.name} />
+											</div>{' '}
+											<p>{data.challenger.name}</p>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div>
+										<span>Mode</span>
+										<p>{data.mode}</p>
+									</div>
+								</td>
+								<td>
+									<div>
+										<span>Prize</span>
+										<p>{data.prize}</p>
+									</div>
+								</td>
+								<td>
 									<div>
 										<div>
-											<img src={Agent1} alt="/" />
-										</div>{' '}
-										<p>Flunk_god</p>
-									</div>
-								</div>
-							</td>
-							<td>
-								<div>
-									<span>Mode</span>
-									<p>1v1</p>
-								</div>
-							</td>
-							<td>
-								<div>
-									<span>Prize</span>
-									<p>300 coins</p>
-								</div>
-							</td>
-							<td>
-								<div>
-									<div>
-										<Button variant="text">Accept</Button>
-									</div>
-									<div>
-										<Button variant="text">Decline</Button>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div>
-									<span>
-										<Valorant />
-									</span>
-									<div>
-										<p>Loner epic</p>
-										<span>WED, JUN 21, 18:30 CST</span>
-									</div>
-								</div>
-							</td>
-							<td>
-								<span className="badge">Upcoming</span>
-							</td>
-							<td>
-								<div>
-									<span>Challenger</span>{' '}
-									<div>
+											<Button variant="text">Accept</Button>
+										</div>
 										<div>
-											<img src={Agent1} alt="/" />
-										</div>{' '}
-										<p>Flunk_god</p>
+											<Button variant="text">Decline</Button>
+										</div>
 									</div>
-								</div>
-							</td>
-							<td>
-								<div>
-									<span>Mode</span>
-									<p>1v1</p>
-								</div>
-							</td>
-							<td>
-								<div>
-									<span>Prize</span>
-									<p>300 coins</p>
-								</div>
-							</td>
-							<td>
-								<div>
-									<div>
-										<Button variant="text">Accept</Button>
-									</div>
-									<div>
-										<Button variant="text">Decline</Button>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div>
-									<span>
-										<Valorant />
-									</span>
-									<div>
-										<p>Loner epic</p>
-										<span>WED, JUN 21, 18:30 CST</span>
-									</div>
-								</div>
-							</td>
-							<td>
-								<span className="badge">Upcoming</span>
-							</td>
-							<td>
-								<div>
-									<span>Challenger</span>{' '}
-									<div>
-										<div>
-											<img src={Agent1} alt="/" />
-										</div>{' '}
-										<p>Flunk_god</p>
-									</div>
-								</div>
-							</td>
-							<td>
-								<div>
-									<span>Mode</span>
-									<p>1v1</p>
-								</div>
-							</td>
-							<td>
-								<div>
-									<span>Prize</span>
-									<p>300 coins</p>
-								</div>
-							</td>
-							<td>
-								<div>
-									<div>
-										<Button variant="text">Accept</Button>
-									</div>
-									<div>
-										<Button variant="text">Decline</Button>
-									</div>
-								</div>
-							</td>
-						</tr>
+								</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 			</div>
@@ -219,3 +123,102 @@ const Challenges = () => {
 };
 
 export default Challenges;
+
+const challengesData = [
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'Upcoming',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'Finished',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'Pending',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'Rejected',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'In progress',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'Accepted',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'Finished',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+	{
+		title: 'Loner epic',
+		date: 'WED, JUN 21, 18:30 CST',
+		image: <Valorant />,
+		status: 'Accepted',
+		challenger: {
+			image: HeroAvatar,
+			name: 'Flunk_god',
+		},
+		mode: '1v1',
+		prize: '300 coins',
+	},
+];

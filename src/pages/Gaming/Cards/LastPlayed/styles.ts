@@ -58,6 +58,13 @@ export const Container = styled.div`
 					margin-left: -0.25rem;
 				}
 
+				img {
+					width: 12px;
+					height: 12px;
+					border-radius: 100%;
+					object-fit: cover;
+				}
+
 				/* > svg {
 					width: 18px;
 					height: 18px;

@@ -90,10 +90,36 @@ export const Container = styled.div`
 					color: ${({ theme }) => theme.colors.accent200};
 				}
 
+				/* &.badge-con {
+					width: max-content;
+				} */
+
 				.badge {
-					padding: 0.5rem 0.75rem;
+					width: 100%;
 					border-radius: 17px;
 					border: 1px solid #3498db;
+					font-size: 10px;
+					font-weight: 400;
+					line-height: 13.2px;
+					padding: 0.5rem 1rem;
+
+					> span {
+						/* width: 4rem; */
+						padding: auto;
+					}
+
+					&.Finished {
+						border: 1px solid #008080;
+					}
+					&.Pending {
+						border: 1px solid #ffc107;
+					}
+					&.Rejected {
+						border: 1px solid #e01e37;
+					}
+					&.In {
+						border: 1px solid #673ab7;
+					}
 				}
 
 				p {
