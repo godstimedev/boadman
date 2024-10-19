@@ -28,7 +28,7 @@ const Matches = () => {
 				<div>
 					<h6>Matches</h6>
 
-					<Button variant="primary" size="large">
+					<Button variant="primary" size="small">
 						Create game
 					</Button>
 				</div>

@@ -1,24 +1,40 @@
 import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 	margin-bottom: 2rem;
 
-	.head {
+	.header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-top: 1rem;
 
+		${maxQuery('md')} {
+			flex-direction: column;
+			align-items: start;
+			gap: 1rem;
+		}
+
 		h6 {
 			padding: 0.5rem 0;
 		}
+
+		> div {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+
+			/* ${maxQuery('md')} {
+				margin-left: auto;
+			} */
+		}
 	}
 
-	.gaming-con {
+	.game-con {
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;

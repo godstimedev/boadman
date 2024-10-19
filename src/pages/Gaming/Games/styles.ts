@@ -372,7 +372,7 @@ export const Container = styled.div`
 			gap: 0.75rem;
 
 			> div {
-				width: 270px;
+				min-width: 260px;
 				height: 200px;
 				img {
 					width: 100%;

@@ -16,6 +16,7 @@ import {
 	CallOfDutyFull,
 	CyberPunkEvent,
 	HeroAvatar,
+	Valorant as ValorantImage,
 	LeagueOfLegends,
 } from '@/assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -26,6 +27,8 @@ import { GeneralChangeEventType } from '@/types';
 import { useState } from 'react';
 import { LastPlayed, RecentWin } from '../Cards';
 import { MatchProps } from '../../../components/Cards/Match/Match.types';
+import { Link } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
 const Games = () => {
 	const [filter, setFilter] = useState('all');
@@ -337,30 +340,16 @@ const Games = () => {
 				</div>
 
 				<div className="games-con">
-					<div className="game-card">
-						<div>
-							<img src={CallOfDutyFull} alt="/" />
-						</div>
-						<p>Modern warfare III </p>
-					</div>
-					{/* <div className="game-card">
-					<div>
-					</div>
-					<p>Valorant</p>
-					<img src={Valorant} alt="/" />
-					</div> */}
-					<div className="game-card">
-						<div>
-							<img src={ApexLegendsSlider} alt="/" />
-						</div>
-						<p>Apex Legends</p>
-					</div>
-					<div className="game-card">
-						<div>
-							<img src={LeagueOfLegends} alt="/" />
-						</div>
-						<p>League of Legends </p>
-					</div>
+					{gameData.map((game, index) => (
+						<Link key={index} to={APP_ROUTES.gaming.use_overview(index.toString())}>
+							<div className="game-card">
+								<div>
+									<img src={game.image} alt={game.title} />
+								</div>
+								<p>{game.title} </p>
+							</div>
+						</Link>
+					))}
 				</div>
 			</div>
 		</Container>
@@ -369,6 +358,7 @@ const Games = () => {
 
 export default Games;
 
+// old match card
 const Match = (props: MatchProps) => {
 	const { title, svg, date, status, player1, player2, mode } = props;
 
@@ -530,5 +520,24 @@ const recentWins = [
 		svg: <Fortnite />,
 		stats: ['2345 kills', '345 death', '345 damage'],
 		ranked: '2nd',
+	},
+];
+
+const gameData = [
+	{
+		title: 'Modern warfare III ',
+		image: CallOfDutyFull,
+	},
+	{
+		title: 'Valorant',
+		image: ValorantImage,
+	},
+	{
+		title: 'Apex Legends',
+		image: ApexLegendsSlider,
+	},
+	{
+		title: 'League of Legends',
+		image: LeagueOfLegends,
 	},
 ];

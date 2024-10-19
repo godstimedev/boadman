@@ -47,7 +47,6 @@ const Tournaments = () => {
 				{tournamentList.map((tournament, index) => (
 					<Link to={APP_ROUTES.tournaments.use_overview(index.toString())} key={index}>
 						<FeaturedTournament
-							key={index}
 							image={tournament.image}
 							categories={tournament.categories}
 							status={tournament.status}

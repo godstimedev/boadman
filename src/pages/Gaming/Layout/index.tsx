@@ -13,7 +13,7 @@ const Gaming = () => {
 			<div className="head">
 				<h6>Gaming</h6>
 
-				{location.pathname === '/gaming/my-challenges' && (
+				{location.pathname === '/games/my-challenges' && (
 					<Button variant="primary" size="small">
 						Make Challenge
 					</Button>
@@ -23,7 +23,7 @@ const Gaming = () => {
 			<div className="gaming-con">
 				<ul>
 					{navList.map((item) => (
-						<NavLink key={item.name} to={item.link}>
+						<NavLink key={item.name} to={item.link} end>
 							<li>{item.name}</li>
 						</NavLink>
 					))}
@@ -40,7 +40,7 @@ export default Gaming;
 const navList = [
 	{
 		name: 'Games',
-		link: APP_ROUTES.gaming.games,
+		link: APP_ROUTES.gaming.initial,
 	},
 	{
 		name: 'My Matches',

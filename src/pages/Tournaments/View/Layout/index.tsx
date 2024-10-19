@@ -11,23 +11,23 @@ const TournamentView = () => {
 	const navList = [
 		{
 			name: 'Overview',
-			link: APP_ROUTES.tournaments.use_overview(params?.id ? params?.id : ''),
+			link: APP_ROUTES.tournaments.use_overview(params?.tournamentId ? params?.tournamentId : ''),
 		},
 		{
 			name: 'Matches',
-			link: APP_ROUTES.tournaments.use_matches(params?.id ? params?.id : ''),
+			link: APP_ROUTES.tournaments.use_matches(params?.tournamentId ? params?.tournamentId : ''),
 		},
 		{
 			name: 'Bracket',
-			link: APP_ROUTES.tournaments.use_bracket(params?.id ? params?.id : ''),
+			link: APP_ROUTES.tournaments.use_bracket(params?.tournamentId ? params?.tournamentId : ''),
 		},
 		{
 			name: 'Teams',
-			link: APP_ROUTES.tournaments.use_teams(params?.id ? params?.id : ''),
+			link: APP_ROUTES.tournaments.use_teams(params?.tournamentId ? params?.tournamentId : ''),
 		},
 		{
 			name: 'Results',
-			link: APP_ROUTES.tournaments.use_results(params?.id ? params?.id : ''),
+			link: APP_ROUTES.tournaments.use_results(params?.tournamentId ? params?.tournamentId : ''),
 		},
 	];
 

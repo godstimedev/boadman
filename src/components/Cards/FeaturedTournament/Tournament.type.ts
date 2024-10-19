@@ -8,5 +8,4 @@ export type TournamentProps = {
 	prize: string;
 	game_mode: string;
 	game_slot: string;
-	key: number;
 };

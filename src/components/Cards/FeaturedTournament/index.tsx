@@ -2,10 +2,10 @@ import { Container } from './styles';
 import { TournamentProps } from './Tournament.type';
 
 const FeaturedTournament = (props: TournamentProps) => {
-	const { image, categories, status, period, title, description, prize, game_mode, game_slot, key } =
+	const { image, categories, status, period, title, description, prize, game_mode, game_slot } =
 		props;
 	return (
-		<Container key={key}>
+		<Container>
 			<div>
 				<img src={image} alt="/" />
 				<div>

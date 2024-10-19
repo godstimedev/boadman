@@ -14,11 +14,11 @@ const MatchView = () => {
 	const navList = [
 		{
 			name: 'Overview',
-			link: APP_ROUTES.matches.use_overview(params?.id ? params?.id : '1'),
+			link: APP_ROUTES.matches.use_overview(params?.matchId ? params?.matchId : ''),
 		},
 		{
 			name: 'Summary',
-			link: APP_ROUTES.matches.use_summary(params?.id ? params?.id : '1'),
+			link: APP_ROUTES.matches.use_summary(params?.matchId ? params?.matchId : ''),
 		},
 	];
 

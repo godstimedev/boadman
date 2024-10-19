@@ -6,7 +6,7 @@ import { Agent1 } from '@/assets/images';
 const Challenges = () => {
 	return (
 		<Container>
-			<div className="head">
+			<div className="filter-box">
 				<div className="dropdowns">
 					<Dropdown
 						trigger={

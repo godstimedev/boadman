@@ -2,7 +2,7 @@ import { maxQuery, minQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	.head {
+	.header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

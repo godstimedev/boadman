@@ -334,7 +334,7 @@ const Valorant = () => {
 
 	return (
 		<Container>
-			<div className="head">
+			<div className="header">
 				<h6>Valorant Leaderboard</h6>
 
 				<button>

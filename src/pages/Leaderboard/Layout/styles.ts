@@ -11,13 +11,17 @@ export const Container = styled.section`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		/* margin-top: 2rem;
-        margin-bottom: 1rem; */
+		margin-top: 1rem;
+		margin-bottom: 0.5rem;
 
 		${maxQuery('sm')} {
 			flex-direction: column;
 			align-items: normal;
 			gap: 1rem;
+		}
+
+		h6 {
+			padding: 0.5rem 0;
 		}
 
 		> .input {
@@ -48,7 +52,6 @@ export const Container = styled.section`
 		align-items: center;
 		background-color: ${({ theme }) => theme.colors.accent500};
 		color: ${({ theme }) => theme.colors.white};
-		margin-top: 1rem;
 		overflow-x: auto;
 
 		.menu {

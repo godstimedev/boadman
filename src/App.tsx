@@ -40,6 +40,11 @@ import {
 	TournamentTeams,
 	TournamentResults,
 	TournamentMatchView,
+	GameView,
+	GameOverview,
+	GameLeaderboard,
+	GameMatches,
+	GameTournaments,
 } from './pages';
 import { ApplyLayout } from './layout';
 import { RestrictPages } from './components';
@@ -90,18 +95,19 @@ function App() {
 							<Route path={APP_ROUTES.playerProfile.maps} element={<LeaderboardProfileMaps />} />
 						</Route>
 						<Route element={<Gaming />}>
-							<Route
-								path={APP_ROUTES.gaming.initial}
-								element={<Navigate to={APP_ROUTES.gaming.games} />}
-							/>
-							<Route path={APP_ROUTES.gaming.games} element={<GamingGames />} />
-							<Route path={APP_ROUTES.gaming.myChallenges} element={<GamingChallenges />} />
-							<Route path={APP_ROUTES.gaming.myTournaments} element={<GamingTournaments />} />
+							<Route path={APP_ROUTES.gaming.initial} element={<GamingGames />} />
 							<Route path={APP_ROUTES.gaming.myMatches} element={<GamingMatches />} />
+							<Route path={APP_ROUTES.gaming.myTournaments} element={<GamingTournaments />} />
+							<Route path={APP_ROUTES.gaming.myChallenges} element={<GamingChallenges />} />
+						</Route>
+						<Route path={APP_ROUTES.gaming.view} element={<GameView />}>
+							<Route path={APP_ROUTES.gaming.overview} element={<GameOverview />} />
+							<Route path={APP_ROUTES.gaming.leaderboard} element={<GameLeaderboard />} />
+							<Route path={APP_ROUTES.gaming.matches} element={<GameMatches />} />
+							<Route path={APP_ROUTES.gaming.tournaments} element={<GameTournaments />} />
 						</Route>
 						<Route path={APP_ROUTES.tournaments.initial} element={<Tournaments />} />
-						<Route element={<TournamentView />}>
-							<Route path={APP_ROUTES.tournaments.view} element={<TournamentView />} />
+						<Route path={APP_ROUTES.tournaments.view} element={<TournamentView />}>
 							<Route path={APP_ROUTES.tournaments.overview} element={<TournamentOverview />} />
 							<Route path={APP_ROUTES.tournaments.bracket} element={<TournamentBracket />} />
 							<Route path={APP_ROUTES.tournaments.matches} element={<TournamentMatches />} />
@@ -112,8 +118,7 @@ function App() {
 						<Route path={APP_ROUTES.teams} element={<Teams />} />
 						<Route path={APP_ROUTES.friends} element={<Friends />} />
 						<Route path={APP_ROUTES.matches.initial} element={<Matches />} />
-						<Route element={<MatchView />}>
-							<Route path={APP_ROUTES.matches.view} element={<MatchView />} />
+						<Route path={APP_ROUTES.matches.view} element={<MatchView />}>
 							<Route path={APP_ROUTES.matches.overview} element={<MatchOverview />} />
 							<Route path={APP_ROUTES.matches.summary} element={<MatchSummary />} />
 						</Route>
