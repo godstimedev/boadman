@@ -4,5 +4,4 @@ export type StreamType = {
 	game: string;
 	username: string;
 	views: string;
-	key: number;
 };

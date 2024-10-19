@@ -1,4 +1,4 @@
-import { DashboardHeader, FeaturedStream, FeaturedTournament } from '@/components';
+import { DashboardHeader, GameStream as FeaturedStream, FeaturedTournament } from '@/components';
 import { Container } from './styles';
 import {
 	Achievement1,
@@ -494,21 +494,26 @@ const Dashboard = () => {
 						breakpoints={{
 							// When the screen width is 280px or larger
 							280: {
-								slidesPerView: 1.3,
+								slidesPerView: 1.2,
 								spaceBetween: 10,
 							},
 							// When the screen width is 390px or larger
 							390: {
-								slidesPerView: 1.4,
+								slidesPerView: 1.3,
 								spaceBetween: 5,
 							},
 							// When the screen width is 440px or larger
 							440: {
-								slidesPerView: 1.6,
+								slidesPerView: 1.4,
+								spaceBetween: 5,
+							},
+							// When the screen width is 440px or larger
+							540: {
+								slidesPerView: 1.75,
 								spaceBetween: 5,
 							},
 							// When the screen width is 550px or larger
-							550: {
+							650: {
 								slidesPerView: 2.1,
 								spaceBetween: 10,
 							},

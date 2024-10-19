@@ -128,7 +128,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
 			border: 1px solid ${({ theme }) => theme.colors.primary500};
 
 			&:hover {
-				color: ${({ theme }) => theme.colors.primary500};
+				color: ${({ theme }) => theme.colors.white};
 				border-color: ${({ theme }) => theme.colors.white};
 				background: ${({ theme }) => theme.colors.primary700};
 			}

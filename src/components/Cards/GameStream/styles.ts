@@ -1,14 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	width: 240px;
-	margin: 1rem 0;
+	width: 265px;
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
-	flex: 1;
+	gap: 0.65rem;
 
-	> div {
+	> div:first-child {
+		height: 150px;
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 6.28px;
+			object-fit: cover;
+		}
+	}
+
+	> div:last-child {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;

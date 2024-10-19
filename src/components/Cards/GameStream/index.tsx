@@ -1,11 +1,13 @@
 import { StreamType } from './StreamType';
 import { Container } from './styles';
 
-const FeaturedStream = (props: StreamType) => {
-	const { image, avatar, username, game, views, key } = props;
+const GameStream = (props: StreamType) => {
+	const { image, avatar, username, game, views } = props;
 	return (
-		<Container key={key}>
-			<img src={image} alt="/" />
+		<Container>
+			<div>
+				<img src={image} alt="/" />
+			</div>
 
 			<div>
 				<img src={avatar} alt="/" />
@@ -22,7 +24,7 @@ const FeaturedStream = (props: StreamType) => {
 	);
 };
 
-export default FeaturedStream;
+export default GameStream;
 
 {
 	/* <iframe

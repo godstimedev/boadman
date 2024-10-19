@@ -443,6 +443,10 @@ export const Container = styled.section`
 	/* con-3 start  */
 
 	.con-3-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
 		${maxQuery('md')} {
 			display: none;
 		}
@@ -451,8 +455,8 @@ export const Container = styled.section`
 	.con-3-list {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 1.5rem;
+		justify-content: start;
+		gap: 1.1rem;
 		flex-wrap: wrap;
 
 		${maxQuery('md')} {

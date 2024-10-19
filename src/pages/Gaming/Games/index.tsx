@@ -228,7 +228,32 @@ const Games = () => {
 				<div className="section-header">
 					<h6>Last played</h6>
 				</div>
-				<Swiper spaceBetween={20} slidesPerView={1.3}>
+				<Swiper
+					spaceBetween={20}
+					slidesPerView={1.3}
+					breakpoints={{
+						// When the screen width is 280px or larger
+						280: {
+							slidesPerView: 1.2,
+							spaceBetween: 15,
+						},
+						// When the screen width is 390px or larger
+						400: {
+							slidesPerView: 1.25,
+							spaceBetween: 15,
+						},
+						// When the screen width is 440px or larger
+						470: {
+							slidesPerView: 1.6,
+							spaceBetween: 25,
+						},
+						// When the screen width is 440px or larger
+						540: {
+							slidesPerView: 1.8,
+							spaceBetween: 25,
+						},
+					}}
+				>
 					{lastPlayed.map((game, index) => (
 						<SwiperSlide>
 							<LastPlayed
@@ -253,7 +278,32 @@ const Games = () => {
 						See all
 					</Button>
 				</div>
-				<Swiper spaceBetween={20} slidesPerView={1.3}>
+				<Swiper
+					spaceBetween={20}
+					slidesPerView={1.3}
+					breakpoints={{
+						// When the screen width is 280px or larger
+						280: {
+							slidesPerView: 1.2,
+							spaceBetween: 15,
+						},
+						// When the screen width is 390px or larger
+						400: {
+							slidesPerView: 1.25,
+							spaceBetween: 15,
+						},
+						// When the screen width is 440px or larger
+						470: {
+							slidesPerView: 1.6,
+							spaceBetween: 25,
+						},
+						// When the screen width is 440px or larger
+						540: {
+							slidesPerView: 1.8,
+							spaceBetween: 25,
+						},
+					}}
+				>
 					{matchData.map((match, index) => (
 						<SwiperSlide>
 							<Match
@@ -350,6 +400,58 @@ const Games = () => {
 							</div>
 						</Link>
 					))}
+				</div>
+
+				<div className="swiper-con">
+					<Swiper
+						spaceBetween={20}
+						slidesPerView={1.3}
+						breakpoints={{
+							// When the screen width is 280px or larger
+							280: {
+								slidesPerView: 1.3,
+								spaceBetween: 25,
+							},
+							// When the screen width is 390px or larger
+							390: {
+								slidesPerView: 1.4,
+								spaceBetween: 25,
+							},
+							// When the screen width is 440px or larger
+							470: {
+								slidesPerView: 1.7,
+								spaceBetween: 25,
+							},
+							// When the screen width is 440px or larger
+							540: {
+								slidesPerView: 1.85,
+								spaceBetween: 25,
+							},
+							// When the screen width is 550px or larger
+							650: {
+								slidesPerView: 2.1,
+								spaceBetween: 25,
+							},
+							// When the screen width is 768px or larger (e.g., tablets)
+							768: {
+								slidesPerView: 2.7,
+								spaceBetween: 25,
+							},
+						}}
+					>
+						{gameData.map((game, index) => (
+							<SwiperSlide>
+								<Link key={index} to={APP_ROUTES.gaming.use_overview(index.toString())}>
+									<div className="game-card">
+										<div>
+											<img src={game.image} alt={game.title} />
+										</div>
+										<p>{game.title} </p>
+									</div>
+								</Link>
+							</SwiperSlide>
+						))}
+					</Swiper>
 				</div>
 			</div>
 		</Container>

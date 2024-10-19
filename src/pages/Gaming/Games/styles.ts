@@ -320,7 +320,7 @@ export const Container = styled.div`
 				align-items: center;
 				gap: 0.5rem;
 				white-space: nowrap;
-				padding: 0 0.75rem;
+				padding: 0.75rem 0.75rem;
 				font-size: 14px;
 				line-height: 16.8px;
 				font-weight: 400;
@@ -364,6 +364,10 @@ export const Container = styled.div`
 			display: flex;
 			gap: 1rem;
 			flex-wrap: wrap;
+
+			${maxQuery('md')} {
+				display: none;
+			}
 		}
 
 		.game-card {

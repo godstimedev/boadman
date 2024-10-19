@@ -10,10 +10,10 @@ export const Container = styled.div`
 	}
 	main {
 		flex: 1;
-		padding: 1rem 2rem;
+		padding: 1rem 2rem 3rem 2rem;
 
 		${maxQuery('md')} {
-			padding: 1rem 1rem;
+			padding: 1rem 1rem 3rem 1rem;
 		}
 	}
 `;

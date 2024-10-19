@@ -9,46 +9,65 @@ export const Container = styled.div`
 
 	.filter-box {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
+		gap: 3rem;
 
 		${maxQuery('md')} {
 			flex-direction: column;
 			gap: 1rem;
 		}
 
-		.dropdowns {
+		.filter-buttons {
 			display: flex;
 			align-items: center;
 			gap: 1rem;
 
+			${maxQuery('md')} {
+				justify-content: start;
+				flex-wrap: wrap;
+			}
+
+			> button {
+				padding: 0.75rem 0;
+				background-color: ${({ theme }) => theme.colors.accent500};
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 18.48px;
+				border-radius: 5px;
+				width: 135px;
+				white-space: nowrap;
+
+				&.active {
+					background-color: ${({ theme }) => theme.colors.primary500};
+				}
+			}
+		}
+
+		.dropdowns {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
 			.dropdown {
 				background-color: ${({ theme }) => theme.colors.accent500};
 				border-radius: 5px;
-				padding: 0.65rem 1rem;
+				padding: 0.75rem 1rem;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-				gap: 0.5rem;
-				width: 170px;
+				gap: 1rem;
 				white-space: nowrap;
 				font-size: 14px;
 				line-height: 18.48px;
+				margin-right: auto;
 			}
 
-			${maxQuery('md')} {
-				display: flex;
-				justify-content: space-between;
+			.filter {
+				margin-left: auto;
 			}
-		}
-
-		.action {
-			display: flex;
-			align-items: center;
-			gap: 2rem;
 		}
 	}
-
 	.table-con {
 		overflow-x: auto;
 	}
@@ -162,15 +181,28 @@ export const Container = styled.div`
 					align-items: center;
 					gap: 0.5rem;
 
+					> div:first-child {
+						${StyledButton} {
+							&:hover {
+								color: ${({ theme }) => theme.colors.success500};
+								/* color: red; */
+							}
+							&:focus {
+								color: ${({ theme }) => theme.colors.success500};
+								box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.success50};
+							}
+						}
+					}
 					> div:last-child {
 						${StyledButton} {
 							color: white;
 							&:hover {
-								color: ${({ theme }) => theme.colors.primary700};
+								color: ${({ theme }) => theme.colors.error500};
 								/* color: red; */
 							}
 							&:focus {
-								color: ${({ theme }) => theme.colors.primary200};
+								color: ${({ theme }) => theme.colors.error500};
+								box-shadow: 0 0 0 4px ${({ theme }) => theme.colors.error500};
 							}
 						}
 					}

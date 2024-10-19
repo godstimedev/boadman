@@ -1,6 +1,6 @@
-import { GamerAvatar, Spectre } from '@/assets/images';
+import { GamerAvatar, Spectre, GameStream as GameStreamImage, StreamAvatar } from '@/assets/images';
 import { Container } from './styles';
-import { GameplaySummary } from '@/components';
+import { GameplaySummary, GameStream } from '@/components';
 
 const Results = () => {
 	return (
@@ -17,6 +17,33 @@ const Results = () => {
 				player_a={gameSummaryData.player_a}
 				player_b={gameSummaryData.player_b}
 			/>
+
+			<div className="bottom">
+				<div>
+					<h6>Game Evidence</h6>
+
+					<div>
+						<img src={GameStreamImage} alt="/" />
+					</div>
+				</div>
+
+				<div>
+					<h6>Game Streams</h6>
+
+					<div>
+						{featuredStreamsList.map((stream, index) => (
+							<GameStream
+								avatar={stream.avatar}
+								game={stream.game}
+								image={stream.image}
+								key={index}
+								username={stream.username}
+								views={stream.views}
+							/>
+						))}
+					</div>
+				</div>
+			</div>
 		</Container>
 	);
 };
@@ -73,3 +100,20 @@ const gameSummaryData = {
 		},
 	},
 };
+
+const featuredStreamsList = [
+	{
+		image: GameStreamImage,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
+	{
+		image: GameStreamImage,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
+];
