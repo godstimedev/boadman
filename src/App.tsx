@@ -46,12 +46,11 @@ import {
 	GameMatches,
 	GameTournaments,
 } from './pages';
-import { ApplyLayout } from './layout';
+import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
 import { APP_ROUTES, PAGE_RESTRICTION_CONDITIONS } from './constants';
 import { GlobalStyles, theme } from './base';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import DashboardLayout from './layout/DashboardLayout';
 
 function App() {
 	return (

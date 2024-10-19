@@ -62,9 +62,12 @@ export const Container = styled.div`
 			display: flex;
 			align-items: center;
 			gap: 1.2rem;
-			padding: 0.5rem 1rem;
-			font-size: 14.64px;
+			padding: 0.85rem 1rem;
+			border-radius: 5px;
 			white-space: nowrap;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 18.48px;
 
 			${maxQuery('md')} {
 				font-size: 10px;

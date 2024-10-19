@@ -9,8 +9,6 @@ import { Link, useParams } from 'react-router-dom';
 const GameOverview = () => {
 	const param = useParams();
 
-	console.log(param);
-
 	return (
 		<Container>
 			<div className="banner" />

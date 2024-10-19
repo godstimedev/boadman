@@ -1,4 +1,4 @@
-import { maxQuery } from '@/utilities';
+import { maxQuery, minQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -44,6 +44,9 @@ export const Container = styled.div`
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		gap: 1rem;
 
+		${minQuery('1520px')} {
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		}
 		${maxQuery('xl')} {
 			grid-template-columns: 1fr 1fr 1fr;
 		}

@@ -4,6 +4,7 @@ export { default as Agent2 } from './Agent2.png';
 export { default as Agent3 } from './Agent3.png';
 export { default as ApexLegends } from './ApexLegends.png';
 export { default as ApexLegendsBanner } from './ApexLegendsBanner.png';
+export { default as ApexLegendsFeatured } from './ApexLegendsFeatured.png';
 export { default as ApexLegendsSlider } from './ApexLegendsSlider.png';
 export { default as AuthBackground } from './AuthBackground.png';
 export { default as AvatarTable } from './AvatarTable.png';
