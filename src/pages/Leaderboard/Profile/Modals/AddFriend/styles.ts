@@ -8,9 +8,16 @@ export const Container = styled.div`
 	align-items: center;
 	gap: 1.5rem;
 	text-align: center;
+	width: 560px;
 
+	${maxQuery('lg')} {
+		width: 466px;
+	}
 	${maxQuery('md')} {
 		padding: 2rem 2rem;
+	}
+	${maxQuery('sm')} {
+		width: 100%;
 	}
 
 	h6 {
@@ -31,7 +38,6 @@ export const Container = styled.div`
 
 	div:last-child {
 		width: 100%;
-
 		> button {
 			width: 100%;
 		}

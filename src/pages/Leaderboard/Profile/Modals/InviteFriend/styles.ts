@@ -8,13 +8,22 @@ export const Container = styled.div`
 	align-items: center;
 	gap: 1.5rem;
 	text-align: center;
+	width: 560px;
+
+	${maxQuery('lg')} {
+		width: 466px;
+	}
+	${maxQuery('sm')} {
+		width: 100%;
+	}
 
 	${maxQuery('md')} {
 		padding: 6rem 2rem 2rem;
 	}
 
-	.img-con {
-		position: absolute;
+	> .img-con,
+	div:first-child {
+		position: fixed;
 		top: -60px;
 		img {
 		}

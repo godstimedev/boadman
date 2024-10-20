@@ -1,4 +1,9 @@
-import { DashboardHeader, GameStream as FeaturedStream, FeaturedTournament } from '@/components';
+import {
+	CreateGame,
+	DashboardHeader,
+	GameStream as FeaturedStream,
+	FeaturedTournament,
+} from '@/components';
 import { Container } from './styles';
 import {
 	Achievement1,
@@ -38,11 +43,18 @@ import { Pagination } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
 const Dashboard = () => {
+	const [createGame, setCreateGame] = useState(false);
+
 	return (
 		<Container>
 			<DashboardHeader />
+
+			<CreateGame gameModal={createGame} setGameModal={setCreateGame} />
 
 			<div className="con-1">
 				<div className="con-1-wrapper">
@@ -59,9 +71,11 @@ const Dashboard = () => {
 								</div>
 
 								<div>
-									<Button variant="primary" size="small">
-										View Profile
-									</Button>
+									<Link to={APP_ROUTES.profile}>
+										<Button variant="primary" size="small">
+											View Profile
+										</Button>
+									</Link>
 								</div>
 							</div>
 
@@ -138,8 +152,12 @@ const Dashboard = () => {
 								Looking for a new challenge or a way to increase earnings? Play your favourite games now
 							</p>
 							<div>
-								<Button variant="outline">Join game</Button>
-								<Button variant="primary">Create game</Button>
+								<Link to={APP_ROUTES.matches.initial}>
+									<Button variant="outline">Join game</Button>
+								</Link>
+								<Button onClick={() => setCreateGame(true)} variant="primary">
+									Create game
+								</Button>
 							</div>
 						</div>
 
@@ -156,7 +174,9 @@ const Dashboard = () => {
 							</div>
 
 							<div>
-								<Button variant="primary">Deposit</Button>
+								<Link to={APP_ROUTES.wallet}>
+									<Button variant="primary">Deposit</Button>
+								</Link>
 							</div>
 						</div>
 					</div>

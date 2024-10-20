@@ -11,7 +11,7 @@ const InviteFriend = (props: PropsType) => {
 	const { isInviteFriend, setIsInviteFriend } = props;
 	return (
 		<Modal isModalOpen={isInviteFriend} setIsModalOpen={setIsInviteFriend}>
-			<Container className="invite-friend-modal">
+			<Container>
 				<div className="img-con">
 					<img src={RequestSuccess} alt="/" />
 				</div>

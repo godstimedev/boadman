@@ -33,16 +33,16 @@ export const StyledModal = styled.div<StyledModalProps>`
 		background-color: ${({ theme }) => theme.colors.accent500};
 		width: max-content;
 		max-width: 65%;
-		min-height: 40%;
+		min-height: 30%;
 		max-height: 90%;
 		border-radius: 5px;
 		transition: all 0.3s ease-in-out;
-		overflow-y: auto;
 		display: flex;
 		flex-direction: column;
 
 		${maxQuery('md')} {
 			max-width: 85%;
+			max-height: 85%;
 		}
 
 		${({ $isOpen }) =>
@@ -58,7 +58,7 @@ export const StyledModal = styled.div<StyledModalProps>`
 
 		.close-btn {
 			position: absolute;
-			right: 1rem;
+			right: 1.5rem;
 			top: 1rem;
 		}
 	}

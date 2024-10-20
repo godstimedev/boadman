@@ -260,8 +260,13 @@ export const Container = styled.section`
 			align-items: center;
 			gap: 1rem;
 
-			> button {
+			> button,
+			a {
 				width: 100%;
+
+				> button {
+					width: 100%;
+				}
 			}
 		}
 	}
