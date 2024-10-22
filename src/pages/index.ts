@@ -24,6 +24,14 @@ export { default as LeaderboardProfileAgents } from './Leaderboard/Profile/Agent
 export { default as LeaderboardProfileWeapons } from './Leaderboard/Profile/Weapons';
 export { default as LeaderboardProfileMaps } from './Leaderboard/Profile/Maps';
 export { default as LeaderboardProfileOverview } from './Leaderboard/Profile/Overview';
+export { default as Teams } from './Teams';
+export { default as TeamView } from './Teams/View/Layout';
+export { default as TeamOverview } from './Teams/View/Overview';
+export { default as TeamMatches } from './Teams/View/Matches';
+export { default as TeamMatchView } from './Teams/View/Matches/View';
+export { default as TeamTournament } from './Teams/View/Tournaments';
+export { default as TeamPlayHistory } from './Teams/View/PlayHistory';
+export { default as TeamWallet } from './Teams/View/Wallet';
 export { default as Tournaments } from './Tournaments';
 export { default as TournamentView } from './Tournaments/View/Layout';
 export { default as TournamentOverview } from './Tournaments/View/Overview';
@@ -32,7 +40,6 @@ export { default as TournamentMatchView } from './Tournaments/View/Matches/View'
 export { default as TournamentBracket } from './Tournaments/View/Bracket';
 export { default as TournamentTeams } from './Tournaments/View/Teams';
 export { default as TournamentResults } from './Tournaments/View/Results';
-export { default as Teams } from './Teams';
 export { default as Friends } from './Friends';
 export { default as Matches } from './Matches';
 export { default as MatchView } from './Matches/View/Layout';

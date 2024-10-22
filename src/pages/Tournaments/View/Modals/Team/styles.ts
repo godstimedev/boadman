@@ -7,6 +7,7 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+	overflow-y: auto;
 
 	${maxQuery('md')} {
 		padding: 2rem;

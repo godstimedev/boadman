@@ -134,7 +134,7 @@ const navList = [
 
 	{
 		name: 'Teams',
-		link: APP_ROUTES.teams,
+		link: APP_ROUTES.teams.initial,
 		svg: {
 			default: <Teams />,
 		},

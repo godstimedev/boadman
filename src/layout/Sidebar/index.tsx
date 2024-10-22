@@ -130,7 +130,7 @@ const navList = {
 	list2: [
 		{
 			name: 'Teams',
-			link: APP_ROUTES.teams,
+			link: APP_ROUTES.teams.initial,
 			svg: {
 				default: <Teams />,
 			},
