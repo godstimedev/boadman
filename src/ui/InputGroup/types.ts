@@ -3,6 +3,7 @@ import { Country } from 'react-phone-number-input';
 export type StyledInputContainerPropType = {
 	$posLeft?: boolean;
 	$dropdownPosBottom?: boolean;
+	$dropdownItemsAlign?: boolean;
 	$variant?: string;
 };
 
@@ -58,6 +59,7 @@ type GeneralType = {
 	}[];
 	suggestWhileTyping?: boolean;
 	dropdownPosition?: 'top' | 'bottom';
+	dropdownAlign?: 'left' | 'center';
 	value: string;
 	onChange: (
 		event: React.ChangeEvent<HTMLInputElement> | null,

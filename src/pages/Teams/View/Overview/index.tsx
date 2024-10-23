@@ -10,10 +10,16 @@ import {
 import { TeamMatch, TeamRoster } from '@/components';
 import { Link, useParams } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
+import { useState } from 'react';
+import RosterProfile from '../../Modals/RosterProfile';
 
 const TeamOverview = () => {
 	const params = useParams();
-	console.log(params);
+	const [showProfile, setShowProfile] = useState(false);
+
+	const handleProfileClick = () => {
+		setShowProfile(true);
+	};
 
 	return (
 		<Container>
@@ -63,15 +69,29 @@ const TeamOverview = () => {
 					</div>
 
 					<div>
-						<TeamRoster />
-						<TeamRoster />
-						<TeamRoster />
-						<TeamRoster />
-						<TeamRoster />
-						<TeamRoster />
+						<div onClick={handleProfileClick}>
+							<TeamRoster />
+						</div>
+						<div onClick={handleProfileClick}>
+							<TeamRoster />
+						</div>
+						<div onClick={handleProfileClick}>
+							<TeamRoster />
+						</div>
+						<div onClick={handleProfileClick}>
+							<TeamRoster />
+						</div>
+						<div onClick={handleProfileClick}>
+							<TeamRoster />
+						</div>
+						<div onClick={handleProfileClick}>
+							<TeamRoster />
+						</div>
 					</div>
 				</div>
 			</div>
+
+			<RosterProfile showProfile={showProfile} setShowProfile={setShowProfile} />
 
 			<div>
 				<h6>Upcomming matches</h6>

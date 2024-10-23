@@ -1,4 +1,4 @@
-import { maxQuery } from '@/utilities';
+import { maxQuery, minQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -21,6 +21,10 @@ export const Container = styled.section`
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 1rem;
 
+		${minQuery('1720px')} {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
 		${maxQuery('xl')} {
 			grid-template-columns: 1fr 1fr;
 		}
@@ -30,7 +34,7 @@ export const Container = styled.section`
 		}
 
 		> a {
-			width: max-content;
+			width: 100%;
 		}
 	}
 `;

@@ -3,9 +3,24 @@ import { Container } from './styles';
 import { CaretDown, Valorant } from '@/assets/svgs';
 import { HeroAvatar } from '@/assets/images';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
 const Challenges = () => {
 	const [filter, setFilter] = useState('challenge-invites');
+	const navigate = useNavigate();
+
+	const handleRowClick = (index: number) => {
+		navigate(APP_ROUTES.gaming.use_challenge_overview(index.toString()));
+	};
+	const handleAccept = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		e.stopPropagation(); // Prevent container click
+		// console.log('Accepted');
+	};
+	const handleDecline = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		e.stopPropagation(); // Prevent container click
+		// console.log('Declided');
+	};
 
 	return (
 		<Container>
@@ -71,7 +86,7 @@ const Challenges = () => {
 				<table>
 					<tbody>
 						{challengesData.map((data, index) => (
-							<tr key={index}>
+							<tr key={index} onClick={() => handleRowClick(index)}>
 								<td>
 									<div>
 										<span>{data.image}</span>
@@ -112,10 +127,14 @@ const Challenges = () => {
 								<td>
 									<div>
 										<div>
-											<Button variant="text">Accept</Button>
+											<Button onClick={handleAccept} variant="text">
+												Accept
+											</Button>
 										</div>
 										<div>
-											<Button variant="text">Decline</Button>
+											<Button onClick={handleDecline} variant="text">
+												Decline
+											</Button>
 										</div>
 									</div>
 								</td>

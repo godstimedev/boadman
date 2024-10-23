@@ -52,6 +52,9 @@ import {
 	TeamPlayHistory,
 	TeamWallet,
 	TeamMatchView,
+	ChallengeView,
+	ChallengeOverview,
+	ChallengeSummary,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -105,6 +108,10 @@ function App() {
 							<Route path={APP_ROUTES.gaming.myMatches} element={<GamingMatches />} />
 							<Route path={APP_ROUTES.gaming.myTournaments} element={<GamingTournaments />} />
 							<Route path={APP_ROUTES.gaming.myChallenges} element={<GamingChallenges />} />
+						</Route>
+						<Route element={<ChallengeView />}>
+							<Route path={APP_ROUTES.gaming.myChallengeOverview} element={<ChallengeOverview />} />
+							<Route path={APP_ROUTES.gaming.myChallengeSummary} element={<ChallengeSummary />} />
 						</Route>
 						<Route path={APP_ROUTES.gaming.view} element={<GameView />}>
 							<Route path={APP_ROUTES.gaming.overview} element={<GameOverview />} />

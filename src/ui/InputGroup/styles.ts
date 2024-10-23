@@ -225,16 +225,17 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			}
 		}
 		&.advanced-group {
-			background: ${({ theme }) => theme.colors.neutral50};
+			/* background: ${({ theme }) => theme.colors.neutral50}; */
 
-			border-radius: 0.75rem;
-
-			&:focus-within {
-				outline: 2px solid ${({ theme }) => theme.colors.primary500};
-			}
+			/* border-radius: 5px; */
 
 			input {
 				outline: none;
+				border-radius: 0.3125rem;
+
+				&:focus-within {
+					outline: 2px solid ${({ theme }) => theme.colors.primary500};
+				}
 			}
 		}
 		&:focus-within {
@@ -291,24 +292,27 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		}
 
 		.select-advanced-values {
-			background: ${({ theme }) => theme.colors.secondary500};
+			background: ${({ theme }) => theme.colors.accent100};
 
 			display: flex;
 			flex-wrap: wrap;
 			gap: 0.5rem;
-			border-radius: 0.75rem;
-			padding: 0.75rem 1rem 0;
+			border-radius: 0.3125rem;
+			padding: 0.5rem;
+
+			margin-top: 0.65rem;
 
 			div {
-				background: ${({ theme }) => theme.colors.primary50};
+				background: ${({ theme }) => theme.colors.secondary500};
 
 				font-size: 0.875rem;
 				line-height: 120%;
+				font-weight: 500;
 				display: flex;
-				gap: 0.125rem;
+				gap: 0.75rem;
 				align-items: center;
-				padding: 0 0.375rem;
-				border-radius: 0.25rem;
+				padding: 0.75rem 0.5rem;
+				border-radius: 0.3125rem;
 
 				span {
 					display: flex;
@@ -456,7 +460,8 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	}
 	.dropdown {
 		background: ${({ theme }) => theme.colors.secondary500};
-		box-shadow: 0 0 8px ${({ theme }) => theme.colors.neutral50};
+		box-shadow: 0 0 8px ${({ theme }) => theme.colors.accent100};
+		outline: 1px solid ${({ theme }) => theme.colors.accent400};
 
 		overflow: auto;
 		border-radius: 0.25rem;
@@ -480,7 +485,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			padding: 0.5rem 0.75rem;
 
 			span {
-				color: ${({ theme }) => theme.colors.neutral50};
+				color: ${({ theme }) => theme.colors.accent200};
 
 				font-size: 0.625rem;
 				line-height: 120%;
@@ -497,14 +502,14 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 				gap: 0.5rem;
 			}
 			li {
-				border: 1px solid ${({ theme }) => theme.colors.neutral200};
+				border: 1px solid ${({ theme }) => theme.colors.neutral100};
 
 				font-size: 0.75rem;
 				line-height: 120%;
 				border-radius: 2em;
 
 				&.active {
-					background-color: ${({ theme }) => theme.colors.primary50};
+					background-color: ${({ theme }) => theme.colors.primary300};
 				}
 			}
 		}
@@ -533,6 +538,7 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 					display: block;
 					margin: 0.75rem 0.5rem 0;
 					border-radius: 0.25rem;
+					color: #000;
 				}
 			}
 		}
@@ -543,10 +549,17 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			cursor: pointer;
 			outline: none;
 			padding: 0.625rem 1rem;
+			text-align: left;
+
+			${({ $dropdownItemsAlign }) =>
+				$dropdownItemsAlign &&
+				css`
+					text-align: center;
+				`}
 
 			&:hover,
 			&:focus {
-				background: ${({ theme }) => theme.colors.neutral50};
+				background: ${({ theme }) => theme.colors.accent500};
 			}
 		}
 	}

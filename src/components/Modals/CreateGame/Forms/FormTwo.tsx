@@ -2,11 +2,13 @@ import { Button, InputGroup, Select } from '@/ui';
 import { FormType } from '..';
 
 const FormTwo = (props: FormType) => {
-	const { formData, handleChange } = props;
+	const { formData, handleChange, setStage } = props;
 
 	const handleSubmit = () => {
 		// console.log(formData);
+		setStage(3);
 	};
+
 	return (
 		<div>
 			<div>
@@ -66,7 +68,7 @@ const FormTwo = (props: FormType) => {
 
 			<div>
 				<Button onClick={handleSubmit} variant="primary" size="large">
-					Make challenge
+					Create Game
 				</Button>
 			</div>
 		</div>

@@ -52,6 +52,7 @@ export { default as PartnerLogo7 } from './PartnerLogo7.png';
 export { default as PartnerLogo8 } from './PartnerLogo8.png';
 export { default as PreferredPlatform } from './PreferredPlatform.png';
 export { default as RequestSuccess } from './RequestSuccess.png';
+export { default as RosterProfileBg } from './RosterProfileBg.png';
 export { default as Sheriff } from './Sheriff.png';
 export { default as Sniper } from './Sniper.png';
 export { default as Spectre } from './Spectre.png';

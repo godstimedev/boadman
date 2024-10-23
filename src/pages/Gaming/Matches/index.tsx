@@ -92,9 +92,8 @@ const Matches = () => {
 
 			<div className="matches">
 				{matchData.map((match, index) => (
-					<Link to={APP_ROUTES.matches.use_overview(index.toString())}>
+					<Link key={index} to={APP_ROUTES.matches.use_overview(index.toString())}>
 						<Match
-							key={index}
 							title={match.title}
 							date={match.date}
 							time={match.time}

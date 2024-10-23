@@ -1,4 +1,4 @@
-import { DashboardHeader, Match } from '@/components';
+import { CreateGame, DashboardHeader, Match } from '@/components';
 import { Container } from './styles';
 import { Button, Dropdown, InputGroup } from '@/ui';
 import { HeroAvatar } from '@/assets/images';
@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { GeneralChangeEventType } from '@/types';
 
 const Matches = () => {
+	const [createGame, setCreateGame] = useState(false);
 	const [filter, setFilter] = useState('all');
 	const [formData, setFormData] = useState({
 		search: '',
@@ -24,11 +25,14 @@ const Matches = () => {
 	return (
 		<Container>
 			<DashboardHeader />
+
+			<CreateGame gameModal={createGame} setGameModal={setCreateGame} />
+
 			<div className="head">
 				<div>
 					<h6>Matches</h6>
 
-					<Button variant="primary" size="small">
+					<Button onClick={() => setCreateGame(true)} variant="primary" size="small">
 						Create game
 					</Button>
 				</div>
@@ -107,9 +111,8 @@ const Matches = () => {
 
 			<div className="matches">
 				{matchData.map((match, index) => (
-					<Link to={APP_ROUTES.matches.use_overview(index.toString())}>
+					<Link key={index} to={APP_ROUTES.matches.use_overview(index.toString())}>
 						<Match
-							key={index}
 							title={match.title}
 							date={match.date}
 							time={match.time}

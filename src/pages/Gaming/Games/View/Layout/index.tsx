@@ -1,11 +1,15 @@
 import { Button } from '@/ui';
 import { Container } from './styles';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
-import { DashboardHeader } from '@/components';
+import { CreateGame, DashboardHeader } from '@/components';
 import { APP_ROUTES } from '@/constants';
+import { useState } from 'react';
+import ConnectAccount from '../Modals/ConnectAccount';
 
 const GameView = () => {
 	const location = useLocation();
+	const [createGame, setCreateGame] = useState(false);
+	const [connectAccount, setConnectAccount] = useState(false);
 
 	const params = useParams();
 
@@ -31,16 +35,21 @@ const GameView = () => {
 	return (
 		<Container>
 			<DashboardHeader />
+
+			<CreateGame gameModal={createGame} setGameModal={setCreateGame} />
+
+			<ConnectAccount connectAccount={connectAccount} setConnectAccount={setConnectAccount} />
+
 			<div className="header">
 				<h6>Apex legend</h6>
 
 				<div>
 					{location.pathname === `/games/${params.gameId}/overview` && (
-						<Button variant="outline" size="small">
+						<Button onClick={() => setConnectAccount(true)} variant="outline" size="small">
 							Connect account
 						</Button>
 					)}
-					<Button variant="primary" size="small">
+					<Button onClick={() => setCreateGame(true)} variant="primary" size="small">
 						Create game
 					</Button>
 				</div>

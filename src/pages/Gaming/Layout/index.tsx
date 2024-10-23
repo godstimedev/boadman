@@ -1,11 +1,13 @@
-import { DashboardHeader } from '@/components';
+import { ChallengeModal, DashboardHeader } from '@/components';
 import { Container } from './styles';
 import { APP_ROUTES } from '@/constants';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Button } from '@/ui';
+import { useState } from 'react';
 
 const Gaming = () => {
 	const location = useLocation();
+	const [createChallenge, setCreateChallenge] = useState(false);
 
 	return (
 		<Container>
@@ -14,11 +16,13 @@ const Gaming = () => {
 				<h6>Gaming</h6>
 
 				{location.pathname === '/games/my-challenges' && (
-					<Button variant="primary" size="small">
+					<Button onClick={() => setCreateChallenge(true)} variant="primary" size="small">
 						Make Challenge
 					</Button>
 				)}
 			</div>
+
+			<ChallengeModal createChallenge={createChallenge} setCreateChallenge={setCreateChallenge} />
 
 			<div className="gaming-con">
 				<ul>

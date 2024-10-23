@@ -1,4 +1,5 @@
 export { default as CreateGame } from './Modals/CreateGame';
+export { default as ChallengeModal } from './Modals/Challenge';
 export { default as DashboardHeader } from './DashboardHeader';
 export { default as FeaturedTournament } from './Cards/FeaturedTournament';
 export { default as GameStream } from './Cards/GameStream';

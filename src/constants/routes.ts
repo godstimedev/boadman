@@ -17,6 +17,12 @@ export const APP_ROUTES = {
 		myMatches: '/games/my-matches',
 		myTournaments: '/games/my-tournaments',
 		myChallenges: '/games/my-challenges',
+		myChallengesView: `/my-challenges/:challengeId/`,
+		use_challenge_view: (challengeId: string) => `/my-challenges/${challengeId}/`,
+		myChallengeOverview: `/my-challenges/:challengeId/overview`,
+		use_challenge_overview: (challengeId: string) => `/my-challenges/${challengeId}/overview`,
+		myChallengeSummary: `/my-challenges/:challengeId/summary`,
+		use_challenge_summary: (challengeId: string) => `/my-challenges/${challengeId}/summary`,
 	},
 	leaderboard: {
 		initial: '/leaderboard/',

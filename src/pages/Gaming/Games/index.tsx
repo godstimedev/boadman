@@ -29,8 +29,12 @@ import { LastPlayed, RecentWin } from '../Cards';
 import { MatchProps } from '../../../components/Cards/Match/Match.types';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
+import { ChallengeModal, CreateGame } from '@/components';
 
 const Games = () => {
+	const [createGame, setCreateGame] = useState(false);
+	const [makeChallenge, setMakeChallenge] = useState(false);
+
 	const [filter, setFilter] = useState('all');
 	const [formData, setFormData] = useState({
 		search: '',
@@ -45,6 +49,9 @@ const Games = () => {
 
 	return (
 		<Container>
+			<CreateGame gameModal={createGame} setGameModal={setCreateGame} />
+			<ChallengeModal createChallenge={makeChallenge} setCreateChallenge={setMakeChallenge} />
+
 			<div className="top">
 				<div>
 					<div>
@@ -117,7 +124,12 @@ const Games = () => {
 						</div>
 						<div>
 							<p>Want to prove your superiority? Challenge friends and gamers to a personal game now</p>
-							<Button variant="outline" outline="primary" size="small">
+							<Button
+								onClick={() => setMakeChallenge(true)}
+								variant="outline"
+								outline="primary"
+								size="small"
+							>
 								Make Challenge
 							</Button>
 						</div>
@@ -130,16 +142,19 @@ const Games = () => {
 							Looking for a new challenge or a way to increase earnings? Play your favourite games now
 						</p>
 						<div>
-							<Button variant="outline" size="small">
-								Join game
-							</Button>
-							<Button variant="primary" size="small">
+							<Link to={APP_ROUTES.matches.initial}>
+								<Button variant="outline" size="small">
+									Join game
+								</Button>
+							</Link>
+							<Button onClick={() => setCreateGame(true)} variant="primary" size="small">
 								Create game
 							</Button>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div className="swiper-con ">
 				<Swiper spaceBetween={20} slidesPerView={1.15}>
 					<SwiperSlide>

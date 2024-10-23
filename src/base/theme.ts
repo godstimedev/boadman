@@ -40,7 +40,7 @@ const colors = {
 	// background: ;
 
 	// Neutral
-	neutral50: '#E5E5E51A',
+	neutral50: '#2C2E33',
 	neutral100: '#E5E5E5B2',
 	// neutral100: '#E7EAEE',
 	neutral200: '#E5E5E5B2',

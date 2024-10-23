@@ -58,6 +58,7 @@ export { default as Leaderboard } from './Leaderboard.svg?react';
 export { default as LeagueOfLegends } from './LeagueOfLegends.svg?react';
 export { default as Linkedin } from './Linkedin.svg?react';
 export { default as LinkIcon } from './LinkIcon.svg?react';
+export { default as Location } from './Location.svg?react';
 export { default as Logout } from './Logout.svg?react';
 export { default as MatchAmount } from './MatchAmount.svg?react';
 export { default as MenuIcon } from './MenuIcon.svg?react';

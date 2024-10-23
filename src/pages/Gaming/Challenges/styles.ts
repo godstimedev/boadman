@@ -97,6 +97,7 @@ export const Container = styled.div`
 			justify-content: space-between;
 			align-items: center;
 			border-radius: 5px;
+			cursor: pointer;
 
 			td {
 				width: max-content;

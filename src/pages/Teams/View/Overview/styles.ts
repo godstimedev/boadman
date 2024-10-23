@@ -96,6 +96,10 @@ export const Container = styled.div`
 				grid-template-columns: 1fr 1fr 1fr;
 				gap: 0.5rem;
 
+				> div {
+					cursor: pointer;
+				}
+
 				${maxQuery('xl')} {
 					grid-template-columns: 1fr 1fr;
 					gap: 0.8rem;

@@ -222,8 +222,13 @@ export const Container = styled.div`
 			gap: 1rem;
 			margin-top: 0.1rem;
 
-			> button {
+			> button,
+			a {
 				width: 100%;
+
+				> button {
+					width: 100%;
+				}
 			}
 		}
 	}

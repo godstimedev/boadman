@@ -210,9 +210,11 @@ const Dashboard = () => {
 										</div>
 
 										<div>
-											<Button variant="primary" size="small">
-												View Profile
-											</Button>
+											<Link to={APP_ROUTES.profile}>
+												<Button variant="primary" size="small">
+													View Profile
+												</Button>
+											</Link>
 										</div>
 									</div>
 
@@ -303,8 +305,12 @@ const Dashboard = () => {
 									Looking for a new challenge or a way to increase earnings? Play your favourite games now
 								</p>
 								<div>
-									<Button variant="outline">Join game</Button>
-									<Button variant="primary">Create game</Button>
+									<Link to={APP_ROUTES.matches.initial}>
+										<Button variant="outline">Join game</Button>
+									</Link>
+									<Button onClick={() => setCreateGame(true)} variant="primary">
+										Create game
+									</Button>
 								</div>
 							</div>
 						</SwiperSlide>
@@ -322,7 +328,9 @@ const Dashboard = () => {
 								</div>
 
 								<div>
-									<Button variant="primary">Deposit</Button>
+									<Link to={APP_ROUTES.wallet}>
+										<Button variant="primary">Deposit</Button>
+									</Link>
 								</div>
 							</div>
 						</SwiperSlide>
@@ -391,8 +399,8 @@ const Dashboard = () => {
 					<Swiper spaceBetween={20} slidesPerView={1.3}>
 						<div className="left-con">
 							{trendingGamesList.map((game, index) => (
-								<SwiperSlide>
-									<div key={index} className="trending-card">
+								<SwiperSlide key={index}>
+									<div className="trending-card">
 										<span>{game.icon}</span>
 
 										<div>
@@ -451,9 +459,8 @@ const Dashboard = () => {
 					>
 						<div className="right-con">
 							{featuredTournamentsList.map((tournament, index) => (
-								<SwiperSlide>
+								<SwiperSlide key={index}>
 									<FeaturedTournament
-										key={index}
 										image={tournament.image}
 										categories={tournament.category}
 										status={tournament.status}
@@ -551,12 +558,11 @@ const Dashboard = () => {
 					>
 						<div className="con-3-list">
 							{featuredStreamsList.map((stream, index) => (
-								<SwiperSlide>
+								<SwiperSlide key={index}>
 									<FeaturedStream
 										avatar={stream.avatar}
 										game={stream.game}
 										image={stream.image}
-										key={index}
 										username={stream.username}
 										views={stream.views}
 									/>

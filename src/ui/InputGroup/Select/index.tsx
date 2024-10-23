@@ -17,6 +17,7 @@ const Select = (props: SelectPropType) => {
 		// Should filter the options as they type
 		suggestWhileTyping = false,
 		dropdownPosition = 'bottom',
+		dropdownAlign = 'center',
 
 		// Onchange passed should follow this pattern
 		onChange,
@@ -102,6 +103,7 @@ const Select = (props: SelectPropType) => {
 			ref={componentRef}
 			id={componentId}
 			$dropdownPosBottom={dropdownPosition === 'bottom' ? true : false}
+			$dropdownItemsAlign={dropdownAlign === 'center' ? true : false}
 		>
 			{customLabel ? (
 				customLabel
@@ -112,22 +114,6 @@ const Select = (props: SelectPropType) => {
 			)}
 
 			<div className={`input-group ${type === 'advanced' ? 'advanced-group' : ''}`}>
-				{type === 'advanced' && value ? (
-					<div
-						className="select-advanced-values"
-						onClick={(event) => event.currentTarget === event.target && inputRef.current?.focus()}
-					>
-						{value.split(seperator).map((val) => (
-							<div key={val}>
-								{val}
-								<span onClick={() => handleRemoveAdvancedValue(val)}>
-									<SelectClose />
-								</span>
-							</div>
-						))}
-					</div>
-				) : null}
-
 				<div className="input-icon">
 					<input
 						type="text"
@@ -304,6 +290,22 @@ const Select = (props: SelectPropType) => {
 						) : null}
 					</ul>
 				)}
+
+				{type === 'advanced' && value ? (
+					<div
+						className="select-advanced-values"
+						onClick={(event) => event.currentTarget === event.target && inputRef.current?.focus()}
+					>
+						{value.split(seperator).map((val) => (
+							<div key={val}>
+								{val}
+								<span onClick={() => handleRemoveAdvancedValue(val)}>
+									<SelectClose />
+								</span>
+							</div>
+						))}
+					</div>
+				) : null}
 			</div>
 
 			<div className="info-con" id="info-con" ref={infoRef}>

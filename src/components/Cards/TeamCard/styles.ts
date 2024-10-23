@@ -9,6 +9,7 @@ export const Container = styled.div`
 	border-radius: 5px;
 
 	${maxQuery('sm')} {
+		max-width: 365px;
 		width: 100%;
 	}
 

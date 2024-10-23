@@ -1041,7 +1041,7 @@ const Playground = () => {
 					<div>
 						<Select
 							suggestWhileTyping={true}
-							label="Stacks Combination"
+							label="Add Players"
 							name="stacks"
 							value={formData.stacks}
 							onChange={handleChange}
@@ -1063,14 +1063,14 @@ const Playground = () => {
 							required
 							dropdownPosition="top"
 							type="advanced"
-							suggestionTitle="Suggested stacks:"
-							initialSuggestions={['Python', 'Javascript', 'Docker', 'AWS']}
+							suggestionTitle="Suggested players:"
+							initialSuggestions={['Flunk_God', 'Boris Winks', 'Alldot', 'Emma']}
 							allowNewSuggestions={true}
 						/>
 
 						<ul>
 							<li>suggestWhileTyping: true</li>
-							<li>label: Stacks Combination</li>
+							<li>label: Add Players</li>
 							<li>name: stacks</li>
 							<li>value: ''</li>
 							<li>onChange: handleChange</li>
@@ -1079,8 +1079,8 @@ const Playground = () => {
 							<li>required</li>
 							<li>dropdownPosition: top</li>
 							<li>type: advanced</li>
-							<li>suggestionTitle: Suggested stacks:</li>
-							<li>initialSuggestions: ['Python', 'Javascript', 'Docker', 'AWS']</li>
+							<li>suggestionTitle: Suggested players:</li>
+							<li>initialSuggestions: ['Flunk_God', 'Boris Winks', 'Alldot', 'Emma']</li>
 							<li>allowNewSuggestions: true</li>
 						</ul>
 					</div>

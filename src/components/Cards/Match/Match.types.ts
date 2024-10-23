@@ -1,5 +1,4 @@
 export type MatchProps = {
-	key: number;
 	title: string;
 	date: string;
 	time?: string;
