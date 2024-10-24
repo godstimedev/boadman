@@ -1,12 +1,18 @@
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { Container } from './styles';
 import { Button } from '@/ui';
 import { APP_ROUTES } from '@/constants';
 import { DashboardHeader } from '@/components';
 import { GamerAvatar } from '@/assets/images';
+import { useState } from 'react';
+import AddMembers from '../../Modals/AddMember';
+import CreateRoster from '../../Modals/CreateRoster';
 
 const TeamView = () => {
 	const params = useParams();
+	const location = useLocation();
+	const [addMembers, setAddMembers] = useState(false);
+	const [createRoster, setCreateRoster] = useState(false);
 
 	const navList = [
 		{
@@ -35,6 +41,10 @@ const TeamView = () => {
 		<Container>
 			<DashboardHeader />
 
+			<AddMembers addMembers={addMembers} setAddMembers={setAddMembers} />
+
+			<CreateRoster createRoster={createRoster} setCreateRoster={setCreateRoster} />
+
 			<div className="banner" />
 
 			<div className="head">
@@ -52,7 +62,15 @@ const TeamView = () => {
 					<Button variant="outline" outline="tetiary">
 						Leave team
 					</Button>
-					<Button variant="primary">Add member</Button>
+					{location.pathname === `/teams/${params?.teamId}/matches` ? (
+						<Button onClick={() => setCreateRoster(true)} variant="primary">
+							Set Roster
+						</Button>
+					) : (
+						<Button onClick={() => setAddMembers(true)} variant="primary">
+							Add member
+						</Button>
+					)}
 				</div>
 			</div>
 

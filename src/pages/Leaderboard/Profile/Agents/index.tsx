@@ -24,7 +24,7 @@ const Agents = () => {
 			onRowClick: () => console.log('clicked'),
 		},
 		{
-			rowId: 1,
+			rowId: 2,
 			rowData: [
 				<div className="player">
 					<img src={Agent1} alt="/" className="w-4 h-4" />
@@ -43,7 +43,7 @@ const Agents = () => {
 			onRowClick: () => console.log('clicked'),
 		},
 		{
-			rowId: 2,
+			rowId: 3,
 			rowData: [
 				<div className="player">
 					<img src={Agent1} alt="/" className="w-4 h-4" />
@@ -62,7 +62,7 @@ const Agents = () => {
 			onRowClick: () => console.log('clicked'),
 		},
 		{
-			rowId: 3,
+			rowId: 4,
 			rowData: [
 				<div className="player">
 					<img src={Agent1} alt="/" className="w-4 h-4" />

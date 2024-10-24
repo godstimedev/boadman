@@ -26,6 +26,7 @@ export { default as Crown } from './Crown.svg?react';
 export { default as Dashboard } from './Dashboard.svg?react';
 export { default as Destiny2 } from './Destiny2.svg?react';
 export { default as DiscordIcon } from './DiscordIcon.svg?react';
+export { default as Download } from './Download.svg?react';
 export { default as EyeIcon } from './EyeIcon.svg?react';
 export { default as FacebookTeams } from './FacebookTeams.svg?react';
 export { default as Faqs } from './Faqs.svg?react';

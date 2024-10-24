@@ -12,10 +12,12 @@ import { Link, useParams } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
 import { useState } from 'react';
 import RosterProfile from '../../Modals/RosterProfile';
+import ChangeCaptain from '../../Modals/ChangeCaptain';
 
 const TeamOverview = () => {
 	const params = useParams();
 	const [showProfile, setShowProfile] = useState(false);
+	const [changeCaptain, setChangeCaptain] = useState(false);
 
 	const handleProfileClick = () => {
 		setShowProfile(true);
@@ -63,7 +65,7 @@ const TeamOverview = () => {
 					<div className="header">
 						<h6>Team Roster</h6>
 
-						<Button variant="text" size="small">
+						<Button onClick={() => setChangeCaptain(true)} variant="text" size="small">
 							Change captain
 						</Button>
 					</div>
@@ -90,9 +92,8 @@ const TeamOverview = () => {
 					</div>
 				</div>
 			</div>
-
 			<RosterProfile showProfile={showProfile} setShowProfile={setShowProfile} />
-
+			<ChangeCaptain changeCaptain={changeCaptain} setChangeCaptain={setChangeCaptain} />
 			<div>
 				<h6>Upcomming matches</h6>
 

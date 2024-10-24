@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { Bracket, RoundProps } from 'react-brackets';
+import { Line, LineChart } from 'recharts';
 import {
 	Button,
 	InputGroup,
@@ -197,6 +198,21 @@ const Playground = () => {
 	// 	},
 	// ];
 
+	const chartData = [
+		{ month: 'January', coins: 30 },
+		{ month: 'February', coins: 35 },
+		{ month: 'March', coins: 50 },
+		{ month: 'April', coins: 45 },
+		{ month: 'May', coins: 33 },
+		{ month: 'June', coins: 63 },
+		{ month: 'July', coins: 95 },
+		{ month: 'August', coins: 87 },
+		{ month: 'September', coins: 99 },
+		{ month: 'October', coins: 110 },
+		{ month: 'Novemeber', coins: 115 },
+		{ month: 'December', coins: 150 },
+	];
+
 	return (
 		<Container>
 			<h1>App components</h1>
@@ -358,6 +374,28 @@ const Playground = () => {
 						<li>trigger: A button element</li>
 						<li>children: A div element with buttons containing the dropdown items</li>
 					</ul>
+				</Flex>
+			</Flex>
+			<br />
+			<br />
+			<br />
+			<br />
+			<h3>Line Chart</h3>
+			<br />
+			<Flex>
+				<Flex $align="center">
+					<LineChart
+						width={180}
+						height={100}
+						accessibilityLayer
+						data={chartData}
+						margin={{
+							left: 12,
+							right: 12,
+						}}
+					>
+						<Line dataKey="coins" type="natural" stroke="#8884d8" strokeWidth={2} dot={false} />
+					</LineChart>
 				</Flex>
 			</Flex>
 			<br />

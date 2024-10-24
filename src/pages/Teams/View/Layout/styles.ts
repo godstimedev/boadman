@@ -94,7 +94,7 @@ export const Container = styled.div`
 		flex-direction: column;
 		gap: 1.5rem;
 
-		ul {
+		> ul {
 			display: flex;
 			align-items: center;
 			gap: 2rem;
