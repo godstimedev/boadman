@@ -7,6 +7,10 @@ export { default as SignUp } from './Auth/SignUp';
 
 // Pages on dashboard layout
 export { default as Dashboard } from './Dashboard';
+export { default as Friends } from './Friends';
+export { default as FriendsView } from './Friends/View/Layout';
+export { default as FriendsOverview } from './Friends/View/Overview';
+export { default as FriendsPlayHistory } from './Friends/View/PlayHistory';
 export { default as Gaming } from './Gaming/Layout';
 export { default as GamingGames } from './Gaming/Games';
 export { default as GameView } from './Gaming/Games/View/Layout';
@@ -43,7 +47,7 @@ export { default as TournamentMatchView } from './Tournaments/View/Matches/View'
 export { default as TournamentBracket } from './Tournaments/View/Bracket';
 export { default as TournamentTeams } from './Tournaments/View/Teams';
 export { default as TournamentResults } from './Tournaments/View/Results';
-export { default as Friends } from './Friends';
+
 export { default as Matches } from './Matches';
 export { default as MatchView } from './Matches/View/Layout';
 export { default as MatchOverview } from './Matches/View/Overview';

@@ -8,6 +8,7 @@ export const Container = styled.div`
 	align-items: center;
 	gap: 1.5rem;
 	text-align: center;
+	overflow-y: auto;
 
 	${maxQuery('md')} {
 		padding: 2rem 2rem;

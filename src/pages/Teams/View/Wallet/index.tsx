@@ -41,6 +41,8 @@ const TeamWallet = () => {
 		}));
 	};
 
+	console.log(clickedRows);
+
 	return (
 		<Container>
 			<div className="header">
@@ -176,7 +178,7 @@ const TeamWallet = () => {
 									<div className="checkbox">
 										<input
 											type="checkbox"
-											checked={!!clickedRows[1]} // Reflect the clicked state
+											checked={!!clickedRows[index + 1]} // Reflect the clicked state
 											readOnly
 										/>
 									</div>
@@ -198,9 +200,11 @@ const TeamWallet = () => {
 										<p>{data.type}</p>
 									</div>
 								</td>
-								<td className="badge-con">
-									<div className={`${data.status} badge`}>
-										<span>{data.status}</span>
+								<td>
+									<div className="badge-con">
+										<div className={`${data.status} badge`}>
+											<span>{data.status}</span>
+										</div>
 									</div>
 								</td>
 								<td>
@@ -249,6 +253,30 @@ const transactionData = [
 		date: 'May 27 2023',
 		time: '9:00 pm',
 		type: 'Transfer',
+		status: 'Pending',
+		amount: '2300 coins',
+	},
+	{
+		id: 'xxxx 4564 2456',
+		date: 'May 27 2023',
+		time: '9:00 pm',
+		type: 'Deposit',
+		status: 'Pending',
+		amount: '2300 coins',
+	},
+	{
+		id: 'xxxx 4564 2456',
+		date: 'May 27 2023',
+		time: '9:00 pm',
+		type: 'Transfer',
+		status: 'Pending',
+		amount: '2300 coins',
+	},
+	{
+		id: 'xxxx 4564 2456',
+		date: 'May 27 2023',
+		time: '9:00 pm',
+		type: 'Competition fee',
 		status: 'Pending',
 		amount: '2300 coins',
 	},

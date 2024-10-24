@@ -29,6 +29,7 @@ export { default as DiamondAchievement } from './DiamondAchievement.png';
 export { default as FeaturedVector } from './FeaturedVector.png';
 export { default as FeaturedVectorMobile1 } from './FeaturedVectorMobile1.png';
 export { default as FeaturedVectorMobile2 } from './FeaturedVectorMobile2.png';
+export { default as FriendsBanner } from './FriendsBanner.png';
 export { default as GamerAvatar } from './GamerAvatar.png';
 export { default as GameStream } from './GameStream.png';
 export { default as GiftAchievement } from './GiftAchievement.png';

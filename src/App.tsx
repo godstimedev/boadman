@@ -55,6 +55,9 @@ import {
 	ChallengeView,
 	ChallengeOverview,
 	ChallengeSummary,
+	FriendsView,
+	FriendsOverview,
+	FriendsPlayHistory,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -137,7 +140,11 @@ function App() {
 							<Route path={APP_ROUTES.teams.playHistory} element={<TeamPlayHistory />} />
 							<Route path={APP_ROUTES.teams.wallet} element={<TeamWallet />} />
 						</Route>
-						<Route path={APP_ROUTES.friends} element={<Friends />} />
+						<Route path={APP_ROUTES.friends.initial} element={<Friends />} />
+						<Route element={<FriendsView />}>
+							<Route path={APP_ROUTES.friends.overview} element={<FriendsOverview />} />
+							<Route path={APP_ROUTES.friends.playHistory} element={<FriendsPlayHistory />} />
+						</Route>
 						<Route path={APP_ROUTES.matches.initial} element={<Matches />} />
 						<Route path={APP_ROUTES.matches.view} element={<MatchView />}>
 							<Route path={APP_ROUTES.matches.overview} element={<MatchOverview />} />

@@ -44,6 +44,9 @@ export const StyledModal = styled.div<StyledModalProps>`
 			max-width: 85%;
 			max-height: 85%;
 		}
+		${maxQuery('sm')} {
+			width: 85%;
+		}
 
 		${({ $isOpen }) =>
 			$isOpen &&

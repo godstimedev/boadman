@@ -1,7 +1,15 @@
 export const APP_ROUTES = {
 	dashboard: '/dashboard',
 	faqs: '/faqs',
-	friends: '/friends',
+	friends: {
+		initial: '/friends',
+		view: `/friends/:friendId/`,
+		use_view: (friendId: string) => `/friends/${friendId}/`,
+		overview: `/friends/:friendId/overview`,
+		use_overview: (friendId: string) => `/friends/${friendId}/overview`,
+		playHistory: `/friends/:friendId/play-history`,
+		use_playHistory: (friendId: string) => `/friends/${friendId}/play-history`,
+	},
 	gaming: {
 		initial: '/games',
 		view: '/games/:gameId',

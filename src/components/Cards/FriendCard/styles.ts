@@ -73,7 +73,7 @@ export const Container = styled.div`
 		}
 	}
 
-	> .middle {
+	> div:last-child {
 		padding: 0.75rem 1rem;
 
 		p {
@@ -92,44 +92,6 @@ export const Container = styled.div`
 				flex-direction: column;
 				gap: 0.5rem;
 			}
-		}
-	}
-
-	> div:last-child {
-		padding: 0.75rem 1rem;
-
-		p {
-			font-size: 12px;
-			font-weight: 400;
-			line-height: 14.4px;
-			margin-left: 0.35rem;
-		}
-
-		> div:first-child {
-			display: flex;
-			align-items: center;
-
-			img {
-				width: 25px;
-				height: 25px;
-				border-radius: 50%;
-				border: 2px solid #22252c;
-				object-fit: cover;
-
-				&:not(:first-child) {
-					margin-left: -0.35rem;
-				}
-			}
-
-			p {
-				margin-left: 0.35rem;
-			}
-		}
-
-		> div:last-child {
-			display: flex;
-			flex-direction: column;
-			gap: 0.5rem;
 		}
 	}
 `;

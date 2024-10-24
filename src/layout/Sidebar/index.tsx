@@ -137,7 +137,7 @@ const navList = {
 		},
 		{
 			name: 'Friends',
-			link: APP_ROUTES.friends,
+			link: APP_ROUTES.friends.initial,
 			svg: {
 				default: <Friends />,
 			},

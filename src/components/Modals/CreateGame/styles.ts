@@ -12,6 +12,9 @@ export const Container = styled.div`
 	${maxQuery('md')} {
 		padding: 2rem 2rem;
 	}
+	${maxQuery('sm')} {
+		padding: 1.5rem;
+	}
 
 	> div {
 		display: flex;
@@ -22,10 +25,7 @@ export const Container = styled.div`
 		flex-grow: 1;
 		width: 390px;
 
-		${maxQuery('lg')} {
-			width: 100%;
-		}
-		${maxQuery('md')} {
+		${maxQuery('sm')} {
 			width: 100%;
 		}
 
