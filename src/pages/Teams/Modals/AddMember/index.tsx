@@ -43,12 +43,15 @@ const AddMembers = (props: PropsType) => {
 						type="advanced"
 						name="members"
 						placeholder="Search players"
-						options={[].map((player) => ({ name: player, value: player }))}
+						options={['Emma', 'Alldot', 'Godstime', 'Boris Wick'].map((player) => ({
+							name: player,
+							value: player,
+						}))}
 						value={formData.members}
 						onChange={handleChange}
-						allowNewSuggestions={true}
+						allowNewSuggestions={false}
 						suggestWhileTyping={true}
-						dropdownPosition="top"
+						dropdownPosition="bottom"
 						dropdownAlign="left"
 					/>
 				</form>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { Bracket, RoundProps } from 'react-brackets';
-import { Line, LineChart } from 'recharts';
+import { Legend, Line, LineChart } from 'recharts';
 import {
 	Button,
 	InputGroup,
@@ -394,6 +394,7 @@ const Playground = () => {
 							right: 12,
 						}}
 					>
+						<Legend verticalAlign="top" align="left" height={4} />
 						<Line dataKey="coins" type="natural" stroke="#8884d8" strokeWidth={2} dot={false} />
 					</LineChart>
 				</Flex>

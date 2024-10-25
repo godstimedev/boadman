@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { Container } from './styles';
 import { Button } from '@/ui';
 import { APP_ROUTES } from '@/constants';
@@ -8,6 +8,7 @@ import { HeroAvatar } from '@/assets/images';
 
 const FriendsView = () => {
 	const params = useParams();
+	const location = useLocation();
 
 	const navList = [
 		{
@@ -37,7 +38,11 @@ const FriendsView = () => {
 				</div>
 
 				<div>
-					<Button variant="outline">Remove friend</Button>
+					{location.pathname === `/friends/${params.friendId}/play-history` ? (
+						<Button variant="outline">Challenge</Button>
+					) : (
+						<Button variant="outline">Remove friend</Button>
+					)}
 
 					<Button variant="primary">Message</Button>
 				</div>
