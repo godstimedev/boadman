@@ -13,6 +13,7 @@ const Select = (props: SelectPropType) => {
 		label,
 		customLabel,
 		options = [],
+		icon,
 
 		// Should filter the options as they type
 		suggestWhileTyping = false,
@@ -102,6 +103,7 @@ const Select = (props: SelectPropType) => {
 		<StyledInputContainer
 			ref={componentRef}
 			id={componentId}
+			$posLeft={icon ? true : false}
 			$dropdownPosBottom={dropdownPosition === 'bottom' ? true : false}
 			$dropdownItemsAlign={dropdownAlign === 'center' ? true : false}
 		>
@@ -115,6 +117,7 @@ const Select = (props: SelectPropType) => {
 
 			<div className={`input-group ${type === 'advanced' ? 'advanced-group' : ''}`}>
 				<div className="input-icon">
+					<div className="custom-icon">{icon && icon}</div>
 					<input
 						type="text"
 						name={name}
@@ -224,7 +227,7 @@ const Select = (props: SelectPropType) => {
 									(event.target as HTMLLIElement).blur();
 								}}
 							>
-								{option.name}
+								{option.icon} {option.name}
 							</li>
 						))}
 						{allowNewSuggestions && inputVal ? (

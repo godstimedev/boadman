@@ -1,9 +1,8 @@
-import { Button, Dropdown, InputGroup } from '@/ui';
+import { Button, Dropdown, InputGroup, LineChart } from '@/ui';
 import { Container } from './styles';
 import { CaretDown, Download } from '@/assets/svgs';
 import { GeneralChangeEventType } from '@/types';
 import { useState } from 'react';
-import { Line, LineChart } from 'recharts';
 
 const TeamWallet = () => {
 	const [formData, setFormData] = useState({
@@ -66,21 +65,16 @@ const TeamWallet = () => {
 									<span>coins</span>
 									<span className="stat">+3%</span>
 								</div>
-								<p>Total this year</p>
 							</div>
 
-							<LineChart
-								width={195}
-								height={90}
-								accessibilityLayer
-								data={chartData}
-								margin={{
-									left: 12,
-									right: 12,
-								}}
-							>
-								<Line dataKey="coins" type="natural" stroke="#FFA000" strokeWidth={2} dot={false} />
-							</LineChart>
+							<div>
+								<LineChart
+									chartData={chartData}
+									dataKey="coins"
+									name="Total this year"
+									lineColor="#FFA000"
+								/>
+							</div>
 						</div>
 						<div>
 							<div>
@@ -88,21 +82,11 @@ const TeamWallet = () => {
 									<h4>34000</h4>
 									<span>coins</span>
 								</div>
-								<p>Wins</p>
 							</div>
 
-							<LineChart
-								width={195}
-								height={90}
-								accessibilityLayer
-								data={chartData}
-								margin={{
-									left: 12,
-									right: 12,
-								}}
-							>
-								<Line dataKey="coins" type="natural" stroke="#3498DB" strokeWidth={2} dot={false} />
-							</LineChart>
+							<div>
+								<LineChart chartData={chartData} dataKey="coins" name="Wins" lineColor="#3498DB" />
+							</div>
 						</div>
 						<div>
 							<div>
@@ -110,21 +94,10 @@ const TeamWallet = () => {
 									<h4>34000</h4>
 									<span>coins</span>
 								</div>
-								<p>Losses</p>
 							</div>
-
-							<LineChart
-								width={195}
-								height={90}
-								accessibilityLayer
-								data={chartData}
-								margin={{
-									left: 12,
-									right: 12,
-								}}
-							>
-								<Line dataKey="coins" type="natural" stroke="#673AB7" strokeWidth={2} dot={false} />
-							</LineChart>
+							<div>
+								<LineChart chartData={chartData} dataKey="coins" name="Losses" lineColor="#673AB7" />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -163,13 +136,15 @@ const TeamWallet = () => {
 			<div className="table-con">
 				<table>
 					<thead>
-						<th></th>
-						<th>Transaction ID</th>
-						<th>Date</th>
-						<th>Type</th>
-						<th>Status</th>
-						<th>Amount</th>
-						<th></th>
+						<tr>
+							<th></th>
+							<th>Transaction ID</th>
+							<th>Date</th>
+							<th>Type</th>
+							<th>Status</th>
+							<th>Amount</th>
+							<th></th>
+						</tr>
 					</thead>
 					<tbody>
 						{transactionData.map((data, index) => (

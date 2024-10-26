@@ -58,6 +58,8 @@ import {
 	FriendsView,
 	FriendsOverview,
 	FriendsPlayHistory,
+	Withdraw,
+	Transfer,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -150,7 +152,14 @@ function App() {
 							<Route path={APP_ROUTES.matches.overview} element={<MatchOverview />} />
 							<Route path={APP_ROUTES.matches.summary} element={<MatchSummary />} />
 						</Route>
-						<Route path={APP_ROUTES.wallet} element={<Wallet />} />
+						<Route element={<Wallet />}>
+							<Route
+								path={APP_ROUTES.wallet.initial}
+								element={<Navigate to={APP_ROUTES.wallet.withdraw} replace />}
+							/>
+							<Route path={APP_ROUTES.wallet.withdraw} element={<Withdraw />} />
+							<Route path={APP_ROUTES.wallet.transfer} element={<Transfer />} />
+						</Route>
 						<Route path={APP_ROUTES.profile} element={<Profile />} />
 						<Route path={APP_ROUTES.settings} element={<Settings />} />
 						<Route path={APP_ROUTES.faqs} element={<Faqs />} />

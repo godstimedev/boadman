@@ -101,5 +101,9 @@ export const APP_ROUTES = {
 		results: `/tournaments/:tournamentId/results`,
 		use_results: (tournamentId: string) => `/tournaments/${tournamentId}/results`,
 	},
-	wallet: '/wallet',
+	wallet: {
+		initial: '/wallet',
+		withdraw: '/wallet/withdraw',
+		transfer: '/wallet/transfer',
+	},
 };

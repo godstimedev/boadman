@@ -15,3 +15,4 @@ export { default as Loader } from './LoadingScreen/Loader';
 export { default as Notification } from './Notification';
 export { default as Pallet } from './Pallet';
 export { default as Table } from './Table';
+export { default as LineChart } from './LineChart';

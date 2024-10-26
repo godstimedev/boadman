@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { Bracket, RoundProps } from 'react-brackets';
-import { Legend, Line, LineChart } from 'recharts';
 import {
 	Button,
 	InputGroup,
@@ -13,6 +12,7 @@ import {
 	FaqAccordion,
 	Dropdown,
 	Accordion,
+	LineChart,
 } from '../../ui';
 import { Container, Flex } from './styles';
 import { useNotify } from '../../hooks';
@@ -213,6 +213,37 @@ const Playground = () => {
 		{ month: 'December', coins: 150 },
 	];
 
+	// const CustomLegend = ({ payload: LegendPayload[] }) => (
+	// 	<ul style={{ listStyleType: 'none', padding: 0, color: '#4A90E2', fontSize: '14px' }}>
+	// 		{payload.map((entry, index) => (
+	// 			<li key={`item-${index}`} style={{ marginBottom: 4 }}>
+	// 				{entry.value} {/* Only the text */}
+	// 			</li>
+	// 		))}
+	// 	</ul>
+	// );
+
+	// Define custom LegendPayload type
+	// type CustomLegendPayload = {
+	// 	value: string;
+	// 	color?: string;
+	// };
+
+	// interface CustomLegendProps extends LegendProps {
+	// 	payload?: CustomLegendPayload[];
+	// }
+
+	// // Custom Legend Component with types
+	// const CustomLegend: React.FC<CustomLegendProps> = ({ payload }) => (
+	// 	<ul style={{ listStyleType: 'none', padding: 0, color: '#fff', fontSize: '12px' }}>
+	// 		{payload?.map((entry, index) => (
+	// 			<li key={`item-${index}`} style={{ marginBottom: 4 }}>
+	// 				{entry.value} {/* Only the text */}
+	// 			</li>
+	// 		))}
+	// 	</ul>
+	// );
+
 	return (
 		<Container>
 			<h1>App components</h1>
@@ -384,19 +415,9 @@ const Playground = () => {
 			<br />
 			<Flex>
 				<Flex $align="center">
-					<LineChart
-						width={180}
-						height={100}
-						accessibilityLayer
-						data={chartData}
-						margin={{
-							left: 12,
-							right: 12,
-						}}
-					>
-						<Legend verticalAlign="top" align="left" height={4} />
-						<Line dataKey="coins" type="natural" stroke="#8884d8" strokeWidth={2} dot={false} />
-					</LineChart>
+					<div className="w-48">
+						<LineChart chartData={chartData} dataKey="coins" lineColor="#E4AB00" name="Total this week" />
+					</div>
 				</Flex>
 			</Flex>
 			<br />
@@ -412,6 +433,7 @@ const Playground = () => {
 						placeholder="Date Time"
 						value={formData.date_time}
 						onChange={handleDateChange}
+						showDateOnly
 					/>
 				</Flex>
 			</Flex>

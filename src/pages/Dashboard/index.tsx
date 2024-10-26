@@ -174,7 +174,7 @@ const Dashboard = () => {
 							</div>
 
 							<div>
-								<Link to={APP_ROUTES.wallet}>
+								<Link to={APP_ROUTES.wallet.initial}>
 									<Button variant="primary">Deposit</Button>
 								</Link>
 							</div>
@@ -328,7 +328,7 @@ const Dashboard = () => {
 								</div>
 
 								<div>
-									<Link to={APP_ROUTES.wallet}>
+									<Link to={APP_ROUTES.wallet.initial}>
 										<Button variant="primary">Deposit</Button>
 									</Link>
 								</div>

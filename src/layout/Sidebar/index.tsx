@@ -151,7 +151,7 @@ const navList = {
 		},
 		{
 			name: 'Wallet',
-			link: APP_ROUTES.wallet,
+			link: APP_ROUTES.wallet.initial,
 			svg: {
 				default: <Wallet />,
 			},

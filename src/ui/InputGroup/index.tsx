@@ -29,6 +29,7 @@ const InputGroup = (props: InputGroupPropType) => {
 		icon,
 		iconPosition = 'left',
 		moreInfo,
+		infoIcon = true,
 		...rest
 	} = props;
 
@@ -225,7 +226,7 @@ const InputGroup = (props: InputGroupPropType) => {
 			<div className="info-wrapper">
 				{moreInfo && (
 					<div className="more-info">
-						<InputInfo /> <span>{moreInfo}</span>
+						{infoIcon && <InputInfo />} <span>{moreInfo}</span>
 					</div>
 				)}
 				<div className="info-con" id="info-con" ref={infoRef}>

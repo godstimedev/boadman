@@ -7,7 +7,16 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const DateTime = (props: DateTimePropType) => {
-	const { name, value, customLabel, onChange, required, label, placeholder } = props;
+	const {
+		name,
+		value,
+		customLabel,
+		onChange,
+		required,
+		label,
+		placeholder,
+		showDateOnly = false,
+	} = props;
 
 	const inputRef = useRef<HTMLInputElement>(null);
 	const infoRef = useRef<HTMLDivElement>(null);
@@ -27,26 +36,26 @@ const DateTime = (props: DateTimePropType) => {
 		<StyledInputContainer ref={componentRef} id={componentId}>
 			{customLabel ? (
 				customLabel
-			) : (
+			) : label ? (
 				<label htmlFor={name}>
 					{label} {required ? <span>*</span> : null}
 				</label>
-			)}
+			) : null}
 
 			<div className="date-group">
 				<DatePicker
 					className="date-picker"
 					selected={value}
 					onChange={handleDateChange}
-					showTimeSelect
-					dateFormat="MMMM d, yyyy h:mm aa"
+					showTimeSelect={showDateOnly ? false : true}
+					dateFormat={showDateOnly ? 'MMMM d, yyyy' : 'MMMM d, yyyy h:mm aa'}
 					customInput={
 						<div className="date-input">
 							<input
 								name={name}
 								ref={inputRef}
 								required={required}
-								value={value?.toLocaleString()}
+								value={showDateOnly ? value?.toLocaleDateString() : value?.toLocaleString()}
 								placeholder={placeholder}
 								readOnly
 							/>

@@ -89,6 +89,15 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 				theme.colors.primary500} !important; /* Selected day/time background */
 			color: #fff; /* Selected day/time text color */
 		}
+		.react-datepicker__day--today {
+			background-color: ${({ theme }) => theme.colors.primary700};
+			border-radius: 4px;
+		}
+
+		.react-datepicker__day--keyboard-selected {
+			background-color: ${({ theme }) =>
+				theme.colors.primary300}; /* Different color for other months' "selected" days */
+		}
 
 		.react-datepicker__day:hover,
 		.react-datepicker__time-list-item:hover {
@@ -246,6 +255,18 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		.input-icon {
 			position: relative;
 			/* border: 1px solid red; */
+		}
+
+		.input-icon > .custom-icon {
+			position: absolute;
+			top: 50%;
+			left: 1rem;
+			transform: translateY(-50%);
+
+			> svg {
+				max-width: 20px;
+				max-height: 20px;
+			}
 		}
 
 		.input-icon > svg {
@@ -550,17 +571,41 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 			outline: none;
 			padding: 0.625rem 1rem;
 			text-align: left;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			justify-content: left;
 
 			${({ $dropdownItemsAlign }) =>
 				$dropdownItemsAlign &&
 				css`
 					text-align: center;
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+					justify-content: center;
 				`}
 
 			&:hover,
 			&:focus {
 				background: ${({ theme }) => theme.colors.accent500};
 			}
+
+			> svg {
+				max-width: 20px;
+				max-height: 20px;
+			}
 		}
+	}
+
+	input[type='number'] {
+		appearance: textfield;
+		-moz-appearance: textfield; /* Firefox */
+	}
+
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none; /* Chrome, Safari, Edge */
+		margin: 0;
 	}
 `;

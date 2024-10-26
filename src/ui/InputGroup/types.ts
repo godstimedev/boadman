@@ -28,6 +28,7 @@ export type InputGroupPropType = {
 	customErrorMsg?: string;
 	icon?: React.ReactNode;
 	moreInfo?: React.ReactNode | string;
+	infoIcon?: boolean;
 	variant?: string;
 	iconPosition?: 'left' | 'right';
 } & React.ComponentProps<'input'>;
@@ -53,7 +54,9 @@ type GeneralType = {
 	name: string;
 	label?: string;
 	customLabel?: React.ReactNode;
+	icon?: React.ReactNode;
 	options?: {
+		icon?: React.ReactNode;
 		name: string | number;
 		value: string | number;
 	}[];
@@ -115,5 +118,6 @@ export type DateTimePropType = {
 	customLabel?: React.ReactNode;
 	onChange: (value: Date | null) => void; // Now accepts Date | null directly
 	placeholder?: string;
+	showDateOnly?: boolean;
 	value: Date | null;
 };

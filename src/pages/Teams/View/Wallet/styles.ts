@@ -59,7 +59,7 @@ export const Container = styled.div`
 				}
 			}
 
-			> div:last-child {
+			> .charts {
 				display: flex;
 				align-items: center;
 
@@ -76,6 +76,7 @@ export const Container = styled.div`
 					display: flex;
 					flex-direction: column;
 					padding: 0.75rem 0.75rem 0;
+					width: 195px;
 
 					> div {
 						> div {
@@ -98,11 +99,11 @@ export const Container = styled.div`
 								line-height: 13.2px;
 							}
 						}
-						p {
+						/* p {
 							font-size: 12px;
 							font-weight: 400;
 							line-height: 15.84px;
-						}
+						} */
 					}
 				}
 			}
@@ -160,21 +161,21 @@ export const Container = styled.div`
 				}
 			}
 			${maxQuery('md')} {
-				> * > tr > *:first-child {
+				tbody > tr > *:first-child {
 					left: 0;
 					position: sticky;
 					background-color: ${({ theme }) => theme.colors.accent500};
 				}
 			}
 
-			thead {
+			thead tr {
 				> th {
 					font-size: 12px;
 					font-weight: 400;
 					line-height: 15.84px;
 					color: ${({ theme }) => theme.colors.accent200};
 					text-align: left;
-					padding: 0rem 0.5rem;
+					padding: 0rem 1rem;
 				}
 			}
 
