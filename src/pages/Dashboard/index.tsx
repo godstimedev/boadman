@@ -71,7 +71,7 @@ const Dashboard = () => {
 								</div>
 
 								<div>
-									<Link to={APP_ROUTES.profile}>
+									<Link to={APP_ROUTES.profile.initial}>
 										<Button variant="primary" size="small">
 											View Profile
 										</Button>
@@ -210,7 +210,7 @@ const Dashboard = () => {
 										</div>
 
 										<div>
-											<Link to={APP_ROUTES.profile}>
+											<Link to={APP_ROUTES.profile.initial}>
 												<Button variant="primary" size="small">
 													View Profile
 												</Button>

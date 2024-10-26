@@ -47,7 +47,6 @@ export { default as TournamentMatchView } from './Tournaments/View/Matches/View'
 export { default as TournamentBracket } from './Tournaments/View/Bracket';
 export { default as TournamentTeams } from './Tournaments/View/Teams';
 export { default as TournamentResults } from './Tournaments/View/Results';
-
 export { default as Matches } from './Matches';
 export { default as MatchView } from './Matches/View/Layout';
 export { default as MatchOverview } from './Matches/View/Overview';
@@ -55,6 +54,9 @@ export { default as MatchSummary } from './Matches/View/Summary';
 export { default as Wallet } from './Wallet/Layout';
 export { default as Transfer } from './Wallet/Transfer';
 export { default as Withdraw } from './Wallet/Withdraw';
-export { default as Profile } from './Profile';
+export { default as Profile } from './Profile/Layout';
+export { default as ProfileOverview } from './Profile/Overview';
+export { default as ProfilePlayHistory } from './Profile/PlayHistory';
+export { default as ProfileStream } from './Profile/Stream';
 export { default as Settings } from './Settings';
 export { default as Faqs } from './Faqs';

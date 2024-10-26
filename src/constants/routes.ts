@@ -63,7 +63,12 @@ export const APP_ROUTES = {
 		weapons: '/player-profile/weapons',
 		maps: '/player-profile/maps',
 	},
-	profile: '/profile',
+	profile: {
+		initial: '/profile',
+		overview: `/profile/overview`,
+		stream: `/profile/stream`,
+		playHistory: `/profile/play-history`,
+	},
 	register: '/register',
 	settings: '/settings',
 	teams: {

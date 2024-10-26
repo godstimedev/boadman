@@ -160,7 +160,7 @@ const navList = {
 	list3: [
 		{
 			name: 'Profile',
-			link: APP_ROUTES.profile,
+			link: APP_ROUTES.profile.initial,
 			svg: {
 				default: <Profile />,
 			},
