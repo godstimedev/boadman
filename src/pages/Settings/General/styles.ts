@@ -2,7 +2,7 @@ import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
-	form {
+	> form {
 		border: 1px solid ${({ theme }) => theme.colors.accent500};
 		border-radius: 5px;
 

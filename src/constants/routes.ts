@@ -72,7 +72,7 @@ export const APP_ROUTES = {
 	register: '/register',
 	settings: {
 		initial: '/settings',
-		general: '/settings/general',
+		general: '/settings/general-information',
 		about: '/settings/about-me',
 		changePassword: '/settings/change-password',
 		integrations: '/settings/integrations',
