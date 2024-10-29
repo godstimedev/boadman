@@ -38,12 +38,12 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 	}
 
 	label {
-		color: ${({ theme }) => theme.colors.white};
+		color: ${({ theme }) => theme.colors.accent200};
 
-		font-size: 0.75rem;
-		line-height: 120%;
+		font-size: 0.875rem;
+		line-height: 132%;
 		display: block;
-		font-weight: 600;
+		font-weight: 400;
 		letter-spacing: 0.02em;
 		margin-bottom: 0.5rem;
 
@@ -483,7 +483,6 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 		background: ${({ theme }) => theme.colors.secondary500};
 		box-shadow: 0 0 8px ${({ theme }) => theme.colors.accent100};
 		outline: 1px solid ${({ theme }) => theme.colors.accent400};
-
 		overflow: auto;
 		border-radius: 0.25rem;
 		position: absolute;

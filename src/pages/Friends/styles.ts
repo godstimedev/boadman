@@ -16,9 +16,12 @@ export const Container = styled.section`
 		}
 	}
 
-	.friends {
+	.friends-con {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		/* grid-template-rows: auto;
+		justify-content: center;
+		align-items: center; */
 		gap: 1rem;
 
 		${minQuery('1720px')} {
@@ -34,7 +37,8 @@ export const Container = styled.section`
 		}
 
 		> a {
-			width: 100%;
+			min-width: 100%;
+			/* max-width: max-content; */
 		}
 	}
 `;

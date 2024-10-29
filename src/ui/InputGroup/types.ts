@@ -121,3 +121,29 @@ export type DateTimePropType = {
 	showDateOnly?: boolean;
 	value: Date | null;
 };
+
+// FileGroup
+export type FileGroupType = {
+	value?: {
+		name: string;
+		file: File | null;
+	};
+	onChange: (
+		event?: React.ChangeEvent<HTMLInputElement> | null,
+		name?: string | '',
+		// value?: string | number | boolean
+		value?: {
+			name: string | '';
+			file: File | null;
+		}
+	) => void;
+	helpTextOne?: string;
+	helpTextTwo?: string;
+	children: JSX.Element;
+	label?: string;
+	name: string;
+	moreInfo?: string;
+	icon?: React.ComponentType;
+	required?: boolean;
+	maxSize?: number; // 1 === 1MB, 0.8 === 800kb
+};

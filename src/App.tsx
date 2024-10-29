@@ -63,6 +63,13 @@ import {
 	ProfileOverview,
 	ProfilePlayHistory,
 	ProfileStream,
+	SettingsGeneral,
+	SettingsAbout,
+	SettingsChangePassword,
+	SettingsIntegrations,
+	SettingsPrivacy,
+	SettingsNotifications,
+	SettingsVerification,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -172,7 +179,19 @@ function App() {
 							<Route path={APP_ROUTES.profile.playHistory} element={<ProfilePlayHistory />} />
 							<Route path={APP_ROUTES.profile.stream} element={<ProfileStream />} />
 						</Route>
-						<Route path={APP_ROUTES.settings} element={<Settings />} />
+						<Route element={<Settings />}>
+							<Route
+								path={APP_ROUTES.settings.initial}
+								element={<Navigate to={APP_ROUTES.settings.general} replace />}
+							/>
+							<Route path={APP_ROUTES.settings.general} element={<SettingsGeneral />} />
+							<Route path={APP_ROUTES.settings.about} element={<SettingsAbout />} />
+							<Route path={APP_ROUTES.settings.changePassword} element={<SettingsChangePassword />} />
+							<Route path={APP_ROUTES.settings.integrations} element={<SettingsIntegrations />} />
+							<Route path={APP_ROUTES.settings.privacy} element={<SettingsPrivacy />} />
+							<Route path={APP_ROUTES.settings.notifications} element={<SettingsNotifications />} />
+							<Route path={APP_ROUTES.settings.verification} element={<SettingsVerification />} />
+						</Route>
 						<Route path={APP_ROUTES.faqs} element={<Faqs />} />
 					</Route>
 

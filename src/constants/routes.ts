@@ -70,7 +70,16 @@ export const APP_ROUTES = {
 		playHistory: `/profile/play-history`,
 	},
 	register: '/register',
-	settings: '/settings',
+	settings: {
+		initial: '/settings',
+		general: '/settings/general',
+		about: '/settings/about-me',
+		changePassword: '/settings/change-password',
+		integrations: '/settings/integrations',
+		privacy: '/settings/privacy',
+		notifications: '/settings/notifications',
+		verification: '/settings/verification',
+	},
 	teams: {
 		initial: '/teams',
 		view: '/teams/:teamId',

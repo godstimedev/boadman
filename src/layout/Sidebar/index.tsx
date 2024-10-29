@@ -167,7 +167,7 @@ const navList = {
 		},
 		{
 			name: 'Settings',
-			link: APP_ROUTES.settings,
+			link: APP_ROUTES.settings.initial,
 			svg: {
 				default: <Settings />,
 			},

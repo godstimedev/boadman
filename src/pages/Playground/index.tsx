@@ -13,6 +13,7 @@ import {
 	Dropdown,
 	Accordion,
 	LineChart,
+	FileGroup,
 } from '../../ui';
 import { Container, Flex } from './styles';
 import { useNotify } from '../../hooks';
@@ -34,6 +35,10 @@ const Playground = () => {
 	const [formData, setFormData] = useState({
 		search: '',
 		date_time: null as Date | null,
+		document: {
+			name: '',
+			file: null,
+		},
 		phone_number: '',
 		company_website: '',
 		startup_stage: '',
@@ -418,6 +423,26 @@ const Playground = () => {
 					<div className="w-48">
 						<LineChart chartData={chartData} dataKey="coins" lineColor="#E4AB00" name="Total this week" />
 					</div>
+				</Flex>
+			</Flex>
+			<br />
+			<br />
+			<br />
+			<br />
+			<h3>FileGroup</h3>
+			<br />
+			<Flex>
+				<Flex $align="center">
+					<FileGroup
+						name="document"
+						onChange={handleChange}
+						value={formData.document}
+						children={
+							<button className="text-black">
+								{formData.document.name ? formData.document.name : 'Click me'}
+							</button>
+						}
+					/>
 				</Flex>
 			</Flex>
 			<br />

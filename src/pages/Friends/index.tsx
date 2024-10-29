@@ -21,7 +21,7 @@ const Friends = () => {
 					Add new
 				</Button>
 			</div>
-			<div className="friends">
+			<div className="friends-con">
 				{Array.from({ length: 12 }).map((_, i) => (
 					<Link key={i} to={APP_ROUTES.friends.use_overview(i.toString())}>
 						{' '}

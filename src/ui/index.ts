@@ -9,6 +9,7 @@ export { default as CodeGroup } from './InputGroup/CodeGroup';
 export { default as Select } from './InputGroup/Select';
 export { default as TextArea } from './InputGroup/TextArea';
 export { default as DateTime } from './InputGroup/DateTime';
+export { default as FileGroup } from './InputGroup/FileGroup';
 
 export { default as LoadingScreen } from './LoadingScreen';
 export { default as Loader } from './LoadingScreen/Loader';
