@@ -43,7 +43,7 @@ const ConnectAccount = (props: PropsType) => {
 					<span>Please enter your apex Legend username</span>
 				</div>
 
-				<form>
+				<form autoComplete="off">
 					<Select
 						type="basic"
 						name="region"

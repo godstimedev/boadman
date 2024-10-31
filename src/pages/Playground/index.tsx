@@ -58,6 +58,7 @@ const Playground = () => {
 		assessments: '',
 		location: '',
 		stacks: '',
+		settings: '',
 		message: '',
 		favorite_color: '',
 		other_favorite_color: '',
@@ -413,6 +414,27 @@ const Playground = () => {
 				</Flex>
 			</Flex>
 			<br />
+			<br />
+			<br />
+			<br />
+			<h3>Radio Buttons</h3>
+			<br />
+			<Flex>
+				<Flex $align="center">
+					<InputGroup
+						type="radio"
+						name="settings"
+						label="Settings"
+						options={[
+							{ name: 'Allow noti', value: 'allow' },
+							{ name: 'dont', value: 'do not' },
+							// { name: 'Allow others', value: 'allow others' },
+						]}
+						onChange={handleChange}
+						value={formData.settings}
+					/>
+				</Flex>
+			</Flex>
 			<br />
 			<br />
 			<br />

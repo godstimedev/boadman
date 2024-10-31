@@ -64,7 +64,7 @@ const SettingsChangePassword = () => {
 					</div>
 				</div>
 				<div>
-					<Button type="submit" variant="primary">
+					<Button type="submit" variant="primary" size="large">
 						Save Changes
 					</Button>
 				</div>

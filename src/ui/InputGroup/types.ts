@@ -21,6 +21,10 @@ export type InputGroupPropType = {
 	) => void;
 	placeholder?: string;
 	value: string | number;
+	options?: {
+		name: string;
+		value: string;
+	}[];
 	defaultCountry?: Country;
 	passwordValid?: boolean;
 	validatePassword?: boolean;

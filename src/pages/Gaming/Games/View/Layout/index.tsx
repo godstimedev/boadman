@@ -1,10 +1,9 @@
 import { Button } from '@/ui';
 import { Container } from './styles';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
-import { CreateGame, DashboardHeader } from '@/components';
+import { ConnectAccount, CreateGame, DashboardHeader } from '@/components';
 import { APP_ROUTES } from '@/constants';
 import { useState } from 'react';
-import ConnectAccount from '../Modals/ConnectAccount';
 
 const GameView = () => {
 	const location = useLocation();

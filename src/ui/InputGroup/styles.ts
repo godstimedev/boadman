@@ -211,6 +211,72 @@ export const StyledInputContainer = styled.div<StyledInputContainerPropType>`
 				cursor: pointer;
 			}
 		}
+		&.radio-container {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			margin-top: 0.75rem;
+
+			.radio-option {
+				--size: 0.75rem;
+
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				position: relative;
+				width: fit-content;
+
+				&:focus-within .custom-radio {
+					box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px ${({ theme }) => theme.colors.primary600};
+				}
+				&.error .custom-radio {
+					border-color: ${({ theme }) => theme.colors.error500};
+				}
+				.custom-radio {
+					background: ${({ theme }) => theme.colors.neutral50};
+					/* background: transparent; */
+					border: 1.66667px solid ${({ theme }) => theme.colors.neutral400};
+
+					flex-shrink: 0;
+					width: var(--size);
+					height: var(--size);
+					cursor: pointer;
+					border-radius: 0.125rem;
+					position: relative;
+
+					&.selected {
+						border-color: ${({ theme }) => theme.colors.primary500};
+
+						div {
+							background: ${({ theme }) => theme.colors.primary500};
+
+							position: absolute;
+							border-radius: 1px;
+							border: 1px solid #fff;
+							inset: 0;
+						}
+					}
+				}
+				input {
+					width: var(--size);
+					height: var(--size);
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+					opacity: 0;
+					pointer-events: none;
+					padding: 0;
+				}
+				label {
+					font-size: 0.875rem;
+					line-height: 120%;
+					margin-bottom: 0;
+					cursor: pointer;
+					color: ${({ theme }) => theme.colors.white};
+				}
+			}
+		}
 		&.code-group {
 			display: flex;
 			gap: 0.5rem;

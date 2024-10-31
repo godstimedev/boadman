@@ -20,6 +20,7 @@ const InputGroup = (props: InputGroupPropType) => {
 		onChange,
 		placeholder,
 		value,
+		options,
 		defaultCountry = 'NG',
 		passwordValid,
 		validatePassword = false,
@@ -146,6 +147,37 @@ const InputGroup = (props: InputGroupPropType) => {
 						) : null}
 						<InputCheckmark className="checkmark" />
 					</div>
+				</div>
+			) : type === 'radio' ? (
+				<div className="input-group radio-container">
+					{options?.map((option) => (
+						<div
+							key={option.value}
+							className="radio-option"
+							onClick={(event) => {
+								infoRef.current?.classList.remove('active');
+								event.currentTarget?.classList.remove('error');
+
+								onChange(undefined, name, option.value);
+							}}
+						>
+							<input
+								type="radio"
+								name={name}
+								required={required}
+								value={option.value}
+								checked={value === option.value}
+								data-componentid={componentId}
+								readOnly
+								{...rest}
+							/>
+							<div className={`custom-radio ${value === option.value ? 'selected' : ''}`}>
+								<div />
+							</div>
+
+							<label htmlFor={option.value}>{option.name}</label>
+						</div>
+					))}
 				</div>
 			) : type === 'checkbox' ? (
 				<div
