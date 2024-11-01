@@ -178,7 +178,7 @@ const navList = [
 
 	{
 		name: 'Faqs',
-		link: APP_ROUTES.faqs,
+		link: APP_ROUTES.faqs.initial,
 		svg: {
 			default: <Faqs />,
 		},

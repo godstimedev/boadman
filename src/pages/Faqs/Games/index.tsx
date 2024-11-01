@@ -19,6 +19,26 @@ const FaqGames = () => {
 						content:
 							'The winnings of a tournament are already determined before you apply. In particular, you can view the total amount of prizes on the application page for tournaments. If you are successful in the tournament, your prize will be credited to your account within 24 hours.',
 					},
+					{
+						title: 'How is the captain of a team chosen?',
+						content:
+							'The winnings of a tournament are already determined before you apply. In particular, you can view the total amount of prizes on the application page for tournaments. If you are successful in the tournament, your prize will be credited to your account within 24 hours.',
+					},
+					{
+						title: 'How is the captain of a team chosen?',
+						content:
+							'The winnings of a tournament are already determined before you apply. In particular, you can view the total amount of prizes on the application page for tournaments. If you are successful in the tournament, your prize will be credited to your account within 24 hours.',
+					},
+					{
+						title: 'How is the captain of a team chosen?',
+						content:
+							'The winnings of a tournament are already determined before you apply. In particular, you can view the total amount of prizes on the application page for tournaments. If you are successful in the tournament, your prize will be credited to your account within 24 hours.',
+					},
+					{
+						title: 'How is the captain of a team chosen?',
+						content:
+							'The winnings of a tournament are already determined before you apply. In particular, you can view the total amount of prizes on the application page for tournaments. If you are successful in the tournament, your prize will be credited to your account within 24 hours.',
+					},
 				]}
 			/>
 		</Container>
