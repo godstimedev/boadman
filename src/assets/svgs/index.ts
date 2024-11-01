@@ -1,5 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 
+export { default as AccordionToggle } from './AccordionToggle.svg?react';
 export { default as Achievement1 } from './Achievement1.svg?react';
 export { default as Achievement2 } from './Achievement2.svg?react';
 export { default as Achievement3 } from './Achievement3.svg?react';
@@ -14,6 +15,7 @@ export { default as BronzeRank } from './BronzeRank.svg?react';
 export { default as CalenderEnd } from './CalenderEnd.svg?react';
 export { default as CalenderStart } from './CalenderStart.svg?react';
 export { default as CallOfDuty } from './CallOfDuty.svg?react';
+export { default as Camera } from './Camera.svg?react';
 export { default as CaretDown } from './CaretDown.svg?react';
 export { default as CaretRight } from './CaretRight.svg?react';
 export { default as Challenge } from './Challenge.svg?react';
@@ -78,6 +80,7 @@ export { default as NotificationBell } from './NotificationBell.svg?react';
 export { default as NotificationInfo } from './NotificationInfo.svg?react';
 export { default as NavClose } from './NavClose.svg?react';
 export { default as NextArrow } from './NextArrow.svg?react';
+export { default as NotVerified } from './NotVerified.svg?react';
 export { default as OverWatch } from './OverWatch.svg?react';
 export { default as PayPal } from './PayPal.svg?react';
 export { default as PersonTargetBody } from './PersonTargetBody.svg?react';
@@ -87,6 +90,9 @@ export { default as PlayStation } from './PlayStation.svg?react';
 export { default as PrevArrow } from './PrevArrow.svg?react';
 export { default as Profile } from './Profile.svg?react';
 export { default as Pubg } from './Pubg.svg?react';
+export { default as SampleId1 } from './SampleId1.svg?react';
+export { default as SampleId2 } from './SampleId2.svg?react';
+export { default as SampleId3 } from './SampleId3.svg?react';
 export { default as Search } from './Search.svg?react';
 export { default as SearchIcon } from './SearchIcon.svg?react';
 export { default as SearchGoggles } from './SearchGoggles.svg?react';

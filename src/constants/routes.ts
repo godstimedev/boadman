@@ -1,6 +1,18 @@
 export const APP_ROUTES = {
 	dashboard: '/dashboard',
-	faqs: '/faqs',
+	faqs: {
+		initial: '/faqs',
+		teams: '/faqs/teams',
+		generalQuestions: '/faqs/general-questions',
+		matches: '/faqs/matches',
+		tournaments: '/faqs/tournaments',
+		payment: '/faqs/payment',
+		games: '/faqs/games',
+		leaderboard: '/faqs/leaderboard',
+		challenges: '/faqs/challenges',
+		disputes: '/faqs/disputes',
+		results: '/faqs/results',
+	},
 	friends: {
 		initial: '/friends',
 		view: `/friends/:friendId/`,

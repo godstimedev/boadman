@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { FileGroupType } from '../types';
 import { StyledFileGroup } from './styles';
 import { useNotify } from '@/hooks';
@@ -19,13 +19,25 @@ const FileGroup = (props: FileGroupType) => {
 		// icon: Icon = FileDefault,
 		required,
 		maxSize,
+		deleteFile,
 		...rest
 	} = props;
 
 	const fileRef = useRef<HTMLInputElement>(null);
 	const notify = useNotify();
 
-	console.log(fileRef);
+	// Function to remove file
+	const removeFile = () => {
+		if (fileRef.current) fileRef.current.value = '';
+		onChange(null, name, { name: '', file: null });
+	};
+
+	// Trigger file removal when `removeTrigger` changes
+	useEffect(() => {
+		if (deleteFile) {
+			removeFile();
+		}
+	}, [deleteFile]);
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const oneMB = 1048576;
@@ -49,20 +61,6 @@ const FileGroup = (props: FileGroupType) => {
 
 	return (
 		<StyledFileGroup>
-			{/* {label && (
-				<label htmlFor={name}>
-					{label} {required && <span className="asterisk">*</span>}
-					{moreInfo && (
-						<span className="info-con">
-							<InputInfo className="info" tabIndex={0} />
-							<span className="outer">
-								<span>{moreInfo}</span>
-							</span>
-						</span>
-					)}
-				</label>
-			)} */}
-
 			<div className="file-group">
 				<input
 					type="file"
@@ -73,38 +71,14 @@ const FileGroup = (props: FileGroupType) => {
 					{...rest}
 				/>
 
-				{/* <div className="text-con">
-					{value.name ? (
-						<p className="selected" title={value.name}>
-							{value.name}
-						</p>
-					) : (
-						<>
-							<p>{helpTextOne}</p>
-							<span title={helpTextTwo}>{helpTextTwo}</span>
-						</>
-					)}
-				</div> */}
-
 				<div tabIndex={-1} onClick={() => fileRef.current?.click()}>
 					{children}
 				</div>
 
 				{value.name && (
-					<button
-						className="remove"
-						type="button"
-						onClick={() => {
-							if (fileRef.current) fileRef.current.value = '';
-							onChange(null, name, { name: '', file: null });
-						}}
-					>
+					<button className="remove" type="button" onClick={() => removeFile()}>
 						X
 					</button>
-					// ) : (
-					// 	<button type="button" onClick={() => fileRef.current?.click()}>
-					// 		UPLOAD
-					// 	</button>
 				)}
 			</div>
 		</StyledFileGroup>

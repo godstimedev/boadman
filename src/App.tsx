@@ -70,6 +70,16 @@ import {
 	SettingsPrivacy,
 	SettingsNotifications,
 	SettingsVerification,
+	FaqTeams,
+	FaqGeneraQuestions,
+	FaqMatches,
+	FaqTournaments,
+	FaqPayment,
+	FaqGames,
+	FaqLeaderboard,
+	FaqChallenges,
+	FaqDispute,
+	FaqResults,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -192,7 +202,22 @@ function App() {
 							<Route path={APP_ROUTES.settings.notifications} element={<SettingsNotifications />} />
 							<Route path={APP_ROUTES.settings.verification} element={<SettingsVerification />} />
 						</Route>
-						<Route path={APP_ROUTES.faqs} element={<Faqs />} />
+						<Route element={<Faqs />}>
+							<Route
+								path={APP_ROUTES.faqs.initial}
+								element={<Navigate to={APP_ROUTES.faqs.teams} replace />}
+							/>
+							<Route path={APP_ROUTES.faqs.teams} element={<FaqTeams />} />
+							<Route path={APP_ROUTES.faqs.generalQuestions} element={<FaqGeneraQuestions />} />
+							<Route path={APP_ROUTES.faqs.matches} element={<FaqMatches />} />
+							<Route path={APP_ROUTES.faqs.tournaments} element={<FaqTournaments />} />
+							<Route path={APP_ROUTES.faqs.payment} element={<FaqPayment />} />
+							<Route path={APP_ROUTES.faqs.games} element={<FaqGames />} />
+							<Route path={APP_ROUTES.faqs.leaderboard} element={<FaqLeaderboard />} />
+							<Route path={APP_ROUTES.faqs.challenges} element={<FaqChallenges />} />
+							<Route path={APP_ROUTES.faqs.disputes} element={<FaqDispute />} />
+							<Route path={APP_ROUTES.faqs.results} element={<FaqResults />} />
+						</Route>
 					</Route>
 
 					{/* Pages that require you to be logged out */}
