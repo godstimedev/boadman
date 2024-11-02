@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import { Bracket, RoundProps } from 'react-brackets';
+// import { Bracket, Seed, SeedItem, SeedTeam, IRenderSeedProps, IRoundProps } from 'react-brackets';
 import {
 	Button,
 	InputGroup,
@@ -28,6 +28,14 @@ import {
 } from '../../utilities';
 import { GeneralChangeEventType } from '../../types';
 import DateTime from '@/ui/InputGroup/DateTime';
+import Bracket from '@/ui/Bracket';
+
+// type Round = {
+// 	title: string;
+// 	matches: Match[];
+// };
+
+// type BracketData = Round[];
 
 const Playground = () => {
 	const notify = useNotify();
@@ -176,33 +184,59 @@ const Playground = () => {
 			return;
 	};
 
-	// const rounds: RoundProps[] = [
+	// const rounds: IRoundProps[] = [
 	// 	{
-	// 		title: 'Round one',
+	// 		title: 'Quarterfinals',
 	// 		seeds: [
 	// 			{
 	// 				id: 1,
-	// 				date: new Date().toDateString(),
-	// 				teams: [{ name: 'Team A' }, { name: 'Team B' }],
+	// 				teams: [
+	// 					{
+	// 						team: { name: 'Team A', logo: 'https://example.com/logoA.png' },
+	// 						score: 1,
+	// 					},
+	// 					{
+	// 						team: { name: 'Team B', logo: 'https://example.com/logoB.png' },
+	// 						score: 2,
+	// 					},
+	// 				],
 	// 			},
 	// 			{
 	// 				id: 2,
-	// 				date: new Date().toDateString(),
-	// 				teams: [{ name: 'Team C' }, { name: 'Team D' }],
-	// 			},
-	// 		],
-	// 	},
-	// 	{
-	// 		title: 'Round one',
-	// 		seeds: [
-	// 			{
-	// 				id: 3,
-	// 				date: new Date().toDateString(),
-	// 				teams: [{ name: 'Team A' }, { name: 'Team C' }],
+	// 				teams: [
+	// 					{
+	// 						team: { name: 'Team C', logo: 'https://example.com/logoC.png' },
+	// 						score: 3,
+	// 					},
+	// 					{
+	// 						team: { name: 'Team D', logo: 'https://example.com/logoD.png' },
+	// 						score: 0,
+	// 					},
+	// 				],
 	// 			},
 	// 		],
 	// 	},
 	// ];
+
+	// const CustomSeed = ({ seed, breakpoint }: IRenderSeedProps) => {
+	// 	// breakpoint passed to Bracket component
+	// 	// to check if mobile view is triggered or not
+
+	// 	// mobileBreakpoint is required to be passed down to a seed
+	// 	return (
+	// 		<Seed mobileBreakpoint={breakpoint} style={{ fontSize: 12 }}>
+	// 			<SeedItem>
+	// 				<div className="flex flex-col gap-4">
+	// 					<SeedTeam style={{ color: 'red', backgroundColor: 'yellow' }}>
+	// 						{' '}
+	// 						{seed.teams[0]?.name || 'NO TEAM '}
+	// 					</SeedTeam>
+	// 					<SeedTeam>{seed.teams[1]?.name || 'NO TEAM '}</SeedTeam>
+	// 				</div>
+	// 			</SeedItem>
+	// 		</Seed>
+	// 	);
+	// };
 
 	const chartData = [
 		{ month: 'January', coins: 30 },
@@ -219,36 +253,60 @@ const Playground = () => {
 		{ month: 'December', coins: 150 },
 	];
 
-	// const CustomLegend = ({ payload: LegendPayload[] }) => (
-	// 	<ul style={{ listStyleType: 'none', padding: 0, color: '#4A90E2', fontSize: '14px' }}>
-	// 		{payload.map((entry, index) => (
-	// 			<li key={`item-${index}`} style={{ marginBottom: 4 }}>
-	// 				{entry.value} {/* Only the text */}
-	// 			</li>
-	// 		))}
-	// 	</ul>
-	// );
-
-	// Define custom LegendPayload type
-	// type CustomLegendPayload = {
-	// 	value: string;
-	// 	color?: string;
-	// };
-
-	// interface CustomLegendProps extends LegendProps {
-	// 	payload?: CustomLegendPayload[];
+	// function CustomMatch({ match }: { match: ISeedProps }) {
+	// 	return (
+	// 		<div>
+	// 			{match.sides.map((side: Side, index: number) => (
+	// 				<div key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: 4 }}>
+	// 					{side.team ? (
+	// 						<>
+	// 							<img
+	// 								src={side.team.logo}
+	// 								alt={`${side.team.name} logo`}
+	// 								width={24}
+	// 								height={24}
+	// 								style={{ marginRight: 8 }}
+	// 							/>
+	// 							<span>{side.team.name}</span>
+	// 						</>
+	// 					) : (
+	// 						<span>Bye</span>
+	// 					)}
+	// 					<span style={{ marginLeft: 'auto' }}>{side.score}</span>
+	// 				</div>
+	// 			))}
+	// 		</div>
+	// 	);
 	// }
 
-	// // Custom Legend Component with types
-	// const CustomLegend: React.FC<CustomLegendProps> = ({ payload }) => (
-	// 	<ul style={{ listStyleType: 'none', padding: 0, color: '#fff', fontSize: '12px' }}>
-	// 		{payload?.map((entry, index) => (
-	// 			<li key={`item-${index}`} style={{ marginBottom: 4 }}>
-	// 				{entry.value} {/* Only the text */}
-	// 			</li>
-	// 		))}
-	// 	</ul>
-	// );
+	// const rounds = [
+	// 	{
+	// 		matches: [
+	// 			{
+	// 				teams: [
+	// 					{ name: 'Rabbit Rush', logo: 'logo1.png', score: 72 },
+	// 					{ name: 'Foxes', logo: 'logo2.png', score: 17 },
+	// 				],
+	// 			},
+	// 			{
+	// 				teams: [
+	// 					{ name: 'Cheetah Crew', logo: 'logo3.png', score: 45 },
+	// 					{ name: 'Lions', logo: 'logo4.png', score: 32 },
+	// 				],
+	// 			},
+	// 		],
+	// 	},
+	// 	{
+	// 		matches: [
+	// 			{
+	// 				teams: [
+	// 					{ name: 'Rabbit Rush', logo: 'logo1.png', score: 90 },
+	// 					{ name: 'Cheetah Crew', logo: 'logo3.png', score: 78 },
+	// 				],
+	// 			},
+	// 		],
+	// 	},
+	// ];
 
 	return (
 		<Container>
@@ -336,13 +394,15 @@ const Playground = () => {
 					</ul>
 				</Flex>
 			</Flex>
-			{/* <br />
+			<br />
 			<br />
 			<h3>Brackets</h3>
 			<br />
 			<Flex>
-				<Bracket rounds={rounds} />
-			</Flex> */}
+				{/* <Bracket rounds={rounds} renderSeedComponent={CustomSeed} />; */}
+
+				<Bracket />
+			</Flex>
 			<br />
 			<br />
 			<h3>Dropdowns</h3>

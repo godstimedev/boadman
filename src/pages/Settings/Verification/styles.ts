@@ -22,6 +22,11 @@ export const Container = styled.section`
 				align-items: start;
 				justify-content: space-between;
 
+				${maxQuery('sm')} {
+					flex-direction: column-reverse;
+					gap: 1rem;
+				}
+
 				> div:first-child {
 					display: flex;
 					flex-direction: column;
@@ -41,6 +46,11 @@ export const Container = styled.section`
 					gap: 0.5rem;
 					background-color: ${({ theme }) => theme.colors.accent100};
 					border-radius: 5px;
+
+					${maxQuery('md')} {
+						padding: 0.5rem 0.5rem;
+						margin-left: auto;
+					}
 
 					> span {
 						font-size: 14px;
@@ -84,6 +94,15 @@ export const Container = styled.section`
 					align-items: center;
 					gap: 1.5rem;
 
+					${maxQuery('md')} {
+						flex-wrap: wrap;
+					}
+
+					${maxQuery('sm')} {
+						flex-direction: column;
+						gap: 1rem;
+					}
+
 					div {
 						display: flex;
 						flex-direction: column;
@@ -115,6 +134,13 @@ export const Container = styled.section`
 					display: flex;
 					flex-direction: column;
 					gap: 1rem;
+
+					> div {
+						${maxQuery('sm')} {
+							flex-direction: column;
+							gap: 1rem;
+						}
+					}
 
 					h6 {
 						font-size: 14px;

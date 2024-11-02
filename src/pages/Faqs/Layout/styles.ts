@@ -1,3 +1,4 @@
+import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -16,6 +17,10 @@ export const Container = styled.section`
 		background-color: ${({ theme }) => theme.colors.accent500};
 		padding: 1.5rem 1.5rem 4rem;
 		border-radius: 5px;
+
+		${maxQuery('md')} {
+			padding: 1.5rem 0.75rem 4rem;
+		}
 
 		> h6 {
 			font-size: 20px;
@@ -45,7 +50,7 @@ export const Container = styled.section`
 		}
 
 		a li {
-			padding: 1rem 0.5rem;
+			padding: 0.75rem;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -58,7 +63,7 @@ export const Container = styled.section`
 
 		.active {
 			background-color: ${({ theme }) => theme.colors.primary500};
-			border-radius: 8px;
+			border-radius: 5px;
 
 			svg {
 				transform: scale(1.35);
