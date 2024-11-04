@@ -11,6 +11,7 @@ export { default as ApexLegend } from './ApexLegend.svg?react';
 export { default as Assist } from './Assist.svg?react';
 export { default as BeginEarningVector } from './BeginEarningVector.svg?react';
 export { default as BoadmanLogo } from './BoadmanLogo.svg?react';
+export { default as BracketLines } from './BracketLine';
 export { default as BronzeRank } from './BronzeRank.svg?react';
 export { default as CalenderEnd } from './CalenderEnd.svg?react';
 export { default as CalenderStart } from './CalenderStart.svg?react';

@@ -1,23 +1,6 @@
-// import { BracketProps } from "./Bracket.types";
-// import Round from "./Round";
-// import { StyledBracket } from "./styles";
-
-// const Bracket = (props:BracketProps) => {
-//     const{rounds} = props
-
-// 	return <StyledBracket>
-//          {rounds.map((round, index) => (
-//         <Round key={index} matches={round.matches} />
-//       ))}
-//     </StyledBracket>;
-// };
-
-// export default Bracket;
-
-import React from 'react';
 import { StyledBracket } from './styles';
 import { GamerAvatar } from '@/assets/images';
-// import './Bracket.css';
+import { BracketLines } from '@/assets/svgs';
 
 type Team = {
 	name: string;
@@ -68,16 +51,16 @@ const bracketData: Round[] = [
 		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
 	],
 	[
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 17] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] },
 	],
 	[
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 27] },
 	],
-	[{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] }],
+	[{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] }],
 	[{ teams: [{ name: 'Rabbit Rush' }] }],
 	// More rounds as needed
 ];
@@ -120,7 +103,9 @@ const Bracket = () => {
 												</div>
 											);
 										})}
-										{match.teams.length === 2 && <SVGLine roundIndex={roundIndex} matchIndex={matchIndex} />}
+										{match.teams.length === 2 && (
+											<BracketLines scores={match.score} roundIndex={roundIndex} matchIndex={matchIndex} />
+										)}
 									</div>
 								);
 							})}
@@ -134,7 +119,7 @@ const Bracket = () => {
 
 export default Bracket;
 
-// Dynamically calculates spacing between matches
+// Dynamically calculates spacing between rounds in rem
 function calculateMargin(roundIndex: number) {
 	return roundIndex === 0
 		? 0
@@ -145,31 +130,4 @@ function calculateMargin(roundIndex: number) {
 		: roundIndex === 3
 		? 10.6
 		: 0; // Increase spacing exponentially for each round
-	// return roundIndex === 0 ? 0 : 18 * Math.pow(3, roundIndex - 1); // Increase spacing exponentially for each round
 }
-
-// SVGLine Component for rendering connector lines
-const SVGLine: React.FC<{ roundIndex: number; matchIndex: number }> = ({
-	roundIndex,
-	// matchIndex,
-}) => {
-	const lineHeights = [42.4, 99.3, 197.6, 393.32];
-	const lineHeight = lineHeights[roundIndex] || 0;
-
-	return (
-		<svg
-			className="svg-connector"
-			width="96"
-			height={lineHeight}
-			// -${yOffset}px
-			style={{ position: 'absolute', right: '-96px', top: `16px` }}
-		>
-			<line x1="0" y1="0" x2="48" y2="0" stroke="#313337" strokeWidth="4" />
-			<line x1="48" y1="0" x2="48" y2={lineHeight / 2} stroke="#313337" strokeWidth="2" />
-			<line x1="48" y1={lineHeight / 2} x2="48" y2={lineHeight} stroke="#FF5733" strokeWidth="2" />
-			<line x1="0" y1={lineHeight} x2="48" y2={lineHeight} stroke="#FF5733" strokeWidth="4" />
-
-			<line x1="47" y1={lineHeight / 2} x2="96" y2={lineHeight / 2} stroke="#FF5733" strokeWidth="2" />
-		</svg>
-	);
-};
