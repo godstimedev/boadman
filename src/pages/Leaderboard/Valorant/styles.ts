@@ -72,7 +72,7 @@ export const Container = styled.div`
 			${maxQuery('md')} {
 				font-size: 10px;
 				gap: 0.5rem;
-				padding: 0.1rem 0.7rem;
+				padding: 0.65rem 0.75rem;
 
 				> svg {
 					width: 10px;

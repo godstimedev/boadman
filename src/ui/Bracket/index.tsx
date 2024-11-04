@@ -36,123 +36,140 @@ const bracketData: Round[] = [
 	[
 		{
 			teams: [
-				{ name: 'Team A', logoUrl: 'url_to_logo_A' },
-				{ name: 'Team B', logoUrl: 'url_to_logo_B' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
 			],
 			score: [72, 17],
 		},
-		{ teams: [{ name: 'Team C' }, { name: 'Team D' }], score: [30, 50] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
 		{
 			teams: [
-				{ name: 'Team A', logoUrl: 'url_to_logo_A' },
-				{ name: 'Team B', logoUrl: 'url_to_logo_B' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
 			],
 			score: [72, 17],
 		},
-		{ teams: [{ name: 'Team C' }, { name: 'Team D' }], score: [30, 50] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
 		{
 			teams: [
-				{ name: 'Team A', logoUrl: 'url_to_logo_A' },
-				{ name: 'Team B', logoUrl: 'url_to_logo_B' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
 			],
 			score: [72, 17],
 		},
-		{ teams: [{ name: 'Team C' }, { name: 'Team D' }], score: [30, 50] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
 		{
 			teams: [
-				{ name: 'Team A', logoUrl: 'url_to_logo_A' },
-				{ name: 'Team B', logoUrl: 'url_to_logo_B' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+				{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
 			],
 			score: [72, 17],
 		},
-		{ teams: [{ name: 'Team C' }, { name: 'Team D' }], score: [30, 50] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
 	],
 	[
-		{ teams: [{ name: 'Team A' }, { name: 'Team C' }] },
-		{ teams: [{ name: 'Team A' }, { name: 'Team C' }] },
-		{ teams: [{ name: 'Team A' }, { name: 'Team C' }] },
-		{ teams: [{ name: 'Team A' }, { name: 'Team C' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
 	],
 	[
-		{ teams: [{ name: 'Team A' }, { name: 'Team C' }] },
-		{ teams: [{ name: 'Team A' }, { name: 'Team C' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] },
 	],
-	[{ teams: [{ name: 'Team A' }, { name: 'Team C' }] }],
-	[{ teams: [{ name: 'Team A' }] }],
+	[{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }] }],
+	[{ teams: [{ name: 'Rabbit Rush' }] }],
 	// More rounds as needed
 ];
 
-const Bracket: React.FC = () => {
+const Bracket = () => {
 	return (
 		<StyledBracket>
-			{bracketData.map((round, roundIndex) => {
-				console.log(roundIndex);
-				return (
-					<div
-						key={roundIndex}
-						className={`round ${
-							roundIndex === 4
-								? 'last-round'
-								: roundIndex === 3
-								? 'fourth-round'
-								: roundIndex === 2
-								? 'third-round'
-								: roundIndex === 1
-								? 'second-round'
-								: ''
-						}`}
-					>
-						{round.map((match, matchIndex) => {
-							return (
-								<div
-									key={matchIndex}
-									className="match"
-									style={{
-										marginTop: `${calculateMargin(roundIndex)}rem`,
-										marginBottom: `${calculateMargin(roundIndex)}rem`,
-									}}
-								>
-									{match.teams.map((team, teamIndex) => {
-										return (
-											<div
-												key={teamIndex}
-												className={`team connecting-lines ${teamIndex % 2 === 0 ? 'even' : 'odd'}`}
-											>
-												<img src={GamerAvatar} alt={`${team?.name} logo`} className="team-logo" />
-												<p>{team?.name}</p>
-												{/* {match.score && <span className="score">{match.score[teamIndex]}</span>} */}
-												{/* {teamIndex === 0 ? (
-													<div className="line top-line"></div>
-												) : (
-													<div className="line bottom-line"></div>
-												)} */}
-											</div>
-										);
-									})}
-								</div>
-							);
-						})}
-					</div>
-				);
-			})}
+			<div className="wrapper">
+				{bracketData.map((round, roundIndex) => {
+					return (
+						<div
+							key={roundIndex}
+							className={`round ${
+								roundIndex === 4
+									? 'last-round'
+									: roundIndex === 3
+									? 'fourth-round'
+									: roundIndex === 2
+									? 'third-round'
+									: roundIndex === 1
+									? 'second-round'
+									: ''
+							}`}
+							style={{
+								paddingTop: `${calculateMargin(roundIndex)}rem`,
+								paddingBottom: `${calculateMargin(roundIndex)}rem`,
+							}}
+						>
+							{round.map((match, matchIndex) => {
+								return (
+									<div key={matchIndex} className="match">
+										{match.teams.map((team, teamIndex) => {
+											return (
+												<div
+													key={teamIndex}
+													className={`team connecting-lines ${teamIndex % 2 === 0 ? 'even' : 'odd'}`}
+												>
+													<img src={GamerAvatar} alt={`${team?.name} logo`} className="team-logo" />
+													<p>{team?.name}</p>
+												</div>
+											);
+										})}
+										{match.teams.length === 2 && <SVGLine roundIndex={roundIndex} matchIndex={matchIndex} />}
+									</div>
+								);
+							})}
+						</div>
+					);
+				})}
+			</div>
 		</StyledBracket>
 	);
 };
+
+export default Bracket;
 
 // Dynamically calculates spacing between matches
 function calculateMargin(roundIndex: number) {
 	return roundIndex === 0
 		? 0
 		: roundIndex === 1
-		? 1.5
+		? 1.325
 		: roundIndex === 2
-		? 4.5
+		? 4.425
 		: roundIndex === 3
-		? 9.5
-		: roundIndex === 4
-		? 8
+		? 10.6
 		: 0; // Increase spacing exponentially for each round
 	// return roundIndex === 0 ? 0 : 18 * Math.pow(3, roundIndex - 1); // Increase spacing exponentially for each round
 }
 
-export default Bracket;
+// SVGLine Component for rendering connector lines
+const SVGLine: React.FC<{ roundIndex: number; matchIndex: number }> = ({
+	roundIndex,
+	// matchIndex,
+}) => {
+	const lineHeights = [42.4, 99.3, 197.6, 393.32];
+	const lineHeight = lineHeights[roundIndex] || 0;
+
+	return (
+		<svg
+			className="svg-connector"
+			width="96"
+			height={lineHeight}
+			// -${yOffset}px
+			style={{ position: 'absolute', right: '-96px', top: `16px` }}
+		>
+			<line x1="0" y1="0" x2="48" y2="0" stroke="#313337" strokeWidth="4" />
+			<line x1="48" y1="0" x2="48" y2={lineHeight / 2} stroke="#313337" strokeWidth="2" />
+			<line x1="48" y1={lineHeight / 2} x2="48" y2={lineHeight} stroke="#FF5733" strokeWidth="2" />
+			<line x1="0" y1={lineHeight} x2="48" y2={lineHeight} stroke="#FF5733" strokeWidth="4" />
+
+			<line x1="47" y1={lineHeight / 2} x2="96" y2={lineHeight / 2} stroke="#FF5733" strokeWidth="2" />
+		</svg>
+	);
+};

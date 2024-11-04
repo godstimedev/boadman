@@ -4,6 +4,7 @@ export { default as FaqDashboard } from './AccordionGroup/FaqAccordion';
 export { default as Button } from './Button';
 export { default as Dropdown } from './Dropdown';
 export { default as Modal } from './Modal';
+export { default as BracketUi } from './Bracket';
 
 export { default as InputGroup } from './InputGroup';
 export { default as CodeGroup } from './InputGroup/CodeGroup';
