@@ -126,6 +126,9 @@ export const APP_ROUTES = {
 		use_teams: (tournamentId: string) => `/tournaments/${tournamentId}/teams`,
 		results: `/tournaments/:tournamentId/results`,
 		use_results: (tournamentId: string) => `/tournaments/${tournamentId}/results`,
+		result: `/tournaments/:tournamentId/results/:resultId`,
+		use_result: (tournamentId: string, resultId: string) =>
+			`/tournaments/${tournamentId}/results/${resultId}`,
 	},
 	wallet: {
 		initial: '/wallet',

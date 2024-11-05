@@ -47,6 +47,7 @@ export { default as TournamentMatchView } from './Tournaments/View/Matches/View'
 export { default as TournamentBracket } from './Tournaments/View/Bracket';
 export { default as TournamentTeams } from './Tournaments/View/Teams';
 export { default as TournamentResults } from './Tournaments/View/Results';
+export { default as TournamentResultView } from './Tournaments/View/Results/View';
 export { default as Matches } from './Matches';
 export { default as MatchView } from './Matches/View/Layout';
 export { default as MatchOverview } from './Matches/View/Overview';

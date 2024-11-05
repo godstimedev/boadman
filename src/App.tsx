@@ -80,6 +80,7 @@ import {
 	FaqChallenges,
 	FaqDispute,
 	FaqResults,
+	TournamentResultView,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -152,6 +153,7 @@ function App() {
 							<Route path={APP_ROUTES.tournaments.match} element={<TournamentMatchView />} />
 							<Route path={APP_ROUTES.tournaments.teams} element={<TournamentTeams />} />
 							<Route path={APP_ROUTES.tournaments.results} element={<TournamentResults />} />
+							<Route path={APP_ROUTES.tournaments.result} element={<TournamentResultView />} />
 						</Route>
 						<Route path={APP_ROUTES.teams.initial} element={<Teams />} />
 						<Route path={APP_ROUTES.teams.view} element={<TeamView />}>

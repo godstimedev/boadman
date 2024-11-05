@@ -1,47 +1,127 @@
-import { GamerAvatar, Spectre, GameStream as GameStreamImage, StreamAvatar } from '@/assets/images';
+import { GamerAvatar, ManSmilling } from '@/assets/images';
 import { Container } from './styles';
-import { GameplaySummary, GameStream } from '@/components';
+import { APP_ROUTES } from '@/constants';
+import { Link, useParams } from 'react-router-dom';
 
 const Results = () => {
+	const params = useParams();
+
 	return (
 		<Container>
-			<div className="head">
-				<h6>Gameplay summary</h6>
-			</div>
+			<div>
+				<h6>Match week 1</h6>
 
-			<GameplaySummary
-				game_time={gameSummaryData.game_time}
-				rounds={gameSummaryData.rounds}
-				prize={gameSummaryData.prize}
-				streams={gameSummaryData.streams}
-				player_a={gameSummaryData.player_a}
-				player_b={gameSummaryData.player_b}
-			/>
+				<div className="results">
+					{Array.from({ length: 5 }).map((_, i) => (
+						<Link
+							key={i}
+							to={APP_ROUTES.tournaments.use_result(
+								params?.id ? params?.id.toString() : '0',
+								i.toString()
+							)}
+						>
+							<div className="team-result">
+								<div className="team">
+									<div className="img-con">
+										<img src={GamerAvatar} alt="/" />
+									</div>
+									<div>
+										<p>Rabbit Rush</p>
+										<div>
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+										</div>
+									</div>
+								</div>
 
-			<div className="bottom">
-				<div>
-					<h6>Game Evidence</h6>
+								<h6>3</h6>
 
-					<div>
-						<img src={GameStreamImage} alt="/" />
-					</div>
+								<div className="versus">
+									<h6>VS</h6>
+									<p>Finished . 12/03/2024</p>
+								</div>
+
+								<h6>0</h6>
+
+								<div className="team">
+									<div className="img-con">
+										<img src={GamerAvatar} alt="/" />
+									</div>
+									<div>
+										<p>Rabbit Rush</p>
+										<div>
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</Link>
+					))}
 				</div>
+			</div>
+			<div>
+				<h6>Match week 2</h6>
 
-				<div>
-					<h6>Game Streams</h6>
+				<div className="results">
+					{Array.from({ length: 5 }).map((_, i) => (
+						<Link
+							key={i}
+							to={APP_ROUTES.tournaments.use_result(
+								params?.id ? params?.id.toString() : '0',
+								i.toString()
+							)}
+						>
+							<div className="team-result">
+								<div className="team">
+									<div className="img-con">
+										<img src={GamerAvatar} alt="/" />
+									</div>
+									<div>
+										<p>Rabbit Rush</p>
+										<div>
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+										</div>
+									</div>
+								</div>
 
-					<div>
-						{featuredStreamsList.map((stream, index) => (
-							<GameStream
-								avatar={stream.avatar}
-								game={stream.game}
-								image={stream.image}
-								key={index}
-								username={stream.username}
-								views={stream.views}
-							/>
-						))}
-					</div>
+								<h6>3</h6>
+
+								<div className="versus">
+									<h6>VS</h6>
+									<p>Finished . 12/03/2024</p>
+								</div>
+
+								<h6>0</h6>
+
+								<div className="team">
+									<div className="img-con">
+										<img src={GamerAvatar} alt="/" />
+									</div>
+									<div>
+										<p>Rabbit Rush</p>
+										<div>
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+											<img src={ManSmilling} alt="/" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</Link>
+					))}
 				</div>
 			</div>
 		</Container>
@@ -49,71 +129,3 @@ const Results = () => {
 };
 
 export default Results;
-
-const gameSummaryData = {
-	game_time: '32 mins 35 secs',
-	rounds: '2 round',
-	prize: '300 coins',
-	streams: '6',
-	player_a: {
-		name: 'Rabbit Rush',
-		image: GamerAvatar,
-		score: '3',
-		combat_score: '201',
-		damage: '120',
-		kda: '1/11/1',
-		headshots: '2 hits',
-		bodyshots: '1 hits',
-		kill: '10',
-		death: '12',
-		assist: '2',
-		legshots: '0 hits',
-		weapons: {
-			name: 'Spectre',
-			image: Spectre,
-			type: 'SMGs',
-			kill: '10',
-			damage: '120',
-			headshots: '2 hits',
-		},
-	},
-	player_b: {
-		name: 'Rabbit Rush',
-		image: GamerAvatar,
-		score: '0',
-		combat_score: '201',
-		damage: '120',
-		kda: '1/11/1',
-		headshots: '2 hits',
-		bodyshots: '1 hits',
-		kill: '10',
-		death: '12',
-		assist: '2',
-		legshots: '0 hits',
-		weapons: {
-			name: 'Spectre',
-			image: Spectre,
-			type: 'SMGs',
-			kill: '10',
-			damage: '120',
-			headshots: '2 hits',
-		},
-	},
-};
-
-const featuredStreamsList = [
-	{
-		image: GameStreamImage,
-		avatar: StreamAvatar,
-		username: 'Flunk_god',
-		game: 'Fortnite',
-		views: '11.2k',
-	},
-	{
-		image: GameStreamImage,
-		avatar: StreamAvatar,
-		username: 'Flunk_god',
-		game: 'Fortnite',
-		views: '11.2k',
-	},
-];

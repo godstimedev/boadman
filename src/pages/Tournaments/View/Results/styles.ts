@@ -1,68 +1,110 @@
-import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 1.5rem;
+	margin-bottom: 3rem;
 
-	h6 {
-		font-size: 20px;
-		font-weight: 500;
-		line-height: 26.4px;
-		text-align: left;
-		align-self: flex-start;
+	> div {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
 	}
 
-	.head {
+	h6 {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 21.12px;
+	}
+
+	.results {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.team-result {
+		padding: 1rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 
-		button {
-			${maxQuery('md')} {
-				display: none;
-			}
-		}
-	}
+		background-color: ${({ theme }) => theme.colors.accent500};
+		border-radius: 5px;
 
-	.bottom {
-		display: flex;
-		gap: 2rem;
-
-		${maxQuery('lg')} {
-			flex-direction: column;
-		}
-
-		> div:first-child {
+		> .team {
 			display: flex;
-			flex-direction: column;
+			align-items: center;
 			gap: 1rem;
 
-			> div {
-				max-width: 418px;
-				min-width: 250px;
-				width: 100%;
+			&:last-child {
+				flex-direction: row-reverse;
+
+				> div:last-child {
+					align-items: end;
+				}
+			}
+
+			.img-con {
+				width: 32px;
+				height: 32px;
 
 				img {
 					width: 100%;
 					height: 100%;
+					border-radius: 50%;
 					object-fit: cover;
-					border-radius: 5px;
+				}
+			}
+
+			> div:last-child {
+				display: flex;
+				flex-direction: column;
+
+				gap: 0.5rem;
+
+				p {
+					font-size: 14px;
+					font-weight: 500;
+					line-height: 16.8px;
+				}
+
+				> div {
+					display: flex;
+					align-items: center;
+
+					img {
+						width: 16px;
+						height: 16px;
+						border-radius: 50%;
+						object-fit: cover;
+						border: 1px solid #22252c;
+					}
+
+					img:not(:first-child) {
+						margin-left: -0.3rem;
+					}
 				}
 			}
 		}
 
-		> div:last-child {
+		.versus {
 			display: flex;
 			flex-direction: column;
-			gap: 1rem;
+			align-items: center;
+			gap: 0.5rem;
 
-			> div {
-				display: flex;
-				align-items: center;
-				gap: 1rem;
-				flex-wrap: wrap;
+			h6 {
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 19.2px;
+			}
+
+			p {
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 14.4px;
 			}
 		}
 	}
