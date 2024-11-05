@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 type PropsType = {
 	roundIndex: number;
 	matchIndex: number;
@@ -10,8 +12,7 @@ const BracketLine = (props: PropsType) => {
 	const lineHeight = lineHeights[roundIndex] || 0;
 
 	return (
-		<svg
-			className="svg-connector"
+		<StyledSvgLine
 			width="96"
 			height={lineHeight}
 			style={{ position: 'absolute', right: '-96px', top: `16px` }}
@@ -54,8 +55,22 @@ const BracketLine = (props: PropsType) => {
 
 			{/* Round connector line */}
 			<line x1="47" y1={lineHeight / 2} x2="96" y2={lineHeight / 2} stroke="#FF5733" strokeWidth="2" />
-		</svg>
+		</StyledSvgLine>
 	);
 };
 
 export default BracketLine;
+
+const StyledSvgLine = styled.svg`
+	line {
+		stroke-dasharray: 200;
+		stroke-dashoffset: 200;
+		animation: draw 2s ease forwards;
+	}
+
+	@keyframes draw {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+`;
