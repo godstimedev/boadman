@@ -106,7 +106,7 @@ const SignUp = () => {
 
 						<div className="button">
 							<Button type="submit" variant="primary" size="large">
-								Create Game
+								Create Account
 							</Button>
 
 							<p>

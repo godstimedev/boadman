@@ -25,7 +25,7 @@ export const Aside = styled.aside`
 		transition: left 0.3s ease-in-out;
 		width: 100%;
 		height: 100%;
-		left: -100vw;
+		left: -120vw;
 		z-index: 20;
 	}
 
@@ -33,7 +33,8 @@ export const Aside = styled.aside`
 		.menu-con {
 			position: relative;
 			background-color: ${({ theme }) => theme.colors.accent500};
-			width: 350px;
+			max-width: 350px;
+			width: 100%;
 			height: 100%;
 			padding: 2rem 0 1rem 0;
 			flex-shrink: 0;

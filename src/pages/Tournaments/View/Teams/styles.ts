@@ -1,27 +1,16 @@
-import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
 	gap: 1rem;
-
-	${maxQuery('xl')} {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	${maxQuery('900px')} {
-		grid-template-columns: 1fr 1fr;
-	}
-	${maxQuery('sm')} {
-		grid-template-columns: 1fr;
-	}
 
 	.team-card {
 		display: flex;
 		flex-direction: column;
 		background-color: ${({ theme }) => theme.colors.accent500};
 		border-radius: 5px;
-		width: 265px;
+		width: 100%;
 		cursor: pointer;
 
 		hr {

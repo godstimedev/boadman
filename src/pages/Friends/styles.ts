@@ -1,4 +1,3 @@
-import { maxQuery, minQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -18,27 +17,7 @@ export const Container = styled.section`
 
 	.friends-con {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		/* grid-template-rows: auto;
-		justify-content: center;
-		align-items: center; */
+		grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
 		gap: 1rem;
-
-		${minQuery('1720px')} {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-
-		${maxQuery('xl')} {
-			grid-template-columns: 1fr 1fr;
-		}
-		${maxQuery('md')} {
-			grid-template-columns: 1fr;
-			width: 100%;
-		}
-
-		> a {
-			min-width: 100%;
-			/* max-width: max-content; */
-		}
 	}
 `;

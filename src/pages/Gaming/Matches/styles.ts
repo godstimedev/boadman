@@ -68,23 +68,7 @@ export const Container = styled.div`
 
 	.matches {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
 		gap: 1rem;
-
-		${maxQuery('xl')} {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-		${maxQuery('lg')} {
-			grid-template-columns: 1fr 1fr;
-			place-items: center;
-		}
-		${maxQuery('sm')} {
-			grid-template-columns: 1fr;
-			place-items: center;
-		}
-
-		> a {
-			width: 100%;
-		}
 	}
 `;

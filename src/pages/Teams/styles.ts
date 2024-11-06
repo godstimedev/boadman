@@ -1,4 +1,3 @@
-import { maxQuery, minQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -18,23 +17,7 @@ export const Container = styled.section`
 
 	.teams {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(357px, 1fr));
 		gap: 1rem;
-
-		${minQuery('1720px')} {
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		}
-
-		${maxQuery('xl')} {
-			grid-template-columns: 1fr 1fr;
-		}
-		${maxQuery('md')} {
-			grid-template-columns: 1fr;
-			width: 100%;
-		}
-
-		> a {
-			width: 100%;
-		}
 	}
 `;

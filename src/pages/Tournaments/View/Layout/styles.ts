@@ -98,6 +98,7 @@ export const Container = styled.div`
 
 			${maxQuery('sm')} {
 				gap: 1rem;
+				overflow-x: auto;
 			}
 
 			a {

@@ -140,19 +140,13 @@ export const Container = styled.div`
 		> div:last-child {
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 			gap: 1rem;
 
 			${maxQuery('xl')} {
 				display: grid;
-				grid-template-columns: 1fr 1fr 1fr 1fr;
-			}
-			${maxQuery('lg')} {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
-			}
-			${maxQuery('md')} {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
+				grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+				gap: 1rem;
 			}
 		}
 	}

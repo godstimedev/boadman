@@ -114,23 +114,8 @@ export const Container = styled.section`
 
 	.matches {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
 		gap: 1rem;
-
-		> a {
-			width: 100%;
-		}
-
-		${maxQuery('xl')} {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-		${maxQuery('md')} {
-			grid-template-columns: 1fr 1fr;
-			place-items: center;
-		}
-		${maxQuery('sm')} {
-			grid-template-columns: 1fr;
-			place-items: center;
-		}
 	}
 `;

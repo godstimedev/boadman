@@ -4,33 +4,31 @@ import styled from 'styled-components';
 export const Aside = styled.aside`
 	background-color: ${({ theme }) => theme.colors.accent500};
 	width: 10.5rem;
-	padding: 2rem 0 1rem 0;
+	padding: 1.5rem 0 1rem 0;
 	flex-shrink: 0;
 	display: flex;
 	flex-direction: column;
 
-	/* WebKit browsers (Chrome, Safari, Edge) */
-	::-webkit-scrollbar {
-		width: 1px; /* Make the scrollbar slimmer */
+	/* ::-webkit-scrollbar {
+		width: 1px; 
 	}
 
 	::-webkit-scrollbar-track {
-		background: #e3e5e9; /* The background of the scrollbar track */
+		background: #e3e5e9; 
 	}
 
 	::-webkit-scrollbar-thumb {
-		background-color: #22252c; /* The color of the scrollbar thumb */
-		border-radius: 5px; /* Rounded corners */
-		border: 2px solid #e3e5e9; /* Adds space around the thumb */
+		background-color: #22252c; 
+		border-radius: 5px; 
+		border: 2px solid #e3e5e9;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
-		background-color: #22252c; /* Color when hovering over the thumb */
-	}
+		background-color: #22252c; 
+	} */
 
-	/* Firefox */
 	scrollbar-width: thin; /* Makes the scrollbar slimmer */
-	scrollbar-color: #22252c #e3e5e9; /* Thumb color and track color */
+	scrollbar-color: ${({ theme }) => theme.colors.accent100} transparent; /*Thumb color and track color*/
 	scrollbar-arrow-color: #22252c; /* Arrow color */
 
 	${maxQuery('lg')} {

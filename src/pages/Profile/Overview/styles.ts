@@ -116,21 +116,13 @@ export const Container = styled.div`
 
 		> div {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 			gap: 1rem;
-
-			${maxQuery('lg')} {
-				grid-template-columns: 1fr 1fr;
-			}
-			${maxQuery('sm')} {
-				grid-template-columns: 1fr;
-			}
 
 			.games-card {
 				display: flex;
 				flex-direction: column;
 				background-color: ${({ theme }) => theme.colors.accent500};
-				max-width: 377px;
 				width: 100%;
 				border-radius: 5px;
 
@@ -335,18 +327,8 @@ export const Container = styled.div`
 
 		> div {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
 			gap: 1rem;
-
-			${maxQuery('lg')} {
-				grid-template-columns: 1fr 1fr 1fr;
-			}
-			${maxQuery('700px')} {
-				grid-template-columns: 1fr 1fr;
-			}
-			${maxQuery('500px')} {
-				grid-template-columns: 1fr;
-			}
 
 			.game-stats-card {
 				display: flex;

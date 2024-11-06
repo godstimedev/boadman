@@ -41,10 +41,10 @@ export const Container = styled.div`
 
 	.tournaments {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
 		gap: 1rem;
 
-		${minQuery('1520px')} {
+		/* ${minQuery('1520px')} {
 			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		}
 		${maxQuery('xl')} {
@@ -55,6 +55,6 @@ export const Container = styled.div`
 		}
 		${maxQuery('sm')} {
 			grid-template-columns: 1fr;
-		}
+		} */
 	}
 `;

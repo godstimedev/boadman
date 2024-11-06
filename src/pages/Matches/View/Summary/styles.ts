@@ -40,9 +40,11 @@ export const Container = styled.div`
 			gap: 1rem;
 
 			> div {
-				max-width: 418px;
-				min-width: 250px;
-				width: 100%;
+				width: 418px;
+
+				${maxQuery('md')} {
+					width: 100%;
+				}
 
 				img {
 					width: 100%;
@@ -57,12 +59,12 @@ export const Container = styled.div`
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
+			width: 100%;
 
 			> div {
-				display: flex;
-				align-items: center;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
 				gap: 1rem;
-				flex-wrap: wrap;
 			}
 		}
 	}

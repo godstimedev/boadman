@@ -30,7 +30,7 @@ const ResultsView = () => {
 				<div>
 					<h6>Game Streams</h6>
 
-					<div>
+					<div className="streams">
 						{featuredStreamsList.map((stream, index) => (
 							<GameStream
 								avatar={stream.avatar}

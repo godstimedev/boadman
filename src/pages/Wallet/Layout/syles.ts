@@ -163,15 +163,8 @@ export const Container = styled.section`
 
 				.charts {
 					display: grid;
-					grid-template-columns: 1fr 1fr 1fr;
+					grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 					gap: 1rem;
-
-					${maxQuery('md')} {
-						grid-template-columns: 1fr 1fr;
-					}
-					${maxQuery('480px')} {
-						grid-template-columns: 1fr;
-					}
 
 					> div {
 						background-color: ${({ theme }) => theme.colors.secondary500};
@@ -206,6 +199,10 @@ export const Container = styled.section`
 			display: flex;
 			flex-direction: column;
 			gap: 0.75rem;
+
+			${maxQuery('xl')} {
+				max-width: 100%;
+			}
 
 			> div:first-child {
 				display: flex;

@@ -1,5 +1,5 @@
 import { StyledInputContainer } from '@/ui/InputGroup/styles';
-import { maxQuery, minQuery } from '@/utilities';
+import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -80,6 +80,7 @@ export const Container = styled.section`
 			> div:last-child {
 				display: flex;
 				align-items: center;
+				gap: 1rem;
 				justify-content: space-between;
 				width: 100%;
 				padding-left: 1.5rem;
@@ -91,7 +92,16 @@ export const Container = styled.section`
 				}
 
 				${StyledInputContainer} {
-					width: 150px;
+					max-width: 180px;
+					width: 100%;
+
+					${maxQuery('xl')} {
+						max-width: 100%;
+						width: 50%;
+					}
+					${maxQuery('md')} {
+						width: 60%;
+					}
 					input {
 						background-color: ${({ theme }) => theme.colors.secondary500};
 						padding: 0.75rem 1rem;
@@ -108,59 +118,7 @@ export const Container = styled.section`
 
 	.tournaments {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
 		gap: 1rem;
-
-		${minQuery('1520px')} {
-			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		}
-		${maxQuery('xl')} {
-			grid-template-columns: 1fr 1fr 1fr;
-		}
-		${maxQuery('900px')} {
-			grid-template-columns: 1fr 1fr;
-		}
-		${maxQuery('sm')} {
-			grid-template-columns: 1fr;
-		}
 	}
 `;
-
-{
-	/* 
-	
-.filter-con {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-
-		border-bottom: 1px solid ${({ theme }) => theme.colors.accent100};
-
-		> div:first-child {
-			display: flex;
-			align-items: center;
-			gap: 2rem;
-
-			${maxQuery('sm')} {
-				gap: 1rem;
-			}
-
-			button {
-				padding: 0.75rem 0.5rem;
-				border-bottom: 2px solid transparent;
-				color: ${({ theme }) => theme.colors.white};
-				font-size: 14px;
-				line-height: 18.48px;
-				font-weight: 500;
-
-				&.active {
-					border-bottom: 2px solid ${({ theme }) => theme.colors.primary500};
-					color: ${({ theme }) => theme.colors.primary500};
-				}
-			}
-		}
-	}	
-
-*/
-}

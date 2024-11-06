@@ -458,15 +458,9 @@ export const Container = styled.section`
 	}
 
 	.con-3-list {
-		display: flex;
-		align-items: center;
-		justify-content: start;
-		gap: 1.1rem;
-		flex-wrap: wrap;
-
-		${maxQuery('md')} {
-			gap: 0rem;
-		}
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+		gap: 1rem;
 	}
 
 	/* swiper styles  */

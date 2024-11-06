@@ -4,7 +4,6 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	background-color: ${({ theme }) => theme.colors.accent500};
-	max-width: 365px;
 	width: 100%;
 	border-radius: 5px;
 
