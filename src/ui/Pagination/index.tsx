@@ -1,139 +1,212 @@
-// import { Link } from 'react-router-dom';
-// import { Container } from './styles'
-// import { NextArrow, PrevArrow } from '@/assets/svgs';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Container } from './styles';
+import { NextArrow, PrevArrow } from '@/assets/svgs';
+import { useReplaceQueryKey } from '@/hooks';
+import { useEffect, useState } from 'react';
+import { QUERY_STRINGS } from '@/constants';
 
-// const Pagination = () => {
-//   return (
-//     <Container>
-// 					<div className="action-container">
-// 						<button tabIndex={-1} disabled={currentPage === 1 || loading}>
-// 							{currentPage === 1 || loading ? (
-// 								<span>
-// 									<PrevArrow />
-// 								</span>
-// 							) : (
-// 								<Link
-// 									to={
-// 										location.pathname +
-// 										replaceQueryKey({ newValue: currentPage - 1, queryKey: PAGE_QUERY_KEY })
-// 									}
-// 								>
-// 									<PrevArrow />
-// 								</Link>
-// 							)}
-// 						</button>
+type PropsType = {
+	maxPage: number;
+	itemsPerPageOptions?: number[];
+	loading?: boolean;
+};
 
-// 						{/* <div>
-// 						Page
-// 						<div className="input-container">
-// 							<input
-// 								type="number"
-// 								value={tempPageValue}
-// 								min={1}
-// 								max={maxPage || 1}
-// 								disabled={loading}
-// 								onChange={(event) => setTempPageValue(event.target.value || '')}
-// 								onBlur={(event) => {
-// 									let value = parseInt(event.target.value || '1');
+const Pagination = (props: PropsType) => {
+	const { loading = false, maxPage, itemsPerPageOptions = [10, 15, 20] } = props;
 
-// 									if (value <= 0) {
-// 										value = 1;
-// 									} else if (value > maxPage) {
-// 										value = maxPage;
-// 									}
+	const [searchParams] = useSearchParams();
+	const location = useLocation();
+	const navigate = useNavigate();
+	const replaceQueryKey = useReplaceQueryKey();
 
-// 									setTempPageValue(value.toString());
+	const ITEM_PER_PAGE_QUERY_KEY = QUERY_STRINGS.items_per_page;
+	const PAGE_QUERY_KEY = QUERY_STRINGS.page;
 
-// 									if (value === currentPage) {
-// 										return;
-// 									}
+	const currentPage = parseInt(searchParams.get(PAGE_QUERY_KEY) || '1');
+	const currentItemPerPage = parseInt(searchParams.get(QUERY_STRINGS.items_per_page) || '10');
 
-// 									const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
-// 									navigate(location.pathname + searchQuery);
-// 								}}
-// 							/>
-// 							<span>{tempPageValue}</span>
-// 						</div>
-// 						of {maxPage}
-// 					</div> */}
+	const [tempPageValue, setTempPageValue] = useState(currentPage.toString());
 
-// 						<div className="page-numbers-container">
-// 							{Array.from({ length: maxPage }, (_, index) => {
-// 								const page = index + 1;
-// 								return (
-// 									<button>
-// 										<Link
-// 											key={page}
-// 											to={location.pathname + replaceQueryKey({ newValue: page, queryKey: PAGE_QUERY_KEY })}
-// 											className={page === currentPage ? 'active' : ''}
-// 											onClick={() => setTempPageValue(page.toString())}
-// 										>
-// 											{page}
-// 										</Link>
-// 									</button>
-// 								);
-// 							})}
-// 						</div>
+	useEffect(() => {
+		// Get the page number from the search parameters, defaulting to '1' if not found
+		const pageValue = searchParams.get(PAGE_QUERY_KEY) || '1';
 
-// 						<button tabIndex={-1} disabled={currentPage >= maxPage || loading}>
-// 							{currentPage >= maxPage || loading ? (
-// 								<span>
-// 									<NextArrow />
-// 								</span>
-// 							) : (
-// 								<Link
-// 									to={
-// 										location.pathname +
-// 										replaceQueryKey({ newValue: currentPage + 1, queryKey: PAGE_QUERY_KEY })
-// 									}
-// 								>
-// 									<NextArrow />
-// 								</Link>
-// 							)}
-// 						</button>
-// 					</div>
+		// Update tempPageValue only if it differs from the current value
+		if (pageValue !== tempPageValue) {
+			setTempPageValue(pageValue);
+		}
+		// setTempPageValue(searchParams.get(PAGE_QUERY_KEY) || '1');
+	}, [location.search, PAGE_QUERY_KEY, searchParams, tempPageValue]);
 
-// 					{/* <div>
-// 					Show
-// 					<div className="select-container" tabIndex={loading ? undefined : 0}>
-// 						{currentItemPerPage}
-// 						<InputCaretDown />
+	useEffect(() => {
+		let validPage = currentPage;
+		let shouldReplaceUrl = false;
 
-// 						<ul>
-// 							{itemsPerPageOptions.map((item) => (
-// 								<li
-// 									key={item}
-// 									onClick={(event) => {
-// 										const maxPagePossibleForPreviousValue = Math.floor((maxPage * currentItemPerPage) / item);
-// 										let searchQuery = '';
+		if (Number.isNaN(currentItemPerPage) || !itemsPerPageOptions.includes(currentItemPerPage)) {
+			const searchQuery = replaceQueryKey({
+				newValue: itemsPerPageOptions.includes(10) ? 10 : itemsPerPageOptions[0],
+				queryKey: ITEM_PER_PAGE_QUERY_KEY,
+			});
+			navigate(location.pathname + searchQuery, { replace: true });
+		}
 
-// 										if (currentPage > maxPagePossibleForPreviousValue) {
-// 											searchQuery = replaceQueryKey({
-// 												newValue: maxPagePossibleForPreviousValue,
-// 												queryKey: PAGE_QUERY_KEY,
-// 											});
-// 										}
+		if (Number.isNaN(validPage)) {
+			const searchQuery = replaceQueryKey({ newValue: 1, queryKey: PAGE_QUERY_KEY });
+			navigate(location.pathname + searchQuery, { replace: true });
+		} else if (currentPage <= 0) {
+			validPage = 1;
+			shouldReplaceUrl = true;
+		} else if (currentPage > maxPage && maxPage !== 0 && !loading) {
+			validPage = maxPage;
+			shouldReplaceUrl = true;
+		}
 
-// 										searchQuery = replaceQueryKey({
-// 											newValue: item,
-// 											queryKey: ITEM_PER_PAGE_QUERY_KEY,
-// 											searchQuery,
-// 										});
-// 										navigate(location.pathname + searchQuery);
+		if (shouldReplaceUrl) {
+			const searchQuery = replaceQueryKey({ newValue: validPage, queryKey: PAGE_QUERY_KEY });
+			navigate(location.pathname + searchQuery, { replace: true });
+		}
+	}, [
+		currentItemPerPage,
+		itemsPerPageOptions,
+		currentPage,
+		maxPage,
+		loading,
+		replaceQueryKey,
+		navigate,
+		location.pathname,
+		searchParams,
+		ITEM_PER_PAGE_QUERY_KEY,
+		PAGE_QUERY_KEY,
+	]);
 
-// 										event.currentTarget.parentElement?.parentElement?.blur();
-// 									}}
-// 								>
-// 									{item}
-// 								</li>
-// 							))}
-// 						</ul>
-// 					</div>
-// 					Items per page
-// 				</div> */}
+	return (
+		<Container>
+			<div className="action-container">
+				<button tabIndex={-1} disabled={currentPage === 1 || loading}>
+					{currentPage === 1 || loading ? (
+						<span>
+							<PrevArrow />
+						</span>
+					) : (
+						<Link
+							to={
+								location.pathname + replaceQueryKey({ newValue: currentPage - 1, queryKey: PAGE_QUERY_KEY })
+							}
+						>
+							<PrevArrow />
+						</Link>
+					)}
+				</button>
 
-//     </Container>
-//   )
-// }
+				{/* <div>
+						Page
+						<div className="input-container">
+							<input
+								type="number"
+								value={tempPageValue}
+								min={1}
+								max={maxPage || 1}
+								disabled={loading}
+								onChange={(event) => setTempPageValue(event.target.value || '')}
+								onBlur={(event) => {
+									let value = parseInt(event.target.value || '1');
 
-// export default Pagination
+									if (value <= 0) {
+										value = 1;
+									} else if (value > maxPage) {
+										value = maxPage;
+									}
+
+									setTempPageValue(value.toString());
+
+									if (value === currentPage) {
+										return;
+									}
+
+									const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
+									navigate(location.pathname + searchQuery);
+								}}
+							/>
+							<span>{tempPageValue}</span>
+						</div>
+						of {maxPage}
+					</div> */}
+
+				<div className="page-numbers-container">
+					{Array.from({ length: maxPage }, (_, index) => {
+						const page = index + 1;
+						return (
+							<button>
+								<Link
+									key={page}
+									to={location.pathname + replaceQueryKey({ newValue: page, queryKey: PAGE_QUERY_KEY })}
+									className={page === currentPage ? 'active' : ''}
+									onClick={() => setTempPageValue(page.toString())}
+								>
+									{page}
+								</Link>
+							</button>
+						);
+					})}
+				</div>
+
+				<button tabIndex={-1} disabled={currentPage >= maxPage || loading}>
+					{currentPage >= maxPage || loading ? (
+						<span>
+							<NextArrow />
+						</span>
+					) : (
+						<Link
+							to={
+								location.pathname + replaceQueryKey({ newValue: currentPage + 1, queryKey: PAGE_QUERY_KEY })
+							}
+						>
+							<NextArrow />
+						</Link>
+					)}
+				</button>
+			</div>
+
+			{/* <div>
+					Show
+					<div className="select-container" tabIndex={loading ? undefined : 0}>
+						{currentItemPerPage}
+						<InputCaretDown />
+
+						<ul>
+							{itemsPerPageOptions.map((item) => (
+								<li
+									key={item}
+									onClick={(event) => {
+										const maxPagePossibleForPreviousValue = Math.floor((maxPage * currentItemPerPage) / item);
+										let searchQuery = '';
+
+										if (currentPage > maxPagePossibleForPreviousValue) {
+											searchQuery = replaceQueryKey({
+												newValue: maxPagePossibleForPreviousValue,
+												queryKey: PAGE_QUERY_KEY,
+											});
+										}
+
+										searchQuery = replaceQueryKey({
+											newValue: item,
+											queryKey: ITEM_PER_PAGE_QUERY_KEY,
+											searchQuery,
+										});
+										navigate(location.pathname + searchQuery);
+
+										event.currentTarget.parentElement?.parentElement?.blur();
+									}}
+								>
+									{item}
+								</li>
+							))}
+						</ul>
+					</div>
+					Items per page
+				</div> */}
+		</Container>
+	);
+};
+
+export default Pagination;

@@ -153,38 +153,38 @@ const Table = (props: TablePropType) => {
 						</button>
 
 						{/* <div>
-						Page
-						<div className="input-container">
-							<input
-								type="number"
-								value={tempPageValue}
-								min={1}
-								max={maxPage || 1}
-								disabled={loading}
-								onChange={(event) => setTempPageValue(event.target.value || '')}
-								onBlur={(event) => {
-									let value = parseInt(event.target.value || '1');
+							Page
+							<div className="input-container">
+								<input
+									type="number"
+									value={tempPageValue}
+									min={1}
+									max={maxPage || 1}
+									disabled={loading}
+									onChange={(event) => setTempPageValue(event.target.value || '')}
+									onBlur={(event) => {
+										let value = parseInt(event.target.value || '1');
 
-									if (value <= 0) {
-										value = 1;
-									} else if (value > maxPage) {
-										value = maxPage;
-									}
+										if (value <= 0) {
+											value = 1;
+										} else if (value > maxPage) {
+											value = maxPage;
+										}
 
-									setTempPageValue(value.toString());
+										setTempPageValue(value.toString());
 
-									if (value === currentPage) {
-										return;
-									}
+										if (value === currentPage) {
+											return;
+										}
 
-									const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
-									navigate(location.pathname + searchQuery);
-								}}
-							/>
-							<span>{tempPageValue}</span>
-						</div>
-						of {maxPage}
-					</div> */}
+										const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
+										navigate(location.pathname + searchQuery);
+									}}
+								/>
+								<span>{tempPageValue}</span>
+							</div>
+							of {maxPage}
+						</div> */}
 
 						<div className="page-numbers-container">
 							{Array.from({ length: maxPage }, (_, index) => {
