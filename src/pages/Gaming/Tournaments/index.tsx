@@ -2,7 +2,7 @@ import { CaretDown } from '@/assets/svgs';
 import { Container } from './styles';
 import { FeaturedTournament } from '@/components';
 import { CyberPunk } from '@/assets/images';
-import { Dropdown } from '@/ui';
+import { Dropdown, Pagination } from '@/ui';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
 
@@ -60,6 +60,8 @@ const Tournaments = () => {
 					</Link>
 				))}
 			</div>
+
+			<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 		</Container>
 	);
 };
@@ -67,6 +69,17 @@ const Tournaments = () => {
 export default Tournaments;
 
 const tournamentList = [
+	{
+		image: CyberPunk,
+		categories: ['Call of duty', 'Team'],
+		status: 'IN PROGRESS',
+		period: ' Finishing in 20 days',
+		title: 'Rebirth Resurgence express ',
+		description: 'Join the call of duty tournament and get a chance to win up to $ 2000 prize..... ',
+		prize: '3500',
+		game_mode: '3 v 3',
+		game_slot: '60/64',
+	},
 	{
 		image: CyberPunk,
 		categories: ['Call of duty', 'Team'],

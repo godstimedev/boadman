@@ -2,7 +2,7 @@ import { DashboardHeader, TeamCard } from '@/components';
 import { Container } from './styles';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
-import { Button } from '@/ui';
+import { Button, Pagination } from '@/ui';
 import { useState } from 'react';
 import CreateTeam from './Modals/CreateTeam';
 
@@ -22,6 +22,7 @@ const Teams = () => {
 					Create team
 				</Button>
 			</div>
+
 			<div className="teams">
 				{Array.from({ length: 12 }).map((_, i) => (
 					<Link key={i} to={APP_ROUTES.teams.use_overview(i.toString())}>
@@ -29,6 +30,10 @@ const Teams = () => {
 						<TeamCard />
 					</Link>
 				))}
+			</div>
+
+			<div className="ml-auto">
+				<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 			</div>
 		</Container>
 	);

@@ -4,6 +4,7 @@ import { HeroAvatar } from '@/assets/images';
 import { Match } from '@/components';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
+import { Pagination } from '@/ui';
 
 const ProfileHistory = () => {
 	return (
@@ -25,6 +26,10 @@ const ProfileHistory = () => {
 						/>
 					</Link>
 				))}
+			</div>
+
+			<div className="ml-auto">
+				<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 			</div>
 		</Container>
 	);
@@ -307,98 +312,6 @@ const matchData = [
 		scores: {
 			player1: 2,
 			player2: 6,
-		},
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'finished match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		winner: 2,
-		scores: {
-			player1: 2,
-			player2: 6,
-		},
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'upcoming match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: '',
-			name: '',
-			avatar: '',
-		},
-		// winner: 2,
-		// scores: {
-		// 	player1: 2,
-		// 	player2: 6,
-		// },
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'upcoming match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		// winner: 2,
-		// scores: {
-		// 	player1: 2,
-		// 	player2: 6,
-		// },
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'finished match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		winner: 2,
-		scores: {
-			player1: 3,
-			player2: 4,
 		},
 	},
 ];

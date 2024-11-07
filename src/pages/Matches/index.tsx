@@ -1,6 +1,6 @@
 import { CreateGame, DashboardHeader, Match } from '@/components';
 import { Container } from './styles';
-import { Button, Dropdown, InputGroup } from '@/ui';
+import { Button, Dropdown, InputGroup, Pagination } from '@/ui';
 import { HeroAvatar } from '@/assets/images';
 import { CaretDown, Valorant } from '@/assets/svgs';
 import { Link } from 'react-router-dom';
@@ -126,6 +126,10 @@ const Matches = () => {
 						/>
 					</Link>
 				))}
+			</div>
+
+			<div className="ml-auto">
+				<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 			</div>
 		</Container>
 	);

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Container } from './styles';
-import { Dropdown } from '@/ui';
+import { Dropdown, Pagination } from '@/ui';
 import { CaretDown } from '@/assets/svgs';
 import { ApexLegendsFeatured } from '@/assets/images';
 import { FeaturedTournament } from '@/components';
@@ -69,6 +69,10 @@ const GameTournaments = () => {
 						/>
 					</Link>
 				))}
+			</div>
+
+			<div className="ml-auto">
+				<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 			</div>
 		</Container>
 	);

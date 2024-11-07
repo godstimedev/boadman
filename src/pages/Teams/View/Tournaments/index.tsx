@@ -3,6 +3,7 @@ import { Container } from './styles';
 import { APP_ROUTES } from '@/constants';
 import { FeaturedTournament } from '@/components';
 import { ApexLegendsFeatured } from '@/assets/images';
+import { Pagination } from '@/ui';
 
 const TeamTournament = () => {
 	return (
@@ -23,6 +24,10 @@ const TeamTournament = () => {
 						/>
 					</Link>
 				))}
+			</div>
+
+			<div className="ml-auto">
+				<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 			</div>
 		</Container>
 	);

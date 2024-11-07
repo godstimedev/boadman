@@ -1,6 +1,6 @@
 import { DashboardHeader, FriendCard } from '@/components';
 import { Container } from './styles';
-import { Button } from '@/ui';
+import { Button, Pagination } from '@/ui';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
 import { useState } from 'react';
@@ -21,6 +21,7 @@ const Friends = () => {
 					Add new
 				</Button>
 			</div>
+
 			<div className="friends-con">
 				{Array.from({ length: 12 }).map((_, i) => (
 					<Link key={i} to={APP_ROUTES.friends.use_overview(i.toString())}>
@@ -28,6 +29,10 @@ const Friends = () => {
 						<FriendCard />
 					</Link>
 				))}
+			</div>
+
+			<div className="ml-auto">
+				<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 			</div>
 		</Container>
 	);

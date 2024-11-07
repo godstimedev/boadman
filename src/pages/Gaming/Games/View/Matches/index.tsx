@@ -4,7 +4,7 @@ import { HeroAvatar } from '@/assets/images';
 import { Link } from 'react-router-dom';
 import { Match } from '@/components';
 import { APP_ROUTES } from '@/constants';
-import { Dropdown } from '@/ui';
+import { Dropdown, Pagination } from '@/ui';
 import { useState } from 'react';
 
 const GameMatches = () => {
@@ -71,6 +71,10 @@ const GameMatches = () => {
 						/>
 					</Link>
 				))}
+			</div>
+
+			<div className="ml-auto">
+				<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 			</div>
 		</Container>
 	);

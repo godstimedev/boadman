@@ -1,6 +1,6 @@
 import { CaretDown, Valorant } from '@/assets/svgs';
 import { Container } from './styles';
-import { Dropdown } from '@/ui';
+import { Dropdown, Pagination } from '@/ui';
 import { HeroAvatar } from '@/assets/images';
 import { Match } from '@/components';
 import { Link } from 'react-router-dom';
@@ -108,6 +108,8 @@ const Matches = () => {
 					</Link>
 				))}
 			</div>
+
+			<Pagination maxPage={3} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 		</Container>
 	);
 };
@@ -320,167 +322,6 @@ const matchData = [
 		scores: {
 			player1: 2,
 			player2: 6,
-		},
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'finished match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		winner: 2,
-		scores: {
-			player1: 2,
-			player2: 6,
-		},
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'finished match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		winner: 2,
-		scores: {
-			player1: 2,
-			player2: 6,
-		},
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'finished match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		winner: 2,
-		scores: {
-			player1: 2,
-			player2: 6,
-		},
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'finished match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		winner: 2,
-		scores: {
-			player1: 2,
-			player2: 6,
-		},
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'upcoming match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: '',
-			name: '',
-			avatar: '',
-		},
-		// winner: 2,
-		// scores: {
-		// 	player1: 2,
-		// 	player2: 6,
-		// },
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'upcoming match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		// winner: 2,
-		// scores: {
-		// 	player1: 2,
-		// 	player2: 6,
-		// },
-	},
-	{
-		title: 'Loner epic',
-		date: 'WED, JUN 21',
-		time: '18:30 CST',
-		svg: <Valorant />,
-		status: 'finished match',
-		mode: '1v1',
-		player1: {
-			id: 1,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		player2: {
-			id: 2,
-			name: 'Flunk god',
-			avatar: HeroAvatar,
-		},
-		winner: 2,
-		scores: {
-			player1: 3,
-			player2: 4,
 		},
 	},
 ];
