@@ -51,7 +51,7 @@ const Table = (props: TablePropType) => {
 			setTempPageValue(pageValue);
 		}
 		// setTempPageValue(searchParams.get(PAGE_QUERY_KEY) || '1');
-	}, [location.search, PAGE_QUERY_KEY, searchParams]);
+	}, [location.search, PAGE_QUERY_KEY, searchParams, tempPageValue]);
 
 	useEffect(() => {
 		let validPage = currentPage;

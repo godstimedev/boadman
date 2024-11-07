@@ -117,7 +117,7 @@ const Tournaments = () => {
 				))}
 			</div>
 
-			<Pagination maxPage={4} loading={false} itemsPerPageOptions={[10, 14, 16]} />
+			<Pagination maxPage={30} loading={false} itemsPerPageOptions={[10, 14, 16]} />
 		</Container>
 	);
 };

@@ -99,39 +99,39 @@ const Pagination = (props: PropsType) => {
 				</button>
 
 				{/* <div>
-						Page
-						<div className="input-container">
-							<input
-								type="number"
-								value={tempPageValue}
-								min={1}
-								max={maxPage || 1}
-								disabled={loading}
-								onChange={(event) => setTempPageValue(event.target.value || '')}
-								onBlur={(event) => {
-									let value = parseInt(event.target.value || '1');
+					Page
+					<div className="input-container">
+						<input
+							type="number"
+							value={tempPageValue}
+							min={1}
+							max={maxPage || 1}
+							disabled={loading}
+							onChange={(event) => setTempPageValue(event.target.value || '')}
+							onBlur={(event) => {
+								let value = parseInt(event.target.value || '1');
 
-									if (value <= 0) {
-										value = 1;
-									} else if (value > maxPage) {
-										value = maxPage;
-									}
+								if (value <= 0) {
+									value = 1;
+								} else if (value > maxPage) {
+									value = maxPage;
+								}
 
-									setTempPageValue(value.toString());
+								setTempPageValue(value.toString());
 
-									if (value === currentPage) {
-										return;
-									}
+								if (value === currentPage) {
+									return;
+								}
 
-									const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
-									navigate(location.pathname + searchQuery);
-								}}
-							/>
-							<span>{tempPageValue}</span>
-						</div>
-						of {maxPage}
-					</div> */}
-
+								const searchQuery = replaceQueryKey({ newValue: value, queryKey: PAGE_QUERY_KEY });
+								navigate(location.pathname + searchQuery);
+							}}
+						/>
+						<span>{tempPageValue}</span>
+					</div>
+					of {maxPage}
+				</div> */}
+				{/* 
 				<div className="page-numbers-container">
 					{Array.from({ length: maxPage }, (_, index) => {
 						const page = index + 1;
@@ -147,6 +147,92 @@ const Pagination = (props: PropsType) => {
 								</Link>
 							</button>
 						);
+					})}
+				</div> */}
+
+				<div className="page-numbers-container">
+					{Array.from({ length: maxPage }, (_, index) => {
+						const page = index + 1;
+						const isDesktop = window.innerWidth >= 500;
+
+						// Desktop view: show first, last, and pages around the current page with ellipses if necessary
+						if (isDesktop) {
+							const isStartOrEndPage = page === 1 || page === maxPage;
+							const isNearCurrentPage = page >= currentPage - 1 && page <= currentPage + 1;
+							const shouldDisplayEllipsisBefore = page === 2 && currentPage > 4;
+							const shouldDisplayEllipsisAfter = page === maxPage - 1 && currentPage < maxPage - 3;
+
+							if (isStartOrEndPage || isNearCurrentPage) {
+								return (
+									<button key={page}>
+										<Link
+											to={location.pathname + replaceQueryKey({ newValue: page, queryKey: PAGE_QUERY_KEY })}
+											className={page === currentPage ? 'active' : ''}
+											onClick={() => setTempPageValue(page.toString())}
+										>
+											{page}
+										</Link>
+									</button>
+								);
+							}
+
+							if (shouldDisplayEllipsisBefore) {
+								return (
+									<span key="left-ellipsis" className="ellipsis">
+										...
+									</span>
+								);
+							}
+
+							if (shouldDisplayEllipsisAfter) {
+								return (
+									<span key="right-ellipsis" className="ellipsis">
+										...
+									</span>
+								);
+							}
+
+							return null;
+						}
+
+						// Mobile view: show only the first page, last page, and current page
+						const isStartOrEndPage = page === 1 || page === maxPage;
+						const isCurrentPage = page === currentPage;
+
+						if (isStartOrEndPage || isCurrentPage) {
+							return (
+								<button key={page}>
+									<Link
+										to={location.pathname + replaceQueryKey({ newValue: page, queryKey: PAGE_QUERY_KEY })}
+										className={page === currentPage ? 'active' : ''}
+										onClick={() => setTempPageValue(page.toString())}
+									>
+										{page}
+									</Link>
+								</button>
+							);
+						}
+
+						// Show ellipsis before the current page if there are pages in between
+						if (page === 2 && currentPage > 3) {
+							return (
+								<span key="left-ellipsis" className="ellipsis">
+									...
+								</span>
+							);
+						}
+
+						// Show ellipsis after the current page if there are pages in between
+						if (page === maxPage - 1 && currentPage < maxPage - 2) {
+							return (
+								<span key="right-ellipsis" className="ellipsis">
+									...
+								</span>
+							);
+						}
+						// Return null for pages that are neither in the range around `currentPage`
+						// nor part of the start/end groups, preventing unnecessary rendering.
+						return null;
 					})}
 				</div>
 
@@ -168,43 +254,43 @@ const Pagination = (props: PropsType) => {
 			</div>
 
 			{/* <div>
-					Show
-					<div className="select-container" tabIndex={loading ? undefined : 0}>
-						{currentItemPerPage}
-						<InputCaretDown />
+				Show
+				<div className="select-container" tabIndex={loading ? undefined : 0}>
+					{currentItemPerPage}
+					<InputCaretDown />
 
-						<ul>
-							{itemsPerPageOptions.map((item) => (
-								<li
-									key={item}
-									onClick={(event) => {
-										const maxPagePossibleForPreviousValue = Math.floor((maxPage * currentItemPerPage) / item);
-										let searchQuery = '';
+					<ul>
+						{itemsPerPageOptions.map((item) => (
+							<li
+								key={item}
+								onClick={(event) => {
+									const maxPagePossibleForPreviousValue = Math.floor((maxPage * currentItemPerPage) / item);
+									let searchQuery = '';
 
-										if (currentPage > maxPagePossibleForPreviousValue) {
-											searchQuery = replaceQueryKey({
-												newValue: maxPagePossibleForPreviousValue,
-												queryKey: PAGE_QUERY_KEY,
-											});
-										}
-
+									if (currentPage > maxPagePossibleForPreviousValue) {
 										searchQuery = replaceQueryKey({
-											newValue: item,
-											queryKey: ITEM_PER_PAGE_QUERY_KEY,
-											searchQuery,
+											newValue: maxPagePossibleForPreviousValue,
+											queryKey: PAGE_QUERY_KEY,
 										});
-										navigate(location.pathname + searchQuery);
+									}
 
-										event.currentTarget.parentElement?.parentElement?.blur();
-									}}
-								>
-									{item}
-								</li>
-							))}
-						</ul>
-					</div>
-					Items per page
-				</div> */}
+									searchQuery = replaceQueryKey({
+										newValue: item,
+										queryKey: ITEM_PER_PAGE_QUERY_KEY,
+										searchQuery,
+									});
+									navigate(location.pathname + searchQuery);
+
+									event.currentTarget.parentElement?.parentElement?.blur();
+								}}
+							>
+								{item}
+							</li>
+						))}
+					</ul>
+				</div>
+				Items per page
+			</div> */}
 		</Container>
 	);
 };

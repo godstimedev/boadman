@@ -1,9 +1,4 @@
-import {
-	CreateGame,
-	DashboardHeader,
-	GameStream as FeaturedStream,
-	FeaturedTournament,
-} from '@/components';
+import { CreateGame, DashboardHeader, FeaturedTournament, Match } from '@/components';
 import { Container } from './styles';
 import {
 	Achievement1,
@@ -31,10 +26,8 @@ import {
 	CoinAchievement,
 	CyberPunkEvent,
 	DiamondAchievement,
-	GameStream,
 	GiftAchievement,
 	HeroAvatar as HeroAvatarImage,
-	StreamAvatar,
 	ThunderAchievement,
 } from '@/assets/images';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -343,9 +336,11 @@ const Dashboard = () => {
 					<div className="left">
 						<div className="nav">
 							<h6>Trending games</h6>
-							<Button variant="text" size="small">
-								VIEW ALL
-							</Button>
+							<Link to={APP_ROUTES.gaming.initial}>
+								<Button variant="text" size="small">
+									VIEW ALL
+								</Button>
+							</Link>
 						</div>
 						<div className="left-con">
 							{trendingGamesList.map((game, index) => (
@@ -364,9 +359,11 @@ const Dashboard = () => {
 					<div className="right">
 						<div className="nav">
 							<h6>Featured tournaments</h6>
-							<Button variant="text" size="small">
-								VIEW ALL
-							</Button>
+							<Link to={APP_ROUTES.tournaments.initial}>
+								<Button variant="text" size="small">
+									VIEW ALL
+								</Button>
+							</Link>
 						</div>
 
 						<div className="right-con">
@@ -391,9 +388,11 @@ const Dashboard = () => {
 				<div className="swiper-con-2">
 					<div className="nav">
 						<h6>Trending games</h6>
-						<Button variant="text" size="small">
-							VIEW ALL
-						</Button>
+						<Link to={APP_ROUTES.gaming.initial}>
+							<Button variant="text" size="small">
+								VIEW ALL
+							</Button>
+						</Link>
 					</div>
 
 					<Swiper spaceBetween={20} slidesPerView={1.3}>
@@ -417,9 +416,11 @@ const Dashboard = () => {
 				<div className="swiper-con-3">
 					<div className="nav">
 						<h6>Featured tournaments</h6>
-						<Button variant="text" size="small">
-							VIEW ALL
-						</Button>
+						<Link to={APP_ROUTES.tournaments.initial}>
+							<Button variant="text" size="small">
+								VIEW ALL
+							</Button>
+						</Link>
 					</div>
 					<Swiper
 						spaceBetween={11.5}
@@ -432,18 +433,18 @@ const Dashboard = () => {
 							},
 							// When the screen width is 390px or larger
 							390: {
-								slidesPerView: 1.3,
-								spaceBetween: 5,
+								slidesPerView: 1.4,
+								spaceBetween: 20,
 							},
 							// When the screen width is 440px or larger
-							440: {
+							420: {
 								slidesPerView: 1.5,
-								spaceBetween: 5,
+								spaceBetween: 20,
 							},
 							// When the screen width is 550px or larger
 							610: {
 								slidesPerView: 2.1,
-								spaceBetween: 10,
+								spaceBetween: 20,
 							},
 							// When the screen width is 768px or larger (e.g., tablets)
 							768: {
@@ -481,68 +482,67 @@ const Dashboard = () => {
 			<div className="con-3">
 				<div className="con-3-wrapper">
 					<div className="nav">
-						<h6>Featured Streams</h6>
-						<Button variant="text" size="small">
-							VIEW ALL
-						</Button>
+						<h6>Upcoming matches</h6>
+						<Link to={APP_ROUTES.matches.initial}>
+							<Button variant="text" size="small">
+								VIEW ALL
+							</Button>
+						</Link>
 					</div>
 
 					<div className="con-3-list">
-						{featuredStreamsList.map((stream, index) => (
-							<FeaturedStream
-								avatar={stream.avatar}
-								game={stream.game}
-								image={stream.image}
-								key={index}
-								username={stream.username}
-								views={stream.views}
-							/>
+						{matchData.map((match, index) => (
+							<Link key={index} to={APP_ROUTES.matches.use_overview(index.toString())}>
+								<Match
+									title={match.title}
+									date={match.date}
+									time={match.time}
+									svg={match.svg}
+									status={match.status}
+									player1={match.player1}
+									player2={match.player2}
+									// winner={match.winner}
+									// scores={match.scores}
+									mode={match.mode}
+								/>
+							</Link>
 						))}
 					</div>
 				</div>
 
 				<div className="swiper-con-4">
 					<div className="nav">
-						<h6>Featured Streams</h6>
-						<Button variant="text" size="small">
-							VIEW ALL
-						</Button>
+						<h6>Upcoming matches</h6>
+						<Link to={APP_ROUTES.matches.initial}>
+							<Button variant="text" size="small">
+								VIEW ALL
+							</Button>
+						</Link>
 					</div>
 
 					<Swiper
 						slidesPerView={1.3}
 						spaceBetween={20}
-						// loop={true}
-						// autoplay={{
-						// 	delay: 2500, // Time in milliseconds (2.5 seconds)
-						// 	disableOnInteraction: false, // Autoplay continues even after user interaction
-						// }}
-						// modules={[Autoplay]}
 						breakpoints={{
 							// When the screen width is 280px or larger
 							280: {
 								slidesPerView: 1.2,
-								spaceBetween: 10,
+								spaceBetween: 20,
 							},
 							// When the screen width is 390px or larger
 							390: {
-								slidesPerView: 1.3,
-								spaceBetween: 5,
-							},
-							// When the screen width is 440px or larger
-							440: {
 								slidesPerView: 1.4,
-								spaceBetween: 5,
+								spaceBetween: 20,
 							},
 							// When the screen width is 440px or larger
-							540: {
-								slidesPerView: 1.75,
-								spaceBetween: 5,
+							420: {
+								slidesPerView: 1.5,
+								spaceBetween: 20,
 							},
 							// When the screen width is 550px or larger
-							650: {
+							610: {
 								slidesPerView: 2.1,
-								spaceBetween: 10,
+								spaceBetween: 20,
 							},
 							// When the screen width is 768px or larger (e.g., tablets)
 							768: {
@@ -557,15 +557,22 @@ const Dashboard = () => {
 						}}
 					>
 						<div className="con-3-list">
-							{featuredStreamsList.map((stream, index) => (
+							{matchData.map((match, index) => (
 								<SwiperSlide key={index}>
-									<FeaturedStream
-										avatar={stream.avatar}
-										game={stream.game}
-										image={stream.image}
-										username={stream.username}
-										views={stream.views}
-									/>
+									<Link key={index} to={APP_ROUTES.matches.use_overview(index.toString())}>
+										<Match
+											title={match.title}
+											date={match.date}
+											time={match.time}
+											svg={match.svg}
+											status={match.status}
+											player1={match.player1}
+											player2={match.player2}
+											// winner={match.winner}
+											// scores={match.scores}
+											mode={match.mode}
+										/>
+									</Link>
 								</SwiperSlide>
 							))}
 						</div>
@@ -633,33 +640,77 @@ const featuredTournamentsList = [
 	},
 ];
 
-const featuredStreamsList = [
+const matchData = [
 	{
-		image: GameStream,
-		avatar: StreamAvatar,
-		username: 'Flunk_god',
-		game: 'Fortnite',
-		views: '11.2k',
+		title: 'Loner epic',
+		date: 'WED, JUN 21',
+		time: '18:30 CST',
+		svg: <Valorant />,
+		status: 'Upcoming',
+		mode: '1v1',
+		player1: {
+			id: 1,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
+		player2: {
+			id: 2,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
 	},
 	{
-		image: GameStream,
-		avatar: StreamAvatar,
-		username: 'Flunk_god',
-		game: 'Fortnite',
-		views: '11.2k',
+		title: 'Loner epic',
+		date: 'WED, JUN 21',
+		time: '18:30 CST',
+		svg: <Valorant />,
+		status: 'Upcoming',
+		mode: '1v1',
+		player1: {
+			id: 1,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
+		player2: {
+			id: 2,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
 	},
 	{
-		image: GameStream,
-		avatar: StreamAvatar,
-		username: 'Flunk_god',
-		game: 'Fortnite',
-		views: '11.2k',
+		title: 'Loner epic',
+		date: 'WED, JUN 21',
+		time: '18:30 CST',
+		svg: <Valorant />,
+		status: 'Upcoming',
+		mode: '1v1',
+		player1: {
+			id: 1,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
+		player2: {
+			id: 2,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
 	},
 	{
-		image: GameStream,
-		avatar: StreamAvatar,
-		username: 'Flunk_god',
-		game: 'Fortnite',
-		views: '11.2k',
+		title: 'Loner epic',
+		date: 'WED, JUN 21',
+		time: '18:30 CST',
+		svg: <Valorant />,
+		status: 'Upcoming',
+		mode: '1v1',
+		player1: {
+			id: 1,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
+		player2: {
+			id: 2,
+			name: 'Flunk god',
+			avatar: HeroAvatarImage,
+		},
 	},
 ];

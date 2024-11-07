@@ -91,6 +91,7 @@ export { default as PlayStation } from './PlayStation.svg?react';
 export { default as PrevArrow } from './PrevArrow.svg?react';
 export { default as Profile } from './Profile.svg?react';
 export { default as Pubg } from './Pubg.svg?react';
+export { default as RankIcon } from './RankIcon.svg?react';
 export { default as SampleId1 } from './SampleId1.svg?react';
 export { default as SampleId2 } from './SampleId2.svg?react';
 export { default as SampleId3 } from './SampleId3.svg?react';

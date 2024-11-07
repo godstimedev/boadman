@@ -6,6 +6,7 @@ export const StyledMatchContainer = styled.div`
 	background-color: ${({ theme }) => theme.colors.accent500};
 	width: 100%;
 	height: max-content;
+	border-radius: 4px;
 
 	span {
 		font-size: 10px;

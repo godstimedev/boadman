@@ -26,10 +26,9 @@ import 'swiper/css';
 import { GeneralChangeEventType } from '@/types';
 import { useState } from 'react';
 import { LastPlayed, RecentWin } from '../Cards';
-import { MatchProps } from '../../../components/Cards/Match/Match.types';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
-import { ChallengeModal, CreateGame } from '@/components';
+import { ChallengeModal, CreateGame, Match } from '@/components';
 
 const Games = () => {
 	const [createGame, setCreateGame] = useState(false);
@@ -215,25 +214,29 @@ const Games = () => {
 					<div className="section-header">
 						<h6>My Matches</h6>
 
-						<Button variant="text" size="small">
-							See all
-						</Button>
+						<Link to={APP_ROUTES.matches.initial}>
+							<Button variant="text" size="small">
+								See all
+							</Button>
+						</Link>
 					</div>
 
 					<div>
 						{matchData.map((match, index) => (
-							<Match
-								key={index}
-								title={match.title}
-								date={match.date}
-								svg={match.svg}
-								status={match.status}
-								player1={match.player1}
-								player2={match.player2}
-								// winner={match.winner}
-								// scores={match.scores}
-								mode={match.mode}
-							/>
+							<Link key={index} to={APP_ROUTES.matches.use_overview(index.toString())}>
+								<Match
+									title={match.title}
+									date={match.date}
+									time={match.time}
+									svg={match.svg}
+									status={match.status}
+									player1={match.player1}
+									player2={match.player2}
+									// winner={match.winner}
+									// scores={match.scores}
+									mode={match.mode}
+								/>
+							</Link>
 						))}
 					</div>
 				</div>
@@ -289,9 +292,11 @@ const Games = () => {
 				<div className="section-header">
 					<h6>My Matches</h6>
 
-					<Button variant="text" size="small">
-						See all
-					</Button>
+					<Link to={APP_ROUTES.matches.initial}>
+						<Button variant="text" size="small">
+							See all
+						</Button>
+					</Link>
 				</div>
 				<Swiper
 					spaceBetween={20}
@@ -321,18 +326,20 @@ const Games = () => {
 				>
 					{matchData.map((match, index) => (
 						<SwiperSlide>
-							<Match
-								key={index}
-								title={match.title}
-								date={match.date}
-								svg={match.svg}
-								status={match.status}
-								player1={match.player1}
-								player2={match.player2}
-								// winner={match.winner}
-								// scores={match.scores}
-								mode={match.mode}
-							/>
+							<Link key={index} to={APP_ROUTES.matches.use_overview(index.toString())}>
+								<Match
+									title={match.title}
+									date={match.date}
+									time={match.time}
+									svg={match.svg}
+									status={match.status}
+									player1={match.player1}
+									player2={match.player2}
+									// winner={match.winner}
+									// scores={match.scores}
+									mode={match.mode}
+								/>
+							</Link>
 						</SwiperSlide>
 					))}
 				</Swiper>
@@ -476,95 +483,96 @@ const Games = () => {
 export default Games;
 
 // old match card
-const Match = (props: MatchProps) => {
-	const { title, svg, date, status, player1, player2, mode } = props;
+// const Match = (props: MatchProps) => {
+// 	const { title, svg, date, status, player1, player2, mode } = props;
 
-	return (
-		<div className="match-card">
-			<div>
-				<div>
-					<span className="icon-con">{svg}</span>
-					<div>
-						<p>{title}</p>
-						<span>{date}</span>
-					</div>
-				</div>
-				<div className="status">
-					<span className="badge">{status}</span>
-					{/* {winner && winner === player1?.id ? (
-					<div>
-						<div className="img-con">
-							<img src={player1?.avatar} alt="/" />
-						</div>{' '}
-						<p className="winner">{player1.name}</p> <WinnerCheck />{' '}
-					</div>
-				) : winner === player2?.id ? (
-					<div>
-						<div className="img-con">
-							<img src={player2?.avatar} alt="/" />
-						</div>{' '}
-						<p className="winner">{player2?.name}</p> <WinnerCheck />{' '}
-					</div>
-				) : null} */}
-				</div>
-			</div>
+// 	return (
+// 		<div className="match-card">
+// 			<div>
+// 				<div>
+// 					<span className="icon-con">{svg}</span>
+// 					<div>
+// 						<p>{title}</p>
+// 						<span>{date}</span>
+// 					</div>
+// 				</div>
+// 				<div className="status">
+// 					<span className="badge">{status}</span>
+// 					{/* {winner && winner === player1?.id ? (
+// 					<div>
+// 						<div className="img-con">
+// 							<img src={player1?.avatar} alt="/" />
+// 						</div>{' '}
+// 						<p className="winner">{player1.name}</p> <WinnerCheck />{' '}
+// 					</div>
+// 				) : winner === player2?.id ? (
+// 					<div>
+// 						<div className="img-con">
+// 							<img src={player2?.avatar} alt="/" />
+// 						</div>{' '}
+// 						<p className="winner">{player2?.name}</p> <WinnerCheck />{' '}
+// 					</div>
+// 				) : null} */}
+// 				</div>
+// 			</div>
 
-			<hr />
+// 			<hr />
 
-			<div>
-				<div>
-					<div>
-						<span>Player 1</span>
-						{player1?.name ? (
-							<div className="player">
-								<div className="img-con">
-									<img src={player1.avatar} alt="/" />
-								</div>
-								<p> {player1.name} </p>
-							</div>
-						) : (
-							<div className="flex items-center justify-center text-center w-full">
-								<span>-</span>
-							</div>
-						)}
-					</div>
-					{/* {scores ? (
-<div className="scores">
-<span className={winner === player1?.id ? 'active' : ''}>{scores.player1}</span>
-<span>:</span>
-<span className={winner === player2?.id ? 'active' : ''}>{scores.player2}</span>
-</div>
-) : ( */}
-					<p>vs</p>
-					{/* )} */}
-					<div>
-						<span>Player 2</span>
-						{player2?.name ? (
-							<div className="player">
-								<div className="img-con">
-									<img src={player2.avatar} alt="/" />
-								</div>
-								<p>{player2.name}</p>
-							</div>
-						) : (
-							'-'
-						)}
-					</div>
-				</div>
+// 			<div>
+// 				<div>
+// 					<div>
+// 						<span>Player 1</span>
+// 						{player1?.name ? (
+// 							<div className="player">
+// 								<div className="img-con">
+// 									<img src={player1.avatar} alt="/" />
+// 								</div>
+// 								<p> {player1.name} </p>
+// 							</div>
+// 						) : (
+// 							<div className="flex items-center justify-center text-center w-full">
+// 								<span>-</span>
+// 							</div>
+// 						)}
+// 					</div>
+// 					{/* {scores ? (
+// <div className="scores">
+// <span className={winner === player1?.id ? 'active' : ''}>{scores.player1}</span>
+// <span>:</span>
+// <span className={winner === player2?.id ? 'active' : ''}>{scores.player2}</span>
+// </div>
+// ) : ( */}
+// 					<p>vs</p>
+// 					{/* )} */}
+// 					<div>
+// 						<span>Player 2</span>
+// 						{player2?.name ? (
+// 							<div className="player">
+// 								<div className="img-con">
+// 									<img src={player2.avatar} alt="/" />
+// 								</div>
+// 								<p>{player2.name}</p>
+// 							</div>
+// 						) : (
+// 							'-'
+// 						)}
+// 					</div>
+// 				</div>
 
-				<div>
-					<span>Mode</span>
-					<p>{mode}</p>
-				</div>
-			</div>
-		</div>
-	);
-};
+// 				<div>
+// 					<span>Mode</span>
+// 					<p>{mode}</p>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	);
+// };
 
 const matchData = [
 	{
 		title: 'Loner epic',
-		date: 'WED, JUN 21, 18:30 CST',
+		date: 'WED, JUN 21',
+		time: '18:30 CST',
 		svg: <Valorant />,
 		status: 'Upcoming',
 		mode: '1v1',
@@ -581,7 +589,8 @@ const matchData = [
 	},
 	{
 		title: 'Loner epic',
-		date: 'WED, JUN 21, 18:30 CST',
+		date: 'WED, JUN 21',
+		time: '18:30 CST',
 		svg: <Valorant />,
 		status: 'Upcoming',
 		mode: '1v1',

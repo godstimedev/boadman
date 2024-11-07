@@ -16,11 +16,11 @@ export const Container = styled.div`
 		align-items: center;
 		gap: 0.5rem;
 
-		${maxQuery('sm')} {
+		/* ${maxQuery('sm')} {
 			:last-child {
 				display: none;
 			}
-		}
+		} */
 	}
 
 	.input-container {
@@ -63,35 +63,35 @@ export const Container = styled.div`
 			}
 		}
 	}
-	.action-container button {
-		/* border: 1px solid ${({ theme }) => theme.colors.neutral100}; */
-		color: ${({ theme }) => theme.colors.white};
-		/* padding: 0.125rem 1rem; */
-
-		/* font-size: 0.875rem;
-			line-height: 120%;
-			font-weight: 600; */
-		background-color: ${({ theme }) => theme.colors.accent500};
-		border-radius: 5px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 44px;
-
-		/* &:hover,
+	.action-container {
+		> button {
+			background-color: ${({ theme }) => theme.colors.accent100};
+			&:hover,
 			&:focus {
-				border: 1px solid ${({ theme }) => theme.colors.neutral500};
-			} */
-		&:disabled {
-			opacity: 0.5;
-			cursor: not-allowed;
+				background-color: ${({ theme }) => theme.colors.primary500};
+			}
 		}
 
-		a,
-		span {
-			color: inherit;
-			text-decoration: none;
-			padding: 1.1rem 1rem;
+		button {
+			color: ${({ theme }) => theme.colors.white};
+
+			border-radius: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 44px;
+
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+
+			a,
+			span {
+				color: inherit;
+				text-decoration: none;
+				padding: 1.1rem 1rem;
+			}
 		}
 	}
 
@@ -99,10 +99,11 @@ export const Container = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+		background-color: ${({ theme }) => theme.colors.accent500};
 
 		button {
 			a {
-				background-color: ${({ theme }) => theme.colors.accent500};
+				background-color: transparent;
 				border-radius: 5px;
 				/* padding: 1rem; */
 				height: 44px;
