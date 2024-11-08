@@ -119,8 +119,18 @@ export const Container = styled.div`
 				}
 			}
 			> div:first-child {
-				width: 100%;
-				/* flex: 1; */
+				flex: 0.52;
+
+				${maxQuery('md')} {
+					flex: 1;
+				}
+			}
+			> div:last-child {
+				flex: 0.48;
+				${maxQuery('lg')} {
+					/* flex: 1; */
+					width: 276px;
+				}
 			}
 
 			.leaderboard {
