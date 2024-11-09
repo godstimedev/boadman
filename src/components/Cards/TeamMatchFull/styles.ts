@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+	min-width: max-content;
+	width: 100%;
 	padding: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
+	gap: 1rem;
+	white-space: nowrap;
 	background-color: ${({ theme }) => theme.colors.accent500};
 	border-radius: 5px;
 

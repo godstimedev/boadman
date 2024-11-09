@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	/* gap: 1rem; */
 
 	.banner {
 		background-image: url(${Banner1});
@@ -13,10 +13,11 @@ export const Container = styled.section`
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 5px 5px 0 0;
-		padding: 1rem 1.5rem;
+		padding: 1.5rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		margin-top: 1rem;
 
 		${maxQuery('lg')} {
 			background-image: url(${Banner1Mobile});
@@ -32,7 +33,11 @@ export const Container = styled.section`
 			display: flex;
 			align-items: center;
 			justify-self: flex-start;
-			/* gap: 1rem; */
+			gap: 1rem;
+
+			${maxQuery('md')} {
+				gap: 0.5rem;
+			}
 
 			> div {
 				display: flex;
@@ -41,7 +46,17 @@ export const Container = styled.section`
 				gap: 1rem;
 
 				.img-con {
+					width: 110px;
+					height: 110px;
+
+					${maxQuery('md')} {
+						width: 60px;
+						height: 60px;
+					}
+
 					img {
+						width: 100%;
+						height: 100%;
 						object-fit: cover;
 					}
 				}
@@ -91,6 +106,11 @@ export const Container = styled.section`
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+
+		${maxQuery('lg')} {
+			gap: 1rem;
+		}
+
 		.page-nav {
 			display: flex;
 			align-items: center;
@@ -122,6 +142,10 @@ export const Container = styled.section`
 				line-height: 18.48px;
 				font-weight: 500;
 				white-space: nowrap;
+
+				${maxQuery('md')} {
+					padding: 0.85rem 1.2rem;
+				}
 			}
 
 			.active {
@@ -137,6 +161,7 @@ export const Container = styled.section`
 			display: flex;
 			align-items: center;
 			gap: 1rem;
+			width: 100%;
 
 			.dropdown {
 				cursor: pointer;
@@ -151,6 +176,10 @@ export const Container = styled.section`
 				font-size: 14px;
 				font-weight: 400;
 				line-height: 18.48px;
+
+				${maxQuery('md')} {
+					width: 150px;
+				}
 			}
 
 			${maxQuery('md')} {

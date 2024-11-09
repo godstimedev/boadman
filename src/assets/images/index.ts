@@ -46,6 +46,7 @@ export { default as GamerAvatar } from './GamerAvatar.png';
 export { default as GameStream } from './GameStream.png';
 export { default as GiftAchievement } from './GiftAchievement.png';
 export { default as HeroAvatar } from './HeroAvatar.png';
+export { default as JoelAvatar } from './JoelAvatar.png';
 export { default as JoelHenderson } from './JoelHenderson.png';
 export { default as LeagueOfLegends } from './LeagueOfLegends.png';
 export { default as ManSmilling } from './ManSmilling.png';

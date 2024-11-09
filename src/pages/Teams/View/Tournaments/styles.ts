@@ -1,3 +1,4 @@
+import { maxQuery } from '@/utilities';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -9,5 +10,9 @@ export const Container = styled.div`
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
 		gap: 1rem;
+
+		${maxQuery('sm')} {
+			width: 276px;
+		}
 	}
 `;

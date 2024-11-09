@@ -120,5 +120,9 @@ export const Container = styled.section`
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
 		gap: 1rem;
+
+		${maxQuery('sm')} {
+			width: 276px;
+		}
 	}
 `;

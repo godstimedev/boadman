@@ -3,17 +3,15 @@ import { Container } from './styles';
 import { Button, Dropdown } from '@/ui';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
-import { HeroAvatar } from '../../../../assets/images';
+import { JoelAvatar } from '../../../../assets/images';
 import { CaretDown } from '@/assets/svgs';
 import { useState } from 'react';
 import AddFriend from '../Modals/AddFriend';
-import InviteFriend from '../Modals/InviteFriend';
 import Challenge from '../Modals/Challenge';
 
 const Profile = () => {
 	const params = useParams();
 	const [isAddFriend, setIsAddFriend] = useState(false);
-	const [isInviteFriend, setIsInviteFriend] = useState(false);
 	const [createChallenge, setCreateChallenge] = useState(false);
 
 	const navList = [
@@ -44,7 +42,7 @@ const Profile = () => {
 			<div className="banner">
 				<div>
 					<div className="img-con">
-						<img src={HeroAvatar} alt="/" />
+						<img src={JoelAvatar} alt="/" />
 						{/* <HeroAvatar /> */}
 					</div>
 
@@ -55,18 +53,13 @@ const Profile = () => {
 				</div>
 				<div>
 					<div>
-						<Button onClick={() => setCreateChallenge(true)} variant="outline" size="large">
+						<Button onClick={() => setCreateChallenge(true)} variant="outline">
 							Challenge
 						</Button>
 					</div>
-					{/* <div>
-						<Button onClick={() => setIsInviteFriend(true)} variant="outline" size="large">
-							Invite to team
-						</Button>
-					</div> */}
 
 					<div>
-						<Button onClick={() => setIsAddFriend(true)} variant="primary" size="large">
+						<Button onClick={() => setIsAddFriend(true)} variant="primary">
 							Add friend
 						</Button>
 					</div>
@@ -74,7 +67,6 @@ const Profile = () => {
 			</div>
 
 			<AddFriend isAddFriend={isAddFriend} setIsAddFriend={setIsAddFriend} />
-			<InviteFriend isInviteFriend={isInviteFriend} setIsInviteFriend={setIsInviteFriend} />
 			<Challenge createChallenge={createChallenge} setCreateChallenge={setCreateChallenge} />
 
 			<div className="profile">

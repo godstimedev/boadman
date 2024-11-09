@@ -27,7 +27,6 @@ export const Container = styled.div`
 
 	> .wrapper {
 		max-width: 100vw;
-
 		overflow-x: auto;
 
 		> div {

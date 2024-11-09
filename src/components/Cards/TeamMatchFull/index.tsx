@@ -9,7 +9,7 @@ type PropsType = {
 const TeamMatchFull = (props: PropsType) => {
 	const { score } = props;
 	return (
-		<Container className="team-match">
+		<Container>
 			<div>
 				<div className="icon-con">
 					<Valorant />

@@ -1,3 +1,4 @@
+import { StyledButton } from '@/ui/Button/styles';
 import { maxQuery, minQuery } from '@/utilities';
 import styled from 'styled-components';
 
@@ -107,9 +108,15 @@ export const Container = styled.section`
 				}
 
 				> div:last-child {
-					button {
+					${StyledButton} {
 						white-space: nowrap;
-						padding: 0.5rem !important;
+						${maxQuery('sm')} {
+							min-height: 25px !important;
+							padding: 0.5rem !important;
+							font-size: 9px;
+							font-weight: 500;
+							line-height: 11.88px;
+						}
 					}
 				}
 			}

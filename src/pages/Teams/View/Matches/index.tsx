@@ -8,14 +8,16 @@ const TeamMatches = () => {
 
 	return (
 		<Container>
-			{Array.from({ length: 12 }).map((_, i) => (
-				<Link
-					to={APP_ROUTES.teams.use_match(params.teamId ? params.teamId.toString() : '', i.toString())}
-					key={i}
-				>
-					<TeamMatchFull />
-				</Link>
-			))}
+			<div>
+				{Array.from({ length: 12 }).map((_, i) => (
+					<Link
+						to={APP_ROUTES.teams.use_match(params.teamId ? params.teamId.toString() : '', i.toString())}
+						key={i}
+					>
+						<TeamMatchFull />
+					</Link>
+				))}
+			</div>
 		</Container>
 	);
 };

@@ -52,8 +52,8 @@ export const Container = styled.div`
 		/* flex-wrap: wrap; */
 
 		${maxQuery('md')} {
-			padding: 0.8rem 1rem;
-			gap: 1rem;
+			padding: 0.8rem 0.5rem;
+			gap: 0.5rem;
 			justify-content: space-between;
 		}
 
@@ -72,7 +72,7 @@ export const Container = styled.div`
 			${maxQuery('md')} {
 				font-size: 10px;
 				gap: 0.5rem;
-				padding: 0.1rem 0.7rem;
+				padding: 0.65rem 0.75rem;
 
 				> svg {
 					width: 10px;
