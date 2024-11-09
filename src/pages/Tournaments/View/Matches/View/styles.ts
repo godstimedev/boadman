@@ -7,6 +7,7 @@ export const Container = styled.div`
 	justify-content: center;
 	gap: 1rem;
 	margin-bottom: 3rem;
+	overflow-x: hidden;
 
 	> div:first-child {
 		text-align: center;
@@ -25,13 +26,15 @@ export const Container = styled.div`
 	}
 
 	> .wrapper {
-		width: max-content;
+		max-width: 100vw;
+
 		overflow-x: auto;
 
 		> div {
 			display: flex;
 			justify-content: space-between;
 			gap: 4rem;
+			width: max-content;
 
 			> div:not(:nth-child(2)) {
 				display: flex;
