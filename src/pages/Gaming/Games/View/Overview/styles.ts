@@ -127,8 +127,8 @@ export const Container = styled.div`
 			}
 			> div:last-child {
 				flex: 0.48;
+
 				${maxQuery('lg')} {
-					/* flex: 1; */
 					width: 276px;
 				}
 			}

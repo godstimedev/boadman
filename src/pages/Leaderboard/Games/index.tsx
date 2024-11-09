@@ -1,11 +1,11 @@
-import { Dropdown, Table } from '@/ui';
-import { Container } from './styles';
 import { CaretDown, Crown, TierRadiant } from '@/assets/svgs';
+import { Container } from './styles';
+import { Dropdown, Table } from '@/ui';
 import { Agent1, AvatarTable } from '@/assets/images';
-import { APP_ROUTES } from '@/constants';
 import { Link, useParams } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
-const GameLeaderboard = () => {
+const GamesLeaderboard = () => {
 	const param = useParams();
 
 	const tableData = players.map((player, index) => ({
@@ -52,13 +52,13 @@ const GameLeaderboard = () => {
 
 	return (
 		<Container>
-			<div className="leaderboard-header">
-				<h6>Apex Legends Leaderboard</h6>
+			<div className="header">
+				<h6>Games Leaderboard</h6>
 
-				{/* <button>
+				<button>
 					<span>Competitive stats</span>
 					<CaretDown />
-				</button> */}
+				</button>
 			</div>
 			<div className="action-bar">
 				<Dropdown
@@ -95,26 +95,19 @@ const GameLeaderboard = () => {
 					position="bottomRight"
 					trigger={
 						<div className="dropdown">
-							Stats <CaretDown className="caret" />
+							Episode 7- act 3 <CaretDown className="caret" />
 						</div>
 					}
 				>
 					<div>
-						<button>Wins</button>
-						<button>Losses</button>
-					</div>
-				</Dropdown>
-				<Dropdown
-					position="bottomRight"
-					trigger={
-						<div className="dropdown">
-							Legend <CaretDown className="caret" />
-						</div>
-					}
-				>
-					<div>
-						<button>Level 1</button>
-						<button>Level 2</button>
+						<button>Episode 8 - act 2</button>
+						<button>Episode 8 - act 1</button>
+						<button>Episode 7 - act 3</button>
+						<button>Episode 7 - act 2</button>
+						<button>Episode 7 - act 1</button>
+						<button>Episode 7 - act 1</button>
+						<button>Episode 7 - act 1</button>
+						<button>Episode 7 - act 1</button>
 					</div>
 				</Dropdown>
 			</div>
@@ -143,7 +136,7 @@ const GameLeaderboard = () => {
 	);
 };
 
-export default GameLeaderboard;
+export default GamesLeaderboard;
 
 const players = [
 	{

@@ -50,8 +50,8 @@ const Leaderboard = () => {
 
 			<div className="leaderboards">
 				<ul className="page-nav">
-					{navList.map((item) => (
-						<NavLink key={item.name} to={item.link}>
+					{navList.map((item, index) => (
+						<NavLink key={item.name} to={APP_ROUTES.leaderboard.use_game(index.toString())}>
 							<li>
 								{item.svg} {item.name}
 							</li>
@@ -77,46 +77,37 @@ const navList = [
 	{
 		name: 'Valorant',
 		svg: <Valorant />,
-		link: APP_ROUTES.leaderboard.valorant,
 	},
 	{
 		name: 'COD',
 		svg: <CallOfDuty />,
-		link: APP_ROUTES.leaderboard.cod,
 	},
 	{
 		name: 'PUBG',
 		svg: <Pubg />,
-		link: APP_ROUTES.leaderboard.pubg,
 	},
 	{
 		name: 'Apex Legend',
 		svg: <ApexLegend />,
-		link: APP_ROUTES.leaderboard.apexLegend,
 	},
 	{
 		name: 'Destiny 2',
 		svg: <Destiny2 />,
-		link: APP_ROUTES.leaderboard.destiny2,
 	},
 	{
 		name: 'League of Legend',
 		svg: <LeagueOfLegends />,
-		link: APP_ROUTES.leaderboard.leagueOfLegend,
 	},
 	{
 		name: 'Fortnite',
 		svg: <Fortnite />,
-		link: APP_ROUTES.leaderboard.fortnite,
 	},
 	{
 		name: 'Counter strike ',
 		svg: <CounterStrike />,
-		link: APP_ROUTES.leaderboard.counterStrike,
 	},
 	{
 		name: 'Overwatch',
 		svg: <OverWatch />,
-		link: APP_ROUTES.leaderboard.overwatch,
 	},
 ];

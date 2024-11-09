@@ -14,11 +14,11 @@ const ChallengeView = () => {
 	const navList = [
 		{
 			name: 'Overview',
-			link: APP_ROUTES.gaming.use_challenge_overview(params?.challengeId ? params?.challengeId : ''),
+			link: APP_ROUTES.gaming.use_challenge_overview(params.challengeId),
 		},
 		{
 			name: 'Summary',
-			link: APP_ROUTES.gaming.use_challenge_summary(params?.challengeId ? params?.challengeId : ''),
+			link: APP_ROUTES.gaming.use_challenge_summary(params.challengeId),
 		},
 	];
 

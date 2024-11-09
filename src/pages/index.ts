@@ -25,7 +25,7 @@ export { default as ChallengeView } from './Gaming/Challenges/View/Layout';
 export { default as ChallengeOverview } from './Gaming/Challenges/View/Overview';
 export { default as ChallengeSummary } from './Gaming/Challenges/View/Summary';
 export { default as Leaderboard } from './Leaderboard/Layout';
-export { default as LeaderboardValorant } from './Leaderboard/Valorant';
+export { default as LeaderboardGames } from './Leaderboard/Games';
 export { default as LeaderboardProfile } from './Leaderboard/Profile/Layout';
 export { default as LeaderboardProfileAgents } from './Leaderboard/Profile/Agents';
 export { default as LeaderboardProfileWeapons } from './Leaderboard/Profile/Weapons';

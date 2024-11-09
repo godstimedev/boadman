@@ -12,8 +12,12 @@ import {
 	Vandal,
 } from '@/assets/images';
 import { PersonTargetBody, PersonTargetHead, PersonTargetLeg, TierRadiant } from '@/assets/svgs';
+import { Link, useParams } from 'react-router-dom';
+import { APP_ROUTES } from '@/constants';
 
 const Overview = () => {
+	const param = useParams();
+
 	const tableData = [
 		{
 			rowId: 1,
@@ -199,9 +203,11 @@ const Overview = () => {
 				<div className="top-weapons">
 					<div>
 						<p>Top weapons</p>
-						<Button variant="text" size="small">
-							SEE ALL
-						</Button>
+						<Link to={APP_ROUTES.leaderboard.player.use_weapons(param.gameId, param.playerId)}>
+							<Button variant="text" size="small">
+								SEE ALL
+							</Button>
+						</Link>
 					</div>
 					<table>
 						<tbody>
@@ -275,9 +281,11 @@ const Overview = () => {
 				<div className="map-performance">
 					<div>
 						<p>Map Performance</p>
-						<Button variant="text" size="small">
-							SEE ALL
-						</Button>
+						<Link to={APP_ROUTES.leaderboard.player.use_maps(param.gameId, param.playerId)}>
+							<Button variant="text" size="small">
+								SEE ALL
+							</Button>
+						</Link>
 					</div>
 
 					<table>
@@ -342,7 +350,7 @@ const Overview = () => {
 							<tr>
 								<td>
 									<div className="teamate">
-										<img src={AvatarTable} alt="/" className="w-4 h-4" />
+										<img src={AvatarTable} alt="/" className="w-4 h-4 rounded-full " />
 										<div>
 											<p className="font-medium text-sm">Joel Henderson </p>
 											<span className=" text-sm">#flunk_god</span>
@@ -362,7 +370,7 @@ const Overview = () => {
 							<tr>
 								<td>
 									<div className="teamate">
-										<img src={AvatarTable} alt="/" className="w-4 h-4" />
+										<img src={AvatarTable} alt="/" className="w-4 h-4 rounded-full" />
 										<div>
 											<p className="font-medium text-sm">Joel Henderson </p>
 											<span className=" text-sm">#flunk_god</span>
@@ -382,7 +390,7 @@ const Overview = () => {
 							<tr>
 								<td>
 									<div className="teamate">
-										<img src={AvatarTable} alt="/" className="w-4 h-4" />
+										<img src={AvatarTable} alt="/" className="w-4 h-4 rounded-full" />
 										<div>
 											<p className="font-medium text-sm">Joel Henderson </p>
 											<span className=" text-sm">#flunk_god</span>
@@ -413,10 +421,18 @@ const Overview = () => {
 						</div>
 
 						<div className="hidden sm:block">
-							<Button variant="outline">View all agents</Button>
+							<Link to={APP_ROUTES.leaderboard.player.use_agents(param.gameId, param.playerId)}>
+								<Button variant="outline" outline="tetiary">
+									View all agents
+								</Button>
+							</Link>
 						</div>
 						<div className=" sm:hidden">
-							<Button variant="outline">View all</Button>
+							<Link to={APP_ROUTES.leaderboard.player.use_agents(param.gameId, param.playerId)}>
+								<Button variant="outline" outline="tetiary">
+									View all
+								</Button>
+							</Link>
 						</div>
 					</div>
 					<Table
@@ -707,6 +723,10 @@ const Overview = () => {
 							</div>
 						</div>
 					</div>
+
+					<Button variant="secondary" size="large">
+						See more
+					</Button>
 				</div>
 			</div>
 		</Container>

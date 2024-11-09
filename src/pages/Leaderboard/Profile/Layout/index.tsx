@@ -1,7 +1,7 @@
 import { DashboardHeader } from '@/components';
 import { Container } from './styles';
 import { Button, Dropdown } from '@/ui';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
 import { HeroAvatar } from '../../../../assets/images';
 import { CaretDown } from '@/assets/svgs';
@@ -11,9 +11,32 @@ import InviteFriend from '../Modals/InviteFriend';
 import Challenge from '../Modals/Challenge';
 
 const Profile = () => {
+	const params = useParams();
 	const [isAddFriend, setIsAddFriend] = useState(false);
 	const [isInviteFriend, setIsInviteFriend] = useState(false);
 	const [createChallenge, setCreateChallenge] = useState(false);
+
+	const navList = [
+		{
+			name: 'Overview',
+			link: APP_ROUTES.leaderboard.player.use_overview(params.gameId, params.playerId),
+		},
+
+		{
+			name: 'Agents',
+			link: APP_ROUTES.leaderboard.player.use_agents(params.gameId, params.playerId),
+		},
+
+		{
+			name: 'Weapons',
+			link: APP_ROUTES.leaderboard.player.use_weapons(params.gameId, params.playerId),
+		},
+
+		{
+			name: 'Maps',
+			link: APP_ROUTES.leaderboard.player.use_maps(params.gameId, params.playerId),
+		},
+	];
 
 	return (
 		<Container>
@@ -102,25 +125,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-const navList = [
-	{
-		name: 'Overview',
-		link: APP_ROUTES.playerProfile.overview,
-	},
-
-	{
-		name: 'Agents',
-		link: APP_ROUTES.playerProfile.agents,
-	},
-
-	{
-		name: 'Weapons',
-		link: APP_ROUTES.playerProfile.weapons,
-	},
-
-	{
-		name: 'Maps',
-		link: APP_ROUTES.playerProfile.maps,
-	},
-];

@@ -391,6 +391,7 @@ export const Container = styled.div`
 
 	.table-con-1 {
 		height: max-content;
+
 		> div:first-child {
 			background-color: ${({ theme }) => theme.colors.accent500};
 			display: flex;

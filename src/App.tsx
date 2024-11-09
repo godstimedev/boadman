@@ -18,12 +18,6 @@ import {
 	Wallet,
 	Settings,
 	Faqs,
-	LeaderboardValorant,
-	LeaderboardProfile,
-	LeaderboardProfileOverview,
-	LeaderboardProfileAgents,
-	LeaderboardProfileWeapons,
-	LeaderboardProfileMaps,
 	Profile,
 	GamingGames,
 	GamingChallenges,
@@ -81,6 +75,12 @@ import {
 	FaqDispute,
 	FaqResults,
 	TournamentResultView,
+	LeaderboardGames,
+	LeaderboardProfile,
+	LeaderboardProfileOverview,
+	LeaderboardProfileAgents,
+	LeaderboardProfileWeapons,
+	LeaderboardProfileMaps,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -107,27 +107,25 @@ function App() {
 						<Route element={<Leaderboard />}>
 							<Route
 								path={APP_ROUTES.leaderboard.initial}
-								element={<Navigate to={APP_ROUTES.leaderboard.valorant} replace />}
+								element={<Navigate to={APP_ROUTES.leaderboard.use_game('0')} replace />}
 							/>
-							<Route path={APP_ROUTES.leaderboard.valorant} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.cod} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.pubg} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.apexLegend} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.destiny2} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.leagueOfLegend} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.fortnite} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.counterStrike} element={<LeaderboardValorant />} />
-							<Route path={APP_ROUTES.leaderboard.overwatch} element={<LeaderboardValorant />} />
+							<Route path={APP_ROUTES.leaderboard.game} element={<LeaderboardGames />} />
 						</Route>
-						<Route element={<LeaderboardProfile />}>
+						<Route path={APP_ROUTES.leaderboard.player.initial} element={<LeaderboardProfile />}>
 							<Route
-								path={APP_ROUTES.playerProfile.initial}
-								element={<Navigate to={APP_ROUTES.playerProfile.overview} replace />}
+								path={APP_ROUTES.leaderboard.player.initial}
+								element={<Navigate to={APP_ROUTES.leaderboard.player.overview} replace />}
 							/>
-							<Route path={APP_ROUTES.playerProfile.overview} element={<LeaderboardProfileOverview />} />
-							<Route path={APP_ROUTES.playerProfile.agents} element={<LeaderboardProfileAgents />} />
-							<Route path={APP_ROUTES.playerProfile.weapons} element={<LeaderboardProfileWeapons />} />
-							<Route path={APP_ROUTES.playerProfile.maps} element={<LeaderboardProfileMaps />} />
+							<Route
+								path={APP_ROUTES.leaderboard.player.overview}
+								element={<LeaderboardProfileOverview />}
+							/>
+							<Route path={APP_ROUTES.leaderboard.player.agents} element={<LeaderboardProfileAgents />} />
+							<Route
+								path={APP_ROUTES.leaderboard.player.weapons}
+								element={<LeaderboardProfileWeapons />}
+							/>
+							<Route path={APP_ROUTES.leaderboard.player.maps} element={<LeaderboardProfileMaps />} />
 						</Route>
 						<Route element={<Gaming />}>
 							<Route path={APP_ROUTES.gaming.initial} element={<GamingGames />} />

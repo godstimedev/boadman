@@ -1,6 +1,6 @@
 import { Table } from '@/ui';
 import { Container } from './styles';
-import { Agent1 } from '@/assets/images';
+import { Agent1, Avatar11, Avatar2, Avatar4, Avatar6, Avatar7 } from '@/assets/images';
 
 const Agents = () => {
 	const tableData = [
@@ -27,9 +27,9 @@ const Agents = () => {
 			rowId: 2,
 			rowData: [
 				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
+					<img src={Avatar2} alt="/" className="w-4 h-4" />
 					<div>
-						<p className="font-medium text-sm">Sage </p>
+						<p className="font-medium text-sm">Jett </p>
 						<span className=" text-sm">2314 matches</span>
 					</div>
 				</div>,
@@ -46,7 +46,7 @@ const Agents = () => {
 			rowId: 3,
 			rowData: [
 				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
+					<img src={Avatar11} alt="/" className="w-4 h-4" />
 					<div>
 						<p className="font-medium text-sm">Sova </p>
 						<span className=" text-sm">1814 matches</span>
@@ -65,9 +65,47 @@ const Agents = () => {
 			rowId: 4,
 			rowData: [
 				<div className="player">
-					<img src={Agent1} alt="/" className="w-4 h-4" />
+					<img src={Avatar4} alt="/" className="w-4 h-4" />
 					<div>
-						<p className="font-medium text-sm">Jett </p>
+						<p className="font-medium text-sm">Renya </p>
+						<span className=" text-sm">814 matches</span>
+					</div>
+				</div>,
+				'234 hrs',
+
+				'58%',
+				'2.33.3',
+				'127.2',
+				'127.2',
+			],
+			onRowClick: () => console.log('clicked'),
+		},
+		{
+			rowId: 5,
+			rowData: [
+				<div className="player">
+					<img src={Avatar7} alt="/" className="w-4 h-4" />
+					<div>
+						<p className="font-medium text-sm">Skye </p>
+						<span className=" text-sm">814 matches</span>
+					</div>
+				</div>,
+				'234 hrs',
+
+				'58%',
+				'2.33.3',
+				'127.2',
+				'127.2',
+			],
+			onRowClick: () => console.log('clicked'),
+		},
+		{
+			rowId: 6,
+			rowData: [
+				<div className="player">
+					<img src={Avatar6} alt="/" className="w-4 h-4" />
+					<div>
+						<p className="font-medium text-sm">Raze </p>
 						<span className=" text-sm">814 matches</span>
 					</div>
 				</div>,
