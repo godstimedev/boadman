@@ -154,6 +154,7 @@ const SettingsGeneral = () => {
 											name="avatar"
 											value={formData.avatar}
 											onChange={handleChange}
+											accept="image/png, image/gif, image/jpeg"
 											children={
 												<button className="avatar-upload">
 													{formData.avatar.name ? formData.avatar.name : 'Upload Avatar'}

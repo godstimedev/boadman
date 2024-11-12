@@ -27,7 +27,7 @@ const Modal = (props: ModalProps) => {
 	return (
 		<StyledModal $isOpen={isModalOpen ? true : false}>
 			<div ref={modalRef} className="modal-con">
-				<button className="close-btn" onClick={() => setIsModalOpen(false)}>
+				<button type="button" className="close-btn" onClick={() => setIsModalOpen(false)}>
 					{' '}
 					<ModalClose />{' '}
 				</button>

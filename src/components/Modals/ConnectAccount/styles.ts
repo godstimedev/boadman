@@ -31,7 +31,7 @@ export const Container = styled.div`
 		line-height: 18.48px;
 	}
 
-	form {
+	.form {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;

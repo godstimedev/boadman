@@ -357,12 +357,13 @@ export const Container = styled.section`
 								&:checked {
 									background-color: ${({ theme }) => theme.colors.primary500} !important;
 									border: 1px solid ${({ theme }) => theme.colors.white} !important;
+									transition: border 0.2s ease;
 
 									&::after {
 										content: '';
 										position: absolute;
 										top: 2px;
-										left: 5px;
+										left: 33.5%;
 										width: 4px;
 										height: 8px;
 										border: solid ${({ theme }) => theme.colors.white};

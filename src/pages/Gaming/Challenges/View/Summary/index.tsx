@@ -1,6 +1,7 @@
 import { HeroAvatar, Spectre, StreamAvatar, GameStream as GameStreamImage } from '@/assets/images';
 import { Container } from './styles';
 import { GameplaySummary, GameStream } from '@/components';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ChallengeSummary = () => {
 	return (
@@ -32,7 +33,7 @@ const ChallengeSummary = () => {
 				<div>
 					<h6>Game Streams</h6>
 
-					<div>
+					<div className="streams">
 						{featuredStreamsList.map((stream, index) => (
 							<GameStream
 								avatar={stream.avatar}
@@ -43,6 +44,60 @@ const ChallengeSummary = () => {
 								views={stream.views}
 							/>
 						))}
+					</div>
+
+					<div className="swiper-con">
+						<Swiper
+							slidesPerView={1.3}
+							spaceBetween={20}
+							breakpoints={{
+								// When the screen width is 280px or larger
+								280: {
+									slidesPerView: 1.2,
+									spaceBetween: 20,
+								},
+								// When the screen width is 390px or larger
+								390: {
+									slidesPerView: 1.4,
+									spaceBetween: 20,
+								},
+								// When the screen width is 440px or larger
+								420: {
+									slidesPerView: 1.5,
+									spaceBetween: 20,
+								},
+								// When the screen width is 550px or larger
+								610: {
+									slidesPerView: 2.1,
+									spaceBetween: 20,
+								},
+								// When the screen width is 768px or larger (e.g., tablets)
+								768: {
+									slidesPerView: 2.3,
+									spaceBetween: 20,
+								},
+								// When the screen width is 1000px or larger (e.g., desktop)
+								1000: {
+									slidesPerView: 1.3,
+									spaceBetween: 20,
+								},
+							}}
+						>
+							<div>
+								{featuredStreamsList.map((stream, index) => (
+									<SwiperSlide key={index}>
+										<GameStream
+											avatar={stream.avatar}
+											game={stream.game}
+											image={stream.image}
+											key={index}
+											username={stream.username}
+											views={stream.views}
+										/>
+									</SwiperSlide>
+								))}
+							</div>
+						</Swiper>
 					</div>
 				</div>
 			</div>
@@ -104,6 +159,20 @@ const gameSummaryData = {
 };
 
 const featuredStreamsList = [
+	{
+		image: GameStreamImage,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
+	{
+		image: GameStreamImage,
+		avatar: StreamAvatar,
+		username: 'Flunk_god',
+		game: 'Fortnite',
+		views: '11.2k',
+	},
 	{
 		image: GameStreamImage,
 		avatar: StreamAvatar,

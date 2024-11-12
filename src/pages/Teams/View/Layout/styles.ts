@@ -103,6 +103,7 @@ export const Container = styled.div`
 
 			${maxQuery('sm')} {
 				gap: 1rem;
+				overflow-x: auto;
 			}
 
 			a {
@@ -112,6 +113,7 @@ export const Container = styled.div`
 				font-size: 14px;
 				line-height: 18.48px;
 				font-weight: 500;
+				white-space: nowrap;
 
 				${maxQuery('sm')} {
 					font-size: 10px;

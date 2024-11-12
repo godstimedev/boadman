@@ -2,24 +2,34 @@ import { Button, InputGroup } from '@/ui';
 import { Container } from './styles';
 import { GeneralChangeEventType } from '@/types';
 import { useState } from 'react';
-import { ConnectAccount, GameConnect } from '@/components';
+import { GameConnect } from '@/components';
 import { CyberPunk } from '@/assets/images';
 
 type FormType = {
-	game_name: string;
+	game_name: string[];
 };
 
 const SettingsIntegrations = () => {
-	const [addGame, setAddGame] = useState(false);
 	const [formData, setFormData] = useState<FormType>({
-		game_name: '',
+		game_name: ['League of legends', 'Call of duty', 'Apex Legends'],
 	});
+	const [inputValue, setInputValue] = useState('');
 
-	const handleChange: GeneralChangeEventType = (event, name, value) => {
-		name = event?.target.name || name || '';
-		value = event?.target.value || value || '';
+	const handleChange: GeneralChangeEventType = (event) => {
+		// name = event?.target.name || name || '';
+		// value = event?.target.value || value || '';
 
-		setFormData((prev) => ({ ...prev, [name]: value }));
+		setInputValue(event?.target.value || '');
+	};
+
+	const handleAddGame = () => {
+		if (inputValue.trim() !== '') {
+			setFormData((prev) => ({
+				...prev,
+				game_name: [...prev.game_name, inputValue.trim()],
+			}));
+			setInputValue('');
+		}
 	};
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -30,8 +40,6 @@ const SettingsIntegrations = () => {
 
 	return (
 		<Container>
-			<ConnectAccount connectAccount={addGame} setConnectAccount={setAddGame} />
-
 			<form onSubmit={handleSubmit} autoComplete="off">
 				<div>
 					<h5>Integrations</h5>
@@ -44,11 +52,11 @@ const SettingsIntegrations = () => {
 								type="text"
 								name="game_name"
 								label="Game name"
-								value={formData.game_name}
+								value={inputValue}
 								onChange={handleChange}
 							/>
 
-							<Button type="button" size="large" onClick={() => setAddGame(true)}>
+							<Button type="button" size="large" onClick={handleAddGame}>
 								Add game
 							</Button>
 						</div>
@@ -58,9 +66,9 @@ const SettingsIntegrations = () => {
 						<h6>Games connected</h6>
 
 						<div>
-							<GameConnect title="League of legends" image={CyberPunk} />
-							<GameConnect title="Call of duty" image={CyberPunk} />
-							<GameConnect title="Apex Legends" image={CyberPunk} />
+							{formData.game_name.map((game, index) => (
+								<GameConnect key={index} title={game} image={CyberPunk} />
+							))}
 						</div>
 					</div>
 				</div>

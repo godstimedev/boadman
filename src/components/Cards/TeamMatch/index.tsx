@@ -3,7 +3,7 @@ import { GamerAvatar, ManSmilling } from '@/assets/images';
 
 const TeamMatch = () => {
 	return (
-		<Container className="team-match">
+		<Container>
 			<div className="team">
 				<div className="img-con">
 					<img src={GamerAvatar} alt="/" />
@@ -20,7 +20,7 @@ const TeamMatch = () => {
 				</div>
 			</div>
 			<div className="versus">
-				<h6>VS</h6>
+				<h6 className="vs">VS</h6>
 				<p>Upcoming . 12/03/2024</p>
 			</div>
 

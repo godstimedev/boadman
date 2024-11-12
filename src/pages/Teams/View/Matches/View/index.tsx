@@ -16,173 +16,175 @@ const TeamMatchView = () => {
 				<span>Tournament match</span>
 			</div>
 
-			<div>
+			<div className="wrapper">
 				<div>
-					<div className="team-a">
-						<div>
-							<img src={GamerAvatar} alt="/" />
+					<div>
+						<div className="team-a">
 							<div>
-								<h6>Rabbit Rush</h6>
-								<span>Created 23/11/2024</span>
+								<img src={GamerAvatar} alt="/" />
+								<div>
+									<h6>Rabbit Rush</h6>
+									<span>Created 23/11/2024</span>
+								</div>
+							</div>
+						</div>
+						<div className="team-members">
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
 							</div>
 						</div>
 					</div>
-					<div className="team-members">
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<span>VS</span>
-
-					<h4>0 : 0</h4>
 
 					<div>
-						<span>Upcoming</span>
-						<p>Starts 22-06-2024 22:00 PM EST</p>
+						<span>VS</span>
 
-						<Button variant="primary">Start Match</Button>
+						<h4>0 : 0</h4>
+
+						<div>
+							<span>Upcoming</span>
+							<p>Starts 22-06-2024 22:00 PM EST</p>
+
+							<Button variant="primary">Start Match</Button>
+						</div>
+					</div>
+
+					<div>
+						<div className="team-b">
+							<div>
+								<img src={GamerAvatar} alt="/" />
+								<div>
+									<h6>Rabbit Rush</h6>
+									<span>Created 23/11/2024</span>
+								</div>
+							</div>
+						</div>
+						<div className="team-members">
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+							<div>
+								<div>
+									<img src={ManSmilling} alt="/" />
+
+									<div>
+										<p>Joel Henderson</p>
+										<span>Flunk_god</span>
+									</div>
+								</div>
+
+								<VerifiedCheckmark />
+							</div>
+						</div>
 					</div>
 				</div>
 
 				<div>
-					<div className="team-b">
-						<div>
-							<img src={GamerAvatar} alt="/" />
-							<div>
-								<h6>Rabbit Rush</h6>
-								<span>Created 23/11/2024</span>
-							</div>
-						</div>
-					</div>
-					<div className="team-members">
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-						<div>
-							<div>
-								<img src={ManSmilling} alt="/" />
-
-								<div>
-									<p>Joel Henderson</p>
-									<span>Flunk_god</span>
-								</div>
-							</div>
-
-							<VerifiedCheckmark />
-						</div>
-					</div>
+					{palletList.map((item, i) => (
+						<Pallet key={i} title={item.title} value={item.value} />
+					))}
 				</div>
-			</div>
-
-			<div>
-				{palletList.map((item, i) => (
-					<Pallet key={i} title={item.title} value={item.value} />
-				))}
 			</div>
 		</Container>
 	);

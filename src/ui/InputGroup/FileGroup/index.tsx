@@ -10,6 +10,7 @@ const FileGroup = (props: FileGroupType) => {
 			file: null,
 		},
 		onChange,
+		accept,
 		// helpTextOne = 'Browse From your Device',
 		// helpTextTwo = '',
 		children,
@@ -39,22 +40,52 @@ const FileGroup = (props: FileGroupType) => {
 		}
 	}, [deleteFile]);
 
-	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const validateFileSize = (file: File) => {
 		const oneMB = 1048576;
+		return maxSize && file.size > oneMB * maxSize;
+	};
+
+	const validateFileDimensions = (file: File) =>
+		new Promise((resolve) => {
+			const img = new Image();
+			img.src = URL.createObjectURL(file);
+			img.onload = () => {
+				const isValid = img.width >= 100 && img.height >= 100;
+				URL.revokeObjectURL(img.src); // Clean up
+				resolve(isValid);
+			};
+		});
+
+	const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const selectedFile = event.target.files?.[0];
 
-		if (maxSize && selectedFile && selectedFile.size > oneMB * maxSize) {
-			notify({
-				message: 'Max file size exceeded',
-				status: 'error',
-				variant: 'minor',
-				toastOptions: { toastId: 'file_size', position: 'bottom-center' },
-			});
-			event.target.value = '';
-		} else {
+		if (selectedFile) {
+			if (validateFileSize(selectedFile)) {
+				notify({
+					message: 'Max file size exceeded',
+					status: 'error',
+					variant: 'minor',
+					toastOptions: { toastId: 'file_size', position: 'bottom-center' },
+				});
+				event.target.value = '';
+				return;
+			}
+
+			const isValidDimensions = await validateFileDimensions(selectedFile);
+			if (!isValidDimensions) {
+				notify({
+					message: 'Image must be at least 100 x 100 pixels',
+					status: 'error',
+					variant: 'minor',
+					toastOptions: { toastId: 'file_dimensions', position: 'bottom-center' },
+				});
+				event.target.value = '';
+				return;
+			}
+
 			onChange(null, name, {
-				name: event.target.files?.[0].name || '',
-				file: event.target.files?.[0] || null,
+				name: selectedFile.name,
+				file: selectedFile,
 			});
 		}
 	};
@@ -68,6 +99,7 @@ const FileGroup = (props: FileGroupType) => {
 					ref={fileRef}
 					onChange={handleChange}
 					required={!value.name && required}
+					accept={accept}
 					{...rest}
 				/>
 

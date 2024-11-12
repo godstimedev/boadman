@@ -7,6 +7,7 @@ import { GAMES } from '@/constants';
 type PropsType = {
 	connectAccount: boolean;
 	setConnectAccount: React.Dispatch<React.SetStateAction<boolean>>;
+	game: string;
 };
 
 type ConnectAccount = {
@@ -16,7 +17,7 @@ type ConnectAccount = {
 };
 
 const ConnectAccount = (props: PropsType) => {
-	const { connectAccount, setConnectAccount } = props;
+	const { connectAccount, setConnectAccount, game } = props;
 
 	const [formData, setFormData] = useState<ConnectAccount>({
 		region: '',
@@ -39,11 +40,11 @@ const ConnectAccount = (props: PropsType) => {
 		<Modal isModalOpen={connectAccount} setIsModalOpen={setConnectAccount}>
 			<Container>
 				<div>
-					<h6>Apex Legends Connection</h6>
-					<span>Please enter your apex Legend username</span>
+					<h6>{game} Connection</h6>
+					<span>Please enter your {game} username</span>
 				</div>
 
-				<form autoComplete="off">
+				<div className="form">
 					<Select
 						type="basic"
 						name="region"
@@ -56,6 +57,7 @@ const ConnectAccount = (props: PropsType) => {
 						type="text"
 						name="username"
 						placeholder="Username"
+						autoComplete="off"
 						value={formData.username}
 						onChange={handleChange}
 					/>
@@ -67,9 +69,9 @@ const ConnectAccount = (props: PropsType) => {
 						value={formData.platform}
 						onChange={handleChange}
 					/>
-				</form>
+				</div>
 				<div>
-					<Button type="submit" onClick={handleSubmit} variant="primary">
+					<Button type="button" onClick={handleSubmit} variant="primary">
 						Connect account
 					</Button>
 				</div>
