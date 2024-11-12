@@ -145,7 +145,7 @@ export type FileGroupType = {
 	deleteFile?: boolean;
 	helpTextTwo?: string;
 	children: JSX.Element;
-	accept: string;
+	accept?: string;
 	label?: string;
 	name: string;
 	moreInfo?: string;

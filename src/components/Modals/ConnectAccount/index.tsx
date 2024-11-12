@@ -7,7 +7,7 @@ import { GAMES } from '@/constants';
 type PropsType = {
 	connectAccount: boolean;
 	setConnectAccount: React.Dispatch<React.SetStateAction<boolean>>;
-	game: string;
+	game?: string;
 };
 
 type ConnectAccount = {
