@@ -5,7 +5,7 @@ import { RankIcon } from '@/assets/svgs';
 import { Button } from '@/ui';
 
 const LastPlayed = (props: LastPlayedProps) => {
-	const { title, image, hours_played, win_percent, avg_score, won_coins } = props;
+	const { title, image, hours_played, win_percent, avg_score, won_coins, setCreateGame } = props;
 
 	return (
 		<Container>
@@ -48,7 +48,7 @@ const LastPlayed = (props: LastPlayedProps) => {
 					<span>7th</span>
 				</div>
 
-				<Button variant="text" size="small">
+				<Button onClick={() => setCreateGame(true)} variant="text" size="small">
 					Create game
 				</Button>
 			</div>

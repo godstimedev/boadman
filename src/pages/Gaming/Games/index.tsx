@@ -163,7 +163,12 @@ const Games = () => {
 							</div>
 							<div>
 								<p>Want to prove your superiority? Challenge friends and gamers to a personal game now</p>
-								<Button variant="outline" outline="primary" size="small">
+								<Button
+									onClick={() => setMakeChallenge(true)}
+									variant="outline"
+									outline="primary"
+									size="small"
+								>
 									Make Challenge
 								</Button>
 							</div>
@@ -178,10 +183,12 @@ const Games = () => {
 								Looking for a new challenge or a way to increase earnings? Play your favourite games now
 							</p>
 							<div>
-								<Button variant="outline" size="small">
-									Join game
-								</Button>
-								<Button variant="primary" size="small">
+								<Link to={APP_ROUTES.matches.initial}>
+									<Button variant="outline" size="small">
+										Join game
+									</Button>
+								</Link>
+								<Button onClick={() => setCreateGame(true)} variant="primary" size="small">
 									Create game
 								</Button>
 							</div>
@@ -205,6 +212,7 @@ const Games = () => {
 								win_percent={game.win_percent}
 								avg_score={game.avg_score}
 								won_coins={game.won_coins}
+								setCreateGame={setCreateGame}
 							/>
 						))}
 					</div>
@@ -282,6 +290,7 @@ const Games = () => {
 								win_percent={game.win_percent}
 								avg_score={game.avg_score}
 								won_coins={game.won_coins}
+								setCreateGame={setCreateGame}
 							/>
 						</SwiperSlide>
 					))}

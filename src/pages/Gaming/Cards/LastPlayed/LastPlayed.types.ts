@@ -6,4 +6,5 @@ export type LastPlayedProps = {
 	win_percent: string;
 	avg_score: string;
 	won_coins: string;
+	setCreateGame: (value: boolean) => void;
 };
