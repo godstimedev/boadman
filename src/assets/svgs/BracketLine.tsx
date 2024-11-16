@@ -1,14 +1,24 @@
 import styled from 'styled-components';
 
 type PropsType = {
+	rounds: number;
 	roundIndex: number;
 	matchIndex: number;
 	scores: number[] | undefined;
 };
 
 const BracketLine = (props: PropsType) => {
-	const { roundIndex, scores } = props;
-	const lineHeights = [42.4, 99.3, 197.6, 393.32];
+	const { roundIndex, scores, rounds } = props;
+	let lineHeights;
+
+	if (rounds === 6) {
+		lineHeights = [42.4, 99.3, 197.6, 395.2, 784];
+	} else if (rounds === 5) {
+		lineHeights = [42.4, 99.3, 197.6, 393.32];
+	} else {
+		lineHeights = [42.4, 99.3, 197.6, 393.32];
+	}
+
 	const lineHeight = lineHeights[roundIndex] || 0;
 
 	return (
@@ -63,8 +73,8 @@ export default BracketLine;
 
 const StyledSvgLine = styled.svg`
 	line {
-		stroke-dasharray: 200;
-		stroke-dashoffset: 200;
+		stroke-dasharray: 500;
+		stroke-dashoffset: 500;
 		animation: draw 2s ease forwards;
 	}
 

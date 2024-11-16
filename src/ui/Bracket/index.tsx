@@ -1,21 +1,76 @@
 import { StyledBracket } from './styles';
 import { GamerAvatar } from '@/assets/images';
 import { BracketLines } from '@/assets/svgs';
-
-type Team = {
-	name: string;
-	logoUrl?: string;
-};
-
-type Match = {
-	teams: [Team, Team?];
-	score?: [number, number];
-};
-
-type Round = Match[];
+import { Round } from './Bracket.types';
 
 const bracketData: Round[] = [
 	// Example structure for the rounds and matches
+	// [
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// 	{
+	// 		teams: [
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_A' },
+	// 			{ name: 'Rabbit Rush', logoUrl: 'url_to_logo_B' },
+	// 		],
+	// 		score: [72, 17],
+	// 	},
+	// 	{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [30, 50] },
+	// ],
 	[
 		{
 			teams: [
@@ -57,36 +112,39 @@ const bracketData: Round[] = [
 		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] },
 	],
 	[
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] },
-		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 27] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [0, 0] },
+		{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [0, 0] },
 	],
-	[{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [72, 87] }],
+	[{ teams: [{ name: 'Rabbit Rush' }, { name: 'Rabbit Rush' }], score: [0, 0] }],
 	[{ teams: [{ name: 'Rabbit Rush' }] }],
 	// More rounds as needed
 ];
 
 const Bracket = () => {
 	return (
-		<StyledBracket>
+		<StyledBracket $roundsAmount={bracketData.length}>
 			<div className="wrapper">
 				{bracketData.map((round, roundIndex) => {
+					const length = bracketData.length;
 					return (
 						<div
 							key={roundIndex}
 							className={`round ${
-								roundIndex === 4
-									? 'last-round'
+								roundIndex === length - 1
+									? 'winner'
+									: roundIndex === length - 2
+									? 'final'
 									: roundIndex === 3
 									? 'fourth-round'
 									: roundIndex === 2
 									? 'third-round'
 									: roundIndex === 1
 									? 'second-round'
-									: ''
+									: 'first-round'
 							}`}
 							style={{
-								paddingTop: `${calculateMargin(roundIndex)}rem`,
-								paddingBottom: `${calculateMargin(roundIndex)}rem`,
+								paddingTop: `${calculatePadding(roundIndex)}rem`,
+								paddingBottom: `${calculatePadding(roundIndex)}rem`,
 							}}
 						>
 							{round.map((match, matchIndex) => {
@@ -104,7 +162,12 @@ const Bracket = () => {
 											);
 										})}
 										{match.teams.length === 2 && (
-											<BracketLines scores={match.score} roundIndex={roundIndex} matchIndex={matchIndex} />
+											<BracketLines
+												rounds={length}
+												scores={match.score}
+												roundIndex={roundIndex}
+												matchIndex={matchIndex}
+											/>
 										)}
 									</div>
 								);
@@ -119,8 +182,8 @@ const Bracket = () => {
 
 export default Bracket;
 
-// Dynamically calculates spacing between rounds in rem
-function calculateMargin(roundIndex: number) {
+// Padding top and bottom for each rounds in rem
+function calculatePadding(roundIndex: number) {
 	return roundIndex === 0
 		? 0
 		: roundIndex === 1
@@ -129,5 +192,7 @@ function calculateMargin(roundIndex: number) {
 		? 4.425
 		: roundIndex === 3
 		? 10.6
-		: 0; // Increase spacing exponentially for each round
+		: roundIndex === 4
+		? 22.95
+		: 0;
 }

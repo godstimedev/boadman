@@ -5,9 +5,9 @@ const Dropdown = (props: DropdownProps) => {
 	const { trigger, children, position } = props;
 
 	return (
-		<StyledDropdown $position={position ? position : 'bottom'}>
+		<StyledDropdown tabIndex={0} $position={position ? position : 'bottom'}>
 			<button>{trigger}</button>
-			<div>{children}</div>
+			<div tabIndex={0}>{children}</div>
 		</StyledDropdown>
 	);
 };
