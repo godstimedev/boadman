@@ -1,12 +1,11 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { Container } from './styles';
-import { DashboardHeader } from '@/components';
+
 import { APP_ROUTES } from '@/constants';
 
 const SettingsGeneral = () => {
 	return (
 		<Container>
-			<DashboardHeader />
 			<div className="head">
 				<h6>Settings</h6>
 			</div>

@@ -2,7 +2,7 @@ import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
 import { Container } from './styles';
 import { Button } from '@/ui';
 import { APP_ROUTES } from '@/constants';
-import { DashboardHeader } from '@/components';
+
 import { GamerAvatar } from '@/assets/images';
 import { useState } from 'react';
 import AddMembers from '../../Modals/AddMember';
@@ -39,8 +39,6 @@ const TeamView = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
-
 			<AddMembers addMembers={addMembers} setAddMembers={setAddMembers} />
 
 			<CreateRoster createRoster={createRoster} setCreateRoster={setCreateRoster} />

@@ -1,6 +1,6 @@
 import { Valorant } from '@/assets/svgs';
 import { Container } from './styles';
-import { DashboardHeader } from '@/components';
+
 import { Button } from '@/ui';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
@@ -33,8 +33,6 @@ const TournamentView = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
-
 			<div className="banner" />
 
 			<div className="head">

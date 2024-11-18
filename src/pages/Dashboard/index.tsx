@@ -1,4 +1,4 @@
-import { CreateGame, DashboardHeader, FeaturedTournament, Match } from '@/components';
+import { CreateGame, FeaturedTournament, Match } from '@/components';
 import { Container } from './styles';
 import {
 	Achievement1,
@@ -45,7 +45,7 @@ const Dashboard = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
+			{/*      */}
 
 			<CreateGame gameModal={createGame} setGameModal={setCreateGame} />
 

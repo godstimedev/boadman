@@ -8,6 +8,7 @@ export { default as Achievement4 } from './Achievement4.svg?react';
 export { default as Achievement5 } from './Achievement5.svg?react';
 export { default as Achievement6 } from './Achievement6.svg?react';
 export { default as ApexLegend } from './ApexLegend.svg?react';
+export { default as ArrowBack } from './ArrowBack.svg?react';
 export { default as Assist } from './Assist.svg?react';
 export { default as BeginEarningVector } from './BeginEarningVector.svg?react';
 export { default as BoadmanLogo } from './BoadmanLogo.svg?react';

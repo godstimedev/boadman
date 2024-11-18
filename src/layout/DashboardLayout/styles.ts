@@ -17,6 +17,9 @@ export const Container = styled.div`
 		padding: 1rem 2rem 3rem 2rem;
 		min-width: 350px !important;
 		overflow-x: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 
 		${maxQuery('md')} {
 			padding: 1rem 1rem 3rem 1rem;

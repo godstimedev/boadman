@@ -1,6 +1,6 @@
 import { CaretDown, Download, TeamsWon } from '@/assets/svgs';
 import { Container } from './syles';
-import { DashboardHeader } from '@/components';
+
 import { APP_ROUTES } from '@/constants';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Button, Dropdown, InputGroup, LineChart } from '@/ui';
@@ -49,8 +49,6 @@ const Wallet = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
-
 			<Deposit deposit={depositModal} setDeposit={setDepositModal} />
 
 			<div className="head">

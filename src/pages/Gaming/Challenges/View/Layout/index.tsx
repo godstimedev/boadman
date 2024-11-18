@@ -3,7 +3,7 @@ import { Container } from './styles';
 import { Valorant } from '@/assets/svgs';
 import { Button } from '@/ui';
 import { APP_ROUTES } from '@/constants';
-import { DashboardHeader } from '@/components';
+
 import { useState } from 'react';
 import ReportResult from '../Modals/ReportResult';
 
@@ -24,8 +24,6 @@ const ChallengeView = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
-
 			<div className="banner" />
 
 			<div className="challenge-head">

@@ -44,7 +44,7 @@ const InputGroup = (props: InputGroupPropType) => {
 	- data-telvalue
 	*/
 
-	const isCheckBoxChecked = type === 'checkbox' ? /^true$/i.test(value.toString()) : false;
+	const isCheckBoxChecked = type === 'checkbox' ? /^true$/i.test((value ?? '').toString()) : false;
 	const [passwordVisible, setPasswordVisible] = useState(false);
 	const [countryCode, setCountryCode] = useState<string | number>(
 		getCountryCallingCode(defaultCountry) || '234'

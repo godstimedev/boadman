@@ -81,6 +81,7 @@ import {
 	LeaderboardProfileAgents,
 	LeaderboardProfileWeapons,
 	LeaderboardProfileMaps,
+	Search,
 } from './pages';
 import { ApplyLayout, DashboardLayout } from './layout';
 import { RestrictPages } from './components';
@@ -103,6 +104,7 @@ function App() {
 
 					{/* Pages that have their own default layout */}
 					<Route element={<DashboardLayout />}>
+						<Route path={APP_ROUTES.search} element={<Search />} />
 						<Route path={APP_ROUTES.dashboard} element={<Dashboard />} />
 						<Route element={<Leaderboard />}>
 							<Route

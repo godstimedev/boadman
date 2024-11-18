@@ -33,8 +33,6 @@ const GameView = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
-
 			<CreateGame gameModal={createGame} setGameModal={setCreateGame} />
 
 			<ConnectAccount connectAccount={connectAccount} setConnectAccount={setConnectAccount} />

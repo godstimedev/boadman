@@ -11,22 +11,54 @@ import {
 } from '@/assets/svgs';
 import { GeneralChangeEventType } from '@/types';
 import { ReactElement, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { BoadmanLogo, JoelHenderson } from '@/assets/images';
 import { MobileSidebar } from '@/layout';
 import { APP_ROUTES } from '@/constants';
+import { useDebouncedCallback } from 'use-debounce';
 
 const DashboardHeader = () => {
-	const [formData, setFormData] = useState({
-		search: '',
-	});
+	const [searchParams, setSearchParams] = useSearchParams();
+	const navigate = useNavigate();
+	const { pathname } = useLocation();
 
-	const handleChange: GeneralChangeEventType = (event, name, value) => {
-		name = event?.target.name || name || '';
+	const handleChange: GeneralChangeEventType = useDebouncedCallback((event, value) => {
+		// name = event?.target.name || name || '';
 		value = event?.target.value ?? value ?? '';
 
-		setFormData((prev) => ({ ...prev, [name]: value }));
-	};
+		if (value) {
+			setSearchParams({
+				q: value || '',
+			});
+			if (pathname !== APP_ROUTES.search) {
+				navigate(`${APP_ROUTES.search}?q=${value}`);
+			}
+		} else {
+			// delete the query from the params
+			setSearchParams({
+				q: '',
+			});
+		}
+	}, 500);
+
+	// const handleSearch = useDebouncedCallback((query) => {
+	// 	// console.log(stateId);
+	// 	if (query || stateId) {
+	// 		setSearchParams({
+	// 			q: query || '',
+	// 			state_id: stateId || '',
+	// 		});
+	// 		if (!pathname !== '/product') {
+	// 			navigate(`${Approutes.product.initial}/?q=${query}&state_id=${stateId}`);
+	// 		}
+	// 	} else {
+	// 		// delete the query from the params
+	// 		setSearchParams({
+	// 			q: '',
+	// 			state_id: '',
+	// 		});
+	// 	}
+	// }, 500);
 
 	const [nav, setNav] = useState(false);
 
@@ -39,7 +71,7 @@ const DashboardHeader = () => {
 						name="search"
 						placeholder="Search Game"
 						autoComplete="off"
-						value={formData.search}
+						defaultValue={searchParams.get('q') || ''}
 						onChange={handleChange}
 						icon={<SearchIcon />}
 						iconPosition="right"
@@ -76,9 +108,11 @@ const DashboardHeader = () => {
 			</nav>
 
 			<div className="mobile-nav-con">
-				<Button variant="primary" size="medium">
-					<SearchGoggles />
-				</Button>
+				<Link to={APP_ROUTES.search}>
+					<Button variant="primary" size="medium">
+						<SearchGoggles />
+					</Button>
+				</Link>
 
 				<button onClick={() => setNav(true)}>
 					<MenuIcon2 />

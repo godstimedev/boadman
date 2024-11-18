@@ -1,4 +1,4 @@
-import { DashboardHeader, FriendCard } from '@/components';
+import { FriendCard } from '@/components';
 import { Container } from './styles';
 import { Button, Pagination } from '@/ui';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ const Friends = () => {
 	const [addFriend, setAddFriend] = useState(false);
 	return (
 		<Container>
-			<DashboardHeader />
+			{/*      */}
 
 			<AddFriend addFriend={addFriend} setAddFriend={setAddFriend} />
 

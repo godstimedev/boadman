@@ -2,14 +2,13 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { Container } from './styles';
 import { Button } from '@/ui';
 import { APP_ROUTES } from '@/constants';
-import { DashboardHeader } from '@/components';
+
 import { HeroAvatar } from '@/assets/images';
 // import { useState } from 'react';
 
 const Profile = () => {
 	return (
 		<Container>
-			<DashboardHeader />
 			<div className="banner" />
 
 			<div className="head">

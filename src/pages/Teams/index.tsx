@@ -1,4 +1,4 @@
-import { DashboardHeader, TeamCard } from '@/components';
+import { TeamCard } from '@/components';
 import { Container } from './styles';
 import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '@/constants';
@@ -11,7 +11,7 @@ const Teams = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
+			{/*      */}
 
 			<CreateTeam createTeam={createTeam} setCreateTeam={setCreateTeam} />
 

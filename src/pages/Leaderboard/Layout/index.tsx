@@ -1,4 +1,3 @@
-import { DashboardHeader } from '@/components';
 import { Container } from './styles';
 import { InputGroup } from '@/ui';
 import { useState } from 'react';
@@ -31,8 +30,6 @@ const Leaderboard = () => {
 	};
 	return (
 		<Container>
-			<DashboardHeader />
-
 			<div className="head">
 				<h6>Leaderboard</h6>
 

@@ -20,7 +20,7 @@ export type InputGroupPropType = {
 		value?: string | number | boolean
 	) => void;
 	placeholder?: string;
-	value: string | number;
+	value?: string | number;
 	options?: {
 		name: string;
 		value: string;

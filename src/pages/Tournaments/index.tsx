@@ -1,4 +1,4 @@
-import { DashboardHeader, FeaturedTournament } from '@/components';
+import { FeaturedTournament } from '@/components';
 import { Container } from './styles';
 import { CyberPunk } from '@/assets/images';
 import { Link } from 'react-router-dom';
@@ -23,7 +23,7 @@ const Tournaments = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
+			{/*      */}
 			<div className="head">
 				<h6>All Tournaments</h6>
 

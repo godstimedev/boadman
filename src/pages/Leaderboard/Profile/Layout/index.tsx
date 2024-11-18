@@ -1,4 +1,3 @@
-import { DashboardHeader } from '@/components';
 import { Container } from './styles';
 import { Button, Dropdown } from '@/ui';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
@@ -38,7 +37,6 @@ const Profile = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
 			<div className="banner">
 				<div>
 					<div className="img-con">

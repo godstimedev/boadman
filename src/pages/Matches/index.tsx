@@ -1,4 +1,4 @@
-import { CreateGame, DashboardHeader, Match } from '@/components';
+import { CreateGame, Match } from '@/components';
 import { Container } from './styles';
 import { Button, Dropdown, InputGroup, Pagination } from '@/ui';
 import { HeroAvatar } from '@/assets/images';
@@ -24,7 +24,7 @@ const Matches = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
+			{/*      */}
 
 			<CreateGame gameModal={createGame} setGameModal={setCreateGame} />
 

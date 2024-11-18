@@ -11,7 +11,6 @@ const Gaming = () => {
 
 	return (
 		<Container>
-			<DashboardHeader />
 			<div className="head">
 				<h6>Gaming</h6>
 

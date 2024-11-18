@@ -1,13 +1,11 @@
 import { APP_ROUTES } from '@/constants';
 import { Container } from './styles';
-import { DashboardHeader } from '@/components';
+
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Faqs = () => {
 	return (
 		<Container>
-			<DashboardHeader />
-
 			<h6>Customer Service support</h6>
 
 			<div className="faqs">

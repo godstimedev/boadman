@@ -1,5 +1,6 @@
 export const APP_ROUTES = {
 	dashboard: '/dashboard',
+	search: '/search',
 	faqs: {
 		initial: '/faqs',
 		teams: '/faqs/teams',
