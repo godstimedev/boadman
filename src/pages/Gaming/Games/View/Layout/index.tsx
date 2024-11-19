@@ -1,7 +1,7 @@
 import { Button } from '@/ui';
 import { Container } from './styles';
 import { NavLink, Outlet, useLocation, useParams } from 'react-router-dom';
-import { ConnectAccount, CreateGame, DashboardHeader } from '@/components';
+import { ConnectAccount, CreateGame } from '@/components';
 import { APP_ROUTES } from '@/constants';
 import { useState } from 'react';
 

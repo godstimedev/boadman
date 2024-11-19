@@ -1,4 +1,4 @@
-import { ChallengeModal, DashboardHeader } from '@/components';
+import { ChallengeModal } from '@/components';
 import { Container } from './styles';
 import { APP_ROUTES } from '@/constants';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
