@@ -9,6 +9,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 		transform: translateY(0);
 		z-index: 100;
 		pointer-events: all;
+		display: flex;
 	}
 
 	&:focus-within {
@@ -33,6 +34,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 		display: flex;
 		gap: 0.5rem;
 		pointer-events: none;
+		display: none;
 		background-color: ${({ theme }) => theme.colors.accent500};
 		border: 1px solid ${({ theme }) => theme.colors.accent100};
 		border-radius: 5px;
