@@ -7,7 +7,7 @@ const Dropdown = (props: DropdownProps) => {
 	return (
 		<StyledDropdown tabIndex={0} $position={position ? position : 'bottom'}>
 			<button>{trigger}</button>
-			<div className="content">{children}</div>
+			{children}
 		</StyledDropdown>
 	);
 };

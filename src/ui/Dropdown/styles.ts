@@ -6,7 +6,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 
 	&:focus-within,
 	&:focus {
-		.content {
+		> div {
 			opacity: 1;
 			transform: translateY(0);
 			z-index: 100;
@@ -35,7 +35,8 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 		height: max-content;
 		max-height: 190px;
 		display: flex;
-		gap: 0.5rem;
+		flex-direction: column;
+		/* gap: 0.5rem; */
 		pointer-events: none;
 		background-color: ${({ theme }) => theme.colors.accent500};
 		border: 1px solid ${({ theme }) => theme.colors.accent100};
@@ -81,30 +82,25 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 				transition: transform 0.3s ease;
 			`}
 
-		> div {
+		
+
+		&:first-child {
+			padding-top: 0.5rem;
+		}
+		&:last-child {
+			padding-bottom: 0.5rem;
+		}
+		> button {
+			font-size: 14px;
+			line-height: 18.48px;
+			padding: 0.5rem 0.75rem;
 			width: 100%;
-			height: 100%;
-			display: flex;
-			flex-direction: column;
+			text-align: left;
+			color: ${({ theme }) => theme.colors.white};
+			transition: color 0.2s ease-in;
 
-			&:first-child {
-				padding-top: 0.5rem;
-			}
-			&:last-child {
-				padding-bottom: 0.5rem;
-			}
-			> button {
-				font-size: 14px;
-				line-height: 18.48px;
-				padding: 0.5rem 0.75rem;
-				width: 100%;
-				text-align: left;
-				color: ${({ theme }) => theme.colors.white};
-				transition: color 0.2s ease-in;
-
-				&:hover {
-					color: ${({ theme }) => theme.colors.primary500};
-				}
+			&:hover {
+				color: ${({ theme }) => theme.colors.primary500};
 			}
 		}
 
