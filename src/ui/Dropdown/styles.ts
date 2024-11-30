@@ -43,6 +43,26 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 		border-radius: 5px;
 		overflow-y: auto;
 
+		&:first-child {
+			padding-top: 0.5rem;
+		}
+		&:last-child {
+			padding-bottom: 0.5rem;
+		}
+		button {
+			font-size: 14px;
+			line-height: 18.48px;
+			padding: 0.5rem 0.75rem;
+			width: 100%;
+			text-align: left;
+			color: ${({ theme }) => theme.colors.white};
+			transition: color 0.2s ease-in;
+
+			&:hover {
+				color: ${({ theme }) => theme.colors.primary500};
+			}
+		}
+
 		${({ $position }) =>
 			$position === 'bottom' &&
 			css`
@@ -84,25 +104,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 
 		
 
-		&:first-child {
-			padding-top: 0.5rem;
-		}
-		&:last-child {
-			padding-bottom: 0.5rem;
-		}
-		button {
-			font-size: 14px;
-			line-height: 18.48px;
-			padding: 0.5rem 0.75rem;
-			width: 100%;
-			text-align: left;
-			color: ${({ theme }) => theme.colors.white};
-			transition: color 0.2s ease-in;
-
-			&:hover {
-				color: ${({ theme }) => theme.colors.primary500};
-			}
-		}
+	
 
 		/* WebKit browsers (Chrome, Safari, Edge) */
 		::-webkit-scrollbar {

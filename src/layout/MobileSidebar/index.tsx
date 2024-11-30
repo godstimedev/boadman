@@ -19,7 +19,7 @@ import {
 } from '@/assets/svgs';
 import { Aside } from './styles';
 import { APP_ROUTES } from '@/constants';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ReactElement, useEffect, useRef } from 'react';
 
 import { BoadmanLogo, JoelHenderson } from '@/assets/images';
@@ -31,6 +31,7 @@ interface MobileSidebarProps {
 
 const MobileSidebar: React.FC<MobileSidebarProps> = ({ nav, setNav }) => {
 	const navRef = useRef<HTMLDivElement>(null);
+	const location = useLocation();
 
 	useEffect(() => {
 		const handleClickOutside = (e: MouseEvent) => {
@@ -46,6 +47,10 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ nav, setNav }) => {
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
 	}, [setNav]);
+
+	useEffect(() => {
+		setNav(false);
+	}, [location.pathname, setNav]);
 
 	return (
 		<Aside>

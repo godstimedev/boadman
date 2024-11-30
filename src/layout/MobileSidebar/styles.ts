@@ -22,11 +22,11 @@ export const Aside = styled.aside`
 	.close {
 		position: fixed;
 		top: 0;
-		transition: left 0.3s ease-in-out;
+		left: -120vw;
 		width: 100%;
 		height: 100%;
-		left: -120vw;
 		z-index: 20;
+		transition: left 0.3s ease-in-out;
 	}
 
 	> div {
