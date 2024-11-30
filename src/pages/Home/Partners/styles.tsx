@@ -14,9 +14,6 @@ export const Container = styled.section`
 		position: relative;
 	}
 
-	img {
-	}
-
 	.logo-slider {
 		display: inline-flex;
 		align-items: center;

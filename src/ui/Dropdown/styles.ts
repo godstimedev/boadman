@@ -4,15 +4,18 @@ import { StyledDropdownProps } from './Dropdown.types';
 export const StyledDropdown = styled.div<StyledDropdownProps>`
 	position: relative;
 
-	&:focus-within > div {
-		opacity: 1;
-		transform: translateY(0);
-		z-index: 100;
-		pointer-events: all;
-		display: flex;
+	&:focus-within,
+	&:focus {
+		.content {
+			opacity: 1;
+			transform: translateY(0);
+			z-index: 100;
+			pointer-events: all;
+		}
 	}
 
-	&:focus-within {
+	&:focus-within,
+	&:focus {
 		.caret {
 			transform: rotate(180deg);
 		}
@@ -34,7 +37,6 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 		display: flex;
 		gap: 0.5rem;
 		pointer-events: none;
-		display: none;
 		background-color: ${({ theme }) => theme.colors.accent500};
 		border: 1px solid ${({ theme }) => theme.colors.accent100};
 		border-radius: 5px;
@@ -47,7 +49,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 				left: 0;
 				opacity: 0;
 				transform: translateY(-1rem);
-				transition: opacity 0.3s ease, transform 0.3s ease;
+				transition: transform 0.3s ease;
 			`}
 
 		${({ $position }) =>
@@ -57,7 +59,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 				left: 0;
 				opacity: 0;
 				transform: translateY(1rem);
-				transition: opacity 0.3s ease, transform 0.3s ease;
+				transition: transform 0.3s ease;
 			`}
 
 		${({ $position }) =>
@@ -67,7 +69,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 				right: 0;
 				opacity: 0;
 				transform: translateY(-1rem);
-				transition: opacity 0.3s ease, transform 0.3s ease;
+				transition: transform 0.3s ease;
 			`}
 		${({ $position }) =>
 			$position === 'topRight' &&
@@ -76,7 +78,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 				right: 0;
 				opacity: 0;
 				transform: translateY(1rem);
-				transition: opacity 0.3s ease, transform 0.3s ease;
+				transition: transform 0.3s ease;
 			`}
 
 		> div {

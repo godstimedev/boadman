@@ -1,7 +1,7 @@
 import { ArrowBack, SearchIcon } from '@/assets/svgs';
 import { Container } from './styles';
 import { GeneralChangeEventType } from '@/types';
-import { InputGroup } from '@/ui';
+import { Button, InputGroup } from '@/ui';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { useDebouncedCallback } from 'use-debounce';
 import { APP_ROUTES, QUERY_STRINGS } from '@/constants';
@@ -37,9 +37,9 @@ const Search = () => {
 	return (
 		<Container>
 			<header className="search-header">
-				<button onClick={handleBack}>
+				<Button variant="text" onClick={handleBack}>
 					<ArrowBack />
-				</button>
+				</Button>
 
 				<div className="search-bar">
 					<InputGroup
