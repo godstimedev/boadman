@@ -90,7 +90,7 @@ export const StyledDropdown = styled.div<StyledDropdownProps>`
 		&:last-child {
 			padding-bottom: 0.5rem;
 		}
-		> button {
+		button {
 			font-size: 14px;
 			line-height: 18.48px;
 			padding: 0.5rem 0.75rem;
