@@ -51,11 +51,11 @@ const SignIn = () => {
 						/>
 
 						<div className="button">
-							<Link to={APP_ROUTES.dashboard}>
+							{/* <Link to={APP_ROUTES.dashboard}> */}
 								<Button type="submit" variant="primary" size="large">
 									Login
 								</Button>
-							</Link>
+							{/* </Link> */}
 
 							<p>
 								Don't have an account, I want <br className="sm:hidden" />{' '}
